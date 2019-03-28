@@ -5,7 +5,7 @@
         <!-- Header Wrap -->
         <div id="site-header-wrap">
           <!-- Top Bar -->
-          <div id="top-bar">
+          <!-- <div id="top-bar">
             <div id="top-bar-inner" class="container">
               <div class="top-bar-inner-wrap">
                 <div class="top-bar-content">
@@ -14,9 +14,10 @@
                     <span class="phone content">+61 3 8376 6284</span>
                     <span class="time content">Mon-Sat: 8am - 6pm</span>
                   </div>
-                </div><!-- /.top-bar-content -->
+                </div> -->
+                <!-- /.top-bar-content -->
 
-                <div class="top-bar-socials">
+                <!-- <div class="top-bar-socials">
                   <div class="inner">
                     <span class="text">Follow us:</span>
                     <span class="icons">
@@ -26,10 +27,12 @@
                       <a href="#"><i class="fa fa-rss" /></a>
                     </span>
                   </div>
-                </div><!-- /.top-bar-socials -->
-              </div>
+                </div> -->
+                <!-- /.top-bar-socials -->
+              <!-- </div>
             </div>
-          </div><!-- /#top-bar -->
+          </div> -->
+          <!-- /#top-bar -->
 
           <!-- Header -->
           <header id="site-header">
@@ -40,7 +43,7 @@
                     <a href="home.html" rel="home" class="main-logo">
                       <img
                         src="~/assets/img/logo-small.png"
-                        alt="Autora"
+                        alt="Custom Steel Trusses & Frames"
                         width="186"
                         height="39"
                         data-retina="~/assets/img/logo-small@2x.png"
@@ -59,18 +62,43 @@
                   <ul id="menu-primary-menu" class="menu">
                     <li class="menu-item menu-item-has-children current-menu-item">
                       <a href="home.html">HOME</a>
-                      <ul class="sub-menu">
+                      <!-- <ul class="sub-menu">
                         <li class="menu-item current-item">
                           <a href="home.html">HOME 1</a>
                         </li>
                         <li class="menu-item">
                           <a href="home-2.html">HOME 2</a>
                         </li>
-                      </ul>
+                      </ul> -->
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a href="page-about.html">ABOUT US </a>
-                      <ul class="sub-menu">
+                      <a href="page-projects.html">PROJECTS</a>
+                      <!-- <ul class="sub-menu">
+                        <li class="menu-item">
+                          <a href="page-projects.html">PROJECTS</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="page-projects-full.html">PROJECTS FULL WIDTH</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="page-project-detail.html">PROJECTS DETAIL</a>
+                        </li>
+                      </ul> -->
+                    </li>
+                    <li class="menu-item menu-item-has-children">
+                      <a href="page-services.html">SERVICES</a>
+                      <!-- <ul class="sub-menu">
+                        <li class="menu-item">
+                          <a href="page-services.html">SERVICES</a>
+                        </li>
+                        <li class="menu-item">
+                          <a href="page-services-detail.html">SERVICES DETAIL</a>
+                        </li>
+                      </ul> -->
+                    </li>
+                    <li class="menu-item menu-item-has-children">
+                      <a href="page-about.html">ABOUT</a>
+                      <!-- <ul class="sub-menu">
                         <li class="menu-item">
                           <a href="page-about.html">ABOUT US</a>
                         </li>
@@ -83,34 +111,9 @@
                         <li class="menu-item">
                           <a href="page-about-careers.html">ABOUT CAREERS</a>
                         </li>
-                      </ul>
+                      </ul> -->
                     </li>
-                    <li class="menu-item menu-item-has-children">
-                      <a href="page-services.html">SERVICES</a>
-                      <ul class="sub-menu">
-                        <li class="menu-item">
-                          <a href="page-services.html">SERVICES</a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="page-services-detail.html">SERVICES DETAIL</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
-                      <a href="page-projects.html">PROJECTS</a>
-                      <ul class="sub-menu">
-                        <li class="menu-item">
-                          <a href="page-projects.html">PROJECTS</a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="page-projects-full.html">PROJECTS FULL WIDTH</a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="page-project-detail.html">PROJECTS DETAIL</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="menu-item menu-item-has-children">
+                    <!-- <li class="menu-item menu-item-has-children">
                       <a href="page-testimonial.html">PAGE</a>
                       <ul class="sub-menu">
                         <li class="menu-item">
@@ -131,23 +134,26 @@
                           <a href="page-blog-single.html">BLOG SINGLE</a>
                         </li>
                       </ul>
-                    </li>
+                    </li> -->
                     <li class="menu-item menu-item-has-children">
                       <a href="page-contact.html">CONTACT</a>
-                      <ul class="sub-menu right-sub-menu">
+                      <!-- <ul class="sub-menu right-sub-menu">
                         <li class="menu-item">
                           <a href="page-contact.html">CONTACT 1</a>
                         </li>
                         <li class="menu-item">
                           <a href="page-contact-2.html">CONTACT 2</a>
                         </li>
-                      </ul>
+                      </ul> -->
+                    </li>
+                    <li class="menu-item">
+                      <a href="#" id="tel">+61 28 527 6342</a>
                     </li>
                   </ul>
                 </nav><!-- /#main-nav -->
 
-                <div id="header-search">
-                  <a href="#" class="header-search-icon">
+                  <!-- <div id="header-search">
+                    <a href="#" class="header-search-icon">
                     <span class="search-icon fa fa-search" />
                   </a>
 
@@ -158,7 +164,9 @@
                       <i class="fa fa-search" />
                     </button>
                   </form>
-                </div><!-- /#header-search -->
+                </div> -->
+
+                <!-- /#header-search -->
               </div><!-- /.wrap-inner -->
             </div><!-- /#site-header-inner -->
           </header><!-- /#site-header -->
