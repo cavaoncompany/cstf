@@ -1,6 +1,6 @@
 # cstf
 
-> Present backbone of the
+> cstf
 
 ## Build Setup
 
