@@ -201,10 +201,10 @@
                   <Quote />
                   <!-- END QUOTE -->
                   <!-- TABS -->
-                  <Tabs />
+                  <!-- <Tabs /> -->
                   <!-- END TABS -->
                   <!-- PARTNER -->
-                  <Partner />
+                  <!-- <Partner /> -->
                   <!-- END PARTNER -->
                 </div><!-- /.page-content -->
               </div><!-- /#inner-content -->
@@ -437,8 +437,8 @@ import Services from '../components/Services'
 import Project from '../components/Project'
 import Quote from '../components/Quote'
 import Testimonials from '../components/Testimonials'
-import Tabs from '../components/Tabs'
-import Partner from '../components/Partner'
+// import Tabs from '../components/Tabs'
+// import Partner from '../components/Partner'
 import Iconbox from '../components/Iconbox'
 
 export default {
@@ -449,8 +449,8 @@ export default {
     Project,
     Quote,
     Testimonials,
-    Tabs,
-    Partner,
+    // Tabs,
+    // Partner,
     Iconbox
   }
 }
