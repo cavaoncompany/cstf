@@ -15,9 +15,8 @@
                     <span class="time content">Mon-Sat: 8am - 6pm</span>
                   </div>
                 </div> -->
-                <!-- /.top-bar-content -->
-
-                <!-- <div class="top-bar-socials">
+          <!-- /.top-bar-content -->
+          <!-- <div class="top-bar-socials">
                   <div class="inner">
                     <span class="text">Follow us:</span>
                     <span class="icons">
@@ -28,8 +27,8 @@
                     </span>
                   </div>
                 </div> -->
-                <!-- /.top-bar-socials -->
-              <!-- </div>
+          <!-- /.top-bar-socials -->
+          <!-- </div>
             </div>
           </div> -->
           <!-- /#top-bar -->
@@ -146,13 +145,13 @@
                         </li>
                       </ul> -->
                     </li>
-                    <li class="menu-item">
-                      <a href="#" id="tel">+61 28 527 6342</a>
+                    <li class="menu-item menu-item-last">
+                      <a id="tel" href="tel:+61285276342"><span class="menu-item-tel">+61 28 527 6342</span></a>
                     </li>
                   </ul>
                 </nav><!-- /#main-nav -->
 
-                  <!-- <div id="header-search">
+                <!-- <div id="header-search">
                     <a href="#" class="header-search-icon">
                     <span class="search-icon fa fa-search" />
                   </a>
@@ -458,5 +457,12 @@ export default {
 </script>
 
 <style>
+.menu-item-tel {
+  border: 1px solid #FED00E;
+  padding: 14px 20px;
+}
 
+.menu-item-last:hover {
+  border: none;
+}
 </style>
