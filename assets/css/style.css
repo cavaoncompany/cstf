@@ -54,6 +54,16 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 
 /* General
 -------------------------------------------------------------- */
+html {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+*, *:before, *:after {
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
+}
 
 body,
 button,
@@ -356,7 +366,7 @@ h6 a { color: inherit }
 
 /* Layouts
 -------------------------------------------------------------- */
-#main-content { padding: 81px 0px; }
+#main-content { padding-top: 81px; }
 body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Inner Content */
@@ -391,6 +401,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 .themesflat-row.gutter-30 > [class*="col"] { padding-left: 15px; padding-right: 15px; }
 
 .themesflat-row .span_1_of_4 { width: 33.333333%; float: left; }
+.themesflat-row .span_1_of_2 { width: 37%; float: left; }
 .themesflat-row .span_1_of_3 { width: 25%; float: left; }
 .themesflat-row .span_1_of_6 { width: 50%; float: left; }
 .themesflat-row .span_1_of_12 { width: 100%; }
@@ -793,7 +804,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Widget lastest */
 .widget.widget_lastest ul { margin: 0px; }
-.widget.widget_lastest ul li { margin-top: 33px; padding: 0px; }
+.widget.widget_lastest ul li { margin-top: 33px; padding: 0px; font-size: 14px; }
 .widget.widget_lastest ul li:first-child { margin-top: 0px; border: none; }
 .widget.widget_lastest .thumb { width: 65px; height: 65px; float: left; margin-right: 19px; margin-top: 5px; }
 .widget.widget_lastest .text { overflow: hidden; }
@@ -804,7 +815,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 #footer .widget.widget_lastest .post-date { color: #777879; }
 
 /* Widget tags */
-.widget.widget_tags .tags-list a { position: relative; display: inline-block; float: left; text-align: center; font-size: 12px; color: #a1a1a1; z-index: 1; padding: 4px 15px 4px 20px; margin: 0px 18px 9px 0px; font-family: 'Montserrat', sans-serif; border-top: 1px solid #e7e7e7; border-bottom: 1px solid #e7e7e7; border-left: 1px solid #e7e7e7; letter-spacing: 0.7px; }
+.widget.widget_tags ul li { position: relative; font-size: 14px; color: #ffffff; z-index: 1; padding: 4px 0px 4px 0px; margin: 0px 18px 9px 0px; font-family: 'Montserrat', sans-serif; letter-spacing: 0.7px; }
 
 .widget.widget_tags .tags-list a:before {content:'';position:absolute;top: 4px;	right: -12px;  height: 24px;width: 23px;border-radius: 4px; background-color: #fff;border-right: 1px solid #e7e7e7;border-top: 1px solid #e7e7e7;transform: rotate(45deg) skew(7deg); -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease; -ms-transition: all 0.3s ease; -o-transition: all 0.3s ease; transition: all 0.3s ease; z-index: -1; overflow: hidden;}
 
@@ -883,11 +894,10 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 -------------------------------------------------------------- */
 #footer { background: url('../img/page/bg-footer.jpg') no-repeat center center; background-size: cover;  position: relative; z-index: 1; padding: 79px 0px 72px 0px; }
 
-#footer-widgets .widget .widget-title { color: #fff; font-size: 14px; margin-bottom: 24px; letter-spacing: 1.3px; margin-top: 2px; }
+#footer-widgets .widget .widget-title { color: #999; font-size: 14px; margin-bottom: 24px; letter-spacing: 1.3px; margin-top: 2px; }
 #footer-widgets .widget .widget-title span { padding: 0px 0px 8px 0px; }
 #footer-widgets .widget .widget-title span:after { width: 40px; }
-#footer-widgets .widget.widget_lastest ul li { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 13px; margin-top: 19px; }
-#footer-widgets .widget.widget_lastest ul li:first-child { border-top: 0px; padding-top: 0px; }
+#footer-widgets .widget.widget_lastest ul li { padding-top: 13px; margin-top: 13px;  border-top: 0px; padding-top: 0px; }
 #footer-widgets .widget ul { margin: 0; list-style: none; }
 
 #footer-widgets .widget p { color: #999; font-weight: 500; font-family: 'Montserrat', sans-serif; }
