@@ -1,0 +1,36 @@
+{
+    "title": "WHY STEEL FRAMING?",
+    "items": [
+        {
+            "icon": "/img/Icon-durability.png",
+            "title": "DURABILITY",
+            "description": "Steel House Frames have In-built Durability. Corrosion Protection is Built In."
+        },
+        {
+            "icon": "/img/Icon-design.png",
+            "title": "DESIGN FLEXIBILITY",
+            "description": "Steel adapts perfectly to cyclonic design requirements, and is equally at home in humid or cold climates."
+        },
+        {
+            "icon": "/img/Icon-accuracy.png",
+            "title": "ACCURACY",
+            "description": "Because steel has consistent material strength and complies with strict quality controls and tolerances."
+        },
+        {
+            "icon": "/img/Icon-deformation.png",
+            "title": "LESS DEFORMATION",
+            "description": "LGS frame provides the strength, stiffness and geometric stability of the building."
+        },
+        {
+            "icon": "/img/Icon-costefficient.png",
+            "title": "COST-EFFICIENT",
+            "description": "Factory pre-assembly will realise cost savings for your project in your labour budget."
+        },
+        {
+            "icon": "/img/Icon-termite.png",
+            "title": "TERMITE",
+            "description": "Termite management is simplified. Termites cannot destroy the steel frame."
+        }
+    ],
+    "buttonText": "VIEW MORE"
+}
