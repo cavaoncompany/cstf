@@ -310,7 +310,7 @@ h6 a { color: inherit }
 .bg-light-snow { background-color: #fafafb; }
 .bg-f7f { background-color: #f7f7f7 !important;}
 .bg-ffc { background-color: #FED00E !important;}
-.bg-row-1 { background: url('../img/page/bg-quote.jpg') center center no-repeat; background-size: cover; }
+.bg-row-1 { background: url('../img/Quote-bg.png') center center no-repeat; background-size: contain; background-position-x: -350px; }
 .bg-row-2 { background: url('../img/page/bg-iconbox.jpg') center center no-repeat; background-size: cover; }
 
 .padding-top-45 { padding-top: 45px !important; }

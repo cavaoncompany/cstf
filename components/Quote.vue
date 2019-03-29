@@ -9,11 +9,11 @@
               <div class="inner">
                 <div class="heading-wrap">
                   <h3 class="heading">
-                    START EXECUTING YOUR PROJECT
+                    {{ quote.text }}
                   </h3>
                 </div>
-                <div class="button-wrap has-icon icon-left">
-                  <a href="#" class="themesflat-button bg-white small"><span>(+613) 8376 6284 <span class="icon"><i class="autora-icon-phone-contact" /></span></span></a>
+                <div class="button-wrap has-icon .sep-icon-after">
+                  <a href="#" class="themesflat-button bg-white small"><span class="themesflat-quote style-1 heading">{{ quote.quote }}<span class="icon"><i class="fa fa-arrow-right" /></span></span></a>
                 </div>
               </div>
             </div>
@@ -24,3 +24,24 @@
     </div><!-- /.container -->
   </div>
 </template>
+
+<script>
+import quote from '../content/quote.json'
+
+export default {
+  data() {
+    return {
+      quote: quote
+    }
+  }
+}
+</script>
+
+<style>
+.row-quote .icon {
+  margin-left: 5px;
+}
+.row-quote .themesflat-button.small {
+  padding-right: 46px;
+}
+</style>
