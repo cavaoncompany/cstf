@@ -1,0 +1,31 @@
+{
+    "title": "FEATURED PROJECT",
+    "backgroundImg": "/img/Featured-bg.png",
+    "projectDetails": [
+        {
+            "img": "/img/Featured-1.png",
+            "title": "LAKE MEADOWS APARTMENTS",
+            "category": "Architecture",
+            "additionalCategory":"Building"
+        },
+        {
+            "img": "/img/Featured-2.png",
+            "title": "LAKE MEADOWS APARTMENTS",
+            "category": "Architecture",
+            "additionalCategory":"Building"
+        },
+        {
+            "img": "/img/Featured-3.png",
+            "title": "LAKE MEADOWS APARTMENTS",
+            "category": "Architecture",
+            "additionalCategory":"Building"
+        },
+        {
+            "img": "/img/Featured-4.png",
+            "title": "LAKE MEADOWS APARTMENTS",
+            "category": "Architecture",
+            "additionalCategory":"Building"
+        }
+    ],
+    "buttonText": "VIEW MORE"
+}
