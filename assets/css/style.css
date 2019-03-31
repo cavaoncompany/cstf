@@ -366,7 +366,6 @@ h6 a { color: inherit }
 
 /* Layouts
 -------------------------------------------------------------- */
-#main-content { padding-top: 81px; }
 body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Inner Content */

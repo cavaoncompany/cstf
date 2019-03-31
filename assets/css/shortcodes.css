@@ -335,7 +335,7 @@
 .parallax { width: 100%; background-attachment: fixed; background-position: 50% 0; background-repeat: repeat;}
 .parallax-1 { background-image: url('../img/Featured-bg.png'); background-size: cover; }
 .parallax-2 { background-image: url('../img/about-bg.png'); background-size: cover; }
-.parallax-3 { background-image: url('../img/parallax/parallax-3.jpg');  }
+.parallax-3 { background-image: url('../img/banner-bg.png'); background-size: cover;  }
 .parallax-4 { background-image: url('../img/parallax/parallax-4.jpg') ; }
 
 .parallax-overlay { position: relative; z-index: 1; }
