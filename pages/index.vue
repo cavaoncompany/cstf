@@ -222,11 +222,9 @@
                     <p>
                       <img :src="footer.logo" alt="Image" width="205" height="72">
                     </p>
-
                     <p class="margin-bottom-15">
                       {{ footer.rights }}
                     </p>
-
                   </div>
                 </div><!-- /.widget_text -->
                 <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="0" data-smobile="35" />
@@ -255,27 +253,27 @@
                     <span>{{ footer.contact }}</span>
                   </h2>
                   <ul>
-                      <li>
-                        <div class="inner">
-                          <span class="fa fa-phone" />
-                          <span class="text">{{ footer.tel }}</span>
-                        </div>
-                      </li>
+                    <li>
+                      <div class="inner">
+                        <span class="fa fa-phone" />
+                        <span class="text">{{ footer.tel }}</span>
+                      </div>
+                    </li>
 
-                      <li>
-                        <div class="inner">
-                          <span class="fa fa-envelope" />
-                          <span class="text">{{ footer.email }}</span>
-                        </div>
-                      </li>
+                    <li>
+                      <div class="inner">
+                        <span class="fa fa-envelope" />
+                        <span class="text">{{ footer.email }}</span>
+                      </div>
+                    </li>
 
-                      <li class="margin-top-7">
-                        <div class="inner">
-                          <span class="fa fa-map-marker" />
-                          <span class="text">{{ footer.address }}</span>
-                        </div>
-                      </li>
-                    </ul>
+                    <li class="margin-top-7">
+                      <div class="inner">
+                        <span class="fa fa-map-marker" />
+                        <span class="text">{{ footer.address }}</span>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div><!-- /.col -->
             </div><!-- /.themesflat-row -->
