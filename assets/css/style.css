@@ -1073,6 +1073,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .works-container { width: 29%; }
 
   .banner-row .container { padding-top: 7%; }
+
+  .menu-item-tel-mobile { display: none }
 }
 
 @media only screen and (max-width: 768px) {
@@ -1110,6 +1112,10 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .quote-item .button-wrap { text-align: center; }
 
   .bg-row-1 { background-size: cover; }
+
+  .menu-item-last { display: none; }
+
+  .menu-item-tel-mobile { display: block; border: 1px solid #FED00E; width: 130px; margin-left: 50%; margin-top: 19px; padding: 5px 0; text-align: center; }
 }
 
 @media only screen and (max-width: 479px) {
@@ -1152,4 +1158,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .container { padding-left: 30px; padding-right: 30px }
 
   .themesflat-row .span_1_of_3 { width: 100% }
+
+  #site-logo { width: 100px; }
+
+  .menu-item-tel-mobile { margin-left: 50%; margin-top: 0; }
 }
