@@ -19,7 +19,7 @@ module.exports = {
     script: [
       { src: '/js/jquery.min.js' },
       { src: '/js/plugins.js' },
-      { src: '/js//tether.js' },
+      { src: '/js/tether.min.js' },
       { src: '/js/bootstrap.min.js' },
       { src: '/js/animsition.js' },
       { src: '/js/owl.carousel.min.js' },

@@ -41,11 +41,11 @@
                   <div id="site-log-inner">
                     <a href="home.html" rel="home" class="main-logo">
                       <img
-                        src="~/assets/img/logo-small.png"
+                        src="/img/logo-small.png"
                         alt="Custom Steel Trusses & Frames"
                         width="186"
                         height="39"
-                        data-retina="~/assets/img/logo-small@2x.png"
+                        data-retina="/img/logo-small@2x.png"
                         data-width="186"
                         data-height="39"
                       >
@@ -181,7 +181,7 @@
                   <Banner />
                   <!-- END SLIDER -->
                   <!-- ICONBOX -->
-
+                  <HowItWorks />
                   <!-- END ICONBOX -->
                   <!-- ABOUT -->
                   <About />
@@ -288,6 +288,7 @@
 <script>
 import footer from '../content/footer.json'
 // import Slider from '../components/Slider'
+import HowItWorks from '../components/HowItWorks'
 import Banner from '../components/Banner'
 import About from '../components/About'
 import Services from '../components/Services'
@@ -300,6 +301,7 @@ export default {
   components: {
     // Slider,
     Banner,
+    HowItWorks,
     About,
     Services,
     Project,

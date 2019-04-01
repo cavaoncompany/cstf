@@ -989,6 +989,14 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Media Queries
 -------------------------------------------------------------- */
+@media only screen and (min-width: 1200px) {
+  .works-container { width: 29%; }
+
+  .banner-row .container {
+    padding-top: 7%;
+  }
+}
+
 @media only screen and (max-width: 1199px) {
 	.hentry .post-tags,
 	#top-bar .top-bar-content { width: 70%; }
@@ -1009,6 +1017,10 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .themesflat-row.gutter-mobile .span_1_of_3 { width: 50%; }
 
   .divider.h35 { height: 35px; display: block; clear: both; }
+
+  .works-container { width: 29%; }
+
+  .banner-row .container { padding-top: 7%; }
 }
 
 @media only screen and (max-width: 991px) {
@@ -1023,7 +1035,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 	#top-bar .top-bar-socials { width: 100%; display: block; text-align: center; }
 
-	#main-content { padding: 60px 0px; }
+	#main-content { padding: 0px 0px; }
 
 	#featured-title .featured-title-heading-wrap,
 	#featured-title #breadcrumbs { width: 50%; }	
@@ -1057,6 +1069,10 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .themesflat-row .col.span_1_of_4 { width: 100%; }
 
   .divider.h35 { height: 35px; display: none; height: 0; }
+
+  .works-container { width: 29%; }
+
+  .banner-row .container { padding-top: 7%; }
 }
 
 @media only screen and (max-width: 767px) {
@@ -1085,6 +1101,9 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   
   .widget.widget_instagram .instagram_badge_image  img { display: block; width: 100%; }
 
+  .works-container { width: 45%; }
+
+  .banner-row .container { padding-top: 10%; }
 }
 
 @media only screen and (max-width: 479px) {
@@ -1120,4 +1139,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   .comment-list.style-2 article .gravatar { margin: 0px; }
 
+  .works-container { width: 90%; }
+
+  .banner-row .container { padding-top: 30%; }
 }

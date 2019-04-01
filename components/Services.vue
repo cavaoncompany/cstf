@@ -112,4 +112,7 @@ export default {
   text-decoration: none;
   box-shadow: none;
 }
+.service-container .card-img-top {
+  width: 100%;
+}
 </style>
