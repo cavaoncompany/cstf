@@ -1075,7 +1075,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .banner-row .container { padding-top: 7%; }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
 	
 	#site-header .wrap-inner { padding: 20px 0px; }
 
@@ -1092,7 +1092,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 	.separator-solid .flat-content-wrap { border-bottom: 0px; }
 
-  .themesflat-row .span_1_of_3,
+  .themesflat-row .span_1_of_3 { width: 49% }
 	.themesflat-row .span_1_of_6,
   .themesflat-row.gutter-mobile .span_1_of_3 ,
 	.themesflat-row .span_1_of_4 { width: 100%; }
@@ -1101,9 +1101,15 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   
   .widget.widget_instagram .instagram_badge_image  img { display: block; width: 100%; }
 
-  .works-container { width: 45%; }
+  .works-container { width: 43%; }
 
   .banner-row .container { padding-top: 10%; }
+
+  .quote-item h3 { text-align: center; }
+
+  .quote-item .button-wrap { text-align: center; }
+
+  .bg-row-1 { background-size: cover; }
 }
 
 @media only screen and (max-width: 479px) {
@@ -1144,4 +1150,6 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .banner-row .container { padding-top: 30%; padding-left: 30px; padding-right: 30px }
 
   .container { padding-left: 30px; padding-right: 30px }
+
+  .themesflat-row .span_1_of_3 { width: 100% }
 }

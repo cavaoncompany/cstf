@@ -2,7 +2,7 @@
   <div class="banner-row parallax parallax-3 parallax-overlay">
     <div class="container">
       <div class="row">
-        <div class="banner-content col-md-6">
+        <div class="banner-content col-md-9 col-lg-6">
           <p>{{ banner.topLine }}</p>
           <h1>{{ banner.bottomLine }}</h1>
           <div class="elm-button">
