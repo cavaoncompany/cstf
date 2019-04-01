@@ -6,25 +6,30 @@
             "img": "/img/Services-design.png",
             "title": "DESIGN",
             "description": "Provide us with architectural plans and we will design the structural and fabrication plans that suit your unique project.",
-            "buttonText": ""
+            "id": "service-design",
+            "overflow": false
         },
         {
             "img": "/img/Services-fabrication.png",
             "title": "FABRICATION",
-            "description": "Using the advanced FRAMECAD fabrication production line and software suite, we can make sure that every steel frame component...",
-            "buttonText": "READ MORE"
+            "description": "Using the advanced FRAMECAD fabrication production line and software suite, we can make sure that every steel frame component will fit together perfectly.",
+            "id": "service-fabrication",
+            "overflow": true
         },
         {
             "img": "/img/Services-project-management.png",
             "title": "PROJECT MANAGEMENT",
-            "description": "Customer service is in the core of our business, our project management team will oversee every project from the design...",
-            "buttonText": "READ MORE"
+            "description": "Customer service is in the core of our business, our project management team will oversee every project from the design stage till completion and maintain adequate communication with our client to ensure to smooth project delivery.",
+            "id": "service-pm",
+            "overflow": true
         },
         {
             "img": "/img/Services-installation.png",
             "title": "INSTALLATION AND CERTIFICATION",
-            "description": "Installation is part of our comprehensive service which will save your money and time looking...",
-            "buttonText": "READ MORE"
+            "description": "Installation is part of our comprehensive service which will save your money and time looking for a third party installer. Engineer inspection and certification are included as part of installation service. You can have the peace of mind knowing your house is built to Australian Standard.",
+            "id": "service-installation",
+            "overflow": true
         }
-    ]
+    ],
+    "buttonText": "READ MORE"
 }
