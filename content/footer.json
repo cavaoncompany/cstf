@@ -4,7 +4,30 @@
     "site": "SITE",
     "contact": "CONTACT",
     "links": [
-        "Home", "Projects", "About", "Services", "Contact", "Testimony"
+        {
+            "title": "Home",
+            "link": "/"
+        },
+        {
+            "title": "Projects",
+            "link": "#projects"
+        },
+        {
+            "title": "About",
+            "link": "#about"
+        },
+        {
+            "title": "Services",
+            "link": "#services"
+        },
+        {
+            "title": "Contact",
+            "link": "#contact"
+        },
+        {
+            "title": "Testimony",
+            "link": "#testimony"
+        }
     ],
     "tel": "+61 2 8324 3742",
     "email": "info@cstf.com.au",

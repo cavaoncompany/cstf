@@ -12,7 +12,7 @@
           <h3>{{ item.title }}</h3>
           <p>{{ item.timeframe }}</p>
         </div>
-     </div>
+      </div>
     </div>
   </div>
 </template>

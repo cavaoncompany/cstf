@@ -1,5 +1,5 @@
 <template>
-  <div class="row-about">
+  <div id="about" class="row-about">
     <div class="container-fluid">
       <div class="row equalize sm-equalize-auto about-background">
         <div class="col-md-6 style-1" /><!-- /.col-md-6 -->

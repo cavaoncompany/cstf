@@ -1,5 +1,5 @@
 <template>
-  <section class="header-fixed page no-sidebar header-style-2 topbar-style-2 menu-has-search">
+  <section id="home" class="header-fixed page no-sidebar header-style-2 topbar-style-2 menu-has-search">
     <div id="wrapper" class="animsition">
       <div id="page" class="clearfix">
         <!-- Header Wrap -->
@@ -60,7 +60,7 @@
                 <nav id="main-nav" class="main-nav">
                   <ul id="menu-primary-menu" class="menu">
                     <li class="menu-item menu-item-has-children current-menu-item">
-                      <a href="home.html">HOME</a>
+                      <a @click="scrollToTop('home')">HOME</a>
                       <!-- <ul class="sub-menu">
                         <li class="menu-item current-item">
                           <a href="home.html">HOME 1</a>
@@ -71,7 +71,7 @@
                       </ul> -->
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a href="page-projects.html">PROJECTS</a>
+                      <a @click="scrollToTop('projects')">PROJECTS</a>
                       <!-- <ul class="sub-menu">
                         <li class="menu-item">
                           <a href="page-projects.html">PROJECTS</a>
@@ -85,7 +85,7 @@
                       </ul> -->
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a href="page-services.html">SERVICES</a>
+                      <a @click="scrollToTop('services')">SERVICES</a>
                       <!-- <ul class="sub-menu">
                         <li class="menu-item">
                           <a href="page-services.html">SERVICES</a>
@@ -96,7 +96,7 @@
                       </ul> -->
                     </li>
                     <li class="menu-item menu-item-has-children">
-                      <a href="page-about.html">ABOUT</a>
+                      <a @click="scrollToTop('about')">ABOUT</a>
                       <!-- <ul class="sub-menu">
                         <li class="menu-item">
                           <a href="page-about.html">ABOUT US</a>
@@ -135,7 +135,7 @@
                       </ul>
                     </li> -->
                     <li class="menu-item menu-item-has-children">
-                      <a href="page-contact.html">CONTACT</a>
+                      <a @click="scrollToTop('contact')">CONTACT</a>
                       <!-- <ul class="sub-menu right-sub-menu">
                         <li class="menu-item">
                           <a href="page-contact.html">CONTACT 1</a>
@@ -231,7 +231,7 @@
                 <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="0" data-smobile="35" />
               </div><!-- /.col -->
 
-              <div class="col span_1_of_2">
+              <div class="col span_1_of_3">
                 <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="0" data-smobile="0" />
 
                 <div class="widget widget_lastest">
@@ -239,13 +239,13 @@
                     <span>{{ footer.site }}</span>
                   </h2>
                   <ul class="site-data data-effect clearfix row">
-                    <li v-for="(item, index) in footer.links" :key="index" class="clearfix col-md-6">
-                      <a href="#">{{ item }}</a>
+                    <li v-for="(item, index) in footer.links" :key="index" class="clearfix col-lg-6 col-sm-4">
+                      <a @click="scrollToTop(item.title.toLowerCase())">{{ item.title }}</a>
                     </li>
                   </ul>
                 </div><!-- /.widget_lastest -->
               </div><!-- /.col -->
-              <div class="col span_1_of_2">
+              <div class="col span_1_of_3">
                 <div class="themesflat-spacer clearfix" data-desktop="0" data-mobile="35" data-smobile="35" />
 
                 <div class="widget widget_tags">
@@ -313,6 +313,16 @@ export default {
     return {
       footer: footer
     }
+  },
+  methods: {
+    scrollToTop: function (el) {
+      const element = document.getElementById(el)
+      const rect = element.getBoundingClientRect()
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const coordinates = { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+      window.scrollTo({ top: coordinates.top, behavior: 'smooth' })
+    }
   }
 }
 </script>
@@ -322,11 +332,16 @@ export default {
   border: 1px solid #FED00E;
   padding: 14px 20px;
 }
-
+.menu-item:hover {
+  cursor: pointer;
+}
 .menu-item-last:hover {
   border: none;
 }
 .site-data li a {
   color: #ffffff;
+}
+.site-data li:hover {
+  cursor: pointer;
 }
 </style>
