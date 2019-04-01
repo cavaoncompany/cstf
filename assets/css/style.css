@@ -995,6 +995,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .banner-row .container {
     padding-top: 7%;
   }
+  .menu-item-tel-mobile { display: none }
 }
 
 @media only screen and (max-width: 1199px) {
@@ -1021,6 +1022,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .works-container { width: 29%; }
 
   .banner-row .container { padding-top: 7%; }
+
+  .menu-item-tel-mobile { display: none }
 }
 
 @media only screen and (max-width: 991px) {
@@ -1162,4 +1165,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #site-logo { width: 100px; }
 
   .menu-item-tel-mobile { margin-left: 50%; margin-top: 0; }
+}
+
+@media only screen and (max-width: 359px) {
+  .menu-item-tel-mobile { margin-left: 43%; margin-top: 0; }
 }
