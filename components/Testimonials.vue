@@ -1,5 +1,5 @@
 <template>
-  <div class="row-testimonials parallax-2">
+  <div id="testimony" class="row-testimonials parallax-2">
     <div class="parallax-overlay">
       <div class="container">
         <div class="row">

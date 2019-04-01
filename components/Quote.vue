@@ -1,5 +1,5 @@
 <template>
-  <div class="row-quote bg-row-1">
+  <div id="contact" class="row-quote bg-row-1">
     <div class="container">
       <div class="row">
         <div class="col-md-12">

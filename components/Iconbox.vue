@@ -16,12 +16,12 @@
               </div>
             </div> -->
           </div>
-          <div class="themesflat-spacer clearfix" data-desktop="57" data-mobile="35" data-smobile="35" />
+          <!-- <div class="themesflat-spacer clearfix" data-desktop="57" data-mobile="35" data-smobile="35" /> -->
         </div><!-- /.col-md-12 -->
       </div><!-- /.row -->
 
       <div class="themesflat-row gutter-30 clearfix">
-        <div v-for="(icon, index) in icons.items" :key="index" class="col span_1_of_4">
+        <div v-for="(icon, index) in icons.items" :key="index" class="col span_1_of_4 icon-item">
           <div class="themesflat-icon-box icon-left accent-color style-2 clearfix">
             <div class="icon-wrap">
               <img :src="icon.icon" :alt="icon.title" class="icon-build">
@@ -68,5 +68,8 @@ export default {
 .icon-build {
   max-width: 50px;
   max-height: 50px;
+}
+.icon-item {
+  margin-top: 50px;
 }
 </style>

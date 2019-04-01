@@ -1,5 +1,5 @@
 <template>
-  <div class="row-project parallax parallax-1 parallax-overlay">
+  <div id="projects" class="row-project parallax parallax-1 parallax-overlay">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">

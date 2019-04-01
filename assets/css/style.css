@@ -366,7 +366,6 @@ h6 a { color: inherit }
 
 /* Layouts
 -------------------------------------------------------------- */
-#main-content { padding-top: 81px; }
 body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Inner Content */
@@ -402,7 +401,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 .themesflat-row .span_1_of_4 { width: 33.333333%; float: left; }
 .themesflat-row .span_1_of_2 { width: 37%; float: left; }
-.themesflat-row .span_1_of_3 { width: 25%; float: left; }
+.themesflat-row .span_1_of_3 { width: 33%; float: left; }
 .themesflat-row .span_1_of_6 { width: 50%; float: left; }
 .themesflat-row .span_1_of_12 { width: 100%; }
 
@@ -804,7 +803,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Widget lastest */
 .widget.widget_lastest ul { margin: 0px; }
-.widget.widget_lastest ul li { margin-top: 33px; padding: 0px; font-size: 14px; }
+.widget.widget_lastest ul li { margin-top: 33px; padding: 0px; font-size: 14px; color: #fff; }
 .widget.widget_lastest ul li:first-child { margin-top: 0px; border: none; }
 .widget.widget_lastest .thumb { width: 65px; height: 65px; float: left; margin-right: 19px; margin-top: 5px; }
 .widget.widget_lastest .text { overflow: hidden; }
@@ -990,6 +989,14 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 /* Media Queries
 -------------------------------------------------------------- */
+@media only screen and (min-width: 1200px) {
+  .works-container { width: 29%; }
+
+  .banner-row .container {
+    padding-top: 7%;
+  }
+}
+
 @media only screen and (max-width: 1199px) {
 	.hentry .post-tags,
 	#top-bar .top-bar-content { width: 70%; }
@@ -1010,6 +1017,10 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .themesflat-row.gutter-mobile .span_1_of_3 { width: 50%; }
 
   .divider.h35 { height: 35px; display: block; clear: both; }
+
+  .works-container { width: 29%; }
+
+  .banner-row .container { padding-top: 7%; }
 }
 
 @media only screen and (max-width: 991px) {
@@ -1024,7 +1035,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 	#top-bar .top-bar-socials { width: 100%; display: block; text-align: center; }
 
-	#main-content { padding: 60px 0px; }
+	#main-content { padding: 0px 0px; }
 
 	#featured-title .featured-title-heading-wrap,
 	#featured-title #breadcrumbs { width: 50%; }	
@@ -1058,9 +1069,15 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .themesflat-row .col.span_1_of_4 { width: 100%; }
 
   .divider.h35 { height: 35px; display: none; height: 0; }
+
+  .works-container { width: 29%; }
+
+  .banner-row .container { padding-top: 7%; }
+
+  .menu-item-tel-mobile { display: none }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 768px) {
 	
 	#site-header .wrap-inner { padding: 20px 0px; }
 
@@ -1077,7 +1094,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
 	.separator-solid .flat-content-wrap { border-bottom: 0px; }
 
-  .themesflat-row .span_1_of_3,
+  .themesflat-row .span_1_of_3 { width: 49% }
 	.themesflat-row .span_1_of_6,
   .themesflat-row.gutter-mobile .span_1_of_3 ,
 	.themesflat-row .span_1_of_4 { width: 100%; }
@@ -1086,6 +1103,19 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   
   .widget.widget_instagram .instagram_badge_image  img { display: block; width: 100%; }
 
+  .works-container { width: 43%; }
+
+  .banner-row .container { padding-top: 10%; }
+
+  .quote-item h3 { text-align: center; }
+
+  .quote-item .button-wrap { text-align: center; }
+
+  .bg-row-1 { background-size: cover; }
+
+  .menu-item-last { display: none; }
+
+  .menu-item-tel-mobile { display: block; border: 1px solid #FED00E; width: 130px; margin-left: 50%; margin-top: 19px; padding: 5px 0; text-align: center; }
 }
 
 @media only screen and (max-width: 479px) {
@@ -1121,4 +1151,15 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   .comment-list.style-2 article .gravatar { margin: 0px; }
 
+  .works-container { width: 90%; }
+
+  .banner-row .container { padding-top: 30%; padding-left: 30px; padding-right: 30px }
+
+  .container { padding-left: 30px; padding-right: 30px }
+
+  .themesflat-row .span_1_of_3 { width: 100% }
+
+  #site-logo { width: 100px; }
+
+  .menu-item-tel-mobile { margin-left: 50%; margin-top: 0; }
 }

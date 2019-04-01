@@ -1,0 +1,35 @@
+{
+    "title": "HOW IT WORKS",
+    "services": [
+        {
+            "title": "E-QUOTE",
+            "timeframe": "3-5 working days",
+            "img": "/img/one.png"
+        },
+        {
+            "title": "DESIGN",
+            "timeframe": "7-14 working days",
+            "img": "/img/two.png"
+        },
+        {
+            "title": "FABRICATION AND ASSEMBLING",
+            "timeframe": "14-21 working days",
+            "img": "/img/three.png"
+        },
+        {
+            "title": "LOGISTICS",
+            "timeframe": "21-35 working days",
+            "img": "/img/four.png"
+        },
+        {
+            "title": "INSTALLATION",
+            "timeframe": "5-10 working days",
+            "img": "/img/five.png"
+        },
+        {
+            "title": "CERTIFICATION",
+            "timeframe": "2-3 working days",
+            "img": "/img/six.png"
+        }
+    ]
+}

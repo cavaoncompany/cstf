@@ -1,5 +1,5 @@
 <template>
-  <div class="row-services">
+  <div id="services" class="row-services">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -35,13 +35,13 @@
                   <div class="overlay-effect bg-color-accent" />
                 </div>
                 <div class="card-body">
-                  <h5 class="card-title">
+                  <h5 :id="'service' + index" class="card-title">
                     {{ service.title }}
                   </h5>
-                  <p class="card-text">
+                  <p :id="service.id" class="card-text">
                     {{ service.description }}
                   </p>
-                  <a href="#" class="btn btn-link">{{ service.buttonText }}</a>
+                  <a v-if="service.overflow===true" class="btn btn-link" @click="extend(service.id)">{{ services.buttonText }}</a>
                 </div>
               </div>
             </div>
@@ -84,7 +84,14 @@ import services from '../content/services.json'
 export default {
   data() {
     return {
-      services: services
+      services: services,
+      toBeExtended: false
+    }
+  },
+  methods: {
+    extend: function (el) {
+      const extended = document.getElementById(el)
+      extended.classList.toggle('higher')
     }
   }
 }
@@ -100,7 +107,7 @@ export default {
 .service-container .card-title {
   margin-top: 25px;
 }
-.service-container .btn-link {
+.service-container .card-body .btn-link {
   color: #FED00E;
   font-size: 14px;
   font-weight: 600;
@@ -111,5 +118,16 @@ export default {
 .service-container .btn-link.focus {
   text-decoration: none;
   box-shadow: none;
+}
+.service-container .card-img-top {
+  width: 100%;
+}
+.service-container .card-body p {
+    line-height: 1.5rem;
+    max-height: 6rem;
+    overflow: hidden;
+}
+.higher {
+  max-height: 15rem !important;
 }
 </style>
