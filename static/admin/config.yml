@@ -1,0 +1,198 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
+collections: 
+  - label: "Homepage"
+    name: "Homepage"
+    files:
+      - label: "Banner"
+        name: "banner"
+        format: "json"
+        file: "/content/banner.json"
+        fields:
+          - label: "Top line"
+            name: "topLine"
+            widget: "string"
+          - label: "Bottom line"
+            name: "bottomLine"
+            widget: "string"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+      - label: "Get a quote form"
+        name: "getaquote"
+        format: "json"
+        file: "/content/getaquote.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Intro"
+            name: "intro"
+            widget: "string"
+          - label: "Name placeholder"
+            name: "namePlaceholder"
+            widget: "string"
+          - label: "Email placeholder"
+            name: "emailPlaceholder"
+            widget: "string"
+          - label: "Company placeholder"
+            name: "companyPlaceholder"
+            widget: "string"
+          - label: "Next button"
+            name: "nextButton"
+            widget: "string"
+      - label: "How it works"
+        name: "howitworks"
+        format: "json"
+        file: "/content/howitworks.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Timeframe", name: "timeframe", widget: "string"}
+              - {label: "Image", name: "img", widget: "image"}
+      - label: "About"
+        name: "about"
+        format: "json"
+        file: "/content/about.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Paragraph 1"
+            name: "paragraph1"
+            widget: "string"
+          - label: "Paragraph 2"
+            name: "paragraph2"
+            widget: "string"
+          - label: "Checklist"
+            name: "checklist"
+            widget: "list"
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+      - label: "Services"
+        name: "services"
+        format: "json"
+        file: "/content/services.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Intro"
+            name: "intro"
+            widget: "string"
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - {label: "Image", name: "img", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
+              - {label: "Identifier", name: "id", widget: "string"}
+              - {label: "Needs shortening", name: "overflow", widget: "boolean"}
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+      - label: "Featured Project"
+        name: "project"
+        format: "json"
+        file: "/content/services.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Project details"
+            name: "projectDetails"
+            widget: "list"
+            fields:
+              {label: "Image", name: "img", widget: "image"}
+              {label: "Title", name: "title", widget: "string"}
+              {label: "Category", name: "category", widget: "string"}
+              {label: "Additional category", name: "additionalCategory", widget: "string"}
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+      - label: "Why steel framing?"
+        name: "iconbox.json"
+        format: "json"
+        file: "/content/iconbox.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Selling Points"
+            name: "items"
+            widget: "list"
+            fields:
+              {label: "Icon", name: "icon", widget: "image"}
+              {label: "Title", name: "title", widget: "string"}
+              {label: "Description", name: "description", widget: "string"}
+          - label: "Button text"
+            name: "buttonText"
+            widget: "string"
+      - label: "Tesimony"
+        name: "testimonials"
+        format: "json"
+        file: "/content/testimonials.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              {label: "Top text", name: "textTop", widget: "string"}
+              {label: "Bottom text", name: "textBottom", widget: "string"}
+              {label: "Name", name: "author", widget: "string"}
+      - label: "Quote"
+        name: "quote"
+        format: "json"
+        file: "/content/quote.json"
+        fields:
+          - label: "Text"
+            name: "text"
+            widget: "string"
+          - label: "Call to action"
+            name: "quote"
+            widget: "string"
+      - label: "Footer"
+        name: "footer"
+        format: "json"
+        file: "/content/footer.json"
+        fields:
+          - label: "Rights"
+            name: "rights"
+            widget: "string"
+          - label: "Logo"
+            name: "logo"
+            widget: "string"
+          - label: "Header 1"
+            name: "site"
+            widget: "string"
+          - label: "Header 2"
+            name: "contact"
+            widget: "string"
+          - label: "Links"
+            name: "links"
+            widget: "list"
+            fields:
+              {label: "Title", name: "title", widget: "string"}
+              {label: "Link to", name: "link", widget: "string"}
+          - label: "Telephone"
+            name: "tel"
+            widget: "string"
+          - label: "Email"
+            name: "email"
+            widget: "string"
+          - label: "Address"
+            name: "address"
+            widget: "string"

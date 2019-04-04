@@ -282,12 +282,14 @@
       </div><!-- /#page -->
     </div><!-- /#wrapper -->
     <a id="scroll-top" />
+    <GetAQuoteModal />
   </section>
 </template>
 
 <script>
 import footer from '../content/footer.json'
 // import Slider from '../components/Slider'
+import GetAQuoteModal from '../components/GetAQuoteModal'
 import HowItWorks from '../components/HowItWorks'
 import Banner from '../components/Banner'
 import About from '../components/About'
@@ -301,6 +303,7 @@ export default {
   components: {
     // Slider,
     Banner,
+    GetAQuoteModal,
     HowItWorks,
     About,
     Services,
