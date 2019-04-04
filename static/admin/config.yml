@@ -113,10 +113,10 @@ collections:
             name: "projectDetails"
             widget: "list"
             fields:
-              {label: "Image", name: "img", widget: "image"}
-              {label: "Title", name: "title", widget: "string"}
-              {label: "Category", name: "category", widget: "string"}
-              {label: "Additional category", name: "additionalCategory", widget: "string"}
+              - {label: "Image", name: "img", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Category", name: "category", widget: "string"}
+              - {label: "Additional category", name: "additionalCategory", widget: "string"}
           - label: "Button text"
             name: "buttonText"
             widget: "string"
@@ -132,9 +132,9 @@ collections:
             name: "items"
             widget: "list"
             fields:
-              {label: "Icon", name: "icon", widget: "image"}
-              {label: "Title", name: "title", widget: "string"}
-              {label: "Description", name: "description", widget: "string"}
+              - {label: "Icon", name: "icon", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: "string"}
           - label: "Button text"
             name: "buttonText"
             widget: "string"
@@ -150,9 +150,9 @@ collections:
             name: "testimonials"
             widget: "list"
             fields:
-              {label: "Top text", name: "textTop", widget: "string"}
-              {label: "Bottom text", name: "textBottom", widget: "string"}
-              {label: "Name", name: "author", widget: "string"}
+              - {label: "Top text", name: "textTop", widget: "string"}
+              - {label: "Bottom text", name: "textBottom", widget: "string"}
+              - {label: "Name", name: "author", widget: "string"}
       - label: "Quote"
         name: "quote"
         format: "json"
@@ -185,8 +185,8 @@ collections:
             name: "links"
             widget: "list"
             fields:
-              {label: "Title", name: "title", widget: "string"}
-              {label: "Link to", name: "link", widget: "string"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Link to", name: "link", widget: "string"}
           - label: "Telephone"
             name: "tel"
             widget: "string"
