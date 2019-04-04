@@ -132,17 +132,6 @@ export default {
 </script>
 
 <style>
-#contact h1 {
-    font-size: 24px;
-    font-weight: 500;
-    color: #232323;
-}
-#contact .sep {
-    background: #fed00e;
-    width: 80px;
-    height: 2px;
-    margin-bottom: 18px;
-}
 .hidden {
     display: none;
 }

@@ -1,0 +1,25 @@
+{
+    "title": "OUR PROJECTS",
+    "projects": [
+        {
+            "img": "/img/Featured-1@2x.png",
+            "name": "CENTRAL COAST",
+            "type": "Commercial"
+        },
+        {
+            "img": "/img/Featured-2@2x.png",
+            "name": "KELLYVILLE",
+            "type": "Commercial"
+        },
+        {
+            "img": "/img/Featured-3@2x.png",
+            "name": "SINGAPORE",
+            "type": "Commercial"
+        },
+        {
+            "img": "/img/Featured-4@2x.png",
+            "name": "KELLYVILLE",
+            "type": "Commercial"
+        }
+    ]
+}

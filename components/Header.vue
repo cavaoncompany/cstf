@@ -36,7 +36,7 @@
         <div class="wrap-inner clearfix">
           <div id="site-logo" class="clearfix">
             <div id="site-log-inner">
-              <a href="home.html" rel="home" class="main-logo">
+              <a href="/" rel="home" class="main-logo">
                 <img
                   src="/img/logo-small.png"
                   alt="Custom Steel Trusses & Frames"
@@ -61,7 +61,7 @@
           <nav id="main-nav" class="main-nav">
             <ul id="menu-primary-menu" class="menu">
               <li class="menu-item menu-item-has-children current-menu-item">
-                <a @click="scrollToTop('home')">HOME</a>
+                <a href="/">HOME</a>
                 <!-- <ul class="sub-menu">
                         <li class="menu-item current-item">
                           <a href="home.html">HOME 1</a>
@@ -72,7 +72,7 @@
                 </ul>-->
               </li>
               <li class="menu-item menu-item-has-children">
-                <a @click="scrollToTop('projects')">PROJECTS</a>
+                <a href="/projects">PROJECTS</a>
                 <!-- <ul class="sub-menu">
                         <li class="menu-item">
                           <a href="page-projects.html">PROJECTS</a>
