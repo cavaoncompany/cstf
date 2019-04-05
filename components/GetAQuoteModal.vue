@@ -31,12 +31,12 @@
 </template>
 
 <script>
-import getaquote from '../content/getaquote.json'
+import quote from '../content/quote.json'
 
 export default {
   data() {
     return {
-      getaquote: getaquote
+      getaquote: quote
     }
   }
 }

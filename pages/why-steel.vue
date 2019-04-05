@@ -44,6 +44,7 @@
     </div>
     <div class="themesflat-spacer clearfix" data-desktop="73" data-mobile="60" data-smobile="60" />
     <Footer />
+    <a id="scroll-top" />
   </section>
 </template>
 
@@ -122,12 +123,6 @@ export default {
 }
 #why-steel .about-right {
   padding: 0;
-}
-#why-steel .outer-wrapper {
-  margin-left: 15px;
-  padding-right: 81px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 #sidebar.sticky {
   position:fixed;

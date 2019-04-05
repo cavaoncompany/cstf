@@ -1,35 +1,6 @@
 <template>
   <!-- Header Wrap -->
   <div id="site-header-wrap">
-    <!-- Top Bar -->
-    <!-- <div id="top-bar">
-            <div id="top-bar-inner" class="container">
-              <div class="top-bar-inner-wrap">
-                <div class="top-bar-content">
-                  <div class="inner">
-                    <span class="address content">4946 Marmora Road, Central New</span>
-                    <span class="phone content">+61 3 8376 6284</span>
-                    <span class="time content">Mon-Sat: 8am - 6pm</span>
-                  </div>
-    </div>-->
-    <!-- /.top-bar-content -->
-    <!-- <div class="top-bar-socials">
-                  <div class="inner">
-                    <span class="text">Follow us:</span>
-                    <span class="icons">
-                      <a href="#"><i class="fa fa-facebook" /></a>
-                      <a href="#"><i class="fa fa-twitter" /></a>
-                      <a href="#"><i class="fa fa-pinterest-p" /></a>
-                      <a href="#"><i class="fa fa-rss" /></a>
-                    </span>
-                  </div>
-    </div>-->
-    <!-- /.top-bar-socials -->
-    <!-- </div>
-            </div>
-    </div>-->
-    <!-- /#top-bar -->
-
     <!-- Header -->
     <header id="site-header">
       <div id="site-header-inner" class="container">
@@ -57,10 +28,9 @@
             <span />
           </div>
           <!-- /.mobile-button -->
-
           <nav id="main-nav" class="main-nav">
             <ul id="menu-primary-menu" class="menu">
-              <li v-bind:class="{'current-menu-item': currentItem === 'HOME'}" class="menu-item menu-item-has-children">
+              <li v-bind:class="{'current-menu-item': currentItem === 'HOME'}" class="menu-item">
                 <a href="/">HOME</a>
                 <!-- <ul class="sub-menu">
                         <li class="menu-item current-item">
@@ -71,7 +41,7 @@
                         </li>
                 </ul>-->
               </li>
-              <li v-bind:class="{'current-menu-item': currentItem === 'PROJECTS'}" class="menu-item menu-item-has-children">
+              <li v-bind:class="{'current-menu-item': currentItem === 'PROJECTS'}" class="menu-item">
                 <a href="/projects">PROJECTS</a>
                 <!-- <ul class="sub-menu">
                         <li class="menu-item">
@@ -85,7 +55,7 @@
                         </li>
                 </ul>-->
               </li>
-              <li v-bind:class="{'current-menu-item': currentItem === 'SERVICES'}" class="menu-item menu-item-has-children">
+              <li v-bind:class="{'current-menu-item': currentItem === 'SERVICES'}" class="menu-item">
                 <a href="/services">SERVICES</a>
                 <!-- <ul class="sub-menu">
                         <li class="menu-item">
@@ -135,7 +105,7 @@
                         </li>
                       </ul>
               </li>-->
-              <li v-bind:class="{'current-menu-item': currentItem === 'CONTACT'}" class="menu-item menu-item-has-children">
+              <li v-bind:class="{'current-menu-item': currentItem === 'CONTACT'}" class="menu-item">
                 <a href="/contact">CONTACT</a>
                 <!-- <ul class="sub-menu right-sub-menu">
                         <li class="menu-item">
@@ -154,20 +124,6 @@
             </ul>
           </nav>
           <!-- /#main-nav -->
-
-          <!-- <div id="header-search">
-                    <a href="#" class="header-search-icon">
-                    <span class="search-icon fa fa-search" />
-                  </a>
-
-                  <form role="search" method="get" class="header-search-form" action="#">
-                    <label class="screen-reader-text">Search for:</label>
-                    <input type="text" value="" name="s" class="header-search-field" placeholder="Search...">
-                    <button type="submit" class="header-search-submit" title="Search">
-                      <i class="fa fa-search" />
-                    </button>
-                  </form>
-          </div>-->
 
           <!-- /#header-search -->
         </div>

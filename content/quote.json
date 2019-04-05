@@ -1,4 +1,22 @@
 {
-    "text": "START YOUR PROJECT TODAY",
-    "quote": "GET A QUOTE"
+    "title": "GET A QUOTE",
+    "intro": "Please leave your details to get a quote.",
+    "namePlaceholder": "Full Name",
+    "emailPlaceholder": "Email Address",
+    "companyPlaceholder": "Company Name",
+    "nextButton": "NEXT",
+    "page": "Page {0} of {1}",
+    "typeOfProject": {
+        "title": "Is your project",
+        "types": [
+            {
+                "question": "A residential project",
+                "img": "/img/quote-domestic.png"
+            },
+            {
+                "question": "A commercial or industrial project",
+                "img": "/img/quote-commercial.png"
+            }
+        ]
+    }
 }
