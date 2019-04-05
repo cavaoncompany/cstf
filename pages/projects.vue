@@ -41,7 +41,7 @@
                             >
                               <img :src="project.img" :alt="project.name">
                               <div class="elm-link">
-                                <a href="#" class="icon-1 icon-search"></a>
+                                <a href="#" class="icon-1 icon-search" data-toggle="modal" :data-target="'#project-detail-' + index"></a>
                                 <!-- <a href="#" class="icon-1"></a> -->
                               </div>
                               <div class="overlay-effect bg-color-3"></div>
@@ -100,6 +100,37 @@
     </div>
     <!-- /#main-content -->
     <Footer />
+    <div
+      v-for="(project, index) in projects.projects"
+      :id="'project-detail-' + index"
+      :key="index"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="projectDetail"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="detail-gallery">
+              <div class="themesflat-spacer clearfix" data-desktop="21" data-mobile="21" data-smobile="21"></div>
+              <div class="themesflat-gallery style-2 has-arrows arrow-center arrow-circle offset-v-82 has-thumb w185 clearfix" data-gap="0" data-column="1" data-column2="1" data-column3="1" data-auto="false">
+                <div class="owl-carousel owl-theme">
+                  <div v-for="(image, index) in project.otherImages" :key="index" class="gallery-item" >
+                    <div class="inner">
+                      <div class="thumb">
+                        <img :src="image" :alt="project.name">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!-- /.themesflat-cousel-box -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -124,5 +155,21 @@ export default {
 <style>
 #projects .text-wrap p {
   margin-bottom: 0;
+}
+#projects .modal-content {
+  background: transparent;
+  border: none;
+}
+#projects .owl-thumb-item {
+  overflow-y: hidden;
+}
+#projects .owl-thumbs {
+  display: flex;
+}
+#projects .owl-prev {
+  margin-left: -65px;
+}
+#projects .owl-next {
+  margin-right: -65px;
 }
 </style>

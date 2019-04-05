@@ -4,22 +4,50 @@
         {
             "img": "/img/Featured-1@2x.png",
             "name": "CENTRAL COAST",
-            "type": "Commercial"
+            "type": "Commercial",
+            "otherImages": [
+                "/img/Featured-1@2x.png",
+                "/img/Featured-1@2x.png",
+                "/img/Featured-1@2x.png",
+                "/img/Featured-1@2x.png",
+                "/img/Featured-1@2x.png"
+            ]
         },
         {
             "img": "/img/Featured-2@2x.png",
             "name": "KELLYVILLE",
-            "type": "Commercial"
+            "type": "Commercial",
+            "otherImages": [
+                "/img/Featured-2@2x.png",
+                "/img/Featured-2@2x.png",
+                "/img/Featured-2@2x.png",
+                "/img/Featured-2@2x.png",
+                "/img/Featured-2@2x.png"
+            ]
         },
         {
             "img": "/img/Featured-3@2x.png",
             "name": "SINGAPORE",
-            "type": "Commercial"
+            "type": "Commercial",
+            "otherImages": [
+                "/img/Featured-3@2x.png",
+                "/img/Featured-3@2x.png",
+                "/img/Featured-3@2x.png",
+                "/img/Featured-3@2x.png",
+                "/img/Featured-3@2x.png"
+            ]
         },
         {
             "img": "/img/Featured-4@2x.png",
             "name": "KELLYVILLE",
-            "type": "Commercial"
+            "type": "Commercial",
+            "otherImages": [
+                "/img/Featured-4@2x.png",
+                "/img/Featured-4@2x.png",
+                "/img/Featured-4@2x.png",
+                "/img/Featured-4@2x.png",
+                "/img/Featured-4@2x.png"
+            ]
         }
     ]
 }

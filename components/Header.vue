@@ -86,7 +86,7 @@
                 </ul>-->
               </li>
               <li class="menu-item menu-item-has-children">
-                <a @click="scrollToTop('services')">SERVICES</a>
+                <a href="/services">SERVICES</a>
                 <!-- <ul class="sub-menu">
                         <li class="menu-item">
                           <a href="page-services.html">SERVICES</a>

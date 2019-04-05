@@ -5,14 +5,10 @@
       <div class="row">
         <div class="col-md-12">
           <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60" />
-          <div class="themesflat-headings style-1 text-center clearfix">
-            <h2 class="heading">
-              {{ services.title }}
-            </h2>
-            <p class="sub-heading">
-              {{ services.intro }}
-            </p>
-          </div>
+            <div class="themesflat-headings style-2 clearfix">
+              <h2 class="heading">{{ services.title }}</h2>
+              <div class="sep has-width w80 accent-bg clearfix"></div>
+            </div>
           <div class="themesflat-spacer clearfix" data-desktop="39" data-mobile="35" data-smobile="35" />
           <div
             class="themesflat-carousel-box data-effect clearfix"
