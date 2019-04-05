@@ -44,7 +44,7 @@
         <div class="col-md-12">
           <div class="themesflat-spacer clearfix" data-desktop="72" data-mobile="60" data-smobile="60" />
           <div class="elm-button text-center">
-            <a href="#" class="themesflat-button bg-accent">{{ icons.buttonText }}</a>
+            <a href="/why-steel" class="themesflat-button bg-accent">{{ icons.buttonText }}</a>
           </div>
           <div class="themesflat-spacer clearfix" data-desktop="62" data-mobile="35" data-smobile="35" />
         </div><!-- /.col-md-12 -->

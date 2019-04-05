@@ -2,7 +2,7 @@
   <section id="home" class="header-fixed page no-sidebar header-style-2 topbar-style-2 menu-has-search">
     <div id="wrapper" class="animsition">
       <div id="page" class="clearfix">
-        <Header />
+        <Header currentItem="HOME" />
         <!-- Main Content -->
         <div id="main-content" class="site-main clearfix">
           <div id="content-wrap">

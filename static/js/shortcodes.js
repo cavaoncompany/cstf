@@ -222,32 +222,32 @@
   
     };
 
-    var flatTabs =  function() {
-        $('.themesflat-tabs').each(function(){
-            var 
-            list ="",
-            title = $(this).find('.item-title'),
-            titleWrap = $(this).children('.tab-title') ;
+    // var flatTabs =  function() {
+    //     $('.themesflat-tabs').each(function(){
+    //         var 
+    //         list ="",
+    //         title = $(this).find('.item-title'),
+    //         titleWrap = $(this).children('.tab-title') ;
 
-            title.each(function() {
-                list = list + "<li>" + $(this).html() + "</li>";
-            }).appendTo(titleWrap);
+    //         title.each(function() {
+    //             list = list + "<li>" + $(this).html() + "</li>";
+    //         }).appendTo(titleWrap);
 
-            $(this).find('.tab-title li').filter(':first').addClass('active');
-            $(this).find('.tab-content-wrap').children().hide().filter(':first').show();
+    //         $(this).find('.tab-title li').filter(':first').addClass('active');
+    //         $(this).find('.tab-content-wrap').children().hide().filter(':first').show();
 
-            $(this).find('.tab-title li').on('click', function(e) {
-                var
-                idx = $(this).index(),
-                content = $(this).closest('.themesflat-tabs').find('.tab-content-wrap').children().eq(idx);
+    //         $(this).find('.tab-title li').on('click', function(e) {
+    //             var
+    //             idx = $(this).index(),
+    //             content = $(this).closest('.themesflat-tabs').find('.tab-content-wrap').children().eq(idx);
 
-                $(this).addClass('active').siblings().removeClass('active');
-                content.fadeIn('slow').siblings().hide();
+    //             $(this).addClass('active').siblings().removeClass('active');
+    //             content.fadeIn('slow').siblings().hide();
 
-                e.preventDefault();
-            });
-        });
-    };
+    //             e.preventDefault();
+    //         });
+    //     });
+    // };
 
     var flatAccordions = function() {
         var args = {easing:'easeOutExpo', duration:500};
@@ -523,7 +523,7 @@
         flatEqualizeHeight();
         flatGallery();
         searchIcon();
-        flatTabs();
+        // flatTabs();
         flatAccordions();
         flatProgressBar();
         googleMap();

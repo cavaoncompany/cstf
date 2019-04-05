@@ -3,7 +3,7 @@
     id="projects"
     class="header-fixed page no-sidebar header-style-2 topbar-style-1 menu-has-search"
   >
-    <Header />
+    <Header currentItem="PROJECTS" />
     <!-- Main Content -->
     <div id="main-content" class="site-main clearfix">
       <div id="content-wrap">
@@ -20,17 +20,19 @@
                         data-desktop="73"
                         data-mobile="60"
                         data-smobile="60"
-                      ></div>
+                      />
                       <div class="themesflat-headings style-2 clearfix">
-                        <h2 class="heading">{{ projects.title }}</h2>
-                        <div class="sep has-width w80 accent-bg clearfix"></div>
+                        <h2 class="heading">
+                          {{ projects.title }}
+                        </h2>
+                        <div class="sep has-width w80 accent-bg clearfix" />
                       </div>
                       <div
                         class="themesflat-spacer clearfix"
                         data-desktop="40"
                         data-mobile="35"
                         data-smobile="35"
-                      ></div>
+                      />
                       <div
                         class="themesflat-project style-2 isotope-project has-margin mg15 data-effect clearfix"
                       >
@@ -41,10 +43,10 @@
                             >
                               <img :src="project.img" :alt="project.name">
                               <div class="elm-link">
-                                <a href="#" class="icon-1 icon-search" data-toggle="modal" :data-target="'#project-detail-' + index"></a>
+                                <a href="#" class="icon-1 icon-search" data-toggle="modal" :data-target="'#project-detail-' + index" />
                                 <!-- <a href="#" class="icon-1"></a> -->
                               </div>
-                              <div class="overlay-effect bg-color-3"></div>
+                              <div class="overlay-effect bg-color-3" />
                             </div>
                             <div class="text-wrap">
                               <h5 class="heading">
@@ -80,7 +82,7 @@
                         data-desktop="72"
                         data-mobile="60"
                         data-smobile="60"
-                      ></div>
+                      />
                     </div>
                     <!-- /.col-md-12 -->
                   </div>
@@ -114,10 +116,17 @@
         <div class="modal-content">
           <div class="modal-body">
             <div class="detail-gallery">
-              <div class="themesflat-spacer clearfix" data-desktop="21" data-mobile="21" data-smobile="21"></div>
-              <div class="themesflat-gallery style-2 has-arrows arrow-center arrow-circle offset-v-82 has-thumb w185 clearfix" data-gap="0" data-column="1" data-column2="1" data-column3="1" data-auto="false">
+              <div class="themesflat-spacer clearfix" data-desktop="21" data-mobile="21" data-smobile="21" />
+              <div
+                class="themesflat-gallery style-2 has-arrows arrow-center arrow-circle offset-v-82 has-thumb w185 clearfix"
+                data-gap="0"
+                data-column="1"
+                data-column2="1"
+                data-column3="1"
+                data-auto="false"
+              >
                 <div class="owl-carousel owl-theme">
-                  <div v-for="(image, index) in project.otherImages" :key="index" class="gallery-item" >
+                  <div v-for="(image, i) in project.otherImages" :key="i" class="gallery-item">
                     <div class="inner">
                       <div class="thumb">
                         <img :src="image" :alt="project.name">
@@ -135,9 +144,9 @@
 </template>
 
 <script>
-import projects from "../content/projects.json"
-import Header from "../components/Header"
-import Footer from "../components/Footer"
+import projects from '../content/projects.json'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
 
 export default {
   components: {

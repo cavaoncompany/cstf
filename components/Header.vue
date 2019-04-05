@@ -54,13 +54,13 @@
             <span class="menu-item-tel-mobile">+61 28 527 6342</span>
           </a>
           <div class="mobile-button">
-            <span/>
+            <span />
           </div>
           <!-- /.mobile-button -->
 
           <nav id="main-nav" class="main-nav">
             <ul id="menu-primary-menu" class="menu">
-              <li class="menu-item menu-item-has-children current-menu-item">
+              <li v-bind:class="{'current-menu-item': currentItem === 'HOME'}" class="menu-item menu-item-has-children">
                 <a href="/">HOME</a>
                 <!-- <ul class="sub-menu">
                         <li class="menu-item current-item">
@@ -71,7 +71,7 @@
                         </li>
                 </ul>-->
               </li>
-              <li class="menu-item menu-item-has-children">
+              <li v-bind:class="{'current-menu-item': currentItem === 'PROJECTS'}" class="menu-item menu-item-has-children">
                 <a href="/projects">PROJECTS</a>
                 <!-- <ul class="sub-menu">
                         <li class="menu-item">
@@ -85,7 +85,7 @@
                         </li>
                 </ul>-->
               </li>
-              <li class="menu-item menu-item-has-children">
+              <li v-bind:class="{'current-menu-item': currentItem === 'SERVICES'}" class="menu-item menu-item-has-children">
                 <a href="/services">SERVICES</a>
                 <!-- <ul class="sub-menu">
                         <li class="menu-item">
@@ -96,22 +96,22 @@
                         </li>
                 </ul>-->
               </li>
-              <li class="menu-item menu-item-has-children">
-                <a @click="scrollToTop('about')">ABOUT</a>
-                <!-- <ul class="sub-menu">
-                        <li class="menu-item">
-                          <a href="page-about.html">ABOUT US</a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="page-about-detail.html">ABOUT DETAIL</a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="page-about-team.html">ABOUT TEAM</a>
-                        </li>
-                        <li class="menu-item">
-                          <a href="page-about-careers.html">ABOUT CAREERS</a>
-                        </li>
-                </ul>-->
+              <li v-bind:class="{'current-menu-item': currentItem === 'ABOUT'}" class="menu-item menu-item-has-children">
+                <a href="/#about">ABOUT</a>
+                <ul class="sub-menu">
+                  <li class="menu-item">
+                    <a href="/why-steel">WHY STEEL</a>
+                  </li>
+                  <!-- <li class="menu-item">
+                    <a href="page-about-detail.html">ABOUT DETAIL</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="page-about-team.html">ABOUT TEAM</a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="page-about-careers.html">ABOUT CAREERS</a>
+                  </li> -->
+                </ul>
               </li>
               <!-- <li class="menu-item menu-item-has-children">
                       <a href="page-testimonial.html">PAGE</a>
@@ -135,7 +135,7 @@
                         </li>
                       </ul>
               </li>-->
-              <li class="menu-item menu-item-has-children">
+              <li v-bind:class="{'current-menu-item': currentItem === 'CONTACT'}" class="menu-item menu-item-has-children">
                 <a href="/contact">CONTACT</a>
                 <!-- <ul class="sub-menu right-sub-menu">
                         <li class="menu-item">
@@ -182,18 +182,21 @@
 
 <script>
 export default {
+  props: {
+    currentItem: String
+  },
   data() {
     return {
     }
   },
   methods: {
     scrollToTop: function (el) {
-        const element = document.getElementById(el)
-        const rect = element.getBoundingClientRect()
-        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-        const coordinates = { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-        window.scrollTo({ top: coordinates.top, behavior: 'smooth' })
+      const element = document.getElementById(el)
+      const rect = element.getBoundingClientRect()
+      const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      const coordinates = { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+      window.scrollTo({ top: coordinates.top, behavior: 'smooth' })
     }
   }
 }
@@ -211,4 +214,3 @@ export default {
   border: none;
 }
 </style>
-
