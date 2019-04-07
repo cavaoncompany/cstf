@@ -22,11 +22,12 @@
       <div class="themesflat-spacer clearfix" data-desktop="37" data-mobile="35" data-smobile="35"></div> 
         <div class="flat-content-wrap style-2 clearfix">
           <div id="sidebar-wrap" class="themesflat-tabs style-2 title-w170 clearfix">
-              <ul id="sidebar" class="tab-title clearfix sticky-top">
+              <ul id="sidebar" class="tab-title">
                   <li v-for="(point, index) in whysteel.points" :id="'item-title-' + index" :key="index" v-bind:class="{'active' : index === 0}" class="item-title">
                       <span class="inner" @click="findcontent('point-' + index, 'item-title-' + index)">{{ point.title }}</span>
                   </li>
               </ul>
+              <div id="spacer" class="invisible">DESIGN_FLEXIBILITY</div>
               <div id="steel-content" class="tab-content-wrap clearfix">
                 <div class="outer-wrapper">
                     <div v-for="(point, index) in whysteel.points" :id="'point-' + index" :key="index" class="tab-content">
@@ -58,31 +59,17 @@ export default {
     Header,
     Footer
   },
-  created() {
+  mounted() {
     if (process.client) {
-      const sidebar = document.getElementById('sidebar')
-      const sidebarTop = sidebar.getBoundingClientRect().top
-      console.log(sidebarTop)
+      if(window.innerWidth > 479) {
+        const sidebar = document.getElementById('sidebar')
+      const sidebarTop = sidebar.getBoundingClientRect()
       const contentHeight = document.getElementById('steel-content').offsetHeight - 10
-
-      window.scrollTo(fixSidebarOnScroll)
-
-      function fixSidebarOnScroll() {
-        console.log('here')
-        const windowScrollTop = window.scrollTo({ top: 0 })
-        if (windowScrollTop >= contentHeight || windowScrollTop <= sidebarTop){
-          console.log('not sticky')
-          sidebar.classList.remove('sticky')
-        }
-        else if (windowScrollTop >= sidebarTop) {
-          if (sidebar.classList.indexOf('sticky') > -1) {
-            console.log('sticky')
-            sidebar.classList.add('sticky')
-          }
-        }
+      const scrollTop = window.pageYOffset + 50 || document.documentElement.scrollTop
+      const coordinates = { top: sidebarTop.top + scrollTop }
+      document.addEventListener('scroll', event => {this.fixSidebarOnScroll(sidebar, coordinates.top, contentHeight)})
       }
     }
-    
   },
   data() {
     return {
@@ -105,8 +92,37 @@ export default {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       const coordinates = { top: rect.top + scrollTop, left: rect.left + scrollLeft }
       window.scrollTo({ top: coordinates.top, behavior: 'smooth' })
+    },
+    fixSidebarOnScroll: function (sidebar, sidebarTop, contentHeight) {
+      const spacer = document.getElementById('spacer')
+        const windowScrollTop = window.scrollY
+        if (windowScrollTop <= sidebarTop){
+          if (sidebar.classList.contains('absolute')) {
+            sidebar.classList.remove('absolute')
+          }
+          sidebar.classList.remove('sticky')
+          spacer.classList.add('hide-element')
+          spacer.classList.remove('invisible')
+        } else if (windowScrollTop >= contentHeight) {
+          sidebar.classList.remove('sticky')
+          sidebar.classList.add('absolute')
+        } else if (windowScrollTop >= sidebarTop) {
+          if (sidebar.classList.contains('absolute')) {
+            sidebar.classList.remove('absolute')
+          }
+          if (!sidebar.classList.contains('sticky')) {
+            sidebar.classList.add('sticky')
+            spacer.classList.remove('hide-element')
+            spacer.classList.add('invisible')
+          }
+        }
+      }
+  },
+  destroyed () {
+    if (process.client) { 
+        window.removeEventListener('scroll', this.fixSidebarOnScroll(sidebar, coordinates.top, contentHeight))
     }
-  }
+}
 }
 </script>
 
@@ -127,6 +143,14 @@ export default {
 #sidebar.sticky {
   position:fixed;
   top:5px;
+}
+#sidebar.absolute {
+  position: absolute;
+  bottom: 0
+}
+.invisible {
+  opacity: 0;
+  padding: 13px;
 }
 /* * {
     background: #000 !important;
