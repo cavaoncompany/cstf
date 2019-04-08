@@ -546,8 +546,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 #site-logo { float: left; max-width: 100%; }
 
 /* Main Nav */
-nav { overflow: hidden; }
-#main-nav ul { margin: 0px; overflow: hidden; }
+/* nav { overflow: hidden; } */
+#main-nav ul { margin: 0px; }
 #main-nav ul li { position: relative;  list-style: none;}
 #main-nav > ul > li { float: left; padding: 0px 17.5px; }
 #main-nav > ul > li > a { display: block; font-size: 14px; font-weight: 600; color: #222; position: relative; line-height: 100px;  font-family: 'Montserrat', sans-serif; }
