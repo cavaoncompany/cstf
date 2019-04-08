@@ -561,14 +561,14 @@ export default {
   padding-top: 10px;
   text-align: center;
 }
-#quote input[type="radio"] {
+#quote input[type='radio'] {
     width: 0px;
     margin-top: 8px;
     vertical-align: middle;
     visibility: hidden;
     position: absolute;
   }
-#quote input[type=radio] + label:before {
+#quote input[type='radio'] + label:before {
     height:12px;
     width:12px;
     margin-right: 2px;
@@ -579,7 +579,7 @@ export default {
     border-radius:50%;
     margin-right: 10px;
   }
-  input[type=radio]:checked + label:before {
+  input[type='radio']:checked + label:before {
     background:#FFC716;
   }
   #quote .questionnaire {
