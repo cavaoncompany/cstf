@@ -1,3 +1,7 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unneeded-ternary */
+/* eslint-disable camelcase */
+/* eslint-disable no-unused-vars */
 /**
   * PreLoader
   * Retina Logos
@@ -6,7 +10,7 @@
   * Scroll to Top
 */
 
-(function ($) {
+;(function ($) {
   'use strict'
 
   const themesflatTheme = {
@@ -195,8 +199,7 @@
         $('html, body').animate({ scrollTop: 0 }, 1000, 'easeInOutExpo')
         return false
       })
-    },
-
+    }
   } // end themesflatTheme
 
   // Start things up
@@ -340,5 +343,4 @@
     ajaxContactForm()
     alertBox()
   })
-
 })(jQuery)

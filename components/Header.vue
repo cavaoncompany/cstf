@@ -67,8 +67,8 @@
                 </ul>-->
               </li>
               <li v-bind:class="{'current-menu-item': currentItem === 'ABOUT'}" class="menu-item menu-item-has-children">
-                <a href="/#about">ABOUT</a>
-                <ul class="sub-menu">
+                <a href="/#about" @mouseenter="showSubMenu('about-submenu')">ABOUT</a>
+                <ul id="about-submenu" class="sub-menu">
                   <li class="menu-item">
                     <a href="/why-steel">WHY STEEL</a>
                   </li>
@@ -153,6 +153,9 @@ export default {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       const coordinates = { top: rect.top + scrollTop, left: rect.left + scrollLeft }
       window.scrollTo({ top: coordinates.top, behavior: 'smooth' })
+    },
+    showSubMenu: function(submenu) {
+      document.getElementById(submenu).classList.add('submenu-visible')
     }
   }
 }
@@ -168,5 +171,14 @@ export default {
 }
 .menu-item-last:hover {
   border: none;
+}
+#main-nav.submenu-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
 }
 </style>

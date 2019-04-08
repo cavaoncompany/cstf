@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /**
   * flatSpacer
   * flatOwl
@@ -48,7 +49,7 @@
       $('.themesflat-spacer').each(function () {
         if (mode === 'desktop') {
           $(this).attr('style', 'height:' + $(this).data('desktop') + 'px')
-        } else if (mode == 'mobile') {
+        } else if (mode === 'mobile') {
           $(this).attr('style', 'height:' + $(this).data('mobile') + 'px')
         } else {
           $(this).attr('style', 'height:' + $(this).data('smobile') + 'px')
@@ -280,6 +281,7 @@
   const googleMap = function () {
     // gmap default
     if ($().gmap3) {
+      // eslint-disable-next-line no-unused-vars
       const data = JSON.parse('[{"address":"Westwell Leacon, Ashford, Vương Quốc Anh","content":""}]')
       $('.themesflat-map')
         .gmap3({
@@ -515,7 +517,7 @@
     flatEqualizeHeight()
     flatGallery()
     searchIcon()
-    // flatTabs();
+    flatTabs()
     flatAccordions()
     flatProgressBar()
     googleMap()
