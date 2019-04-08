@@ -61,7 +61,8 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    'nuxt-leaflet'
   ],
   router: {
     scrollBehavior(to, _from, savedPosition) {

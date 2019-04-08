@@ -1179,7 +1179,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   #site-logo { width: 100px; }
 
-  .menu-item-tel-mobile { margin-left: 50%; margin-top: 0; }
+  .menu-item-tel-mobile { margin-left: 45%; margin-top: 0; }
 
   #projects .owl-thumbs { flex-wrap: wrap; }
   #projects .owl-thumb-item {width: 33% }

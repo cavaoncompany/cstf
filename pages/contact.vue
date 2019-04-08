@@ -208,7 +208,15 @@
                         data-mobile="35"
                         data-smobile="35"
                       />
-                      <div class="themesflat-map" />
+                      <!-- <div class="themesflat-map" /> -->
+                      <div id="map-wrap" style="height: 20vh; width: 100%;">
+                        <no-ssr>
+                          <l-map :zoom="10" :center="[47.413220, -1.219482]">
+                            <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
+                            <l-marker :lat-lng="[-33.833220, 151.209482]"></l-marker>
+                          </l-map>
+                        </no-ssr>
+                      </div>
                     </div>
                     <!-- /.col-md-6 -->
                   </div>
