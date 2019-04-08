@@ -7,6 +7,8 @@
     "companyPlaceholder": "Company Name",
     "nextButton": "NEXT",
     "page": "Page {0} of {1}",
+    "next": "NEXT",
+    "back": "BACK",
     "typeOfProject": {
         "title": "Is your project",
         "types": [
@@ -22,5 +24,31 @@
             }
         ]
     },
-    "tick": "/img/tick.png"
+    "tick": "/img/tick.png",
+    "residentialProject": "Your residential project",
+    "profession": {
+        "title": "What is your profession?",
+        "professions": [
+            "Homeowner builder",
+            "Licenced contractor builder / project manager",
+            "Architect"
+        ]
+    },
+    "projectType": {
+        "title": "What is the project type?",
+        "type": [
+            "New build",
+            "Renovation and/or extension of an existing building"
+        ]
+    },
+    "detail": {
+        "title": "What detail would you like for your project?",
+        "detail": [
+            "Single dwelling",
+            "Multi-dwelling / townhouse",
+            "Apartment building",
+            "Duplex",
+            "Other"
+        ]
+    }
 }
