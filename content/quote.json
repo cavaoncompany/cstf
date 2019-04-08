@@ -62,5 +62,65 @@
             "Factory",
             "Other"
         ]
-    }
-}
+    },
+    "DAApproval": {
+        "title": "Have you obtained DA approval or CDC for the project?",
+        "approval": [
+            "Yes",
+            "No"
+        ],
+        "noDAApproval": {
+            "title": "I have not obtained DA approval or CDC for the project because",
+            "reasons": [
+                "It does not require approval",
+                "I have not obtained required approvals from related authority"
+            ]
+        }
+    },
+    "architecturalPlan": {
+        "title": "Do you have architectural plans for the project?",
+        "plans": [
+            "Yes",
+            "No"
+        ],
+        "upload": "Please upload your architectural plan.",
+        "uploadButton": "Upload architectural plan"
+    },
+    "engineeringPlan": {
+        "title": "Do you have engineering plans (structural, hydraulic, mechanical and electrical) for the project?",
+        "plans": [
+            "Yes",
+            "No"
+        ],
+        "upload": "Please upload your engineering plan.",
+        "uploadButton": "Upload engineering plan"
+    },
+    "structuralPlan": {
+        "title": "Are the structural plans provided designed specifically for light gauge steel application?",
+        "plans": [
+            "Yes",
+            "No"
+        ]
+    },
+    "sorry": "Sorry, we can not provide accurate quotation without architectural plan and engineering plan. For further information or if you would like to submit later, please email: quotes@cstf.com.au",
+    "returnHome": "RETURN TO HOMEPAGE",
+    "quoteFor": {
+        "title": "Are you seeking a quote for",
+        "type": [
+            "Materials supply only",
+            "Materials supply and site installation"
+        ]
+    },
+    "startProject": {
+        "title": "When you plan to start your project?",
+        "timeframe": [
+            "In 3 months",
+            "3-6 months",
+            "More than 6 months"
+        ]
+    },
+    "message": "Leave your message (optional) ",
+    "submitButton": "SUBMIT",
+    "thankYou": "THANK YOU",
+    "thankYouMessage": "Thank you for submitting a request, our team will contact you shortly."
+}       

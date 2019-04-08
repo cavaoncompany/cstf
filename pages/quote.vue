@@ -44,7 +44,7 @@
               </div>
             </div>
             <div class="elm-button">
-              <a href="#" @click="getNext(2)" class="themesflat-button bg-accent">{{ quote.nextButton }}</a>
+              <a href="#" @click="nextPage()" class="themesflat-button bg-accent">{{ quote.nextButton }}</a>
             </div>
             <div
             class="themesflat-spacer clearfix"
@@ -60,17 +60,23 @@
             data-smobile="60"
           />
         </section>
-        <!-- SECTION 2  residential -->
-        <section v-if="currentPage === 2 && projectType === 'residential'" id="quote-page-2">
+        <!-- SECTION 2 -->
+        <section v-if="currentPage === 2" id="quote-page-2">
           <div
             class="themesflat-spacer clearfix"
             data-desktop="73"
             data-mobile="60"
             data-smobile="60"
           />
-          <div class="themesflat-headings style-2 clearfix">
+          <div v-if="projectType === 'residential'" class="themesflat-headings style-2 clearfix">
             <h2 class="heading">
               {{ quote.residentialProject }}
+            </h2>
+            <div class="sep has-width w80 accent-bg clearfix" />
+          </div>
+          <div v-if="projectType === 'commercial'" class="themesflat-headings style-2 clearfix">
+            <h2 class="heading">
+              {{ quote.commercialProject }}
             </h2>
             <div class="sep has-width w80 accent-bg clearfix" />
           </div>
@@ -86,6 +92,7 @@
               <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <p>Page {{ currentPage }} of {{ totalPages }}</p>
+            <p @click="previousPage()">{{ quote.back }}</p>
             <p @click="nextPage()">{{ quote.next }}</p>
           </div>
 
@@ -117,29 +124,56 @@
               >
               <label :for="'project' + index">{{ proj }}</label><br>
             </div>
-            <h3>
-              {{ quote.detail.title }}
-            </h3>
-            <div v-for="(det, index) in quote.detail.detail" :key="index">
+            <div v-if="projectType === 'residential'">
+              <h3>
+                {{ quote.detail.title }}
+              </h3>
+              <div v-for="(det, index) in quote.detail.detail" :key="index">
+                <input
+                  :id="'detail' + index"
+                  v-model="detail"
+                  type="radio"
+                  name="detail"
+                  :value="detail"
+                  @change="checkIfOther(detail)"
+                >
+                <label :for="'detail' + index">{{ det }}</label><br>
+              </div>
               <input
-                :id="'detail' + index"
+                v-if="otherSelected"
+                id="residentialDetail"
+                v-model="detailOther"
+                type="text"
+                placeholder="Other"
+                name="detailOther"
+                size="100"
+              >
+            </div>
+            <div v-if="projectType === 'commercial'">
+              <h3>
+              {{ quote.commercialDetail.title }}
+            </h3>
+            <div v-for="(det, index) in quote.commercialDetail.detail" :key="index">
+              <input
+                :id="'commercialDetail' + index"
                 v-model="detail"
                 type="radio"
                 name="detail"
                 :value="detail"
                 @change="checkIfOther(detail)"
               >
-              <label :for="'detail' + index">{{ det }}</label><br>
+              <label :for="'commercialDetail' + index">{{ det }}</label><br>
             </div>
             <input
               v-if="otherSelected"
-              id="residentialDetail"
+              id="commercialDetail"
               v-model="detailOther"
               type="text"
               placeholder="Other"
               name="detailOther"
               size="100"
             >
+            </div>
             <div
             class="themesflat-spacer clearfix"
             data-desktop="73"
@@ -147,7 +181,7 @@
             data-smobile="60"
           />
           <div class="elm-button">
-            <a href="#" @click="getNext(3)" class="themesflat-button bg-accent">{{ quote.nextButton }}</a>
+            <a href="#" @click="nextPage()" class="themesflat-button bg-accent">{{ quote.nextButton }}</a>
           </div>
           </article>
           <div
@@ -157,15 +191,22 @@
             data-smobile="60"
           />
         </section>
-        <!-- SECTION 2  commercial -->
-        <section v-if="currentPage === 2 && projectType === 'commercial'" id="quote-page-2">
+        
+        <!-- SECTION 3 residential & commercial -->
+        <section v-if="currentPage === 3" id="quote-page-3">
           <div
             class="themesflat-spacer clearfix"
             data-desktop="73"
             data-mobile="60"
             data-smobile="60"
           />
-          <div class="themesflat-headings style-2 clearfix">
+          <div v-if="projectType === 'residential'" class="themesflat-headings style-2 clearfix">
+            <h2 class="heading">
+              {{ quote.residentialProject }}
+            </h2>
+            <div class="sep has-width w80 accent-bg clearfix" />
+          </div>
+          <div v-if="projectType === 'commercial'" class="themesflat-headings style-2 clearfix">
             <h2 class="heading">
               {{ quote.commercialProject }}
             </h2>
@@ -180,62 +221,69 @@
           <div class="sep has-width w80 accent-bg clearfix" />
           <div class="progress-bar-wrapper bg-white-column">
             <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
             <p>Page {{ currentPage }} of {{ totalPages }}</p>
+            <p @click="previousPage()">{{ quote.back }}</p>
             <p @click="nextPage()">{{ quote.next }}</p>
           </div>
           <article class="bg-white-column questionnaire">
             <h3>
-              {{ quote.profession.title }}
+              {{ quote.DAApproval.title }}
             </h3>
-            <div v-for="(prof, index) in quote.profession.professions" :key="index">
+            <div v-for="(DA, index) in quote.DAApproval.approval" :key="index">
               <input
-                :id="'profession' + index"
-                v-model="profession"
+                :id="'DAApproval' + index"
+                v-model="DAApproval"
                 type="radio"
-                name="profession"
-                :value="profession"
+                name="DA"
+                :value="DAApproval"
               >
-              <label :for="'profession' + index">{{ prof }}</label><br>
+              <label :for="'DAApproval' + index">{{ DA }}</label><br>
             </div>
             
             <h3>
-              {{ quote.projectType.title }}
+              {{ quote.architecturalPlan.title }}
             </h3>
-            <div v-for="(proj, index) in quote.projectType.type" :key="index">
+            <div v-for="(arch, index) in quote.architecturalPlan.plans" :key="index">
               <input
-                :id="'project' + index"
+                :id="'architectural' + index"
                 v-model="type"
                 type="radio"
-                name="project"
-                :value="project"
+                name="architectural"
+                :value="arch"
+                @change="checkIfNo(architecturalPlans)"
               >
-              <label :for="'project' + index">{{ proj }}</label><br>
+              <label :for="'architectural' + index">{{ arch }}</label><br>
             </div>
             <h3>
-              {{ quote.commercialDetail.title }}
+              {{ quote.engineeringPlan.title }}
             </h3>
-            <div v-for="(det, index) in quote.commercialDetail.detail" :key="index">
+            <div v-for="(eng, index) in quote.engineeringPlan.plans" :key="index">
               <input
-                :id="'project' + index"
+                :id="'engineering' + index"
                 v-model="detail"
                 type="radio"
-                name="detail"
-                :value="detail"
-                @change="checkIfOther(detail)"
+                name="engineering"
+                :value="eng"
+                @change="checkIfNo(engineeringPlans)"
               >
-              <label :for="'profession' + index">{{ det }}</label><br>
+              <label :for="'engineering' + index">{{ eng }}</label><br>
             </div>
-            <input
-              v-if="otherSelected"
-              id="commercialDetail"
-              v-model="detailOther"
-              type="text"
-              placeholder="Other"
-              name="detailOther"
-              size="100"
-            >
+            <h3>
+              {{ quote.structuralPlan.title }}
+            </h3>
+            <div v-for="(struct, index) in quote.structuralPlan.plans" :key="index">
+              <input
+                :id="'structural' + index"
+                v-model="detail"
+                type="radio"
+                name="structural"
+                :value="struct"
+                @change="checkIfNo(structuralPlan)"
+              >
+              <label :for="'structural' + index">{{ struct }}</label><br>
+            </div>
             <div
             class="themesflat-spacer clearfix"
             data-desktop="73"
@@ -243,7 +291,87 @@
             data-smobile="60"
           />
           <div class="elm-button">
-            <a href="#" @click="getNext(3)" class="themesflat-button bg-accent">{{ quote.nextButton }}</a>
+            <a href="#" @click="nextPage()" class="themesflat-button bg-accent">{{ quote.nextButton }}</a>
+          </div>
+          </article>
+          <div
+            class="themesflat-spacer clearfix"
+            data-desktop="73"
+            data-mobile="60"
+            data-smobile="60"
+          />
+        </section>
+
+        <!-- SECTION 4 residential & commercial -->
+        <section v-if="currentPage === 4" id="quote-page-4">
+          <div
+            class="themesflat-spacer clearfix"
+            data-desktop="73"
+            data-mobile="60"
+            data-smobile="60"
+          />
+          <div v-if="projectType === 'residential'" class="themesflat-headings style-2 clearfix">
+            <h2 class="heading">
+              {{ quote.residentialProject }}
+            </h2>
+            <div class="sep has-width w80 accent-bg clearfix" />
+          </div>
+          <div v-if="projectType === 'commercial'" class="themesflat-headings style-2 clearfix">
+            <h2 class="heading">
+              {{ quote.commercialProject }}
+            </h2>
+            <div class="sep has-width w80 accent-bg clearfix" />
+          </div>
+          <div
+            class="themesflat-spacer clearfix"
+            data-desktop="73"
+            data-mobile="60"
+            data-smobile="60"
+          />
+          <div class="sep has-width w80 accent-bg clearfix" />
+          <div class="progress-bar-wrapper bg-white-column">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <p>Page {{ currentPage }} of {{ totalPages }}</p>
+            <p @click="previousPage()">{{ quote.back }}</p>
+          </div>
+          <article class="bg-white-column questionnaire">
+            <h3>
+              {{ quote.quoteFor.title }}
+            </h3>
+            <div v-for="(quote, index) in quote.quoteFor.type" :key="index">
+              <input
+                :id="'quoteFor' + index"
+                v-model="quoteFor"
+                type="radio"
+                name="quoteFor"
+                :value="quote"
+              >
+              <label :for="'quoteFor' + index">{{ quote }}</label><br>
+            </div>
+            
+            <h3>
+              {{ quote.startProject.title }}
+            </h3>
+            <div v-for="(start, index) in quote.startProject.timeframe" :key="index">
+              <input
+                :id="'startProject' + index"
+                v-model="startProject"
+                type="radio"
+                name="startProject"
+                :value="start"
+              >
+              <label :for="'startProject' + index">{{ start }}</label><br>
+            </div>
+            <div
+            class="themesflat-spacer clearfix"
+            data-desktop="73"
+            data-mobile="60"
+            data-smobile="60"
+          />
+          <div class="elm-button">
+            <a href="#" @click="nextPage()" class="themesflat-button bg-accent">{{ quote.submitButton }}</a>
           </div>
           </article>
           <div
@@ -272,7 +400,7 @@ export default {
   data() {
     return {
       quote: quote,
-      currentPage: 2,
+      currentPage: 3,
       totalPages: 4,
       otherSelected: false,
       name: this.$route.params.name,
@@ -282,7 +410,14 @@ export default {
       profession: '',
       type: '',
       detail: '',
-      detailOther: ''
+      detailOther: '',
+      DAApproval: 'No',
+      noDAApproval: 'No',
+      architecturalPlans: 'No',
+      engineeringPlans: 'No',
+      structuralPlan: 'No',
+      quoteFor: '',
+      startProject: ''
     }
   },
   methods: {
