@@ -25,7 +25,8 @@
         ]
     },
     "tick": "/img/tick.png",
-    "residentialProject": "Your residential project",
+    "residentialProject": "YOUR RESIDENTIAL PROJECT",
+    "commercialProject": "YOUR COMMERCIAL / INDUSTRIAL PROJECT",
     "profession": {
         "title": "What is your profession?",
         "professions": [
@@ -48,6 +49,17 @@
             "Multi-dwelling / townhouse",
             "Apartment building",
             "Duplex",
+            "Other"
+        ]
+    },
+    "commercialDetail": {
+        "title": "What detail would you like for your project?",
+        "detail": [
+            "Retail",
+            "Hospitality",
+            "Medical",
+            "Warehouse",
+            "Factory",
             "Other"
         ]
     }

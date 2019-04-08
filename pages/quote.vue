@@ -122,18 +122,18 @@
             </h3>
             <div v-for="(det, index) in quote.detail.detail" :key="index">
               <input
-                :id="'project' + index"
+                :id="'detail' + index"
                 v-model="detail"
                 type="radio"
                 name="detail"
                 :value="detail"
                 @change="checkIfOther(detail)"
               >
-              <label :for="'profession' + index">{{ det }}</label><br>
+              <label :for="'detail' + index">{{ det }}</label><br>
             </div>
             <input
               v-if="otherSelected"
-              id="detail"
+              id="residentialDetail"
               v-model="detailOther"
               type="text"
               placeholder="Other"
@@ -167,7 +167,7 @@
           />
           <div class="themesflat-headings style-2 clearfix">
             <h2 class="heading">
-              {{ quote.title }}
+              {{ quote.commercialProject }}
             </h2>
             <div class="sep has-width w80 accent-bg clearfix" />
           </div>
@@ -214,9 +214,9 @@
               <label :for="'project' + index">{{ proj }}</label><br>
             </div>
             <h3>
-              {{ quote.detail.title }}
+              {{ quote.commercialDetail.title }}
             </h3>
-            <div v-for="(det, index) in quote.detail.detail" :key="index">
+            <div v-for="(det, index) in quote.commercialDetail.detail" :key="index">
               <input
                 :id="'project' + index"
                 v-model="detail"
@@ -229,7 +229,7 @@
             </div>
             <input
               v-if="otherSelected"
-              id="detail"
+              id="commercialDetail"
               v-model="detailOther"
               type="text"
               placeholder="Other"
@@ -278,7 +278,7 @@ export default {
       name: this.$route.params.name,
       email: this.$route.params.email,
       company: this.$route.params.company,
-      projectType: 'residential',
+      projectType: 'commercial',
       profession: '',
       type: '',
       detail: '',
