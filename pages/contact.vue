@@ -71,7 +71,7 @@
                               tabindex="1"
                               name="name"
                               value
-                              class="wpcf7-form-control"
+                              class="wpcf7-form-control input_text"
                               :placeholder="contact.namePlaceholder"
                               required
                             >
@@ -87,7 +87,7 @@
                               tabindex="2"
                               name="phone"
                               value
-                              class="wpcf7-form-control"
+                              class="wpcf7-form-control input_text"
                               :placeholder="contact.phonePlaceholder"
                             >
                           </span>
@@ -102,7 +102,7 @@
                               tabindex="3"
                               name="email"
                               value
-                              class="wpcf7-form-control"
+                              class="wpcf7-form-control input_text"
                               :placeholder="contact.emailPlaceholder"
                               required
                             >
@@ -118,7 +118,7 @@
                               tabindex="4"
                               name="subject"
                               value
-                              class="wpcf7-form-control"
+                              class="wpcf7-form-control input_text"
                               :placeholder="contact.subjectPlaceholder"
                             >
                           </span>
@@ -265,8 +265,7 @@ export default {
 .hidden {
   display: none
 }
-#contact input[type=text],
-#contact input[type="text"] {
+#contact .input_text {
     background-color: #fafafb;
     font-weight: 300;
     color: #777;
