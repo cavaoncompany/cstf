@@ -32,7 +32,7 @@
                   <Testimonials />
                   <!-- END TESTIMONIALS -->
                   <!-- QUOTE -->
-                  <Quote />
+                  <GetAQuote />
                   <!-- END QUOTE -->
                   <!-- TABS -->
                   <!-- <Tabs /> -->
@@ -61,7 +61,7 @@ import Banner from '../components/Banner'
 import About from '../components/About'
 import Services from '../components/Services'
 import Project from '../components/Project'
-import Quote from '../components/Quote'
+import GetAQuote from '../components/GetAQuote'
 import Testimonials from '../components/Testimonials'
 import Iconbox from '../components/Iconbox'
 import Footer from '../components/Footer'
@@ -75,7 +75,7 @@ export default {
     About,
     Services,
     Project,
-    Quote,
+    GetAQuote,
     Testimonials,
     Iconbox,
     Footer

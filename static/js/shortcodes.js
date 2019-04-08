@@ -515,7 +515,7 @@
     flatEqualizeHeight()
     flatGallery()
     searchIcon()
-    // flatTabs();
+    flatTabs();
     flatAccordions()
     flatProgressBar()
     googleMap()

@@ -15,13 +15,13 @@
             <div class="sep has-width w80 accent-bg clearfix" />
             <p>{{ getaquote.intro }}</p>
             <label for="quote-name" class="hide-element">{{ getaquote.namePlaceholder }}</label>
-            <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder">
+            <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name">
             <label for="quote-email" class="hide-element">{{ getaquote.emailPlaceholder }}</label>
-            <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder">
+            <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email">
             <label for="quote-company" class="hide-element">{{ getaquote.companyPlaceholder }}</label>
-            <input id="quote-company" type="text" name="company" :placeholder="getaquote.companyPlaceholder">
+            <input id="quote-company" type="text" name="company" :placeholder="getaquote.companyPlaceholder" v-model="company">
             <div class="elm-button">
-            <a href="#" class="themesflat-button bg-accent">{{ getaquote.nextButton }}</a>
+            <a :href="$router.resolve({name:'quote', params:{name: name, email: email, company: company}}).href" class="themesflat-button bg-accent">{{ getaquote.nextButton }}</a>
             </div>
           </form>
         </div>
@@ -36,7 +36,10 @@ import quote from '../content/quote.json'
 export default {
   data() {
     return {
-      getaquote: quote
+      getaquote: quote,
+      name: '',
+      email: '',
+      company: ''
     }
   }
 }
