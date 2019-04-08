@@ -9,11 +9,11 @@
               <div class="inner">
                 <div class="heading-wrap">
                   <h3 class="heading">
-                    {{ quote.text }}
+                    {{ quote.startYourProject }}
                   </h3>
                 </div>
                 <div class="button-wrap has-icon .sep-icon-after">
-                  <a href="#" class="themesflat-button bg-white small"><span class="themesflat-quote style-1 heading">{{ quote.quote }}<span class="icon"><i class="fa fa-arrow-right" /></span></span></a>
+                  <a href="#" class="themesflat-button bg-white small"><span class="themesflat-quote style-1 heading">{{ quote.title }}<span class="icon"><i class="fa fa-arrow-right" /></span></span></a>
                 </div>
               </div>
             </div>

@@ -24,7 +24,7 @@
               <div v-for="(service, index) in services.services" :key="index" class="card col-md-3">
                 <div class="thumb data-effect-item">
                   <img :src="service.img" :alt="service.title" class="card-img-top">
-                  <div class="overlay-effect bg-color-accent" />
+                  <!-- <div class="overlay-effect bg-color-accent" /> -->
                 </div>
                 <div class="card-body">
                   <h5 :id="'service' + index" class="card-title">

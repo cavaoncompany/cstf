@@ -23,7 +23,7 @@ module.exports = {
       { src: '/js/bootstrap.min.js' },
       { src: '/js/animsition.js' },
       { src: '/js/owl.carousel.min.js' },
-      { src: '/js/countto.js"' },
+      { src: '/js/countto.js' },
       { src: '/js/equalize.min.js' },
       { src: '/js/jquery.isotope.min.js' },
       { src: '/js/owl.carousel2.thumbs.js' },

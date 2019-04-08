@@ -71,7 +71,7 @@
                               tabindex="1"
                               name="name"
                               value
-                              class="wpcf7-form-control"
+                              class="wpcf7-form-control input_text"
                               :placeholder="contact.namePlaceholder"
                               required
                             >
@@ -87,7 +87,7 @@
                               tabindex="2"
                               name="phone"
                               value
-                              class="wpcf7-form-control"
+                              class="wpcf7-form-control input_text"
                               :placeholder="contact.phonePlaceholder"
                             >
                           </span>
@@ -102,7 +102,7 @@
                               tabindex="3"
                               name="email"
                               value
-                              class="wpcf7-form-control"
+                              class="wpcf7-form-control input_text"
                               :placeholder="contact.emailPlaceholder"
                               required
                             >
@@ -118,7 +118,7 @@
                               tabindex="4"
                               name="subject"
                               value
-                              class="wpcf7-form-control"
+                              class="wpcf7-form-control input_text"
                               :placeholder="contact.subjectPlaceholder"
                             >
                           </span>
@@ -264,6 +264,22 @@ export default {
 <style>
 .hidden {
   display: none
+}
+#contact .input_text {
+    background-color: #fafafb;
+    font-weight: 300;
+    color: #777;
+    border: 1px solid #e7e7e7;
+    padding: 13px 20px;
+    letter-spacing: 0;
+    line-height: inherit;
+    width: 100%;
+    margin-bottom: 14px;
+    height: auto;
+    text-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    transition: border .238s ease;
 }
 /* * {
     background: #000 !important;

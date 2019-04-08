@@ -162,6 +162,8 @@ export default {
 </script>
 
 <style>
+#main-nav li:hover .sub-menu { opacity: 1; visibility: visible; -webkit-transform: translateY(0);-moz-transform: translateY(0); -ms-transform: translateY(0);
+   -o-transform: translateY(0); transform: translateY(0); }
 .menu-item-tel {
   border: 1px solid #FED00E;
   padding: 14px 20px;

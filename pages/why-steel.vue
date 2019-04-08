@@ -19,29 +19,31 @@
           <img :src="whysteel.img" :alt="whysteel.title">
         </div>
       </div>
-      <div class="themesflat-spacer clearfix" data-desktop="37" data-mobile="35" data-smobile="35"></div> 
-        <div class="flat-content-wrap style-2 clearfix">
-          <div id="sidebar-wrap" class="themesflat-tabs style-2 title-w170 clearfix">
-              <ul id="sidebar" class="tab-title">
-                  <li v-for="(point, index) in whysteel.points" :id="'item-title-' + index" :key="index" v-bind:class="{'active' : index === 0}" class="item-title">
-                      <span class="inner" @click="findcontent('point-' + index, 'item-title-' + index)">{{ point.title }}</span>
-                  </li>
-              </ul>
-              <div id="spacer" class="invisible">DESIGN_FLEXIBILITY</div>
-              <div id="steel-content" class="tab-content-wrap clearfix">
-                <div class="outer-wrapper">
-                    <div v-for="(point, index) in whysteel.points" :id="'point-' + index" :key="index" class="tab-content">
-                        <div class="item-content">  
-                          <h5>{{ point.title }}</h5>                                                          
-                            <p v-for="(paragraph, index) in point.description" :key="index">
-                              {{ paragraph }}  
-                            </p>                                                    
-                        </div>
-                    </div><!-- /.tab-content -->
-                  </div>
-              </div><!-- /.tab-content-wrap -->
-          </div><!-- /.themesflat-tabs -->
-        </div>
+      <div class="themesflat-spacer clearfix" data-desktop="37" data-mobile="35" data-smobile="35" />
+      <div class="flat-content-wrap style-2 clearfix">
+        <div id="sidebar-wrap" class="themesflat-tabs style-2 title-w170 clearfix">
+          <ul id="sidebar" class="tab-title">
+            <li v-for="(point, index) in whysteel.points" :id="'item-title-' + index" :key="index" v-bind:class="{'active' : index === 0}" class="item-title">
+              <span class="inner" @click="findcontent('point-' + index, 'item-title-' + index)">{{ point.title }}</span>
+            </li>
+          </ul>
+          <div id="spacer" class="invisible">
+            DESIGN_FLEXIBILITY
+          </div>
+          <div id="steel-content" class="tab-content-wrap clearfix">
+            <div class="outer-wrapper">
+              <div v-for="(point, index) in whysteel.points" :id="'point-' + index" :key="index" class="tab-content">
+                <div class="item-content">
+                  <h5>{{ point.title }}</h5>
+                  <p v-for="(paragraph, i) in point.description" :key="i">
+                    {{ paragraph }}
+                  </p>
+                </div>
+              </div><!-- /.tab-content -->
+            </div>
+          </div><!-- /.tab-content-wrap -->
+        </div><!-- /.themesflat-tabs -->
+      </div>
     </div>
     <div class="themesflat-spacer clearfix" data-desktop="73" data-mobile="60" data-smobile="60" />
     <Footer />
@@ -59,27 +61,39 @@ export default {
     Header,
     Footer
   },
-  mounted() {
-    if (process.client) {
-      if(window.innerWidth > 479) {
-        const sidebar = document.getElementById('sidebar')
-      const sidebarTop = sidebar.getBoundingClientRect()
-      const contentHeight = document.getElementById('steel-content').offsetHeight - 10
-      const scrollTop = window.pageYOffset + 50 || document.documentElement.scrollTop
-      const coordinates = { top: sidebarTop.top + scrollTop }
-      document.addEventListener('scroll', event => {this.fixSidebarOnScroll(sidebar, coordinates.top, contentHeight)})
-      }
-    }
-  },
   data() {
     return {
       whysteel: whysteel
     }
   },
+  created() {
+    if (process.client) {
+      // eslint-disable-next-line
+      if (window.innerWidth > 479) {
+        // eslint-disable-next-line
+        const sidebar = document.getElementById('sidebar')
+        const sidebarTop = sidebar.getBoundingClientRect()
+        // eslint-disable-next-line
+        const contentHeight = document.getElementById('steel-content').offsetHeight - 10
+        // eslint-disable-next-line
+        const scrollTop = window.pageYOffset + 50 || document.documentElement.scrollTop
+        const coordinates = { top: sidebarTop.top + scrollTop }
+        // eslint-disable-next-line
+        document.addEventListener('scroll', event => {this.fixSidebarOnScroll(sidebar, coordinates.top, contentHeight)})
+      }
+    }
+  },
+  // destroyed() {
+  //   // eslint-disable-next-line
+  //   if (process.client) {
+  //     // eslint-disable-next-line
+  //     window.removeEventListener('scroll', this.fixSidebarOnScroll(sidebar, coordinates.top, contentHeight))
+  //   }
+  // },
   methods: {
-    findcontent: function(content, button) {
+    findcontent: function (content, button) {
       const buttons = document.getElementsByClassName('item-title')
-      for (let i =0; i < buttons.length; i++) {
+      for (let i = 0; i < buttons.length; i++) {
         buttons[i].classList.remove('active')
       }
       document.getElementById(button).classList.add('active')
@@ -95,34 +109,29 @@ export default {
     },
     fixSidebarOnScroll: function (sidebar, sidebarTop, contentHeight) {
       const spacer = document.getElementById('spacer')
-        const windowScrollTop = window.scrollY
-        if (windowScrollTop <= sidebarTop){
-          if (sidebar.classList.contains('absolute')) {
-            sidebar.classList.remove('absolute')
-          }
-          sidebar.classList.remove('sticky')
-          spacer.classList.add('hide-element')
-          spacer.classList.remove('invisible')
-        } else if (windowScrollTop >= contentHeight) {
-          sidebar.classList.remove('sticky')
-          sidebar.classList.add('absolute')
-        } else if (windowScrollTop >= sidebarTop) {
-          if (sidebar.classList.contains('absolute')) {
-            sidebar.classList.remove('absolute')
-          }
-          if (!sidebar.classList.contains('sticky')) {
-            sidebar.classList.add('sticky')
-            spacer.classList.remove('hide-element')
-            spacer.classList.add('invisible')
-          }
+      const windowScrollTop = window.scrollY
+      if (windowScrollTop <= sidebarTop) {
+        if (sidebar.classList.contains('absolute')) {
+          sidebar.classList.remove('absolute')
+        }
+        sidebar.classList.remove('sticky')
+        spacer.classList.add('hide-element')
+        spacer.classList.remove('invisible')
+      } else if (windowScrollTop >= contentHeight) {
+        sidebar.classList.remove('sticky')
+        sidebar.classList.add('absolute')
+      } else if (windowScrollTop >= sidebarTop) {
+        if (sidebar.classList.contains('absolute')) {
+          sidebar.classList.remove('absolute')
+        }
+        if (!sidebar.classList.contains('sticky')) {
+          sidebar.classList.add('sticky')
+          spacer.classList.remove('hide-element')
+          spacer.classList.add('invisible')
         }
       }
-  },
-  destroyed () {
-    if (process.client) { 
-        window.removeEventListener('scroll', this.fixSidebarOnScroll(sidebar, coordinates.top, contentHeight))
     }
-}
+  }
 }
 </script>
 
