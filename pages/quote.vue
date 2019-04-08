@@ -245,16 +245,29 @@
             <h3>
               {{ quote.architecturalPlan.title }}
             </h3>
-            <div v-for="(arch, index) in quote.architecturalPlan.plans" :key="index">
+            <div>
               <input
-                :id="'architectural' + index"
+                id="'architectural0'"
                 v-model="type"
                 type="radio"
                 name="architectural"
-                :value="arch"
+                :value="quote.architecturalPlan.plans[0]"
                 @change="checkIfNo(architecturalPlans)"
               >
-              <label :for="'architectural' + index">{{ arch }}</label><br>
+              <label for="architectural0">{{ quote.architecturalPlan.plans[0] }}</label><br>
+            </div>
+            <div >
+              <input
+                id="'architectural1'"
+                v-model="type"
+                type="radio"
+                name="architectural"
+                :value="quote.architecturalPlan.plans[1]"
+                data-toggle="modal"
+                data-target="sorry-modal"
+                @change="checkIfNo(architecturalPlans)"
+              >
+              <label for="architectural1">{{ quote.architecturalPlan.plans[1] }}</label><br>
             </div>
             <h3>
               {{ quote.engineeringPlan.title }}
@@ -262,7 +275,7 @@
             <div v-for="(eng, index) in quote.engineeringPlan.plans" :key="index">
               <input
                 :id="'engineering' + index"
-                v-model="detail"
+                v-model="engineeringPlans"
                 type="radio"
                 name="engineering"
                 :value="eng"
@@ -276,7 +289,7 @@
             <div v-for="(struct, index) in quote.structuralPlan.plans" :key="index">
               <input
                 :id="'structural' + index"
-                v-model="detail"
+                v-model="structuralPlans"
                 type="radio"
                 name="structural"
                 :value="struct"
@@ -384,6 +397,30 @@
       </div>
     </div>
     <Footer />
+    <div
+      id="sorry-modal"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="projectDetail"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="detail-gallery">
+                <div class="themesflat-spacer clearfix" data-desktop="21" data-mobile="21" data-smobile="21" />
+                <div>
+                  <p>{{ quote.sorry }}</p>
+                  <div class="elm-button">
+                    <a href="/" class="themesflat-button bg-accent">{{ quote.returnHome }}</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
   </section>
 </template>
 
@@ -406,7 +443,7 @@ export default {
       name: this.$route.params.name,
       email: this.$route.params.email,
       company: this.$route.params.company,
-      projectType: 'commercial',
+      projectType: 'residential',
       profession: '',
       type: '',
       detail: '',
@@ -415,7 +452,7 @@ export default {
       noDAApproval: 'No',
       architecturalPlans: 'No',
       engineeringPlans: 'No',
-      structuralPlan: 'No',
+      structuralPlans: 'No',
       quoteFor: '',
       startProject: ''
     }

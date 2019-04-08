@@ -265,6 +265,22 @@ export default {
 .hidden {
   display: none
 }
+#contact input[type=text] {
+    background-color: #fafafb;
+    font-weight: 300;
+    color: #777;
+    border: 1px solid #e7e7e7;
+    padding: 13px 20px;
+    letter-spacing: 0;
+    line-height: inherit;
+    width: 100%;
+    margin-bottom: 14px;
+    height: auto;
+    text-shadow: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    transition: border .238s ease;
+}
 /* * {
     background: #000 !important;
     color: #0f0 !important;
