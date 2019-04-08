@@ -265,7 +265,7 @@ export default {
 .hidden {
   display: none
 }
-#contact input[type=text] {
+#contact input {
     background-color: #fafafb;
     font-weight: 300;
     color: #777;
