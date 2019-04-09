@@ -84,7 +84,7 @@
                             >{{ contact.phonePlaceholder }}</label>
                             <input
                               id="contact-phone"
-                              v-model="contact"
+                              v-model="phone"
                               type="text"
                               tabindex="2"
                               name="phone"
