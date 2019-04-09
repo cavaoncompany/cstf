@@ -661,6 +661,9 @@ export default {
       } else if ( area === 'engineering') {
         this.engineeringPlan = file.name
       }
+    },
+    removeDisabled: function(el) {
+      document.getElementById(el).disabled = false
     }
   },
   watch: {
@@ -688,6 +691,8 @@ export default {
     DAApproval: function() {
       if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
+      } else if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
       } else {
         this.page4enabled = false
       }
@@ -698,9 +703,11 @@ export default {
       } else if (this.architecturalPlans === 'Yes') {
         this.page4enabled = false
         for (let i = 0; i < this.quote.engineeringPlan.plans.length; i++) {
-          
+          this.removeDisabled('engineering' + i)
         }
         this.engineeringPlansEnabled = true
+      } else if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
       } else {
         this.page4enabled = false
       }
@@ -708,12 +715,23 @@ export default {
     engineeringPlans: function() {
       if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
+      } else if (this.engineeringPlans === 'Yes') {
+        this.page4enabled = false
+        for (let i = 0; i < this.quote.structuralPlan.plans.length; i++) {
+          this.removeDisabled('structural' + i)
+        }
+        this.structuralPlansEnabled = true
+      } else if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
       } else {
         this.page4enabled = false
+        this.structuralPlansEnabled = false
       }
     },
     structuralPlans: function() {
       if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans === 'No') {
         this.page4enabled = true
       } else {
         this.page4enabled = false
