@@ -9,6 +9,7 @@
     "page": "Page {0} of {1}",
     "next": "NEXT",
     "back": "BACK",
+    "yellowTick": "/img/yellow-tick.png",
     "typeOfProject": {
         "title": "Is your project",
         "types": [

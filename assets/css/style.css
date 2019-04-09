@@ -1156,6 +1156,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .menu-item-tel-mobile { display: block; border: 1px solid #FED00E; width: 130px; margin-left: 50%; margin-top: 19px; padding: 5px 0; text-align: center; }
 
   #quote .project-type { margin: 35px; padding: 50px 20px 40px 20px; }
+
+  #quote #sorry-modal .modal-body { padding: 40px; }
 }
 
 @media only screen and (max-width: 479px) {

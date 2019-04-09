@@ -304,10 +304,16 @@
                 <h3>
                   {{ quote.architecturalPlan.upload }}
                 </h3>
+                <div v-if="architecturalPlan !== ''" class="uploaded-files">
+                  <img :src="quote.yellowTick" alt="file uploaded">
+                  <p>{{ architecturalPlan }}</p>
+                </div>
                 <input
                   id="architecturalPlans"
                   type="file"
                   name="architecturalPlans"
+                  @change="showUploadedFile($event, 'architecture')"
+                  multiple
                 >
                 <label for="architecturalPlans">
               <i class="fa fa-upload" />
@@ -334,10 +340,15 @@
                 <h3>
                   {{ quote.engineeringPlan.upload }}
                 </h3>
+                <div v-if="engineeringPlan !== ''" class="uploaded-files">
+                  <img :src="quote.yellowTick" alt="file uploaded">
+                  <p>{{ engineeringPlan }}</p>
+                </div>
                 <input
                   id="engineeringPlans"
                   type="file"
                   name="engineeringPlans"
+                  @change="showUploadedFile($event, 'engineering')"
                 >
                 <label for="engineeringPlans">
               <i class="fa fa-upload" />
@@ -529,7 +540,9 @@ export default {
       noDAApproval: '',
       architecturalPlans: '',
       architecturalPlansSelected: false,
+      architecturalPlan: '',
       engineeringPlans: '',
+      engineeringPlan: '',
       engineeringPlansSelected: false,
       structuralPlans: '',
       quoteFor: '',
@@ -615,16 +628,17 @@ export default {
           this.engineeringPlansSelected = false
         }
       }
+    },
+    showUploadedFile: function(e, area) {
+      const file = e.target.files[0]
+      if (area === 'architecture'){
+        this.architecturalPlan = file.name
+      } else if ( area === 'engineering') {
+        this.engineeringPlan = file.name
+      }
     }
   },
   watch: {
-    // projectType: function() {
-    //   if (this.projectType !== '') {
-    //     this.page2enabled = true
-    //   } else {
-    //     this.page2enabled = false
-    //   }
-    // },
     profession: function() {
       if (this.profession !== '' && this.type !== '' && this.detail !== '') {
         this.page3enabled = true
@@ -854,5 +868,11 @@ export default {
   }
   #quote .yellow {
     color: #FED00E;
+  }
+  #quote .uploaded-files {
+    display: flex;
+  }
+  #quote .uploaded-files img {
+    height: 25px;
   }
 </style>
