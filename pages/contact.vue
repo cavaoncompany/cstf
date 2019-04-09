@@ -67,6 +67,7 @@
                             >{{ contact.namePlaceholder }}</label>
                             <input
                               id="contact-name"
+                              v-model="name"
                               type="text"
                               tabindex="1"
                               name="name"
@@ -83,6 +84,7 @@
                             >{{ contact.phonePlaceholder }}</label>
                             <input
                               id="contact-phone"
+                              v-model="contact"
                               type="text"
                               tabindex="2"
                               name="phone"
@@ -98,6 +100,7 @@
                             >{{ contact.emailPlaceholder }}</label>
                             <input
                               id="contact-email"
+                              v-model="email"
                               type="email"
                               tabindex="3"
                               name="email"
@@ -114,6 +117,7 @@
                             >{{ contact.subjectPlaceholder }}</label>
                             <input
                               id="contact-subject"
+                              v-model="subject"
                               type="text"
                               tabindex="4"
                               name="subject"
@@ -129,6 +133,7 @@
                             >{{ contact.messagePlaceholder }}</label>
                             <textarea
                               id="contact-message"
+                              v-model="message"
                               name="message"
                               tabindex="5"
                               cols="40"
@@ -145,6 +150,8 @@
                               :value="contact.sendButtonText"
                               class="submit wpcf7-form-control wpcf7-submit"
                               name="submit"
+                              disabled
+                              v-bind:class="{'disabled': submitEnabled === false}"
                             >
                           </span>
                         </form>
@@ -263,8 +270,45 @@ export default {
   },
   data() {
     return {
-      contact: contact
+      contact: contact,
+      name: '',
+      phone: '',
+      email: '',
+      subject: '',
+      message: '',
+      submitEnabled: false
     }
+  },
+  watch: {
+    name: function() {
+      if (this.name !== '' && this.email !== '' && this.message !== '') {
+        this.submitEnabled = true
+        this.enableSubmit()
+      } else {
+        this.submitEnabled = false
+      }
+    },
+    email: function() {
+      if (this.name !== '' && this.email !== '' && this.message !== '') {
+        this.submitEnabled = true
+        this.enableSubmit()
+      } else {
+        this.submitEnabled = false
+      }
+    },
+    message: function() {
+      if (this.name !== '' && this.email !== '' && this.message !== '') {
+        this.submitEnabled = true
+        this.enableSubmit()
+      } else {
+        this.submitEnabled = false
+      }
+    }
+  },
+  methods: {
+    enableSubmit: function() {
+      document.getElementById('contact-submit').disabled = false
+    } 
   }
 }
 </script>
@@ -288,6 +332,12 @@ export default {
     box-shadow: none;
     box-sizing: border-box;
     transition: border .238s ease;
+}
+#contact #contact-submit.disabled,
+#contact #contact-submit.disabled:hover,
+#contact #contact-submit.disabled:hover:before {
+  background-color: #E0E0E0 !important;
+  color: #111;
 }
 /* * {
     background: #000 !important;

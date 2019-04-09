@@ -51,6 +51,9 @@
 .themesflat-button.bg-light-white:hover,
 .themesflat-button.bg-white:hover,
 .themesflat-button.bg-accent:hover { color: #fff; }
+.themesflat-button.bg-accent:active { color: #fff; }
+.themesflat-button.bg-accent:focus { color: #fff; }
+
 
 /* Button custom */
 .button-wrap.has-icon .themesflat-button > span { position: relative; display: block; }

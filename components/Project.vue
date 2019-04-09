@@ -35,15 +35,15 @@
                         <h5 class="heading">
                           <a href="#">{{ item.title }}</a>
                         </h5>
-                        <div class="elm-meta">
+                        <!-- <div class="elm-meta">
                           <span><a href="#">{{ item.category }}</a></span>
                           <span><a href="#">{{ item.additionalCategory }}</a></span>
-                        </div>
+                        </div> -->
                       </div>
-                      <div class="elm-link">
+                      <!-- <div class="elm-link">
                         <a href="#" class="icon-1 icon-search" />
                         <a href="#" class="icon-1" />
-                      </div>
+                      </div> -->
                       <div class="overlay-effect bg-color-3" />
                     </div>
                   </div>
@@ -53,7 +53,7 @@
           </div><!-- /.themesflat-carousel-box -->
           <div class="themesflat-spacer clearfix" data-desktop="41" data-mobile="35" data-smobile="35" />
           <div class="elm-button text-center">
-            <a href="#" class="themesflat-button bg-accent">{{ project.buttonText }}</a>
+            <a href="/projects" class="themesflat-button bg-accent">{{ project.buttonText }}</a>
           </div>
           <div class="themesflat-spacer clearfix" data-desktop="73" data-mobile="60" data-smobile="60" />
         </div><!-- /.col-md-12 -->
