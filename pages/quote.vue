@@ -634,7 +634,10 @@ export default {
         }
       } else if (value === 'architectural') {
         if (this.architecturalPlans === 'No') {
-          $('#sorry-modal').modal('show')
+          $('#sorry-modal').modal({
+            backdrop: 'static',
+            keyboard: false
+          })
           this.architecturalPlansSelected = false
         } else {
           this.architecturalPlansSelected = true
