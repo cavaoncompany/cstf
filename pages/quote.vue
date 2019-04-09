@@ -25,12 +25,15 @@
             data-smobile="60"
           />
           <div class="sep has-width w80 accent-bg clearfix" />
-          <div class="progress-bar-wrapper bg-white-column">
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar-wrapper bg-white-column row">
+            <div class="invisible page-navigation" @click="previousPage()"><i class="fa fa-chevron-left"></i> {{ quote.back }}</div>
+            <div class="progress-wrapper">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" />
+              </div>
+              <div>Page {{ currentPage }} of {{ totalPages }}</div>
             </div>
-            <p>Page {{ currentPage }} of {{ totalPages }}</p>
-            <p @click="nextPage()">{{ quote.next }}</p>
+            <div class="page-navigation" @click="nextPage()">{{ quote.next }} <i class="fa fa-chevron-right"></div>
           </div>
           <div class="row bg-white-column">
             <div class="themesflat-headings style-2 clearfix col-12">
@@ -87,92 +90,102 @@
             data-smobile="60"
           />
           <div class="sep has-width w80 accent-bg clearfix" />
-          <div class="progress-bar-wrapper bg-white-column">
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar-wrapper bg-white-column row">
+            <div class="page-navigation" @click="previousPage()"><i class="fa fa-chevron-left"></i> {{ quote.back }}</div>
+            <div class="progress-wrapper">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" />
+              </div>
+              <div>Page {{ currentPage }} of {{ totalPages }}</div>
             </div>
-            <p>Page {{ currentPage }} of {{ totalPages }}</p>
-            <p @click="previousPage()">{{ quote.back }}</p>
-            <p @click="nextPage()">{{ quote.next }}</p>
+            <div class="page-navigation" @click="nextPage()">{{ quote.next }} <i class="fa fa-chevron-right"></div>
           </div>
 
           <article class="bg-white-column questionnaire">
             <h3>
               {{ quote.profession.title }}
             </h3>
-            <div v-for="(prof, index) in quote.profession.professions" :key="index">
-              <input
-                :id="'profession' + index"
-                v-model="profession"
-                type="radio"
-                name="profession"
-                :value="profession"
-              >
-              <label :for="'profession' + index">{{ prof }}</label><br>
-            </div>
+            <article class="with-border">
+              <div v-for="(prof, index) in quote.profession.professions" :key="index">
+                <input
+                  :id="'profession' + index"
+                  v-model="profession"
+                  type="radio"
+                  name="profession"
+                  :value="profession"
+                >
+                <label :for="'profession' + index">{{ prof }}</label><br>
+              </div>
+            </article>
             
             <h3>
               {{ quote.projectType.title }}
             </h3>
-            <div v-for="(proj, index) in quote.projectType.type" :key="index">
-              <input
-                :id="'project' + index"
-                v-model="type"
-                type="radio"
-                name="project"
-                :value="project"
-              >
-              <label :for="'project' + index">{{ proj }}</label><br>
-            </div>
+            <article  class="with-border">
+              <div v-for="(proj, index) in quote.projectType.type" :key="index">
+                <input
+                  :id="'project' + index"
+                  v-model="type"
+                  type="radio"
+                  name="project"
+                  :value="project"
+                >
+                <label :for="'project' + index">{{ proj }}</label><br>
+              </div>
+            </article>
             <div v-if="projectType === 'residential'">
               <h3>
                 {{ quote.detail.title }}
               </h3>
-              <div v-for="(det, index) in quote.detail.detail" :key="index">
+              <article>
+                <div v-for="(det, index) in quote.detail.detail" :key="index">
+                  <input
+                    :id="'detail' + index"
+                    v-model="detail"
+                    type="radio"
+                    name="detail"
+                    :value="det"
+                    @change="checkIfOther(det)"
+                  >
+                  <label :for="'detail' + index">{{ det }}</label><br>
+                </div>
                 <input
-                  :id="'detail' + index"
+                  v-if="otherDetailSelected"
+                  id="residentialDetail"
+                  v-model="detailOther"
+                  type="text"
+                  placeholder="Other"
+                  name="detailOther"
+                  size="100"
+                >
+              </article>
+            </div>
+            <div v-if="projectType === 'commercial'">
+              <h3>
+              {{ quote.commercialDetail.title }}
+            </h3>
+            <article>
+              <div v-for="(det, index) in quote.commercialDetail.detail" :key="index">
+                <input
+                  :id="'commercialDetail' + index"
                   v-model="detail"
                   type="radio"
                   name="detail"
-                  :value="detail"
-                  @change="checkIfOther(detail)"
+                  :value="det"
+                  @change="checkIfOther(det, otherDetailSelected)"
                 >
-                <label :for="'detail' + index">{{ det }}</label><br>
+                <label :for="'commercialDetail' + index">{{ det }}</label><br>
               </div>
               <input
-                v-if="otherSelected"
-                id="residentialDetail"
+                v-if="otherDetailSelected"
+                id="commercialDetail"
                 v-model="detailOther"
                 type="text"
                 placeholder="Other"
                 name="detailOther"
                 size="100"
               >
-            </div>
-            <div v-if="projectType === 'commercial'">
-              <h3>
-              {{ quote.commercialDetail.title }}
-            </h3>
-            <div v-for="(det, index) in quote.commercialDetail.detail" :key="index">
-              <input
-                :id="'commercialDetail' + index"
-                v-model="detail"
-                type="radio"
-                name="detail"
-                :value="detail"
-                @change="checkIfOther(detail)"
-              >
-              <label :for="'commercialDetail' + index">{{ det }}</label><br>
-            </div>
-            <input
-              v-if="otherSelected"
-              id="commercialDetail"
-              v-model="detailOther"
-              type="text"
-              placeholder="Other"
-              name="detailOther"
-              size="100"
-            >
+            </article>
             </div>
             <div
             class="themesflat-spacer clearfix"
@@ -219,73 +232,82 @@
             data-smobile="60"
           />
           <div class="sep has-width w80 accent-bg clearfix" />
-          <div class="progress-bar-wrapper bg-white-column">
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar-wrapper bg-white-column row">
+            <div class="page-navigation" @click="previousPage()"><i class="fa fa-chevron-left"></i> {{ quote.back }}</div>
+            <div class="progress-wrapper">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" />
+              </div>
+              <div>Page {{ currentPage }} of {{ totalPages }}</div>
             </div>
-            <p>Page {{ currentPage }} of {{ totalPages }}</p>
-            <p @click="previousPage()">{{ quote.back }}</p>
-            <p @click="nextPage()">{{ quote.next }}</p>
+            <div class="page-navigation" @click="nextPage()">{{ quote.next }} <i class="fa fa-chevron-right"></div>
           </div>
           <article class="bg-white-column questionnaire">
             <h3>
               {{ quote.DAApproval.title }}
             </h3>
-            <div v-for="(DA, index) in quote.DAApproval.approval" :key="index">
-              <input
-                :id="'DAApproval' + index"
-                v-model="DAApproval"
-                type="radio"
-                name="DA"
-                :value="DAApproval"
-              >
-              <label :for="'DAApproval' + index">{{ DA }}</label><br>
-            </div>
-            
+            <article class="with-border">
+              <div v-for="(DA, index) in quote.DAApproval.approval" :key="index">
+                <input
+                  :id="'DAApproval' + index"
+                  v-model="DAApproval"
+                  type="radio"
+                  name="DA"
+                  :value="DAApproval"
+                >
+                <label :for="'DAApproval' + index">{{ DA }}</label><br>
+              </div>
+            </article>
+
             <h3>
               {{ quote.architecturalPlan.title }}
             </h3>
-            <div>
-              <input
-                id="'architectural0'"
-                v-model="type"
-                type="radio"
-                name="architectural"
-                :value="quote.architecturalPlan.plans[0]"
-                @change="checkIfNo(architecturalPlans)"
-              >
-              <label for="architectural0">{{ quote.architecturalPlan.plans[0] }}</label><br>
-            </div>
-            <div >
-              <input
-                id="'architectural1'"
-                v-model="type"
-                type="radio"
-                name="architectural"
-                :value="quote.architecturalPlan.plans[1]"
-                data-toggle="modal"
-                data-target="sorry-modal"
-                @change="checkIfNo(architecturalPlans)"
-              >
-              <label for="architectural1">{{ quote.architecturalPlan.plans[1] }}</label><br>
-            </div>
+            <article class="with-border">
+              <div>
+                <input
+                  id="'architectural0'"
+                  v-model="type"
+                  type="radio"
+                  name="architectural"
+                  :value="quote.architecturalPlan.plans[0]"
+                  @change="checkIfNo(architecturalPlans)"
+                >
+                <label for="architectural0">{{ quote.architecturalPlan.plans[0] }}</label><br>
+              </div>
+              <div >
+                <input
+                  id="'architectural1'"
+                  v-model="type"
+                  type="radio"
+                  name="architectural"
+                  :value="quote.architecturalPlan.plans[1]"
+                  data-toggle="modal"
+                  data-target="sorry-modal"
+                  @change="checkIfNo(architecturalPlans)"
+                >
+                <label for="architectural1">{{ quote.architecturalPlan.plans[1] }}</label><br>
+              </div>
+            </article>
             <h3>
               {{ quote.engineeringPlan.title }}
             </h3>
-            <div v-for="(eng, index) in quote.engineeringPlan.plans" :key="index">
-              <input
-                :id="'engineering' + index"
-                v-model="engineeringPlans"
-                type="radio"
-                name="engineering"
-                :value="eng"
-                @change="checkIfNo(engineeringPlans)"
-              >
-              <label :for="'engineering' + index">{{ eng }}</label><br>
-            </div>
-            <h3>
+            <article class="with-border">
+              <div v-for="(eng, index) in quote.engineeringPlan.plans" :key="index">
+                <input
+                  :id="'engineering' + index"
+                  v-model="engineeringPlans"
+                  type="radio"
+                  name="engineering"
+                  :value="eng"
+                  @change="checkIfNo(engineeringPlans)"
+                >
+                <label :for="'engineering' + index">{{ eng }}</label><br>
+              </div>
+            </article>
+            <!-- <h3>
               {{ quote.structuralPlan.title }}
             </h3>
+            <article>
             <div v-for="(struct, index) in quote.structuralPlan.plans" :key="index">
               <input
                 :id="'structural' + index"
@@ -293,10 +315,11 @@
                 type="radio"
                 name="structural"
                 :value="struct"
-                @change="checkIfNo(structuralPlan)"
+                @change="checkIfNo(structuralPlans)"
               >
               <label :for="'structural' + index">{{ struct }}</label><br>
-            </div>
+            </div> -->
+          <!-- </article> -->
             <div
             class="themesflat-spacer clearfix"
             data-desktop="73"
@@ -342,47 +365,59 @@
             data-smobile="60"
           />
           <div class="sep has-width w80 accent-bg clearfix" />
-          <div class="progress-bar-wrapper bg-white-column">
-            <div class="progress">
-              <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+          <div class="progress-bar-wrapper bg-white-column row">
+            <div class="page-navigation" @click="previousPage()"><i class="fa fa-chevron-left"></i> {{ quote.back }}</div>
+            <div class="progress-wrapper">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" />
+              </div>
+              <div>Page {{ currentPage }} of {{ totalPages }}</div>
             </div>
-            <p>Page {{ currentPage }} of {{ totalPages }}</p>
-            <p @click="previousPage()">{{ quote.back }}</p>
+            <div class="page-navigation invisible" @click="nextPage()">{{ quote.next }} <i class="fa fa-chevron-right"></div>
           </div>
           <article class="bg-white-column questionnaire">
             <h3>
               {{ quote.quoteFor.title }}
             </h3>
-            <div v-for="(quote, index) in quote.quoteFor.type" :key="index">
-              <input
-                :id="'quoteFor' + index"
-                v-model="quoteFor"
-                type="radio"
-                name="quoteFor"
-                :value="quote"
-              >
-              <label :for="'quoteFor' + index">{{ quote }}</label><br>
-            </div>
-            
+            <article class="with-border">
+              <div v-for="(quote, index) in quote.quoteFor.type" :key="index">
+                <input
+                  :id="'quoteFor' + index"
+                  v-model="quoteFor"
+                  type="radio"
+                  name="quoteFor"
+                  :value="quote"
+                >
+                <label :for="'quoteFor' + index">{{ quote }}</label><br>
+              </div>
+            </article>
             <h3>
               {{ quote.startProject.title }}
             </h3>
-            <div v-for="(start, index) in quote.startProject.timeframe" :key="index">
-              <input
-                :id="'startProject' + index"
-                v-model="startProject"
-                type="radio"
-                name="startProject"
-                :value="start"
-              >
-              <label :for="'startProject' + index">{{ start }}</label><br>
-            </div>
+            <article class="with-border">
+              <div v-for="(start, index) in quote.startProject.timeframe" :key="index">
+                <input
+                  :id="'startProject' + index"
+                  v-model="startProject"
+                  type="radio"
+                  name="startProject"
+                  :value="start"
+                >
+                <label :for="'startProject' + index">{{ start }}</label><br>
+              </div>
+            </article>
             <div
             class="themesflat-spacer clearfix"
             data-desktop="73"
             data-mobile="60"
             data-smobile="60"
           />
+          <h3>
+              {{ quote.message }}
+          </h3>
+          <article>
+            <textarea id="quoteMessage" name="message" cols="40" rows="4" />
+          </article>
           <div class="elm-button">
             <a href="#" @click="nextPage()" class="themesflat-button bg-accent">{{ quote.submitButton }}</a>
           </div>
@@ -437,30 +472,27 @@ export default {
   data() {
     return {
       quote: quote,
-      currentPage: 3,
+      currentPage: 1,
       totalPages: 4,
-      otherSelected: false,
+      otherDetailSelected: false,
       name: this.$route.params.name,
       email: this.$route.params.email,
       company: this.$route.params.company,
-      projectType: 'residential',
+      projectType: '',
       profession: '',
       type: '',
       detail: '',
       detailOther: '',
-      DAApproval: 'No',
-      noDAApproval: 'No',
-      architecturalPlans: 'No',
-      engineeringPlans: 'No',
-      structuralPlans: 'No',
+      DAApproval: '',
+      noDAApproval: '',
+      architecturalPlans: '',
+      engineeringPlans: '',
+      structuralPlans: '',
       quoteFor: '',
       startProject: ''
     }
   },
   methods: {
-    getNext: function(page) {
-      this.currentPage = page
-    },
     addProjectType: function(project, e) {
       const type = 'type-' + project.type
       const tick = 'tick-' + project.type
@@ -481,17 +513,24 @@ export default {
       }
     },
     nextPage: function() {
-      this.currentPage++
+      if (this.currentPage < this.totalPages) {
+        this.currentPage++
+      }
     },
     previousPage: function() {
-      this.currentPage--
-    },
-    checkIfOther: function (value) {
-      if (value.toLowerCase() === 'other') {
-        this.otherSelected = true
-      } else {
-        this.otherSelected = false
+      if (this.currentPage > 1) {
+        this.currentPage--
       }
+    },
+    checkIfOther: function (value, changer) {
+      if (value.toLowerCase() === 'other') {
+        this.otherDetailSelected = true
+      } else {
+        this.otherDetailSelected = false
+      }
+    },
+    checkIfNo: function(value) {
+
     }
   }
 }
@@ -545,21 +584,45 @@ export default {
   opacity: 0;
 }
 #quote .elm-button {
+  text-align: center;
   margin: 0 auto;
+}
+#quote .themesflat-button {
+  height: 50px;
+  width: 270px;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 50px; 
 }
 #quote .sep {
   margin: 0 auto;
 }
 #quote .progress {
-  width: 30%;
+  width: 60%;
   margin: 0 auto;
+  height: 15px;
+  margin-top: 6px;
+}
+#quote .page-navigation {
+  width: 20%;
+  color: #c4c4c4;
+  cursor: pointer;
+}
+#quote .progress-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 35%;
 }
 #quote .progress-bar {
   background-color: #FED00E;
 }
 #quote .progress-bar-wrapper {
-  padding-top: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 #quote input[type='radio'] {
     width: 0px;
@@ -580,12 +643,17 @@ export default {
     margin-right: 10px;
   }
   input[type='radio']:checked + label:before {
-    background:#FFC716;
+    /* background-image: url('/img/tick.png'); */
+    background-color: #FED00E;
   }
   #quote .questionnaire {
     padding: 2% 15%;
   }
   #quote .questionnaire h3 {
     text-align: left;
+  }
+  #quote .with-border {
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 30px;
   }
 </style>
