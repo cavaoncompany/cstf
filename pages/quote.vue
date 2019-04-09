@@ -1,5 +1,5 @@
 <template>
-  <section id="quote">
+  <section id="quote" class="header-fixed page no-sidebar header-style-2 topbar-style-1 menu-has-search">
     <Header />
     <div class="container">
       <div class="wrapper">
@@ -826,7 +826,6 @@ export default {
     margin-right: 10px;
   }
   input[type='radio']:checked + label:before {
-    /* background-image: url('/img/tick.png'); */
     background-color: #FED00E;
   }
   #quote .questionnaire h3 {

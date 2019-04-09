@@ -1,7 +1,7 @@
 <template>
   <div
     id="getAQuote"
-    class="modal fade"
+    class="modal"
     tabindex="-1"
     role="dialog"
     aria-labelledby="getAQuote"
@@ -14,14 +14,20 @@
             <h1>{{ getaquote.title }}</h1>
             <div class="sep has-width w80 accent-bg clearfix" />
             <p>{{ getaquote.intro }}</p>
-            <label for="quote-name" class="hide-element">{{ getaquote.namePlaceholder }}</label>
-            <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name">
-            <label for="quote-email" class="hide-element">{{ getaquote.emailPlaceholder }}</label>
-            <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email">
-            <label for="quote-company" class="hide-element">{{ getaquote.companyPlaceholder }}</label>
-            <input id="quote-company" type="text" name="company" :placeholder="getaquote.companyPlaceholder" v-model="company">
+            <div class="form-group">
+              <label for="quote-name" class="hide-element">{{ getaquote.namePlaceholder }}</label>
+              <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name">
+            </div>
+            <div class="form-group">
+              <label for="quote-email" class="hide-element">{{ getaquote.emailPlaceholder }}</label>
+              <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email">
+            </div>
+            <div class="form-group">
+              <label for="quote-company" class="hide-element">{{ getaquote.companyPlaceholder }}</label>
+              <input id="quote-company" type="text" name="company" :placeholder="getaquote.companyPlaceholder" v-model="company">
+            </div>
             <div class="elm-button">
-            <a :href="$router.resolve({name:'quote', params:{name: name, email: email, company: company}}).href" class="themesflat-button bg-accent">{{ getaquote.nextButton }}</a>
+            <a :href="$router.resolve({name:'quote', params:{name: name, email: email, company: company}}).href" v-bind:class="{'disabled': nextEnabled === false}" class="themesflat-button bg-accent">{{ getaquote.nextButton }}</a>
             </div>
           </form>
         </div>
@@ -39,7 +45,31 @@ export default {
       getaquote: quote,
       name: '',
       email: '',
-      company: ''
+      company: '',
+      nextEnabled: false
+    }
+  },
+  watch: {
+    name: function () {
+      if (this.name !== '' && this.email !== '' && this.company !== '') {
+        this.nextEnabled = true
+      } else {
+        this.nextEnabled = false
+      }
+    },
+    email: function () {
+      if (this.name !== '' && this.email !== '' && this.company !== '') {
+        this.nextEnabled = true
+      } else {
+        this.nextEnabled = false
+      }
+    },
+    company: function () {
+      if (this.name !== '' && this.email !== '' && this.company !== '') {
+        this.nextEnabled = true
+      } else {
+        this.nextEnabled = false
+      }
     }
   }
 }
@@ -73,5 +103,11 @@ export default {
     height: 3px;
     margin: 0 auto;
     margin-bottom: 18px;
+}
+#getAQuote .themesflat-button.disabled,
+#getAQuote .themesflat-button.disabled:hover,
+#getAQuote .themesflat-button.bg-accent.disabled:hover:before {
+    background-color: #E0E0E0 !important;
+    color: #111;
 }
 </style>
