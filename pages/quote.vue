@@ -112,7 +112,7 @@
                   v-model="profession"
                   type="radio"
                   name="profession"
-                  :value="profession"
+                  :value="prof"
                 >
                 <label :for="'profession' + index">{{ prof }}</label><br>
               </div>
@@ -128,7 +128,7 @@
                   v-model="type"
                   type="radio"
                   name="project"
-                  :value="project"
+                  :value="proj"
                 >
                 <label :for="'project' + index">{{ proj }}</label><br>
               </div>
@@ -253,40 +253,67 @@
                   v-model="DAApproval"
                   type="radio"
                   name="DA"
-                  :value="DAApproval"
+                  :value="DA"
+                  @change="checkIfNo('DAApproval')"
                 >
                 <label :for="'DAApproval' + index">{{ DA }}</label><br>
               </div>
+              <article v-if="noDAApprovalSelected === true" class="sub-quote-article">
+                <p>{{ quote.DAApproval.noDAApproval.title }}</p>
+                <div v-for="(noDA, index) in quote.DAApproval.noDAApproval.reasons" :key="index">
+                  <input
+                    :id="'noDAApproval' + index"
+                    v-model="noDAApproval"
+                    type="radio"
+                    name="noDA"
+                    :value="noDA"
+                  >
+                  <label :for="'noDAApproval' + index">{{ noDA }}</label>
+                </div>
+              </article>
             </article>
-
             <h3>
               {{ quote.architecturalPlan.title }}
             </h3>
             <article class="with-border">
               <div>
                 <input
-                  id="'architectural0'"
+                  id="architectural0"
                   v-model="type"
                   type="radio"
                   name="architectural"
                   :value="quote.architecturalPlan.plans[0]"
-                  @change="checkIfNo(architecturalPlans)"
+                  @change="checkIfNo('architectural')"
                 >
                 <label for="architectural0">{{ quote.architecturalPlan.plans[0] }}</label><br>
               </div>
               <div >
                 <input
-                  id="'architectural1'"
-                  v-model="type"
+                  id="architectural1"
+                  v-model="architecturalPlans"
                   type="radio"
                   name="architectural"
-                  :value="quote.architecturalPlan.plans[1]"
                   data-toggle="modal"
                   data-target="sorry-modal"
-                  @change="checkIfNo(architecturalPlans)"
+                  :value="quote.architecturalPlan.plans[1]"
+                  @change="checkIfNo('architectural')"
                 >
-                <label for="architectural1">{{ quote.architecturalPlan.plans[1] }}</label><br>
+                <label for="architectural1" data-toggle="modal" data-arget="sorry-modal">{{ quote.architecturalPlan.plans[1] }}</label><br>
               </div>
+              <article v-if="architecturalPlansSelected" class="sub-article-dashed">
+                <h3>
+                  {{ quote.architecturalPlan.upload }}
+                </h3>
+                <input
+                  id="architecturalPlans"
+                  type="file"
+                  name="architecturalPlans"
+                >
+                <label for="architecturalPlans">
+              <i class="fa fa-upload" />
+              {{ quote.architecturalPlan.uploadButton }}
+            </label>
+              </article>
             </article>
             <h3>
               {{ quote.engineeringPlan.title }}
@@ -299,10 +326,24 @@
                   type="radio"
                   name="engineering"
                   :value="eng"
-                  @change="checkIfNo(engineeringPlans)"
+                  @change="checkIfNo('engineering')"
                 >
                 <label :for="'engineering' + index">{{ eng }}</label><br>
               </div>
+              <article v-if="engineeringPlansSelected" class="sub-article-dashed">
+                <h3>
+                  {{ quote.engineeringPlan.upload }}
+                </h3>
+                <input
+                  id="engineeringPlans"
+                  type="file"
+                  name="engineeringPlans"
+                >
+                <label for="engineeringPlans">
+              <i class="fa fa-upload" />
+              {{ quote.engineeringPlan.uploadButton }}
+            </label>
+              </article>
             </article>
             <!-- <h3>
               {{ quote.structuralPlan.title }}
@@ -440,7 +481,7 @@
       aria-labelledby="projectDetail"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-body">
               <div class="detail-gallery">
@@ -463,6 +504,7 @@
 import quote from '../content/quote.json'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import { constants } from 'crypto';
 
 export default {
   components: {
@@ -484,9 +526,12 @@ export default {
       detail: '',
       detailOther: '',
       DAApproval: '',
+      noDAApprovalSelected: false,
       noDAApproval: '',
       architecturalPlans: '',
+      architecturalPlansSelected: false,
       engineeringPlans: '',
+      engineeringPlansSelected: false,
       structuralPlans: '',
       quoteFor: '',
       startProject: ''
@@ -530,7 +575,30 @@ export default {
       }
     },
     checkIfNo: function(value) {
-
+      console.log('check if no ', value)
+      if (value === 'DAApproval') {
+        if (this.DAApproval === 'No') {
+          this.noDAApprovalSelected = true
+        } else {
+          this.noDAApprovalSelected = false
+        }
+      } else if (value === 'architectural') {
+        if (this.architecturalPlans === 'No') {
+          // document.getElementById('sorry-modal').modal('show')
+          $('#sorry-modal').modal('show')
+          this.architecturalPlansSelected = false
+          console.log(this.architecturalPlansSelected)
+        } else if (this.architecturalPlans === 'Yes') {
+          this.architecturalPlansSelected = true
+          console.log(this.architecturalPlansSelected)
+        }
+      } else if (value === 'engineering') {
+        if (this.engineeringPlans === 'Yes') {
+          this.engineeringPlansSelected = true
+        } else {
+          this.engineeringPlansSelected = false
+        }
+      }
     }
   }
 }
@@ -655,5 +723,46 @@ export default {
   #quote .with-border {
     border-bottom: 1px solid #e0e0e0;
     padding-bottom: 30px;
+  }
+  #quote .sub-quote-article {
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  #quote .sub-article-dashed {
+    border: 1px dashed #E0E0E0;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  #quote .sub-article-dashed h3 {
+    margin-top: 20px;
+  }
+  #architecturalPlans,
+  #engineeringPlans {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  #architecturalPlans + label,
+  #engineeringPlans + label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    background-color: transparent;
+    border: 1px solid #E5E5E5;
+    display: inline-block;
+    cursor: pointer;
+    padding: 8px;
+    margin-top: 10px;
+  }
+  #architecturalPlans:focus + label,
+  #architecturalPlans + label:hover,
+  #engineeringPlans:focus + label,
+  #engineeringPlans + label:hover {
+    background-color: #FED00E;
+    color: #FFF;
   }
 </style>
