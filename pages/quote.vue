@@ -26,14 +26,14 @@
           />
           <div class="sep has-width w80 accent-bg clearfix" />
           <div class="progress-bar-wrapper bg-white-column row">
-            <div class="invisible page-navigation" @click="previousPage()"><i class="fa fa-chevron-left"></i> {{ quote.back }}</div>
+            <div class="invisible page-navigation disabled" role="button" aria-disabled="true" @click="previousPage()"><i class="fa fa-chevron-left"></i> {{ quote.back }}</div>
             <div class="progress-wrapper">
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" />
               </div>
               <div>Page {{ currentPage }} of {{ totalPages }}</div>
             </div>
-            <div class="page-navigation" @click="nextPage()">{{ quote.next }} <i class="fa fa-chevron-right"></div>
+            <div class="page-navigation disabled" role="button" aria-disabled="true" @click="nextPage(2)" v-bind:class="{'yellow': page2enabled === true}">{{ quote.next }} <i class="fa fa-chevron-right"></div>
           </div>
           <div class="row bg-white-column">
             <div class="themesflat-headings style-2 clearfix col-12">
@@ -47,7 +47,7 @@
               </div>
             </div>
             <div class="elm-button">
-              <a href="#" @click="nextPage()" class="themesflat-button bg-accent">{{ quote.nextButton }}</a>
+              <a @click="nextPage(2)" class="themesflat-button bg-accent" role="button" v-bind:class="{'disabled': page2enabled === false}" aria-disabled="true">{{ quote.nextButton }}</a>
             </div>
             <div
             class="themesflat-spacer clearfix"
@@ -91,14 +91,14 @@
           />
           <div class="sep has-width w80 accent-bg clearfix" />
           <div class="progress-bar-wrapper bg-white-column row">
-            <div class="page-navigation" @click="previousPage()"><i class="fa fa-chevron-left"></i> {{ quote.back }}</div>
+            <div class="page-navigation disabled" role="button" aria-disabled="true" @click="previousPage()"><i class="fa fa-chevron-left"></i> {{ quote.back }}</div>
             <div class="progress-wrapper">
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" />
               </div>
               <div>Page {{ currentPage }} of {{ totalPages }}</div>
             </div>
-            <div class="page-navigation" @click="nextPage()">{{ quote.next }} <i class="fa fa-chevron-right"></div>
+            <div class="page-navigation disabled" role="button" aria-disabled="true" @click="nextPage(3)" v-bind:class="{'yellow': page3enabled === true}">{{ quote.next }} <i class="fa fa-chevron-right"></div>
           </div>
 
           <article class="bg-white-column questionnaire">
@@ -194,7 +194,7 @@
             data-smobile="60"
           />
           <div class="elm-button">
-            <a href="#" @click="nextPage()" class="themesflat-button bg-accent">{{ quote.nextButton }}</a>
+            <a @click="nextPage(3)" class="themesflat-button bg-accent" role="button" aria-disabled="true" v-bind:class="{'disabled': page3enabled === false}">{{ quote.nextButton }}</a>
           </div>
           </article>
           <div
@@ -240,7 +240,7 @@
               </div>
               <div>Page {{ currentPage }} of {{ totalPages }}</div>
             </div>
-            <div class="page-navigation" @click="nextPage()">{{ quote.next }} <i class="fa fa-chevron-right"></div>
+            <div class="page-navigation" @click="nextPage(4)" v-bind:class="{'yellow': page4enabled === true}">{{ quote.next }} <i class="fa fa-chevron-right"></div>
           </div>
           <article class="bg-white-column questionnaire">
             <h3>
@@ -279,7 +279,7 @@
               <div>
                 <input
                   id="architectural0"
-                  v-model="type"
+                  v-model="architecturalPlans"
                   type="radio"
                   name="architectural"
                   :value="quote.architecturalPlan.plans[0]"
@@ -345,7 +345,7 @@
             </label>
               </article>
             </article>
-            <!-- <h3>
+            <h3>
               {{ quote.structuralPlan.title }}
             </h3>
             <article>
@@ -356,11 +356,10 @@
                 type="radio"
                 name="structural"
                 :value="struct"
-                @change="checkIfNo(structuralPlans)"
               >
               <label :for="'structural' + index">{{ struct }}</label><br>
-            </div> -->
-          <!-- </article> -->
+            </div>
+          </article>
             <div
             class="themesflat-spacer clearfix"
             data-desktop="73"
@@ -368,7 +367,7 @@
             data-smobile="60"
           />
           <div class="elm-button">
-            <a href="#" @click="nextPage()" class="themesflat-button bg-accent">{{ quote.nextButton }}</a>
+            <a @click="nextPage(4)" class="themesflat-button bg-accent" role="button" aria-disabled="true" v-bind:class="{'disabled': page4enabled === false}">{{ quote.nextButton }}</a>
           </div>
           </article>
           <div
@@ -407,14 +406,14 @@
           />
           <div class="sep has-width w80 accent-bg clearfix" />
           <div class="progress-bar-wrapper bg-white-column row">
-            <div class="page-navigation" @click="previousPage()"><i class="fa fa-chevron-left"></i> {{ quote.back }}</div>
+            <div class="page-navigation  disabled" role="button" aria-disabled="true" @click="previousPage()"><i class="fa fa-chevron-left"></i> {{ quote.back }}</div>
             <div class="progress-wrapper">
               <div class="progress">
                 <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" />
               </div>
               <div>Page {{ currentPage }} of {{ totalPages }}</div>
             </div>
-            <div class="page-navigation invisible" @click="nextPage()">{{ quote.next }} <i class="fa fa-chevron-right"></div>
+            <div class="page-navigation invisible disabled" role="button" aria-disabled="true" @click="nextPage()">{{ quote.next }} <i class="fa fa-chevron-right"></div>
           </div>
           <article class="bg-white-column questionnaire">
             <h3>
@@ -460,7 +459,7 @@
             <textarea id="quoteMessage" name="message" cols="40" rows="4" />
           </article>
           <div class="elm-button">
-            <a href="#" @click="nextPage()" class="themesflat-button bg-accent">{{ quote.submitButton }}</a>
+            <a @click="nextPage('submit')" class="themesflat-button bg-accent" role="button" v-bind:class="{'disabled': submitEnabled === false}">{{ quote.submitButton }}</a>
           </div>
           </article>
           <div
@@ -534,7 +533,11 @@ export default {
       engineeringPlansSelected: false,
       structuralPlans: '',
       quoteFor: '',
-      startProject: ''
+      startProject: '',
+      page2enabled: false,
+      page3enabled: false,
+      page4enabled: false,
+      submitEnabled: false
     }
   },
   methods: {
@@ -547,19 +550,36 @@ export default {
         document.getElementById(thisType).classList.remove('projectSelected')
         document.getElementById(thisType).classList.add('projectDeselected')
         document.getElementById(thisTick).classList.add('invisible')
+        this.page2enabled = false
       }
       if (this.projectType === project.type) {
         this.projectType = ''
       } else {
         this.projectType = project.type
+        document.getElementById(tick).classList.remove('invisible')
         document.getElementById(type).classList.remove('projectDeselected')
         document.getElementById(type).classList.add('projectSelected')
-        document.getElementById(tick).classList.remove('invisible')
+        this.page2enabled = true
       }
     },
-    nextPage: function() {
+    nextPage: function(value) {
       if (this.currentPage < this.totalPages) {
-        this.currentPage++
+        if (value === 2) {
+          if (this.projectType !== '') {
+            this.currentPage++
+          }
+        } else if (value === 3) {
+          if (this.profession !== '' && this.type !== '' && this.detail !== '') {
+            this.currentPage++
+          }
+        } else if (value === 4) {
+          if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+            this.currentPage++
+          }
+        } else if (value === 'submit') {
+          if (this.quoteFor !== '' && this.startProject !== '') {
+          }
+        }
       }
     },
     previousPage: function() {
@@ -575,7 +595,6 @@ export default {
       }
     },
     checkIfNo: function(value) {
-      console.log('check if no ', value)
       if (value === 'DAApproval') {
         if (this.DAApproval === 'No') {
           this.noDAApprovalSelected = true
@@ -584,13 +603,10 @@ export default {
         }
       } else if (value === 'architectural') {
         if (this.architecturalPlans === 'No') {
-          // document.getElementById('sorry-modal').modal('show')
           $('#sorry-modal').modal('show')
           this.architecturalPlansSelected = false
-          console.log(this.architecturalPlansSelected)
-        } else if (this.architecturalPlans === 'Yes') {
+        } else {
           this.architecturalPlansSelected = true
-          console.log(this.architecturalPlansSelected)
         }
       } else if (value === 'engineering') {
         if (this.engineeringPlans === 'Yes') {
@@ -598,6 +614,78 @@ export default {
         } else {
           this.engineeringPlansSelected = false
         }
+      }
+    }
+  },
+  watch: {
+    // projectType: function() {
+    //   if (this.projectType !== '') {
+    //     this.page2enabled = true
+    //   } else {
+    //     this.page2enabled = false
+    //   }
+    // },
+    profession: function() {
+      if (this.profession !== '' && this.type !== '' && this.detail !== '') {
+        this.page3enabled = true
+      } else {
+        this.page3enabled = false
+      }
+    },
+    type: function() {
+      if (this.profession !== '' && this.type !== '' && this.detail !== '') {
+        this.page3enabled = true
+      } else {
+        this.page3enabled = false
+      }
+    },
+    detail: function() {
+      if (this.profession !== '' && this.type !== '' && this.detail !== '') {
+        this.page3enabled = true
+      } else {
+        this.page3enabled = false
+      }
+    },
+    DAApproval: function() {
+      if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+        this.page4enabled = true
+      } else {
+        this.page4enabled = false
+      }
+    },
+    architecturalPlans: function() {
+      if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+        this.page4enabled = true
+      } else {
+        this.page4enabled = false
+      }
+    },
+    engineeringPlans: function() {
+      if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+        this.page4enabled = true
+      } else {
+        this.page4enabled = false
+      }
+    },
+    structuralPlans: function() {
+      if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+        this.page4enabled = true
+      } else {
+        this.page4enabled = false
+      }
+    },
+    quoteFor: function() {
+      if (this.quoteFor !== '' && this.startProject !== '') {
+        this.submitEnabled = true
+      } else {
+        this.submitEnabled = false
+      }
+    },
+    startProject: function() {
+      if (this.quoteFor !== '' && this.startProject !== '') {
+        this.submitEnabled = true
+      } else {
+        this.submitEnabled = false
       }
     }
   }
@@ -656,7 +744,8 @@ export default {
   height: 50px;
   text-align: center;
   margin-top: 70px;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
+  color: #FFF;
 }
 #quote .sep {
   margin: 0 auto;
@@ -756,5 +845,14 @@ export default {
   #engineeringPlans + label:hover {
     background-color: #FED00E;
     color: #FFF;
+  }
+  #quote .themesflat-button.disabled,
+  #quote .themesflat-button.disabled:hover,
+  #quote .themesflat-button.bg-accent.disabled:hover:before {
+    background-color: #E0E0E0 !important;
+    color: #111;
+  }
+  #quote .yellow {
+    color: #FED00E;
   }
 </style>

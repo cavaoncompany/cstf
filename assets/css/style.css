@@ -1017,6 +1017,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #quote .questionnaire { padding: 2% 15%; }
 
   #quote .themesflat-button { width: 270px; }
+
+  #quote #sorry-modal .modal-body { padding: 40px 152px; text-align: center; }
 }
 
 @media only screen and (max-width: 1199px) {
@@ -1055,6 +1057,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #quote .questionnaire { padding: 2% 15%; }
 
   #quote .themesflat-button { width: 270px; }
+
+  #quote #sorry-modal .modal-body { padding: 40px 152px; text-align: center; }
 }
 
 @media only screen and (max-width: 991px) {
