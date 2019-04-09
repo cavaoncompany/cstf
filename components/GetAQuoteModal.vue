@@ -10,26 +10,32 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-body">
-          <form id="getAQuoteForm">
-            <h1>{{ getaquote.title }}</h1>
-            <div class="sep has-width w80 accent-bg clearfix" />
-            <p>{{ getaquote.intro }}</p>
-            <div class="form-group">
-              <label for="quote-name" class="hide-element">{{ getaquote.namePlaceholder }}</label>
-              <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name">
-            </div>
-            <div class="form-group">
-              <label for="quote-email" class="hide-element">{{ getaquote.emailPlaceholder }}</label>
-              <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email">
-            </div>
-            <div class="form-group">
-              <label for="quote-company" class="hide-element">{{ getaquote.companyPlaceholder }}</label>
-              <input id="quote-company" type="text" name="company" :placeholder="getaquote.companyPlaceholder" v-model="company">
-            </div>
-            <div class="elm-button">
-            <a :href="$router.resolve({name:'quote', params:{name: name, email: email, company: company}}).href" v-bind:class="{'disabled': nextEnabled === false}" class="themesflat-button bg-accent">{{ getaquote.nextButton }}</a>
-            </div>
-          </form>
+          <h1>{{ getaquote.title }}</h1>
+          <div class="sep has-width w80 accent-bg clearfix" />
+          <p>{{ getaquote.intro }}</p>
+          <div class="form-group">
+            <label for="quote-name" class="hide-element">{{ getaquote.namePlaceholder }}</label>
+            <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name">
+          </div>
+          <div class="form-group">
+            <label for="quote-email" class="hide-element">{{ getaquote.emailPlaceholder }}</label>
+            <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email">
+          </div>
+          <div class="form-group">
+            <label for="quote-company" class="hide-element">{{ getaquote.companyPlaceholder }}</label>
+            <input id="quote-company" type="text" name="company" :placeholder="getaquote.companyPlaceholder" v-model="company">
+          </div>
+          <div class="elm-button">
+          <input
+            id="submitDetails"
+            type="submit"
+            :value="getaquote.nextButton"
+            disabled
+            v-bind:class="{'disabled': nextEnabled === false}"
+            class="themesflat-button bg-accent"
+            @click="openQuoteForm()"
+          >
+          </div>
         </div>
       </div>
     </div>
@@ -53,6 +59,7 @@ export default {
     name: function () {
       if (this.name !== '' && this.email !== '' && this.company !== '') {
         this.nextEnabled = true
+        this.enableButton()
       } else {
         this.nextEnabled = false
       }
@@ -60,6 +67,7 @@ export default {
     email: function () {
       if (this.name !== '' && this.email !== '' && this.company !== '') {
         this.nextEnabled = true
+        this.enableButton()
       } else {
         this.nextEnabled = false
       }
@@ -67,9 +75,28 @@ export default {
     company: function () {
       if (this.name !== '' && this.email !== '' && this.company !== '') {
         this.nextEnabled = true
+        this.enableButton()
       } else {
         this.nextEnabled = false
       }
+    }
+  },
+  methods: {
+    openQuoteForm: function() {
+      if (this.nextEnabled) {
+        this.$router.push({
+          name: 'quote',
+          params: {
+            name: this.name,
+            email: this.email,
+            company: this.company
+          }
+      })
+      $('.modal-backdrop').remove()
+      }
+    },
+    enableButton: function() {
+      document.getElementById('submitDetails').disabled = false
     }
   }
 }
