@@ -616,9 +616,6 @@ export default {
 }
 #quote .project-type {
   text-align: center;
-  margin: 50px;
-  padding-top: 100px;
-  padding-bottom: 80px;
   position: relative;
 }
 #quote .row {
@@ -657,7 +654,6 @@ export default {
 }
 #quote .themesflat-button {
   height: 50px;
-  width: 270px;
   text-align: center;
   margin-top: 70px;
   margin-bottom: 50px; 
@@ -679,7 +675,6 @@ export default {
 #quote .progress-wrapper {
   display: flex;
   justify-content: center;
-  width: 35%;
 }
 #quote .progress-bar {
   background-color: #FED00E;
@@ -713,9 +708,6 @@ export default {
   input[type='radio']:checked + label:before {
     /* background-image: url('/img/tick.png'); */
     background-color: #FED00E;
-  }
-  #quote .questionnaire {
-    padding: 2% 15%;
   }
   #quote .questionnaire h3 {
     text-align: left;

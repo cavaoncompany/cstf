@@ -1009,6 +1009,14 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .menu-item-tel-mobile { display: none }
 
   #why-steel .outer-wrapper { margin-left: 15px; padding-right: 81px; padding-top: 20px; padding-bottom: 20px; }
+
+  #quote .project-type { margin: 50px; padding-top: 100px; padding-bottom: 80px; }
+
+  #quote .progress-wrapper { flex-direction: row; }
+
+  #quote .questionnaire { padding: 2% 15%; }
+
+  #quote .themesflat-button { width: 270px; }
 }
 
 @media only screen and (max-width: 1199px) {
@@ -1039,6 +1047,14 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .menu-item-tel-mobile { display: none }
 
   #why-steel .outer-wrapper { margin-left: 15px; padding-right: 81px; padding-top: 20px; padding-bottom: 20px; }
+
+  #quote .project-type { margin: 50px; padding-top: 100px; padding-bottom: 80px; }
+
+  #quote .progress-wrapper { flex-direction: row; width: 35%; }
+
+  #quote .questionnaire { padding: 2% 15%; }
+
+  #quote .themesflat-button { width: 270px; }
 }
 
 @media only screen and (max-width: 991px) {
@@ -1134,6 +1150,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .menu-item-last { display: none; }
 
   .menu-item-tel-mobile { display: block; border: 1px solid #FED00E; width: 130px; margin-left: 50%; margin-top: 19px; padding: 5px 0; text-align: center; }
+
+  #quote .project-type { margin: 35px; padding: 50px 20px 40px 20px; }
 }
 
 @media only screen and (max-width: 479px) {
@@ -1185,6 +1203,14 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #projects .owl-thumb-item {width: 33% }
 
   #why-steel .outer-wrapper { margin-left: 0; padding-right: 0; padding-top: 20px; padding-bottom: 20px; }
+
+  #quote .project-type { margin: 35px; padding: 30px 10px 10px 10px; }
+
+  #quote .progress-wrapper { flex-direction: column; width: 50%; }
+
+  #quote .questionnaire { padding: 2% 5%; }
+
+  #quote .themesflat-button { width: 100%; }
 }
 
 @media only screen and (max-width: 359px) {
