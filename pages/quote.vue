@@ -489,7 +489,15 @@
             <textarea id="quoteMessage" name="message" cols="40" rows="4" />
           </article>
           <div class="elm-button">
-            <a @click="nextPage('submit')" class="themesflat-button bg-accent" role="button" v-bind:class="{'disabled': submitEnabled === false}">{{ quote.submitButton }}</a>
+            <input
+              id="quote-submit"
+              type="submit"
+              :value="quote.submitButton"
+              class="themesflat-button bg-accent"
+              name="submit"
+              disabled
+              v-bind:class="{'disabled': submitEnabled === false}"
+            >
           </div>
           </article>
           <div
@@ -740,6 +748,7 @@ export default {
     quoteFor: function() {
       if (this.quoteFor !== '' && this.startProject !== '') {
         this.submitEnabled = true
+        this.removeDisabled('quote-submit')
       } else {
         this.submitEnabled = false
       }
@@ -747,6 +756,7 @@ export default {
     startProject: function() {
       if (this.quoteFor !== '' && this.startProject !== '') {
         this.submitEnabled = true
+        this.removeDisabled('quote-submit')
       } else {
         this.submitEnabled = false
       }
