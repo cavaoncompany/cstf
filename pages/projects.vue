@@ -106,7 +106,7 @@
       v-for="(project, index) in projects.projects"
       :id="'project-detail-' + index"
       :key="index"
-      class="modal fade"
+      class="modal"
       tabindex="-1"
       role="dialog"
       aria-labelledby="projectDetail"
@@ -115,28 +115,32 @@
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-body">
-            <div class="detail-gallery">
-              <div class="themesflat-spacer clearfix" data-desktop="21" data-mobile="21" data-smobile="21" />
-              <div
-                class="themesflat-gallery style-2 has-arrows arrow-center arrow-circle offset-v-82 has-thumb w185 clearfix"
-                data-gap="0"
-                data-column="1"
-                data-column2="1"
-                data-column3="1"
-                data-auto="false"
-              >
-                <div class="owl-carousel owl-theme">
-                  <div v-for="(image, i) in project.otherImages" :key="i" class="gallery-item">
-                    <div class="inner">
-                      <div class="thumb">
-                        <img :src="image" :alt="project.name">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- /.themesflat-cousel-box -->
+            <div class="row">
+        <!--Carousel Wrapper-->
+    <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-interval="false" data-ride="carousel">
+      <!--Slides-->
+      <div class="carousel-inner" role="listbox">
+        <div v-for="(image, i) in project.otherImages" :key="i" class="carousel-item" v-bind:class="{'active': i === 0 }">
+          <img class="d-block w-100" :src="image" :alt="project.name">
+        </div>
+      </div>
+      <!--/.Slides-->
+      <!--Controls-->
+      <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      <!--/.Controls-->
+      <ol class="carousel-indicators">
+        <li v-for="(image, i) in project.otherImages" :key="i" data-target="#carousel-thumb" :data-slide-to="i" v-bind:class="{'active': i === 0 }"> <img class="d-block w-100 img-fluid" :src="image"></li>
+      </ol>
+    </div>
+    <!--/.Carousel Wrapper-->
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -180,5 +184,26 @@ export default {
 }
 #projects .owl-next {
   margin-right: -65px;
+}
+#projects .carousel-indicators {
+  bottom: -22px;
+}
+#projects .carousel-indicators li {
+  max-width: 27.5%;
+}
+#projects .carousel-control-prev-icon {
+  background-image: url('/img/left.png');
+  margin-left: -160px;
+  height: 30px;
+  width: 30px;
+}
+#projects .carousel-control-next-icon {
+  background-image: url('/img/right.png');
+  margin-right: -160px;
+  height: 30px;
+  width: 30px;
+}
+.carousel-indicators .active {
+  background-color: #FED00E;
 }
 </style>

@@ -697,6 +697,9 @@ export default {
         this.page4enabled = true
       } else if (this.architecturalPlans === 'Yes') {
         this.page4enabled = false
+        for (let i = 0; i < this.quote.engineeringPlan.plans.length; i++) {
+          
+        }
         this.engineeringPlansEnabled = true
       } else {
         this.page4enabled = false
