@@ -188,9 +188,6 @@ export default {
 #projects .carousel-indicators {
   bottom: -22px;
 }
-#projects .carousel-indicators li {
-  max-width: 27.5%;
-}
 #projects .carousel-control-prev-icon {
   background-image: url('/img/left.png');
   margin-left: -160px;
@@ -203,7 +200,11 @@ export default {
   height: 30px;
   width: 30px;
 }
-.carousel-indicators .active {
+#projects .carousel-indicators .active {
   background-color: #FED00E;
+}
+
+#projects .carousel-item img {
+  height: 100%;
 }
 </style>
