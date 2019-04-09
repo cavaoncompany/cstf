@@ -338,10 +338,10 @@
             </label>
               </article>
             </article>
-            <h3>
+            <h3 v-bind:class="{'greyed-out': engineeringPlansEnabled === false}">
               {{ quote.engineeringPlan.title }}
             </h3>
-            <article class="with-border">
+            <article class="with-border" v-bind:class="{'greyed-out': engineeringPlansEnabled === false}">
               <div v-for="(eng, index) in quote.engineeringPlan.plans" :key="index">
                 <input
                   :id="'engineering' + index"
@@ -350,6 +350,7 @@
                   name="engineering"
                   :value="eng"
                   @change="checkIfNo('engineering')"
+                  disabled
                 >
                 <label :for="'engineering' + index">{{ eng }}</label><br>
               </div>
@@ -373,10 +374,10 @@
             </label>
               </article>
             </article>
-            <h3>
+            <h3 v-bind:class="{'greyed-out': structuralPlansEnabled === false}">
               {{ quote.structuralPlan.title }}
             </h3>
-            <article>
+            <article v-bind:class="{'greyed-out': structuralPlansEnabled === false}">
             <div v-for="(struct, index) in quote.structuralPlan.plans" :key="index">
               <input
                 :id="'structural' + index"
@@ -384,6 +385,7 @@
                 type="radio"
                 name="structural"
                 :value="struct"
+                disabled
               >
               <label :for="'structural' + index">{{ struct }}</label><br>
             </div>
@@ -562,7 +564,9 @@ export default {
       engineeringPlans: '',
       engineeringPlan: '',
       engineeringPlansSelected: false,
+      engineeringPlansEnabled: false,
       structuralPlans: '',
+      structuralPlansEnabled: false,
       quoteFor: '',
       startProject: '',
       page2enabled: false,
@@ -691,6 +695,9 @@ export default {
     architecturalPlans: function() {
       if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
+      } else if (this.architecturalPlans === 'Yes') {
+        this.page4enabled = false
+        this.engineeringPlansEnabled = true
       } else {
         this.page4enabled = false
       }
@@ -893,5 +900,8 @@ export default {
   }
   #quote .uploaded-files img {
     height: 25px;
+  }
+  #quote .greyed-out {
+    color: #E0E0E0;
   }
 </style>
