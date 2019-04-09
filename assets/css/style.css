@@ -1012,7 +1012,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   #quote .project-type { margin: 50px; padding-top: 100px; padding-bottom: 80px; }
 
-  #quote .progress-wrapper { flex-direction: row; }
+  #quote .progress-wrapper { flex-direction: row; width: 35%; }
 
   #quote .questionnaire { padding: 2% 15%; }
 
