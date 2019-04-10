@@ -666,6 +666,7 @@ export default {
       const file = e.target.files[0]
       if (area === 'architecture'){
         this.architecturalPlan = file.name
+        console.log(this.architecturalPlan)
       } else if ( area === 'engineering') {
         this.engineeringPlan = file.name
       }
@@ -676,37 +677,54 @@ export default {
   },
   watch: {
     profession: function() {
-      if (this.profession !== '' && this.type !== '' && this.detail !== '') {
+      if (this.profession !== '' && this.type !== '' && this.detail === 'other' && this.detailOther !== ''){
+        this.page3enabled = true
+      } else if (this.profession !== '' && this.type !== '' && this.detail !== 'other' && this.detail !== '') {
         this.page3enabled = true
       } else {
         this.page3enabled = false
       }
     },
     type: function() {
-      if (this.profession !== '' && this.type !== '' && this.detail !== '') {
+      if (this.profession !== '' && this.type !== '' && this.detail.toLowerCase() === 'other' && this.detailOther !== ''){
+        this.page3enabled = true
+      } else if (this.profession !== '' && this.type !== '' && this.detail !== 'other' && this.detail !== '') {
         this.page3enabled = true
       } else {
         this.page3enabled = false
       }
     },
     detail: function() {
-      if (this.profession !== '' && this.type !== '' && this.detail !== '') {
+      if (this.profession !== '' && this.type !== '' && this.detail.toLowerCase() === 'other' && this.detailOther !== ''){
+        this.page3enabled = true
+      } else if (this.profession !== '' && this.type !== '' && this.detail.toLowerCase() !== 'other' && this.detail !== '') {
+        this.page3enabled = true
+      } else {
+        this.page3enabled = false
+      }
+    },
+    detailOther: function() {
+      if (this.profession !== '' && this.type !== '' && this.detail.toLowerCase() === 'other' && this.detailOther !== ''){
+        this.page3enabled = true
+      } else if (this.profession !== '' && this.type !== '' && this.detail.toLowerCase() !== 'other' && this.detail !== '') {
         this.page3enabled = true
       } else {
         this.page3enabled = false
       }
     },
     DAApproval: function() {
-      if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans === 'No') {
+      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== '' && this.architecturalPlans !== 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else {
         this.page4enabled = false
       }
     },
     architecturalPlans: function() {
-      if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else if (this.architecturalPlans === 'Yes') {
         this.page4enabled = false
@@ -714,14 +732,25 @@ export default {
           this.removeDisabled('engineering' + i)
         }
         this.engineeringPlansEnabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans === 'No') {
+      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else {
+        this.page4enabled = false
+      }
+    },
+    architecturalPlan: function() {
+      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== '' && this.architecturalPlans !== 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else {
         this.page4enabled = false
       }
     },
     engineeringPlans: function() {
-      if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else if (this.engineeringPlans === 'Yes') {
         this.page4enabled = false
@@ -729,17 +758,32 @@ export default {
           this.removeDisabled('structural' + i)
         }
         this.structuralPlansEnabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans === 'No') {
+      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else {
         this.page4enabled = false
         this.structuralPlansEnabled = false
       }
     },
-    structuralPlans: function() {
-      if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+    engineeringPlan: function() {
+      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans === 'No') {
+      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== '' && this.architecturalPlans !== 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+        this.page4enabled = true
+      } else {
+        this.page4enabled = false
+      }
+    },
+    structuralPlans: function() {
+      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else {
         this.page4enabled = false
