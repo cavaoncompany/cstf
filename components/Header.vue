@@ -67,7 +67,7 @@
                 </ul>-->
               </li>
               <li v-bind:class="{'current-menu-item': currentItem === 'ABOUT'}" class="menu-item menu-item-has-children">
-                <a href="/#about" @mouseenter="showSubMenu('about-submenu')">ABOUT</a>
+                <a @mouseenter="showSubMenu('about-submenu')">ABOUT</a>
                 <ul id="about-submenu" class="sub-menu">
                   <li class="menu-item">
                     <a href="/why-steel">WHY STEEL</a>
