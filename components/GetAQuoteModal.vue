@@ -15,15 +15,15 @@
           <p>{{ getaquote.intro }}</p>
           <div class="form-group">
             <label for="quote-name" class="hide-element">{{ getaquote.namePlaceholder }}</label>
-            <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name">
+            <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name" required>
           </div>
           <div class="form-group">
             <label for="quote-email" class="hide-element">{{ getaquote.emailPlaceholder }}</label>
-            <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email">
+            <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email" required>
           </div>
           <div class="form-group">
             <label for="quote-company" class="hide-element">{{ getaquote.companyPlaceholder }}</label>
-            <input id="quote-company" type="text" name="company" :placeholder="getaquote.companyPlaceholder" v-model="company">
+            <input id="quote-company" type="text" name="company" :placeholder="getaquote.companyPlaceholder" v-model="company" required>
           </div>
           <div class="elm-button">
           <input

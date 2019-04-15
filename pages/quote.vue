@@ -521,6 +521,9 @@
     >
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
           <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
             <div class="modal-body">
               <div class="detail-gallery">
                 <div class="themesflat-spacer clearfix" data-desktop="21" data-mobile="21" data-smobile="21" />
@@ -978,5 +981,12 @@ export default {
   }
   #quote .greyed-out {
     color: #E0E0E0;
+  }
+  #sorry-modal .modal-header {
+    border: none;
+  }
+  #sorry-modal .close {
+    margin-left: auto;
+    overflow: hidden;
   }
 </style>
