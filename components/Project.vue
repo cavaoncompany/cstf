@@ -8,13 +8,6 @@
             <h2 class="heading text-white">
               {{ project.title }}
             </h2>
-            <!-- <div class="sep has-icon width-125 border-color-light clearfix">
-              <div class="sep-icon">
-                <span class="sep-icon-before sep-center sep-solid" />
-                <span class="icon-wrap"><i class="autora-icon-build" /></span>
-                <span class="sep-icon-after sep-center sep-solid" />
-              </div>
-            </div> -->
           </div>
           <div class="themesflat-spacer clearfix" data-desktop="30" data-mobile="35" data-smobile="35" />
           <div
@@ -35,15 +28,7 @@
                         <h5 class="heading">
                           <a href="#">{{ item.title }}</a>
                         </h5>
-                        <!-- <div class="elm-meta">
-                          <span><a href="#">{{ item.category }}</a></span>
-                          <span><a href="#">{{ item.additionalCategory }}</a></span>
-                        </div> -->
                       </div>
-                      <!-- <div class="elm-link">
-                        <a href="#" class="icon-1 icon-search" />
-                        <a href="#" class="icon-1" />
-                      </div> -->
                       <div class="overlay-effect bg-color-3" />
                     </div>
                   </div>

@@ -10,9 +10,9 @@
               <div id="inner-content" class="inner-content-wrap">
                 <div class="page-content">
                   <!-- SLIDER -->
-                  <!-- <Slider /> -->
+                  <!-- <BANNER /> -->
                   <Banner />
-                  <!-- END SLIDER -->
+                  <!-- END BANNER -->
                   <!-- ICONBOX -->
                   <HowItWorks />
                   <!-- END ICONBOX -->
@@ -34,12 +34,6 @@
                   <!-- QUOTE -->
                   <GetAQuote />
                   <!-- END QUOTE -->
-                  <!-- TABS -->
-                  <!-- <Tabs /> -->
-                  <!-- END TABS -->
-                  <!-- PARTNER -->
-                  <!-- <Partner /> -->
-                  <!-- END PARTNER -->
                 </div><!-- /.page-content -->
               </div><!-- /#inner-content -->
             </div><!-- /#site-content -->

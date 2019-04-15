@@ -8,13 +8,6 @@
             <h2 class="heading">
               {{ services.title }}
             </h2>
-            <!-- <div class="sep has-icon width-125 clearfix">
-              <div class="sep-icon">
-                <span class="sep-icon-before sep-center sep-solid" />
-                <span class="icon-wrap"><i class="autora-icon-build" /></span>
-                <span class="sep-icon-after sep-center sep-solid" />
-              </div>
-            </div> -->
             <p class="sub-heading">
               {{ services.intro }}
             </p>
@@ -45,32 +38,8 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="owl-carousel owl-theme">
-              <div v-for="(service, index) in services.services" :key="index" class="themesflat-image-box style-1 has-icon icon-right w65 clearfix">
-                <div class="image-box-item">
-                  <div class="inner">
-                    <div class="thumb data-effect-item">
-                      <img :src="service.img" :alt="service.title">
-                      <div class="overlay-effect bg-color-accent" />
-                    </div>
-                    <div class="text-wrap">
-                      <h5 class="heading">
-                        <a href="#">{{ service.title }}</a>
-                      </h5>
-                      <span class="icon-wrap">
-                        <i class="fa fa-angle-right" />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div> -->
-            <!-- /.themesflat-image-box -->
-            <!-- </div> -->
           </div><!-- /.themesflat-carousel-box -->
           <div class="themesflat-spacer clearfix" data-desktop="50" data-mobile="35" data-smobile="35" />
-          <!-- <div class="elm-button text-center">
-            <a href="#" class="themesflat-button bg-accent">ALL SERVICES</a>
-          </div> -->
           <div class="themesflat-spacer clearfix" data-desktop="73" data-mobile="60" data-smobile="60" />
         </div><!-- /.col-md-12 -->
       </div><!-- /.row -->

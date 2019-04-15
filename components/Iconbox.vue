@@ -8,13 +8,6 @@
             <h2 class="heading font-size-30">
               {{ icons.title }}
             </h2>
-            <!-- <div class="sep has-icon width-125 clearfix">
-              <div class="sep-icon">
-                <span class="sep-icon-before sep-center sep-solid" />
-                <span class="icon-wrap"><i class="autora-icon-build" /></span>
-                <span class="sep-icon-after sep-center sep-solid" />
-              </div>
-            </div> -->
           </div>
           <!-- <div class="themesflat-spacer clearfix" data-desktop="57" data-mobile="35" data-smobile="35" /> -->
         </div><!-- /.col-md-12 -->
