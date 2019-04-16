@@ -262,7 +262,7 @@
                 <label :for="'DAApproval' + index">{{ DA }}</label><br>
               </div>
               <article v-if="noDAApprovalSelected === true" class="sub-quote-article">
-                <p>{{ quote.DAApproval.noDAApproval.title }}</p>
+                <p>{{ quote.noDAApproval.title }}</p>
                 <div v-for="(noDA, index) in quote.noDAApproval.reasons" :key="index">
                   <input
                     :id="'noDAApproval' + index"
@@ -314,6 +314,7 @@
                 <input
                   id="architecturalPlans"
                   type="file"
+                  ref="architecturalfile"
                   name="architecturalPlans"
                   @change="showUploadedFile($event, 'architecture')"
                   multiple
@@ -351,6 +352,7 @@
                 <input
                   id="engineeringPlans"
                   type="file"
+                  ref="engineeringfile"
                   name="engineeringPlans"
                   @change="showUploadedFile($event, 'engineering')"
                 >
@@ -660,12 +662,13 @@ export default {
     },
     showUploadedFile: function(e, area) {
       const file = e.target.files[0]
-      this.files.push(file)
       if (area === 'architecture'){
         this.architecturalPlan = file.name
+        this.architecturalFile = this.$refs.architecturalfile.files[0]
         this.architecturalPlanPath = this.createFile(file)
       } else if ( area === 'engineering') {
         this.engineeringPlan = file.name
+        this.engineeringFile = this.$refs.engineeringfile.files[0]
         this.engineeringPlanPath = this.createFile(file)
       }
     },

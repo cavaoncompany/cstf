@@ -52,7 +52,7 @@ const sendMail = (emailInfo, emailProvider) => {
       from: emailInfo.email,
       // to: ''
       to: `${emailProvider.username}`,
-      subject: `${emailInfo.subject}`,
+      subject: 'New quote request form',
       html: `<h2>The following message has been received through the Contact us form on www.cavaon.com</h2>
       <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
       <p style="margin-bottom: 10px;"><b>Email:</b> ${emailInfo.email}</p>
