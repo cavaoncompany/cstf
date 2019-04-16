@@ -277,7 +277,7 @@
               </div>
               <article v-if="noDAApprovalSelected === true" class="sub-quote-article">
                 <p>{{ quote.DAApproval.noDAApproval.title }}</p>
-                <div v-for="(noDA, index) in quote.DAApproval.noDAApproval.reasons" :key="index">
+                <div v-for="(noDA, index) in quote.noDAApproval.reasons" :key="index">
                   <input
                     :id="'noDAApproval' + index"
                     v-model="noDAApproval"

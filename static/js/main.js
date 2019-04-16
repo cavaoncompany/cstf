@@ -12,21 +12,21 @@
     var themesflatTheme = {
 
         // Main init function
-        init : function() {
+        init: function() {
             this.config();
             this.events();
         },
 
         // Define vars for caching
-        config : function() {
+        config: function() {
             this.config = {
-                $window : $( window ),
-                $document : $( document ),
+                $window: $( window ),
+                $document: $( document ),
             };
         },
 
         // Events
-        events : function() {
+        events: function() {
             var self = this;
 
             // Run on document ready
@@ -216,7 +216,7 @@
 
                     $.ajax({
                         type: "POST",
-                        url:  $form.attr('action'),
+                        url: $form.attr('action'),
                         data: str,
                         beforeSend: function () {
                             $form.find('.form-submit').append(loading);
@@ -234,7 +234,7 @@
                             $form.prepend(
                                 $('<div />', {
                                     'class': 'flat-alert ' + cls,
-                                    'text' : result
+                                    'text': result
                                 }).append(
                                     $('<a class="close" href="#"><i class="fa fa-close"></i></a>')
                                 )
@@ -253,17 +253,17 @@
 
     var ajaxSubscribe = {
         obj: {
-            subscribeEmail    : $('#subscribe-email'),
-            subscribeButton   : $('#subscribe-button'),
-            subscribeMsg      : $('#subscribe-msg'),
-            subscribeContent  : $("#subscribe-content"),
-            dataMailchimp     : $('#subscribe-form').attr('data-mailchimp'),
-            success_message   : '<div class="notification_ok">Thank you for joining our mailing list! Please check your email for a confirmation link.</div>',
-            failure_message   : '<div class="notification_error">Error! <strong>There was a problem processing your submission.</strong></div>',
-            noticeError       : '<div class="notification_error">{msg}</div>',
-            noticeInfo        : '<div class="notification_error">{msg}</div>',
-            basicAction       : 'mail/subscribe.php',
-            mailChimpAction   : 'mail/subscribe-mailchimp.php'
+            subscribeEmail: $('#subscribe-email'),
+            subscribeButton: $('#subscribe-button'),
+            subscribeMsg: $('#subscribe-msg'),
+            subscribeContent: $("#subscribe-content"),
+            dataMailchimp: $('#subscribe-form').attr('data-mailchimp'),
+            success_message: '<div class="notification_ok">Thank you for joining our mailing list! Please check your email for a confirmation link.</div>',
+            failure_message: '<div class="notification_error">Error! <strong>There was a problem processing your submission.</strong></div>',
+            noticeError: '<div class="notification_error">{msg}</div>',
+            noticeInfo: '<div class="notification_error">{msg}</div>',
+            basicAction: 'mail/subscribe.php',
+            mailChimpAction: 'mail/subscribe-mailchimp.php'
         },
 
         eventLoad: function() {

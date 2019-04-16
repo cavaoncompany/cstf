@@ -69,14 +69,14 @@
         "approval": [
             "Yes",
             "No"
-        ],
-        "noDAApproval": {
-            "title": "I have not obtained DA approval or CDC for the project because",
-            "reasons": [
-                "It does not require approval",
-                "I have not obtained required approvals from related authority"
-            ]
-        }
+        ]
+    },
+    "noDAApproval": {
+        "title": "I have not obtained DA approval or CDC for the project because",
+        "reasons": [
+            "It does not require approval",
+            "I have not obtained required approvals from related authority"
+        ]
     },
     "architecturalPlan": {
         "title": "Do you have architectural plans for the project?",

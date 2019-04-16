@@ -44,7 +44,7 @@
                       />
                       <div class="themesflat-contact-form style-2 clearfix">
                         <form
-                          id="contactform"
+                          id="contactusform"
                           action="/success"
                           netlify-honeypot="bot-field"
                           name="contact-form"
