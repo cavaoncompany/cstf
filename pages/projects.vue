@@ -116,30 +116,30 @@
         <div class="modal-content">
           <div class="modal-body">
             <div class="row">
-        <!--Carousel Wrapper-->
-    <div id="carousel-thumb" class="carousel slide carousel-fade carousel-thumbnails" data-interval="false" data-ride="carousel">
-      <!--Slides-->
-      <div class="carousel-inner" role="listbox">
-        <div v-for="(image, i) in project.otherImages" :key="i" class="carousel-item" v-bind:class="{'active': i === 0 }">
-          <img class="d-block w-100" :src="image" :alt="project.name">
-        </div>
-      </div>
-      <!--/.Slides-->
-      <!--Controls-->
-      <a class="carousel-control-prev" href="#carousel-thumb" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel-thumb" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-      <!--/.Controls-->
-      <ol class="carousel-indicators">
-        <li v-for="(image, i) in project.otherImages" :key="i" data-target="#carousel-thumb" :data-slide-to="i" v-bind:class="{'active': i === 0 }"> <img class="d-block w-100 img-fluid" :src="image"></li>
-      </ol>
-    </div>
-    <!--/.Carousel Wrapper-->
+              <!--Carousel Wrapper-->
+              <div :id="'carousel-thumb'+index" class="carousel slide carousel-fade carousel-thumbnails" data-interval="false" data-ride="carousel">
+                <!--Slides-->
+                <div class="carousel-inner" role="listbox">
+                  <div v-for="(image, i) in project.otherImages" :key="i" class="carousel-item" v-bind:class="{'active': i === 0 }">
+                    <img class="d-block w-100" :src="image" :alt="project.name">
+                  </div>
+                </div>
+                <!--/.Slides-->
+                <!--Controls-->
+                <a class="carousel-control-prev" :href="'#carousel-thumb' + index" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" :href="'#carousel-thumb' + index" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+                <!--/.Controls-->
+                <ol class="carousel-indicators">
+                  <li v-for="(image, i) in project.otherImages" :key="i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" v-bind:class="{'active': i === 0 }"> <img class="d-block w-100 img-fluid" :src="image"></li>
+                </ol>
+              </div>
+              <!--/.Carousel Wrapper-->
             </div>
         </div>
       </div>

@@ -13,17 +13,23 @@
           <h1>{{ getaquote.title }}</h1>
           <div class="sep has-width w80 accent-bg clearfix" />
           <p>{{ getaquote.intro }}</p>
+          <p v-if="errors.length">
+            <b>Please correct the following error(s):</b>
+            <ul>
+              <li v-for="(error, i) in errors" :key="i">{{ error }}</li>
+            </ul>
+          </p>
           <div class="form-group">
             <label for="quote-name" class="hide-element">{{ getaquote.namePlaceholder }}</label>
-            <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name" required>
+            <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name">
           </div>
           <div class="form-group">
             <label for="quote-email" class="hide-element">{{ getaquote.emailPlaceholder }}</label>
-            <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email" required>
+            <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email">
           </div>
           <div class="form-group">
             <label for="quote-company" class="hide-element">{{ getaquote.companyPlaceholder }}</label>
-            <input id="quote-company" type="text" name="company" :placeholder="getaquote.companyPlaceholder" v-model="company" required>
+            <input id="quote-company" type="text" name="company" :placeholder="getaquote.companyPlaceholder" v-model="company">
           </div>
           <div class="elm-button">
           <input
@@ -52,7 +58,8 @@ export default {
       name: '',
       email: '',
       company: '',
-      nextEnabled: false
+      nextEnabled: false,
+      errors: []
     }
   },
   watch: {
