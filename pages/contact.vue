@@ -45,7 +45,7 @@
                       <div class="themesflat-contact-form style-2 clearfix">
                         <form
                           id="contactusform"
-                          @submit.prevent="sendEmail"
+                          @submit.prevent="onSubmit"
                           accept-charset="utf-8"
                           class="form-submit contact-form wpcf7-form"
                         >

@@ -5,22 +5,8 @@
       <div class="wrapper">
         <form
           id="quoteForm"
-          action="/success"
-          netlify-honeypot="bot-field"
-          name="get-a-quote"
-          method="post"
-          data-netlify="true"
+          @submit.prevent="onSubmit"
         >
-        <!-- NETLIFY SECTION -->
-        <section>
-          <input type="hidden" name="form-name" value="getAQuote">
-          <p class="hidden">
-            <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-          </p>
-          <input type="hidden" name="name" :value="name">
-          <input type="hidden" name="email" :value="email">
-          <input type="hidden" name="company" :value="company">
-        </section>
         <!-- SECTION 1 -->
         <section v-if="currentPage === 1" id="quote-page-1">
           <div
@@ -572,10 +558,14 @@ export default {
       architecturalPlans: '',
       architecturalPlansSelected: false,
       architecturalPlan: '',
+      architecturalPlanPath: '',
+      architecturalFile: '',
       engineeringPlans: '',
       engineeringPlan: '',
+      engineeringPlanPath: '',
       engineeringPlansSelected: false,
       engineeringPlansEnabled: false,
+      engineeringFile: {},
       structuralPlans: '',
       structuralPlansEnabled: false,
       quoteFor: '',
@@ -585,6 +575,9 @@ export default {
       page4enabled: false,
       submitEnabled: false
     }
+  },
+  async mounted() {
+    await this.$recaptcha.init()
   },
   methods: {
     addProjectType: function(project, e) {
@@ -667,15 +660,81 @@ export default {
     },
     showUploadedFile: function(e, area) {
       const file = e.target.files[0]
+      this.files.push(file)
       if (area === 'architecture'){
         this.architecturalPlan = file.name
-        console.log(this.architecturalPlan)
+        this.architecturalPlanPath = this.createFile(file)
       } else if ( area === 'engineering') {
         this.engineeringPlan = file.name
+        this.engineeringPlanPath = this.createFile(file)
+      }
+    },
+    createFile: function(file) {
+      const reader = new FileReader()
+      const vm = this
+
+      reader.onload = (e) => {
+        reader.readAsDataURL(file)
       }
     },
     removeDisabled: function(el) {
       document.getElementById(el).disabled = false
+    },
+    sendEmail: function() {
+      const emailData = {
+        email: this.email,
+        name: this.name,
+        company: this.company,
+        projectType: this.projectType,
+        profession: this.profession,
+        type: this.type,
+        detail: this.detail,
+        detailOther: this.detailOther,
+        DAApproval: this.DAApproval,
+        noDAApproval: this.noDAApproval,
+        architecturalPlans: this.architecturalPlans,
+        architecturalPlan: this.architecturalPlan,
+        architecturalPlanPath: this.architecturalPlanPath,
+        architecturalFile: this.architecturalFile,
+        engineeringPlans: this.engineeringPlans,
+        engineeringPlan: this.engineeringPlan,
+        engineeringPlanPath: this.engineeringPlanPath,
+        engineeringFile: this.engineeringFile,
+        structuralPlans: this.structuralPlans,
+        quoteFor: this.quoteFor,
+        startProject: this.startProject
+      }
+      this.$store.dispatch('getQuote', emailData)
+      this.email = ''
+      this.name = ''
+      this.company = ''
+      this.projectType = ''
+      this.profession = ''
+      this.type = ''
+      this.detail = ''
+      this.detailOther =''
+      this.DAApproval = ''
+      this.noDAApproval = ''
+      this.architecturalPlans = ''
+      this.architecturalPlan = ''
+      this.architecturalPlanPath = ''
+      this.architecturalFile = ''
+      this.engineeringPlans = ''
+      this.engineeringPlan = ''
+      this.engineeringPlanPath = ''
+      this.engineeringFile = {},
+      this.structuralPlans = ''
+      this.quoteFor = ''
+      this.startProject = ''
+      this.$router.replace({ path: 'success' })
+    },
+    async onSubmit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        this.sendEmail()
+      } catch (error) {
+        console.log('Submission error: ', error)
+      }
     }
   },
   watch: {

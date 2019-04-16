@@ -42,5 +42,9 @@ export const actions = {
   async contactUs({ state, commit }, payload) {
     const path = '/.netlify/functions/contact'
     await sendEmail({ state, commit }, payload, path)
+  },
+  async getQuote({ state, commit }, payload) {
+    const path = '/.netlify/functions/quote'
+    await sendEmail({ state, commit }, payload, path)
   }
 }
