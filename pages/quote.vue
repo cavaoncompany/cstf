@@ -684,6 +684,7 @@ export default {
       document.getElementById(el).disabled = false
     },
     sendEmail: function() {
+      console.log(this.architecturalFile)
       const emailData = {
         email: this.email,
         name: this.name,
@@ -778,18 +779,36 @@ export default {
       }
     },
     DAApproval: function() {
-      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
+      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
+      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
+      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans !== 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
         this.page4enabled = true
       } else {
         this.page4enabled = false
       }
     },
     architecturalPlans: function() {
-      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
+      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
+      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else if (this.architecturalPlans === 'Yes') {
         this.page4enabled = false
@@ -797,25 +816,45 @@ export default {
           this.removeDisabled('engineering' + i)
         }
         this.engineeringPlansEnabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+      } else if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
         this.page4enabled = true
       } else {
         this.page4enabled = false
       }
     },
     architecturalPlan: function() {
-      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
+      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
+      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
+      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans !== 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
         this.page4enabled = true
       } else {
         this.page4enabled = false
       }
     },
     engineeringPlans: function() {
-      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
+      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
+      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
+      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else if (this.engineeringPlans === 'Yes') {
         this.page4enabled = false
@@ -823,32 +862,53 @@ export default {
           this.removeDisabled('structural' + i)
         }
         this.structuralPlansEnabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '') {
         this.page4enabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+      } else if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
         this.page4enabled = true
       } else {
         this.page4enabled = false
-        this.structuralPlansEnabled = false
       }
     },
     engineeringPlan: function() {
-      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
+      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
+      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
+      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans !== 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
         this.page4enabled = true
       } else {
         this.page4enabled = false
       }
     },
     structuralPlans: function() {
-      if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
+      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
+      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
+      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
+      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
+      if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
-      } else if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
+        this.page4enabled = true
+      } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No') {
         this.page4enabled = true
       } else {
         this.page4enabled = false
