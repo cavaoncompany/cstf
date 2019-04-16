@@ -614,7 +614,7 @@ export default {
             this.currentPage++
           }
         } else if (value === 4) {
-          if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '' && this.structuralPlans !== '') {
+          if (this.DAApproval !== '' && this.architecturalPlans !== '' && this.engineeringPlans !== '') {
             this.currentPage++
           }
         } else if (value === 'submit') {
@@ -690,7 +690,6 @@ export default {
       document.getElementById(el).disabled = false
     },
     sendEmail: function() {
-      console.log(this.architecturalFile)
       const emailData = {
         email: this.email,
         name: this.name,
@@ -785,12 +784,6 @@ export default {
       }
     },
     DAApproval: function() {
-      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
-      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
-      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
-      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
       if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
@@ -806,12 +799,6 @@ export default {
       }
     },
     architecturalPlans: function() {
-      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
-      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
-      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
-      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
       if (this.DAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
@@ -831,12 +818,6 @@ export default {
       }
     },
     architecturalPlan: function() {
-      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
-      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
-      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
-      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
       if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
@@ -852,12 +833,6 @@ export default {
       }
     },
     engineeringPlans: function() {
-      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
-      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
-      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
-      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
       if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
@@ -879,12 +854,6 @@ export default {
       }
     },
     engineeringPlan: function() {
-      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
-      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
-      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
-      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
       if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
@@ -900,12 +869,6 @@ export default {
       }
     },
     structuralPlans: function() {
-      console.log('DA Approval: ', this.DAApproval, 'Architectural Plans: ', this.architecturalPlans, 'Architectural Plan: ', this.architecturalPlan !== '', 'Engineering Plans: ', this.engineeringPlans, 'Engineering Plan: ', this.engineeringPlan !== '', 'Structural plans: ', this.structuralPlans !== '')
-      console.log("option 1: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 2: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '')
-      console.log("option 3: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '')
-      console.log("option 4: ", this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
-      console.log("option 5: ", this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'No')
       if (this.DAApproval !== 'Yes' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
         this.page4enabled = true
       } else if (this.DAApproval !== 'No' && this.noDAApproval !== '' && this.architecturalPlans === 'Yes' && this.architecturalPlan !== '' && this.engineeringPlans === 'Yes' && this.engineeringPlan !== '' && this.structuralPlans !== '') {
