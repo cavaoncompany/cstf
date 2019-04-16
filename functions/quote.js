@@ -12,8 +12,9 @@ exports.handler = function (event, context, callback) {
   const body = JSON.parse(event.body)
 
   const emailInfo = body.emailInfo
+  const attachments = [body.emailInfo.architecturalFile, body.emailInfo.engineeringFile]
 
-  sendMail(emailInfo, emailProviderDetails)
+  sendMail(emailInfo, emailProviderDetails, attachments)
 
   callback(null, {
     statusCode: 200,
@@ -66,7 +67,7 @@ const sendMail = (emailInfo, emailProvider) => {
       <p style="margin-bottom: 10px;"><b>Reason if no DA approval:</b> ${emailInfo.noDAApproval}</p>
       <p style="margin-bottom: 10px;"><b>Architectural plans:</b> ${emailInfo.architecturalPlans}</p>
       <p style="margin-bottom: 10px;"><b>Engineering plans:</b> ${emailInfo.engineeringPlans}</p>
-      <p style="margin-bottom: 10px;"><b>Structural plans:</b> ${emailInfo.structuralPlans}</p>
+      <p style="margin-bottom: 10px;"><b>Structural plans designed specifically for light gauge steel application:</b> ${emailInfo.structuralPlans}</p>
       <p style="margin-bottom: 10px;"><b>Quote for:</b> ${emailInfo.quoteFor}</p>
       <p style="margin-bottom: 10px;"><b>Start of project:</b> ${emailInfo.startProject}</p>
       `,
