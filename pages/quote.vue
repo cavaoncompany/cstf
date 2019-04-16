@@ -665,20 +665,26 @@ export default {
       if (area === 'architecture'){
         this.architecturalPlan = file.name
         this.architecturalFile = this.$refs.architecturalfile.files[0]
-        this.architecturalPlanPath = this.createFile(file)
+        this.architecturalPlanPath = this.createFile(file, area)
       } else if ( area === 'engineering') {
         this.engineeringPlan = file.name
         this.engineeringFile = this.$refs.engineeringfile.files[0]
-        this.engineeringPlanPath = this.createFile(file)
+        this.engineeringPlanPath = this.createFile(file, area)
       }
     },
-    createFile: function(file) {
+    createFile: function(file, area) {
       const reader = new FileReader()
       const vm = this
 
       reader.onload = (e) => {
-        reader.readAsDataURL(file)
+        if (area === 'architecture'){
+          this.architecturalFile = e.target.result
+        }
+        else if (area === 'engineering') {
+          this.engineeringFile = e.target.result
+        }
       }
+      reader.readAsDataURL(file)
     },
     removeDisabled: function(el) {
       document.getElementById(el).disabled = false
