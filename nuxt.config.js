@@ -1,3 +1,4 @@
+const env = require('dotenv').config()
 const pkg = require('./package')
 
 module.exports = {
@@ -42,7 +43,7 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: { color: '#fff' },
-
+  env: env.parsed,
   /*
   ** Global CSS
   */
@@ -62,7 +63,9 @@ module.exports = {
   */
   modules: [
     '@nuxtjs/pwa',
-    'nuxt-leaflet'
+    'nuxt-leaflet',
+    '@nuxtjs/axios',
+    '@nuxtjs/recaptcha'
   ],
   router: {
     scrollBehavior(to, _from, savedPosition) {
@@ -82,6 +85,11 @@ module.exports = {
       }
     }
   },
+  recaptcha: {
+    hideBadge: true,
+    siteKey: process.env.recaptchasitekey,
+    version: 3
+  },
   /*
   ** Build configuration
   */
@@ -89,6 +97,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    vendor: ['axios'],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {

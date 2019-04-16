@@ -45,11 +45,7 @@
                       <div class="themesflat-contact-form style-2 clearfix">
                         <form
                           id="contactusform"
-                          action="/success"
-                          netlify-honeypot="bot-field"
-                          name="contact-form"
-                          method="post"
-                          data-netlify="true"
+                          @submit.prevent="sendEmail"
                           accept-charset="utf-8"
                           class="form-submit contact-form wpcf7-form"
                         >
@@ -268,6 +264,9 @@ export default {
     Header,
     Footer
   },
+  async mounted() {
+    await this.$recaptcha.init()
+  },
   data() {
     return {
       contact: contact,
@@ -308,7 +307,30 @@ export default {
   methods: {
     enableSubmit: function() {
       document.getElementById('contact-submit').disabled = false
-    } 
+    },
+    sendEmail: function() {
+      const emailData = {
+        email: this.email,
+        name: this.name,
+        phone: this.phone,
+        subject: this.subject,
+        message: this.message
+      }
+      this.$store.dispatch('contactUs', emailData)
+      this.email = ''
+      this.name = ''
+      this.phone = ''
+      this.subject = ''
+      this.message = ''
+    },
+    async onSubmit() {
+      try {
+        const token = await this.$recaptcha.execute('login')
+        this.sendEmail()
+      } catch (error) {
+        console.log('Submission error: ', error)
+      }
+    }
   }
 }
 </script>
