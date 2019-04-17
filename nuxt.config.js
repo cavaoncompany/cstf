@@ -65,8 +65,13 @@ module.exports = {
     '@nuxtjs/pwa',
     'nuxt-leaflet',
     '@nuxtjs/axios',
-    '@nuxtjs/recaptcha'
+    '@nuxtjs/recaptcha',
+    '@nuxtjs/toast'
   ],
+  toast: {
+    position: 'top-center',
+    goaway: 1500
+  },
   router: {
     scrollBehavior(to, _from, savedPosition) {
       if (savedPosition) {

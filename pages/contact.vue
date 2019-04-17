@@ -316,7 +316,13 @@ export default {
         subject: this.subject,
         message: this.message
       }
-      this.$store.dispatch('contactUs', emailData)
+      this.$store.dispatch('contactUs', emailData).then((msg) => { 
+        if (msg === 'Message sent successfully') {
+          this.$toast.success(this.contact.success).goAway(1500)
+        } else {
+          this.$toast.error(this.contact.error, msg).goAway(1500)
+        }
+      })
       this.email = ''
       this.name = ''
       this.phone = ''

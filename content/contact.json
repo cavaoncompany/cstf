@@ -12,5 +12,7 @@
     "callUs": "CALL US:",
     "tel": "(+61) 3 8376 6284",
     "emailus": "EMAIL:",
-    "email": "support@cstf.com"
+    "email": "support@cstf.com",
+    "success": "Your message has been sent. We will be in touch shortly.",
+    "error": "Sorry an error occurred. Error: "
 }
