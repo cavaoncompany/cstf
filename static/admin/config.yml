@@ -138,7 +138,7 @@ collections:
           - label: "Button text"
             name: "buttonText"
             widget: "string"
-      - label: "Tesimony"
+      - label: "Testimony"
         name: "testimonials"
         format: "json"
         file: "/content/testimonials.json"
@@ -199,7 +199,7 @@ collections:
   - label: "Contact"
     name: "Contact"
     files:
-      - label: "Conact"
+      - label: "Contact"
         name: "contact"
         format: "json"
         file: "/content/contact.json"
@@ -252,6 +252,9 @@ collections:
           - label: "Error sending message"
             name: "error"
             widget: "string"
+  - label: "Projects"
+    name: "Projects"
+    files:
       - label: "Projects"
         name: "projects"
         format: "json"
@@ -268,6 +271,9 @@ collections:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Type of project", name: "type", widget: "string"}
               - {label: "Project images", name: "otherImages", widget: "list"}
+  - label: "Services"
+    name: "Services"
+    files:
       - label: "Services"
         name: "services"
         format: "json"
@@ -286,6 +292,9 @@ collections:
               - {label: "Image", name: "img", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
+  - label: "Why Steel"
+    name: "whysteel"
+    files:
       - label: "Why Steel"
         name: "whysteel"
         format: "json"
@@ -309,6 +318,9 @@ collections:
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: list}
+    - label: "Quote Form"
+      name: "quoteform"
+      files:
       - label: "Quote Form"
         name: "quote"
         format: "json"
