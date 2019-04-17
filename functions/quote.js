@@ -36,15 +36,14 @@ const sendMail = (emailInfo, emailProvider) => {
   })
   setTimeout(() => {
     const file1 = emailInfo.architecturalFile
-    const file2 = emailInfo.engineeringFile
     const attachments = []
-    if (file1 && file2) {
+    if (emailInfo.engineeringFile !== null || emailInfo.engineeringFile !== {}) {
+      const file2 = emailInfo.engineeringFile
       const buffer = Buffer.from(file1.split('base64,')[1], 'base64')
       attachments.push({ content: buffer, filename: emailInfo.architecturalPlan })
       const secondbuffer = Buffer.from(file2.split('base64')[1], 'base64')
       attachments.push({ content: secondbuffer, filename: emailInfo.engineeringPlan })
-    }
-    if (file1) {
+    } else {
       const buffer = Buffer.from(file1.split('base64,')[1], 'base64')
       attachments.push({ content: buffer, filename: emailInfo.architecturalPlan })
     }

@@ -51,8 +51,6 @@ export default {
 #thankyou .thank-you-wrapper {
   background-color: #fff;
   text-align: center;
-  margin: 70px;
-  padding: 70px;
 }
 #thankyou .themesflat-button {
   margin-top: 50px;
