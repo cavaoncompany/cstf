@@ -31,9 +31,9 @@ async function sendEmail({ state, commit }, payload, path) {
     const { res } = await axios.post(path, {
       emailInfo
     })
-    return ('Message sent successfully')
+    // alert('Message sent successfully')
   } catch (e) {
-    return (e)
+    alert(e)
   }
   // }
 }

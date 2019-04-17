@@ -316,13 +316,8 @@ export default {
         subject: this.subject,
         message: this.message
       }
-      this.$store.dispatch('contactUs', emailData).then((msg) => { 
-        console.log(msg)
-        if (msg === 'Message sent successfully') {
+      this.$store.dispatch('contactUs', emailData).then(() => {
           this.$toast.success(this.contact.success).goAway(1500)
-        } else {
-          this.$toast.error(this.contact.error, msg).goAway(1500)
-        }
       })
       this.email = ''
       this.name = ''
