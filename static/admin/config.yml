@@ -23,7 +23,7 @@ collections:
       - label: "Get a quote form"
         name: "getaquote"
         format: "json"
-        file: "/content/getaquote.json"
+        file: "/content/quote.json"
         fields:
           - label: "Title"
             name: "title"
