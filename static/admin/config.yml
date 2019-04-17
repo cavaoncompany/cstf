@@ -318,9 +318,9 @@ collections:
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: list}
-    - label: "Quote Form"
-      name: "quoteform"
-      files:
+  - label: "Quote Form"
+    name: "quoteform"
+    files:
       - label: "Quote Form"
         name: "quote"
         format: "json"
