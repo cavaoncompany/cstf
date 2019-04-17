@@ -226,7 +226,7 @@ collections:
             name: "messagePlaceholder"
             widget: "string"
           - label: "Send button"
-            name: "sendButton"
+            name: "sendButtonText"
             widget: "string"
           - label: "Information header"
             name: "information"
@@ -270,7 +270,9 @@ collections:
               - {label: "Top image", name: "img", widget: "image"}
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Type of project", name: "type", widget: "string"}
-              - {label: "Project images", name: "otherImages", widget: "list"}
+              - {label: "Project images", name: "otherImages", widget: "list", fields: 
+                  - {label: "Image", name: "img", widget: "image"}
+                }
   - label: "Services"
     name: "Services"
     files:
