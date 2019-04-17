@@ -840,14 +840,17 @@ export default {
         if (value === 2) {
           if (this.page2enabled) {
             this.currentPage++
+            this.scrollToTop()
           }
         } else if (value === 3) {
           if (this.page3enabled) {
             this.currentPage++
+            this.scrollToTop()
           }
         } else if (value === 4) {
           if (this.page4enabled) {
             this.currentPage++
+            this.scrollToTop()
           }
         } else if (value === 'submit') {
           if (this.quoteFor !== '' && this.startProject !== '') {
@@ -891,6 +894,11 @@ export default {
         } else {
           this.engineeringPlansSelected = false
         }
+      }
+    },
+    scrollToTop: function () {
+      if (process.client){
+        window.scrollTo({top: 120, behavior: 'smooth'})
       }
     },
     showUploadedFile: function (e, area) {
