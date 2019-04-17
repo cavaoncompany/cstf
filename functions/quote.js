@@ -37,7 +37,7 @@ const sendMail = (emailInfo, emailProvider) => {
   setTimeout(() => {
     const file1 = emailInfo.architecturalFile
     const attachments = []
-    if (emailInfo.engineeringFile !== null || emailInfo.engineeringFile !== {}) {
+    if (emailInfo.engineeringFile !== '') {
       const file2 = emailInfo.engineeringFile
       const buffer = Buffer.from(file1.split('base64,')[1], 'base64')
       attachments.push({ content: buffer, filename: emailInfo.architecturalPlan })

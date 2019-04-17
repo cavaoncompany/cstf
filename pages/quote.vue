@@ -637,7 +637,7 @@ export default {
       engineeringPlanPath: '',
       engineeringPlansSelected: false,
       engineeringPlansEnabled: false,
-      engineeringFile: {},
+      engineeringFile: '',
       engineeringPlanIsEmpty: false,
       structuralPlans: '',
       structuralPlansEnabled: false,
@@ -993,7 +993,7 @@ export default {
       this.engineeringPlans = ''
       this.engineeringPlan = ''
       this.engineeringPlanPath = ''
-      this.engineeringFile = {}
+      this.engineeringFile = ''
       this.structuralPlans = ''
       this.quoteFor = ''
       this.startProject = ''
