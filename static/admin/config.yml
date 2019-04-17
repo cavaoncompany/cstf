@@ -268,7 +268,7 @@ collections:
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Type of project", name: "type", widget: "string"}
               - {label: "Project images", name: "otherImages", widget: "list"}
-        - label: "Services"
+      - label: "Services"
         name: "services"
         format: "json"
         file: "/content/services.json"
@@ -286,183 +286,183 @@ collections:
               - {label: "Image", name: "img", widget: "image"}
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
-        - label: "Why Steel"
-          name: "whysteel"
-          format: "json"
-          file: "/content/whysteel.json"
-          fields: 
-            - label: "Title"
-              name: "title"
-              widget: "string"
-            - label: "About"
-              name: "about"
-              widget: "string"
-            - label: "Intro"
-              name: "intro"
-              widget: "string"
-            - label: "Image"
-              name: "img"
-              widget: "image"
-            - label: "Selling points"
-              name: "points"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Description", name: "description", widget: list}
-        - label: "Quote Form"
-          name: "quote"
-          format: "json"
-          file: "/content/quote.json"
-          fields:
-            - label: "Start your project"
-              name: "startYourProject"
-              widget: "string"
-            - label: "Title"
-              name: "title"
-              widget: "string"
-            - label: "Intro"
-              name: "intro"
-              widget": "string"
-            - label: "Name placeholder"
-              name: "namePlaceholder"
-              widget": "string"
-            - label: "Missing name"
-              name: "nameMissing"
-              widget: "string"
-            - label: "Email placeholder"
-              name: "emailPlaceholder"
-              widget": "string"
-            - label: "Email missing"
-              name: "emailMissing"
-              widget: "string"
-            - label: "Company placeholder"
-              name: "companyPlaceholder"
-              widget": "string"
-            - label: "Next button"
-              name: "nextButton"
-              widget": "string"
-            - label: "Page"
-              name: "page"
-              widget": "string"
-            - label: "Next page"
-              name: "next"
-              widget": "string"
-            - label: "Back"
-              name: "back"
-              widget": "string"
-            - label: "Yellow tick"
-              name: "yellowTick"
-              widget": "image"
-            - label: "Type of project"
-              name: "typeOfProject"
-              widget": "list"
-              fields:
-                - label: "Title"
-                  name: "title"
-                  widget: "string"
-                - label: "Types"
-                  name: "types"
-                  widget: "list"
-                  fields:
-                    - {label: "Question", name: "question", widget: "string"}
-                    - {label: "Image", name: "img", widget: "image"}
-            - label: "Tick"
-              name: "tick"
-              widget": "image"
-            - label: "Residential project"
-              name: "residentialProject"
-              widget": "string"
-            - label: "Commercial project"
-              name: "commercialProject"
-              widget": "string"
-            - label: "Profession"
-              name: "profession"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Professions", name: "professions", widget: "list"}
-            - label: "Project type"
-              name: "projectType"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Type", name: "type", widget: "list"}
-            - label: "Detail for residential project"
-              name: "detail"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Detail", name: "detail", widget: "list"}
-            - label: "Detail for commercial project"
-              name: "commercialDetail"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Detail", name: "detail", widget: "list"}
-            - label: "DA approval"
-              name: "DAApproval"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Options", name: "approval", widget: "list"}
-            - label: "No DA approval"
-              name: "noDAApproval"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Reasons", name: "reasons", widget: "list"}
-            - label: "Architectural plan"
-              name: "architecturalPlan"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Options", name: "plans", widget: "list"}
-                - {label: "Upload", name: "upload", widget: "string"}
-                - {label: "Upload button", name: uploadButton, widget: "string"}
-            - label: "Engineering plan"
-              name: "engineeringPlan"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Options", name: "plans", widget: "list"}
-                - {label: "Upload", name: "upload", widget: "string"}
-                - {label: "Upload button", name: uploadButton, widget: "string"}
-            - label: "Structural plan"
-              name: "structuralPlan"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Options", name: "plans", widget: "list"}
-            - label: "No architectural plan"
-              name: "sorry"
-              widget: "string"
-            - label: "Return to homepage"
-              name: "returnHome"
-              widget: "string"
-            - label: "Quote for"
-              name: "quoteFor"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Type", name: "type", widget: "list"}
-            - label: "Start project"
-              name: "startProject"
-              widget: "list"
-              fields:
-                - {label: "Title", name: "title", widget: "string"}
-                - {label: "Timeframe", name: "timeframe", widget: "list"}
-            - label: "Message"
-              name: "message"
-              widget: "string"
-            - label: "Submit button"
-              name: "submitButton"
-              widget: "string"
-            - label: "Thank you title"
-              name: "thankYou"
-              widget: "string"
-            - label: "Thank you message"
-              name: "thankYouMessage"
-              widget: "string"
+      - label: "Why Steel"
+        name: "whysteel"
+        format: "json"
+        file: "/content/whysteel.json"
+        fields: 
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "About"
+            name: "about"
+            widget: "string"
+          - label: "Intro"
+            name: "intro"
+            widget: "string"
+          - label: "Image"
+            name: "img"
+            widget: "image"
+          - label: "Selling points"
+            name: "points"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Description", name: "description", widget: list}
+      - label: "Quote Form"
+        name: "quote"
+        format: "json"
+        file: "/content/quote.json"
+        fields:
+          - label: "Start your project"
+            name: "startYourProject"
+            widget: "string"
+          - label: "Title"
+            name: "title"
+            widget: "string"
+          - label: "Intro"
+            name: "intro"
+            widget": "string"
+          - label: "Name placeholder"
+            name: "namePlaceholder"
+            widget": "string"
+          - label: "Missing name"
+            name: "nameMissing"
+            widget: "string"
+          - label: "Email placeholder"
+            name: "emailPlaceholder"
+            widget": "string"
+          - label: "Email missing"
+            name: "emailMissing"
+            widget: "string"
+          - label: "Company placeholder"
+            name: "companyPlaceholder"
+            widget": "string"
+          - label: "Next button"
+            name: "nextButton"
+            widget": "string"
+          - label: "Page"
+            name: "page"
+            widget": "string"
+          - label: "Next page"
+            name: "next"
+            widget": "string"
+          - label: "Back"
+            name: "back"
+            widget": "string"
+          - label: "Yellow tick"
+            name: "yellowTick"
+            widget": "image"
+          - label: "Type of project"
+            name: "typeOfProject"
+            widget": "list"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Types"
+                name: "types"
+                widget: "list"
+                fields:
+                  - {label: "Question", name: "question", widget: "string"}
+                  - {label: "Image", name: "img", widget: "image"}
+          - label: "Tick"
+            name: "tick"
+            widget": "image"
+          - label: "Residential project"
+            name: "residentialProject"
+            widget": "string"
+          - label: "Commercial project"
+            name: "commercialProject"
+            widget": "string"
+          - label: "Profession"
+            name: "profession"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Professions", name: "professions", widget: "list"}
+          - label: "Project type"
+            name: "projectType"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Type", name: "type", widget: "list"}
+          - label: "Detail for residential project"
+            name: "detail"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Detail", name: "detail", widget: "list"}
+          - label: "Detail for commercial project"
+            name: "commercialDetail"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Detail", name: "detail", widget: "list"}
+          - label: "DA approval"
+            name: "DAApproval"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Options", name: "approval", widget: "list"}
+          - label: "No DA approval"
+            name: "noDAApproval"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Reasons", name: "reasons", widget: "list"}
+          - label: "Architectural plan"
+            name: "architecturalPlan"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Options", name: "plans", widget: "list"}
+              - {label: "Upload", name: "upload", widget: "string"}
+              - {label: "Upload button", name: uploadButton, widget: "string"}
+          - label: "Engineering plan"
+            name: "engineeringPlan"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Options", name: "plans", widget: "list"}
+              - {label: "Upload", name: "upload", widget: "string"}
+              - {label: "Upload button", name: uploadButton, widget: "string"}
+          - label: "Structural plan"
+            name: "structuralPlan"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Options", name: "plans", widget: "list"}
+          - label: "No architectural plan"
+            name: "sorry"
+            widget: "string"
+          - label: "Return to homepage"
+            name: "returnHome"
+            widget: "string"
+          - label: "Quote for"
+            name: "quoteFor"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Type", name: "type", widget: "list"}
+          - label: "Start project"
+            name: "startProject"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Timeframe", name: "timeframe", widget: "list"}
+          - label: "Message"
+            name: "message"
+            widget: "string"
+          - label: "Submit button"
+            name: "submitButton"
+            widget: "string"
+          - label: "Thank you title"
+            name: "thankYou"
+            widget: "string"
+          - label: "Thank you message"
+            name: "thankYouMessage"
+            widget: "string"
               
             
             
