@@ -317,6 +317,7 @@ export default {
         message: this.message
       }
       this.$store.dispatch('contactUs', emailData).then((msg) => { 
+        console.log(msg)
         if (msg === 'Message sent successfully') {
           this.$toast.success(this.contact.success).goAway(1500)
         } else {
