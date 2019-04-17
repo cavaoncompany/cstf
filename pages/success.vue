@@ -58,4 +58,3 @@ export default {
   margin-top: 50px;
 }
 </style>
-

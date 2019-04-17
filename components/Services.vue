@@ -54,7 +54,7 @@ export default {
   data() {
     return {
       services: services,
-      toBeExtended: false,
+      toBeExtended: false
     }
   },
   methods: {

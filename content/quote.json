@@ -3,8 +3,10 @@
     "title": "GET A QUOTE",
     "intro": "Please leave your details to get a quote.",
     "namePlaceholder": "Full Name*",
+    "nameMissing": "*Please enter your name",
     "emailPlaceholder": "Email Address*",
-    "companyPlaceholder": "Company Name*",
+    "emailMissing": "*Please enter your email",
+    "companyPlaceholder": "Company Name",
     "nextButton": "NEXT",
     "page": "Page {0} of {1}",
     "next": "NEXT",
@@ -76,7 +78,8 @@
         "reasons": [
             "It does not require approval",
             "I have not obtained required approvals from related authority"
-        ]
+        ],
+        "noReason": "*Please select a reason"
     },
     "architecturalPlan": {
         "title": "Do you have architectural plans for the project?",
@@ -85,7 +88,8 @@
             "No"
         ],
         "upload": "Please upload your architectural plan.",
-        "uploadButton": "Upload architectural plan"
+        "uploadButton": "Upload architectural plan",
+        "uploadMissing": "*Please upload your architectural plan"
     },
     "engineeringPlan": {
         "title": "Do you have engineering plans (structural, hydraulic, mechanical and electrical) for the project?",
@@ -94,7 +98,8 @@
             "No"
         ],
         "upload": "Please upload your engineering plan.",
-        "uploadButton": "Upload engineering plan"
+        "uploadButton": "Upload engineering plan",
+        "uploadMissing": "*Please upload your engineering plan"
     },
     "structuralPlan": {
         "title": "Are the structural plans provided designed specifically for light gauge steel application?",

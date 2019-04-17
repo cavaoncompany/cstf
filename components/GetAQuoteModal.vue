@@ -21,11 +21,13 @@
           </p>
           <div class="form-group">
             <label for="quote-name" class="hide-element">{{ getaquote.namePlaceholder }}</label>
-            <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name">
+            <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name" @blur="sendWarning('name')">
+            <p v-if="nameIsEmpty === true" class="warning-message">{{ getaquote.nameMissing }}</p>
           </div>
           <div class="form-group">
             <label for="quote-email" class="hide-element">{{ getaquote.emailPlaceholder }}</label>
-            <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email">
+            <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email"  @blur="sendWarning('email')">
+            <p v-if="emailIsEmpty === true" class="warning-message">{{ getaquote.emailMissing }}</p>
           </div>
           <div class="form-group">
             <label for="quote-company" class="hide-element">{{ getaquote.companyPlaceholder }}</label>
@@ -59,28 +61,36 @@ export default {
       email: '',
       company: '',
       nextEnabled: false,
-      errors: []
+      errors: [],
+      nameIsEmpty: false,
+      emailIsEmpty: false
     }
   },
   watch: {
     name: function () {
-      if (this.name !== '' && this.email !== '' && this.company !== '') {
+      if (this.name !== '' && this.email !== '') {
         this.nextEnabled = true
+        this.nameIsEmpty = false
         this.enableButton()
+      } else if (this.name !== '') {
+        this.nameIsEmpty = false
       } else {
         this.nextEnabled = false
       }
     },
     email: function () {
-      if (this.name !== '' && this.email !== '' && this.company !== '') {
+      if (this.name !== '' && this.email !== '') {
         this.nextEnabled = true
+        this.emailIsEmpty = false
         this.enableButton()
+      } else if (this.email !== '') {
+        this.emailIsEmpty = false
       } else {
         this.nextEnabled = false
       }
     },
     company: function () {
-      if (this.name !== '' && this.email !== '' && this.company !== '') {
+      if (this.name !== '' && this.email !== '') {
         this.nextEnabled = true
         this.enableButton()
       } else {
@@ -104,6 +114,21 @@ export default {
     },
     enableButton: function() {
       document.getElementById('submitDetails').disabled = false
+    },
+    sendWarning: function(field) {
+      if (field === 'name') {
+        if (this.name === ''){
+          this.nameIsEmpty = true
+        } else {
+          this.nameIsEmpty = false
+        }
+      } else if (field === 'email') {
+        if (this.email === '') {
+          this.emailIsEmpty = true
+        } else {
+          this.emailIsEmpty = false
+        }
+      }
     }
   }
 }
@@ -143,5 +168,12 @@ export default {
 #getAQuote .themesflat-button.bg-accent.disabled:hover:before {
     background-color: #E0E0E0 !important;
     color: #111;
+}
+#getAQuote .warning-message {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+  margin-top: -30px;
+  padding-left: 20px;
 }
 </style>
