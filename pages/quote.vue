@@ -997,7 +997,8 @@ export default {
       this.structuralPlans = ''
       this.quoteFor = ''
       this.startProject = ''
-      this.$router.replace({ path: 'success' })
+      return this.$router.push("/success");
+      // this.$router.replace({ path: 'success' })
     },
     async onSubmit() {
       try {
