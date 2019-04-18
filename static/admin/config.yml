@@ -273,7 +273,7 @@ collections:
               - label: "Project images"
                 name: "otherImages"
                 widget: "list"
-                fields:
+                field:
               - {label: "Project image", name: "img", widget: "image"}
   - label: "Services"
     name: "Services"
