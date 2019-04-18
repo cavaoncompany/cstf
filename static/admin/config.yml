@@ -272,9 +272,13 @@ collections:
               - {label: "Type of project", name: "type", widget: "string"}
               - label: "Project images"
                 name: "otherImages"
-                widget: "list"
-                field:
-              - {label: "Project image", name: "img", widget: "image"}
+                widget: "object"
+                fields:
+                  - label: "Images"
+                    name: "images"
+                    widget: "list"
+                    field:
+                      - {label: "Project image", name: "img", widget: "image"}
   - label: "Services"
     name: "Services"
     files:

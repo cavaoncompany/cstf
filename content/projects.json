@@ -41,13 +41,15 @@
             "img": "/img/Featured-4@2x.png",
             "name": "KELLYVILLE",
             "type": "Commercial",
-            "otherImages": [
+            "otherImages": {
+                "images": [
                 "/img/Featured-4@2x.png", 
                 "/img/Featured-4@2x.png",
                 "/img/Featured-4@2x.png",
                 "/img/Featured-4@2x.png",
                 "/img/Featured-4@2x.png"
-            ]
+                ]
+            }
         }
     ]
 }
