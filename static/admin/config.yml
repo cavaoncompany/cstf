@@ -322,10 +322,10 @@ collections:
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: list}
-  - label: "Quote Form"
+  - label: "Quote"
     name: "quoteform"
     files:
-      - label: "Quote Form"
+      - label: "Quote"
         name: "quote"
         format: "json"
         file: "/content/quote.json"
