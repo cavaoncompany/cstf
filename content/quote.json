@@ -12,21 +12,19 @@
     "next": "NEXT",
     "back": "BACK",
     "yellowTick": "/img/yellow-tick.png",
-    "typeOfProject": {
-        "title": "Is your project",
-        "types": [
-            {
-                "question": "A residential project",
-                "img": "/img/quote-domestic.png",
-                "type": "residential"
-            },
-            {
-                "question": "A commercial or industrial project",
-                "img": "/img/quote-commercial.png",
-                "type": "commercial"
-            }
-        ]
-    },
+    "typeOfProjectTitle": "Is your project",
+    "typeOfProject": [
+        {
+            "question": "A residential project",
+            "img": "/img/quote-domestic.png",
+            "type": "residential"
+        },
+        {
+            "question": "A commercial or industrial project",
+            "img": "/img/quote-commercial.png",
+            "type": "commercial"
+        }
+    ],
     "tick": "/img/tick.png",
     "residentialProject": "YOUR RESIDENTIAL PROJECT",
     "commercialProject": "YOUR COMMERCIAL / INDUSTRIAL PROJECT",

@@ -1,10 +1,10 @@
 <template>
   <div
-    id="getAQuote"
+    id="getAQuoteModal"
     class="modal"
     tabindex="-1"
     role="dialog"
-    aria-labelledby="getAQuote"
+    aria-labelledby="getAQuoteModal"
     aria-hidden="true"
   >
     <div class="modal-dialog" role="document">
@@ -135,41 +135,41 @@ export default {
 </script>
 
 <style>
-#getAQuote h1 {
+#getAQuoteModal h1 {
     font-size: 24px;
     font-weight: 500;
     text-align: center;
     color: #232323;
 }
-#getAQuote p {
+#getAQuoteModal p {
     text-align: center;
     color: #585858;
 }
-#getAQuote .modal-content {
+#getAQuoteModal .modal-content {
     padding: 27px 35px;
 }
-#getAQuote input[type='text'],
-#getAQuote input[type='email'] {
+#getAQuoteModal input[type='text'],
+#getAQuoteModal input[type='email'] {
     margin-bottom: 30px;
 }
-#getAQuote .themesflat-button {
+#getAQuoteModal .themesflat-button {
     width: 100%;
     text-align: center;
 }
-#getAQuote .sep {
+#getAQuoteModal .sep {
     background: #fed00e;
     width: 60px;
     height: 3px;
     margin: 0 auto;
     margin-bottom: 18px;
 }
-#getAQuote .themesflat-button.disabled,
-#getAQuote .themesflat-button.disabled:hover,
-#getAQuote .themesflat-button.bg-accent.disabled:hover:before {
+#getAQuoteModal .themesflat-button.disabled,
+#getAQuoteModal .themesflat-button.disabled:hover,
+#getAQuoteModal .themesflat-button.bg-accent.disabled:hover:before {
     background-color: #E0E0E0 !important;
     color: #111;
 }
-#getAQuote .warning-message {
+#getAQuoteModal .warning-message {
   color: red;
   font-size: 12px;
   text-align: left;

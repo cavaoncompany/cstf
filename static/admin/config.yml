@@ -270,7 +270,11 @@ collections:
               - {label: "Top image", name: "img", widget: "image"}
               - {label: "Name", name: "name", widget: "string"}
               - {label: "Type of project", name: "type", widget: "string"}
-              - {label: "Project images", name: "otherImages", widget: "list"}
+              - {label: "Project image 1", name: "img1", widget: "image"}
+              - {label: "Project image 2", name: "img2", widget: "image"}
+              - {label: "Project image 3", name: "img3", widget: "image"}
+              - {label: "Project image 4", name: "img4", widget: "image"}
+              - {label: "Project image 5", name: "img5", widget: "image"}
   - label: "Services"
     name: "Services"
     files:
@@ -365,19 +369,15 @@ collections:
           - label: "Yellow tick"
             name: "yellowTick"
             widget": "image"
+          - label: "Type of project title"
+            name: "typeOfProjectTitle"
+            widget: "string"
           - label: "Type of project"
             name: "typeOfProject"
             widget": "list"
             fields:
-              - label: "Title"
-                name: "title"
-                widget: "string"
-              - label: "Types"
-                name: "types"
-                widget: "list"
-                fields:
-                  - {label: "Question", name: "question", widget: "string"}
-                  - {label: "Image", name: "img", widget: "image"}
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Image", name: "img", widget: "image"}
           - label: "Tick"
             name: "tick"
             widget": "image"

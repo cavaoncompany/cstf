@@ -10,7 +10,7 @@
         <div id="site-content" class="site-content clearfix">
           <div id="inner-content" class="inner-content-wrap">
             <div class="page-content">
-              <!-- SERVICES -->
+              <!-- PROJECTS -->
               <div class="row-services">
                 <div class="container">
                   <div class="row">
@@ -90,7 +90,7 @@
                 </div>
                 <!-- /.container -->
               </div>
-              <!-- END SERVICES -->
+              <!-- END PROJECTS -->
             </div>
             <!-- /.page-content -->
           </div>
@@ -121,7 +121,7 @@
                 <!--Slides-->
                 <div class="carousel-inner" role="listbox">
                   <div v-for="(image, i) in project.otherImages" :key="i" class="carousel-item" v-bind:class="{'active': i === 0 }">
-                    <img class="d-block w-100" :src="image.img" :alt="project.name">
+                    <img class="d-block w-100" :src="image" :alt="project.name">
                   </div>
                 </div>
                 <!--/.Slides-->
@@ -136,7 +136,7 @@
                 </a>
                 <!--/.Controls-->
                 <ol class="carousel-indicators">
-                  <li v-for="(image, i) in project.otherImages" :key="i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" v-bind:class="{'active': i === 0 }"> <img class="d-block w-100 img-fluid" :src="image.img"></li>
+                  <li v-for="(image, i) in project.otherImages" :key="i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" v-bind:class="{'active': i === 0 }"> <img class="d-block w-100 img-fluid" :src="image"></li>
                 </ol>
               </div>
               <!--/.Carousel Wrapper-->
@@ -161,6 +161,17 @@ export default {
   data() {
     return {
       projects: projects
+    }
+  },
+  created() {
+    if (process.client) {
+      for (let i = 0; i < this.projects.projects.length; i++) {
+        this.projects.projects[i].otherImages.push(this.projects.projects[i].img1)
+        this.projects.projects[i].otherImages.push(this.projects.projects[i].img2)
+        this.projects.projects[i].otherImages.push(this.projects.projects[i].img3)
+        this.projects.projects[i].otherImages.push(this.projects.projects[i].img4)
+        this.projects.projects[i].otherImages.push(this.projects.projects[i].img5)
+      }
     }
   }
 }

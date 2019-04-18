@@ -1,5 +1,5 @@
 <template>
-  <div id="contact" class="row-quote bg-row-1">
+  <div id="getAQuote" class="row-quote bg-row-1">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -38,8 +38,12 @@ export default {
 </script>
 
 <style>
-.row-quote .icon {
+#getAQuote .themesflat-quote .icon {
   margin-left: 5px;
+  top: 33%;
+}
+.row-quote .icon .fa {
+  font-size: 19px;
 }
 .row-quote .themesflat-button.small {
   padding-right: 46px;

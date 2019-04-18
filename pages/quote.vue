@@ -57,9 +57,9 @@
             </div>
             <div class="row bg-white-column">
               <div class="themesflat-headings style-2 clearfix col-12">
-                <h3>{{ quote.typeOfProject.title }}</h3>
+                <h3>{{ quote.typeOfProjectTitle }}</h3>
               </div>
-              <div v-for="(detailtype, index) in quote.typeOfProject.types" :key="index" class="col-md-6">
+              <div v-for="(detailtype, index) in quote.typeOfProject" :key="index" class="col-md-6">
                 <div :id="'type-' + detailtype.type" class="project-type projectDeselected" @click="addProjectType(detailtype, $event)">
                   <img :id="'tick-' + detailtype.type" :src="quote.tick" alt="ticked" class="tick invisible">
                   <img :src="detailtype.img" :alt="detailtype.question">
@@ -817,9 +817,9 @@ export default {
     addProjectType: function (project, e) {
       const type = 'type-' + project.type
       const tick = 'tick-' + project.type
-      for (let i = 0; i < this.quote.typeOfProject.types.length; i++) {
-        const thisType = 'type-' + this.quote.typeOfProject.types[i].type
-        const thisTick = 'tick-' + this.quote.typeOfProject.types[i].type
+      for (let i = 0; i < this.quote.typeOfProject.length; i++) {
+        const thisType = 'type-' + this.quote.typeOfProject[i].type
+        const thisTick = 'tick-' + this.quote.typeOfProject[i].type
         document.getElementById(thisType).classList.remove('projectSelected')
         document.getElementById(thisType).classList.add('projectDeselected')
         document.getElementById(thisTick).classList.add('invisible')
