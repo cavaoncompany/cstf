@@ -6,7 +6,7 @@
           <p>{{ banner.topLine }}</p>
           <h1>{{ banner.bottomLine }}</h1>
           <div class="elm-button">
-            <a href="#" class="themesflat-button bg-accent" data-toggle="modal" data-target="#getAQuote">{{ banner.buttonText }}</a>
+            <a href="#" class="themesflat-button bg-accent" data-toggle="modal" data-target="#getAQuoteModal">{{ banner.buttonText }}</a>
           </div>
         </div>
       </div>

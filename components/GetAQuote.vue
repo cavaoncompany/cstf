@@ -13,7 +13,7 @@
                   </h3>
                 </div>
                 <div class="button-wrap has-icon .sep-icon-after">
-                  <a href="#" class="themesflat-button bg-white small"><span class="themesflat-quote style-1 heading" data-toggle="modal" data-target="#getAQuote">{{ quote.title }}<span class="icon"><i class="fa fa-arrow-right" /></span></span></a>
+                  <a href="#" class="themesflat-button bg-white small"><span class="themesflat-quote style-1 heading" data-toggle="modal" data-target="#getAQuoteModal">{{ quote.title }}<span class="icon"><i class="fa fa-arrow-right" /></span></span></a>
                 </div>
               </div>
             </div>
