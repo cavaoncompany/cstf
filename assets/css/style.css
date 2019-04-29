@@ -1232,7 +1232,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   #why-steel .about-left { padding: 20px; }
   #why-steel .contact-box { margin-top: 30px }
-  #why-steel .about { height: 450px; }
+  #why-steel .about { height: auto; }
   #why-steel .about-right { height: auto }
   #why-steel .about-right img { height: auto }
   #quote .project-type { margin: 35px; padding: 30px 10px 10px 10px; }
