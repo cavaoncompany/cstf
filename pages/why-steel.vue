@@ -75,8 +75,8 @@
           <!-- /.tab-content-wrap -->
         <!-- </div> -->
         <!-- /.themesflat-tabs -->
-      <!-- </div>
-    </div>-->
+      <!-- </div>-->
+    </div>
     <div class="themesflat-spacer clearfix" data-desktop="73" data-mobile="60" data-smobile="60" />
     <Footer />
     <a id="scroll-top" />
