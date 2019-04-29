@@ -20,6 +20,35 @@
         </div>
       </div>
       <div class="themesflat-spacer clearfix" data-desktop="37" data-mobile="35" data-smobile="35" />
+      <div class="row why-steel-content">
+        <div class="col-md-8 col-lg-9">
+          <div id="why-steel-framing-accordion">
+            <div v-for="(point, index) in whysteel.points" :id="'item-title-' + index" :key="index" class="card">
+              <div class="card-header">
+                <h5>{{ point.title }}</h5>
+                <button class="btn btn-link expand" role="button" data-toggle="collapse" :data-target="'#item-content-' + index" :aria-controls="'item-content-' + index" type="button" @click="handleExpand(index)"><i class="fa fa-angle-down"></i></button>
+              </div>
+              <div :id="'item-content-' + index" class="collapse" aria-labelledby="'item-title-' + index" data-parent="#why-steel-framing-accordion">
+                <div class="card-body">
+                  <p v-for="(paragraph, i) in point.description" :key="i">
+                    {{ paragraph }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <div class="contact-box">
+            <h5>{{ whysteel.contactBoxTitle }}</h5>
+          <p>{{ whysteel.contactBoxDescription }}</p>
+          <div class="elm-button">
+            <a href="/contact" class="themesflat-button bg-accent">{{ whysteel.contactBoxButtonText }}</a>
+          </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="themesflat-spacer clearfix" data-desktop="37" data-mobile="35" data-smobile="35" />
       <div class="flat-content-wrap style-2 clearfix">
         <div id="sidebar-wrap" class="themesflat-tabs style-2 title-w170 clearfix">
           <ul id="sidebar" class="tab-title">
@@ -39,12 +68,15 @@
                     {{ paragraph }}
                   </p>
                 </div>
-              </div><!-- /.tab-content -->
-            </div>
-          </div><!-- /.tab-content-wrap -->
-        </div><!-- /.themesflat-tabs -->
-      </div>
-    </div>
+              </div>
+              <!-- /.tab-content -->
+            <!-- </div> -->
+          <!-- </div> -->
+          <!-- /.tab-content-wrap -->
+        <!-- </div> -->
+        <!-- /.themesflat-tabs -->
+      <!-- </div>
+    </div>-->
     <div class="themesflat-spacer clearfix" data-desktop="73" data-mobile="60" data-smobile="60" />
     <Footer />
     <a id="scroll-top" />
@@ -140,14 +172,42 @@ export default {
   background-color: #F7F7F7;
   margin: 0;
 }
-#why-steel .about-left {
-  padding: 35px;
-}
 #why-steel .about-left p {
   margin: 0;
 }
 #why-steel .about-right {
   padding: 0;
+}
+#why-steel .card-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FFF;
+  height: 75px;
+}
+#why-steel .card {
+  border: none;
+}
+#why-steel .card-header h5 {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+#why-steel .card-header button {
+  color: black;
+  font-size: 20px;
+  width: 20px;
+}
+#why-steel .card-header button:focus,
+#why-steel .btn.focus,
+#why-steel .btn:focus {
+  box-shadow: none;
+}
+#why-steel .card-body {
+  padding: 20px;
+}
+#why-steel .contact-box {
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  padding: 40px 20px;
 }
 #sidebar.sticky {
   position:fixed;

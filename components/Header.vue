@@ -43,7 +43,7 @@
                 <a @mouseenter="showSubMenu('about-submenu')">ABOUT</a>
                 <ul id="about-submenu" class="sub-menu">
                   <li class="menu-item">
-                    <a href="/why-steel">WHY STEEL</a>
+                    <a href="/why-steel">WHY STEEL FRAMING</a>
                   </li>
                 </ul>
               </li>

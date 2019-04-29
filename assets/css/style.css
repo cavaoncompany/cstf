@@ -1015,7 +1015,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .menu-item-tel-mobile { display: none }
 
   #why-steel .outer-wrapper { margin-left: 15px; padding-right: 81px; padding-top: 20px; padding-bottom: 20px; }
-
+  #why-steel .about-left { padding: 35px; }
   #quote .project-type { margin: 50px; padding-top: 100px; padding-bottom: 80px; }
 
   #quote .progress-wrapper { flex-direction: row; width: 35%; }
@@ -1060,7 +1060,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .menu-item-tel-mobile { display: none }
 
   #why-steel .outer-wrapper { margin-left: 15px; padding-right: 81px; padding-top: 20px; padding-bottom: 20px; }
-
+  #why-steel .about-left { padding: 35px; }
   #quote .project-type { margin: 50px; padding-top: 100px; padding-bottom: 80px; }
 
   #quote .progress-wrapper { flex-direction: row; width: 35%; }
@@ -1170,7 +1170,9 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .menu-item-last { display: none; }
 
   .menu-item-tel-mobile { display: block; border: 1px solid #FED00E; width: 130px; margin-left: 50%; margin-top: 19px; padding: 5px 0; text-align: center; }
-
+  #why-steel .about { height: 300px; }
+  #why-steel .about-right { height: 100% }
+  #why-steel .about-right img { height: 100% }
   #quote .project-type { margin: 35px; padding: 50px 20px 40px 20px; }
 
   #quote #sorry-modal .modal-body { padding: 40px; }
@@ -1228,6 +1230,11 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   #why-steel .outer-wrapper { margin-left: 0; padding-right: 0; padding-top: 20px; padding-bottom: 20px; }
 
+  #why-steel .about-left { padding: 20px; }
+  #why-steel .contact-box { margin-top: 30px }
+  #why-steel .about { height: 450px; }
+  #why-steel .about-right { height: auto }
+  #why-steel .about-right img { height: auto }
   #quote .project-type { margin: 35px; padding: 30px 10px 10px 10px; }
 
   #quote .progress-wrapper { flex-direction: column; width: 50%; }
