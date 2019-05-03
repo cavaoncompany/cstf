@@ -6,10 +6,18 @@
           {{ howitworks.title }}
         </h2>
       </div>
-      <div class="row">
+      <div class="row desktop-only">
         <div v-for="(item, index) in howitworks.services" :key="index" class="works-container">
           <!-- <img :src="item.img" :alt="item.title"> -->
           <div class="number">{{ index + 1 }}</div>
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.timeframe }}</p>
+        </div>
+      </div>
+      <div class="row mobile-only">
+        <div v-for="(item, index) in howitworks.services" :key="index" class="works-container">
+          <!-- <img :src="item.img" :alt="item.title"> -->
+          <div class="number-mobile">{{ index + 1 }}</div>
           <h3>{{ item.title }}</h3>
           <p>{{ item.timeframe }}</p>
         </div>
@@ -36,7 +44,6 @@ export default {
     position: relative;
     border: 1px solid #FED00E;
     margin: 25px;
-    height: 130px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,6 +66,22 @@ export default {
     position: absolute;
     left: -32px;
     top: 35px;
+}
+.works-container .number-mobile {
+    color: #FED00E;
+    font-size: 40px;
+    font-weight: 600;
+    border: 1px solid #FED00E;
+    padding: 30px 5px 0;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+    left: 50px;
+    top: -29px;
 }
 .works-container p {
   color: #fff;

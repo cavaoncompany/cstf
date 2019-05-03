@@ -1009,7 +1009,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 /* Media Queries
 -------------------------------------------------------------- */
 @media only screen and (min-width: 1200px) {
-  .works-container { width: 29%; }
+  .works-container { width: 29%; height: 130px; }
+  .mobile-only { display: none; }
 
   .banner-row .container { padding-top: 7%; }
   .menu-item-tel-mobile { display: none }
@@ -1053,7 +1054,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   .divider.h35 { height: 35px; display: block; clear: both; }
 
-  .works-container { width: 29%; }
+  .works-container { width: 29%; height: 130px; }
+  .mobile-only { display: none; }
 
   .banner-row .container { padding-top: 7%; }
 
@@ -1124,8 +1126,6 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   .divider.h35 { height: 35px; display: none; height: 0; }
 
-  .works-container { width: 29%; }
-
   .banner-row .container { padding-top: 7%; }
 
   .menu-item-tel-mobile { display: none }
@@ -1157,7 +1157,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   
   .widget.widget_instagram .instagram_badge_image  img { display: block; width: 100%; }
 
-  .works-container { width: 43%; }
+  .works-container { width: 43%; height: 140px; }
+  .mobile-only { display: none; }
 
   .banner-row .container { padding-top: 10%; }
 
@@ -1213,7 +1214,9 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   .comment-list.style-2 article .gravatar { margin: 0px; }
 
-  .works-container { width: 90%; }
+  .works-container { width: 47%; }
+  .mobile-only { display: flex; justify-content: space-around; }
+  .desktop-only { display: none; }
 
   .banner-row .container { padding-top: 30%; padding-left: 30px; padding-right: 30px }
 

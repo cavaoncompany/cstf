@@ -1,5 +1,19 @@
 {
   "topLine": "WE ARE OFTEN UNSEEN",
   "bottomLine": "Backbone of the construction industry",
-  "buttonText": "GET AN ESTIMATE"
+  "buttonText": "GET AN ESTIMATE",
+  "slides": [
+    {
+      "title": "Banner image showing construction",
+      "image": "/img/banner-bg.png"
+    },
+    {
+      "title": "Banner image with construction work",
+      "image": "/img/banner-bg.png"
+    },
+    {
+      "title": "Banner image showing construction worker",
+      "image": "/img/banner-bg.png"
+    }
+  ]
 }
