@@ -13,23 +13,23 @@
                   <!-- <BANNER /> -->
                   <Banner />
                   <!-- END BANNER -->
-                  <!-- ICONBOX -->
+                  <!-- WHY STEEL FRAMING ICONBOX -->
+                  <Iconbox />
+                  <!-- END STEEL FRAMING ICONBOX -->
+                  <!-- HOW IT WORKS ICONBOX -->
                   <HowItWorks />
-                  <!-- END ICONBOX -->
-                  <!-- ABOUT -->
-                  <About />
-                  <!-- END ABOUT -->
+                  <!-- HOW IT WORKS END ICONBOX -->
                   <!-- SERVICES -->
                   <Services />
                   <!-- END SERVICES -->
+                  <!-- ABOUT -->
+                  <About />
+                  <!-- END ABOUT -->
                   <!-- PROJECT -->
                   <Project />
                   <!-- END PROJECT -->
-                  <!-- ICONBOX -->
-                  <Iconbox />
-                  <!-- END ICONBOX -->
                   <!-- TESTIMONIALS -->
-                  <Testimonials />
+                  <!-- <Testimonials /> -->
                   <!-- END TESTIMONIALS -->
                   <!-- QUOTE -->
                   <GetAQuote />
