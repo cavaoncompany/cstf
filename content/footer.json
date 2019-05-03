@@ -31,5 +31,19 @@
     ],
     "tel": "+61 2 8324 3742",
     "email": "info@cstf.com.au",
-    "address": "403 Elizabeth St, Surry Hills 2010 NSW"
+    "address": "403 Elizabeth St, Surry Hills 2010 NSW",
+    "associations": [
+        {
+            "image": "/img/nash.png",
+            "title": "NASH"
+        },
+        {
+            "image": "/img/truecore.png",
+            "title": "Truecore"
+        },
+        {
+            "image": "/img/mba.png",
+            "title": "Master Builders Association"
+        }
+    ]
 }

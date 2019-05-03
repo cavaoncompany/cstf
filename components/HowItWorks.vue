@@ -75,7 +75,6 @@ export default {
 }
 .works-row .themesflat-headings {
     margin-bottom: 50px;
-    color: #fff;
 }
 .works-row h3 {
     margin-bottom: 5px;
