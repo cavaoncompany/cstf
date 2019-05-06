@@ -399,6 +399,8 @@
 	.row-iconbox .themesflat-row { display: flex; flex-wrap: wrap; text-align: center;}
 	#projects .owl-carousel { display: none; }
 	.themesflat-icon-box.icon-left .icon-wrap { position: relative; margin-right: 0; margin-bottom: 5px; }
+	.themesflat-icon-box.icon-left .icon-wrap { width: 100%; }
+	.themesflat-icon-box.icon-left .text-wrap { width: 100%; }
 }
 
 /* Icon left */
