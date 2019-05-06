@@ -22,19 +22,19 @@
             data-auto="false"
           >
             <div class="service-container row">
-              <div v-for="(service, index) in services.services" :key="index" class="card col-md-3">
+              <div v-for="(service, index) in services.services" :key="index" class="card bg-dark text-white col-md-3">
                 <div class="thumb data-effect-item">
                   <img :src="service.img" :alt="service.title" class="card-img-top">
-                  <!-- <div class="overlay-effect bg-color-accent" /> -->
-                </div>
-                <div class="card-body">
-                  <h5 :id="'service' + index" class="card-title">
-                    {{ service.title }}
-                  </h5>
-                  <p :id="service.id" class="card-text">
+                  <div class="overlay-effect bg-light-grey">
+                  <p :id="service.id" class="card-text card-overlay-text">
                     {{ service.description }}
                   </p>
-                  <a v-if="service.overflow===true" class="btn btn-link" @click="extend(service.id)">{{ services.buttonText }}</a>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <h5 :id="'service' + index" class="card-title text-center">
+                    {{ service.title }}
+                  </h5>
                 </div>
               </div>
             </div>
@@ -92,9 +92,13 @@ export default {
   width: 100%;
 }
 .service-container .card-body p {
-    line-height: 1.5rem;
-    max-height: 6rem;
-    overflow: hidden;
+  line-height: 1.5rem;
+  max-height: 6rem;
+  overflow: hidden;
+}
+.service-container .card-overlay-text {
+  padding: 15px;
+  color: #111111;
 }
 .higher {
   max-height: 15rem !important;
