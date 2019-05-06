@@ -14,7 +14,7 @@
       </div><!-- /.row -->
 
       <div class="themesflat-row gutter-30 clearfix">
-        <div v-for="(icon, index) in icons.items" :key="index" class="col span_1_of_4 icon-item">
+        <div v-for="(icon, index) in icons.items" :key="index" class="col-6 col-md-4 icon-item">
           <div class="themesflat-icon-box icon-left accent-color style-2 clearfix">
             <div class="icon-wrap">
               <img :src="icon.icon" :alt="icon.title" class="icon-build">
@@ -36,7 +36,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="themesflat-spacer clearfix" data-desktop="72" data-mobile="60" data-smobile="60" />
-          <div class="elm-button text-center">
+          <div class="elm-button text-center why-steel-btn">
             <a href="/why-steel" class="themesflat-button bg-accent">{{ icons.buttonText }}</a>
           </div>
           <div class="themesflat-spacer clearfix" data-desktop="62" data-mobile="35" data-smobile="35" />
@@ -62,7 +62,6 @@ export default {
   max-width: 50px;
   max-height: 50px;
 }
-.icon-item {
-  margin-top: 50px;
-}
+
+.themesflat-row {}
 </style>

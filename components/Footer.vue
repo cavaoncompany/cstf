@@ -118,14 +118,11 @@ export default {
 }
 #footer .associations {
   display: flex;
-  justify-content: flex-end;
   width: 100%;
   border-top: 1px solid #585858;
 }
 #footer .associations img {
-  height: 50px;
   margin-top: 25px;
-  margin-left: 40px;
 }
 #footer .themesflat-row .span_1_of_3 {
   margin-bottom: 15px;

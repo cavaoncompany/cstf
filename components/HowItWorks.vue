@@ -43,11 +43,11 @@ export default {
 .works-container {
     position: relative;
     border: 1px solid #FED00E;
-    margin: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    padding: 30px 5px 0;
 }
 .works-row .heading {
   color: #fff;
@@ -72,7 +72,6 @@ export default {
     font-size: 40px;
     font-weight: 600;
     border: 1px solid #FED00E;
-    padding: 30px 5px 0;
     height: 50px;
     width: 50px;
     display: flex;

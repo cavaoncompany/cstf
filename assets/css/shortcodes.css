@@ -398,6 +398,12 @@
 	.themesflat-project.has-margin.mg15 .project-item { width: 100%; }
 }
 
+/* Icon left */
+.themesflat-icon-box.icon-left { position: relative; display: flex; flex-direction: column; }
+.themesflat-icon-box.icon-left .icon-wrap { position: relative; }
+.themesflat-icon-box.icon-left .text-wrap { padding-left: 0; }
+.row-iconbox .themesflat-row { display: flex; flex-wrap: wrap; text-align: center;}
+
 /* Testimonials
 -------------------------------------------------------------- */
 .themesflat-testimonials blockquote { padding: 0px; }
