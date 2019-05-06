@@ -9,6 +9,7 @@
       <div class="row desktop-only">
         <div v-for="(item, index) in howitworks.services" :key="index" class="works-container">
           <!-- <img :src="item.img" :alt="item.title"> -->
+          <div v-bind:class="{'invisible': (index === 0 || index === 3)}" class="connecting-line" />
           <div class="number">{{ index + 1 }}</div>
           <h3>{{ item.title }}</h3>
           <p>{{ item.timeframe }}</p>
@@ -66,6 +67,15 @@ export default {
     position: absolute;
     left: -32px;
     top: 35px;
+    background-image: url('/img/number-bg.png')
+}
+.works-container .connecting-line {
+  background-image: url('/img/blank.png');
+  border-bottom: 1px solid #FED00E;
+  width: 50px;
+  position: absolute;
+  left: -51px;
+  top: 64px;
 }
 .works-container .number-mobile {
     color: #FED00E;
@@ -81,6 +91,7 @@ export default {
     position: absolute;
     left: 50px;
     top: -29px;
+    background-image: url('/img/number-bg.png')
 }
 .works-container p {
   color: #fff;
@@ -101,5 +112,8 @@ export default {
 .works-row h3 {
     margin-bottom: 5px;
     color: #fff;
+}
+.invisible {
+  display: none;
 }
 </style>

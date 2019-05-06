@@ -99,9 +99,7 @@ export default {
 .service-container .card {
   border: none;
 }
-.service-container .card-title {
-  margin-top: 25px;
-}
+
 .service-container .card-body .btn-link {
   color: #FED00E;
   font-size: 14px;

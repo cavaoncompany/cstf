@@ -20,7 +20,7 @@
             data-column3="1"
             data-auto="false"
           >
-            <div class="service-container row">
+            <div class="services-container row">
               <div v-for="(service, index) in services.services" :key="index" class="card col-md-3">
                 <div class="thumb data-effect-item">
                   <img :src="service.img" :alt="service.title" class="card-img-top">
@@ -68,25 +68,25 @@ export default {
 .service-container {
   margin: 40px 0;
 }
-.service-container .card {
+.services-container .card {
   border: none;
 }
-.service-container .card-title {
+.services-container .card-title {
   margin-top: 25px;
 }
-.service-container .card-body .btn-link {
+.services-container .card-body .btn-link {
   color: #FED00E;
   font-size: 14px;
   font-weight: 600;
   float: right;
 }
-.service-container .btn-link:hover,
-.service-container .btn-link:focus,
-.service-container .btn-link.focus {
+.services-container .btn-link:hover,
+.services-container .btn-link:focus,
+.services-container .btn-link.focus {
   text-decoration: none;
   box-shadow: none;
 }
-.service-container .card-img-top {
+.services-container .card-img-top {
   width: 100%;
 }
 </style>
