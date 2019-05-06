@@ -18,7 +18,7 @@
             data-column3="1"
             data-auto="false"
           >
-            <div class="owl-carousel owl-theme">
+            <div class="desktop-only owl-carousel owl-theme">
               <div v-for="(item, index) in project.projectDetails" :key="index" class="themesflat-project style-1 data-effect  clearfix">
                 <div class="project-item">
                   <div class="inner">
@@ -26,7 +26,7 @@
                       <img :src="item.img" :alt="item.title">
                       <div class="text-wrap text-center">
                         <h5 class="heading">
-                          <a href="#">{{ item.title }}</a>
+                          <a>{{ item.title }}</a>
                         </h5>
                       </div>
                       <div class="overlay-effect bg-color-3" />
@@ -34,6 +34,23 @@
                   </div>
                 </div>
               </div><!-- /.themesflat-project -->
+            </div>
+            <div class="mobile-only projects-carousel">
+              <div v-for="(item, index) in project.projectDetails" :key="index" class="themesflat-project style-1 data-effect clearfix">
+                <div class="project-item">
+                  <div class="inner">
+                    <div class="thumb data-effect-item has-effect-icon w40 offset-v-43 offset-h-46">
+                      <img :src="item.img" :alt="item.title">
+                      <div class="text-wrap text-center">
+                        <h5 class="heading">
+                          <a>{{ item.title }}</a>
+                        </h5>
+                      </div>
+                      <div class="overlay-effect bg-color-3" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div><!-- /.themesflat-carousel-box -->
           <div class="themesflat-spacer clearfix" data-desktop="41" data-mobile="35" data-smobile="35" />
@@ -59,3 +76,37 @@ export default {
   }
 }
 </script>
+
+<style>
+  .projects-carousel {
+    flex-direction: column;
+  }
+  .projects-carousel .style-1 {
+    margin-bottom: 30px;
+  }
+  .projects-carousel img {
+    width: 100%;
+  }
+  .projects-carousel .overlay-effect,
+  #projects .owl-carousel .overlay-effect {
+    bottom: 0;
+    top: auto;
+    height: 30%;
+    opacity: 0.6;
+    visibility: visible;
+    transform: none;
+  }
+  .themesflat-project.style-1 .text-wrap {
+    top: 77%;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: none;
+  }
+  #projects .owl-carousel {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+</style>
+
