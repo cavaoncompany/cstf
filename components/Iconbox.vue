@@ -14,7 +14,7 @@
       </div><!-- /.row -->
 
       <div class="themesflat-row gutter-30 clearfix">
-        <div v-for="(icon, index) in icons.items" :key="index" class="col-6 col-md-4 icon-item">
+        <div v-for="(icon, index) in icons.items" :key="index" class="col-6 col-lg-4 icon-item">
           <div class="themesflat-icon-box icon-left accent-color style-2 clearfix">
             <div class="icon-wrap">
               <img :src="icon.icon" :alt="icon.title" class="icon-build">
