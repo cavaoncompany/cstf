@@ -1235,6 +1235,9 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .service-container .padding-left { padding-left: 5px }
   .service-container .padding-right { padding-right: 5px }
   .service-container h5 { font-size: 0.9rem; }
+  .modal-backdrop.show { opacity: 0.8; }
+  .service-modal-content, .service-modal-body { background-color: transparent }
+  .service-modal-header { border: none; }
 
   #site-logo { width: 100px; }
 

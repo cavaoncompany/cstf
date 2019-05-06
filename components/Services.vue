@@ -12,7 +12,7 @@
               {{ services.intro }}
             </p>
           </div>
-          <div class="themesflat-spacer clearfix" data-desktop="39" data-mobile="35" data-smobile="35" />
+          <div class="themesflat-spacer clearfix desktop-only" data-desktop="39" data-mobile="35" data-smobile="35" />
           <div
             class="themesflat-carousel-box data-effect clearfix"
             data-gap="30"
@@ -22,14 +22,24 @@
             data-auto="false"
           >
             <div class="service-container row">
-              <div v-for="(service, index) in services.services" :key="index" v-bind:class="{'padding-right': index % 2 === 0, 'padding-left' : index % 2 > 0}" class="card bg-dark text-white col-6 col-md-3">
+              <div v-for="(service, index) in services.services" :key="index" class="card bg-dark text-white col-6 col-md-3 desktop-only">
                 <div class="thumb data-effect-item">
                   <img :src="service.img" :alt="service.title" class="card-img-top">
-                  <div class="overlay-effect bg-light-grey">
-                  <p :id="service.id" class="card-text card-overlay-text">
-                    {{ service.description }}
-                  </p>
+                  <div class="overlay-effect bg-light-grey desktop-only">
+                    <p :id="service.id" class="card-text card-overlay-text">
+                      {{ service.description }}
+                    </p>
                   </div>
+                </div>
+                <div class="card-body">
+                  <h5 :id="'service' + index" class="card-title text-center">
+                    {{ service.title }}
+                  </h5>
+                </div>
+              </div>
+              <div v-for="(service, index) in services.services" :key="index" v-bind:class="{'padding-right': index % 2 === 0, 'padding-left' : index % 2 > 0}" data-toggle="modal" class="card mobile-only bg-dark text-white col-6 col-md-3">
+                <div class="thumb data-effect-item">
+                  <img :src="service.img" :alt="service.title" :data-target="'service-' + index" class="card-img-top" @click="showModal('service-' + index)">
                 </div>
                 <div class="card-body">
                   <h5 :id="'service' + index" class="card-title text-center">
@@ -44,6 +54,23 @@
         </div><!-- /.col-md-12 -->
       </div><!-- /.row -->
     </div><!-- /.container -->
+    <div v-for="(service, i) in services.services" :key="i" class="modal fade service-modal" :id="'service-' + i" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content service-modal-content">
+          <div class="modal-header service-modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body service-modal-body">
+            <h5>{{ service.title }}</h5>
+            <p :id="service.id" class="card-text card-overlay-text">
+              {{ service.description }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -58,9 +85,8 @@ export default {
     }
   },
   methods: {
-    extend: function (el) {
-      const extended = document.getElementById(el)
-      extended.classList.toggle('higher')
+    showModal: function (modal) {
+      $('#' + modal).appendTo("body").modal('show')
     }
   }
 }
@@ -93,8 +119,6 @@ export default {
 }
 .service-container .card-body p {
   line-height: 1.5rem;
-  max-height: 6rem;
-  overflow: hidden;
 }
 .service-container .card-overlay-text {
   padding: 15px;
@@ -102,5 +126,16 @@ export default {
 }
 .higher {
   max-height: 15rem !important;
+}
+.service-modal .modal-header button {
+  text-align: right;
+  color: #fff;
+}
+.service-modal-body {
+  background-color: transparent;
+  color: #fff;
+}
+.service-modal-body h5 {
+  color: #fff;
 }
 </style>
