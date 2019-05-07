@@ -190,6 +190,7 @@ export default {
     }
   },
   created() {
+    const vm = this
     if (process.client) {
       // eslint-disable-next-line
       if (window.matchMedia('screen and (max-width: 768px)').matches) {
@@ -203,8 +204,8 @@ export default {
       // eslint-disable-next-line
       const el = document.getElementById('swipezone')
       this.swipedetect(el, function (swipedir) {
-      // swipedir contains either "none", "left", "right", "top", or "down"
-        this.swipeImage(swipedir)
+        // swipedir contains either "none", "left", "right", "top", or "down"
+        vm.swipeImage(swipedir)
       })
     }
   },
@@ -254,6 +255,7 @@ export default {
       }, false)
     },
     swipeImage: function (direction) {
+      alert(direction)
       if (direction === 'left') {
         // eslint-disable-next-line
         $('#mobile-projects-carousel').carousel('next')
@@ -318,6 +320,8 @@ export default {
 }
 #projects .carousel-mobile-only .carousel-caption {
   left: 0;
+  bottom: -20px;
+  right: auto;
 }
 #projects .carousel-inner {
   margin-bottom: 10px;
