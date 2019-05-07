@@ -43,7 +43,8 @@
                             >
                               <img :src="project.img" :alt="project.name">
                               <div class="elm-link">
-                                <a href="#" class="icon-1 icon-search" data-toggle="modal" :data-target="target + index" />
+                                <a v-if="mobile === true" href="#" class="icon-1 icon-search" data-toggle="modal" :data-target="'#project-detail-mobile-' + index" />
+                                <a v-if="mobile === false" href="#" class="icon-1 icon-search" data-toggle="modal" :data-target="'#project-detail-' + index" />
                               </div>
                               <div class="overlay-effect bg-color-3" />
                             </div>
@@ -185,12 +186,12 @@ export default {
     return {
       projects: projects,
       mobile: false,
-      target: '#project-detail-mobile-',
+      target: '',
       swipe: ''
     }
   },
   watch: {
-    mobile: function () {
+    target: function () {
       if (this.mobile === true) {
         this.target = '#project-detail-mobile-'
       } else {
@@ -204,10 +205,8 @@ export default {
       // eslint-disable-next-line
       if (window.matchMedia('screen and (max-width: 768px)').matches) {
         this.mobile = true
-        this.target = '#project-detail-mobile-'
       } else {
         this.mobile = false
-        this.target = '#project-detail-'
       }
 
       // eslint-disable-next-line
