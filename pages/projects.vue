@@ -44,7 +44,6 @@
                               <img :src="project.img" :alt="project.name">
                               <div class="elm-link">
                                 <a href="#" class="icon-1 icon-search" data-toggle="modal" :data-target="'#project-detail-' + index" />
-                                <!-- <a href="#" class="icon-1"></a> -->
                               </div>
                               <div class="overlay-effect bg-color-3" />
                             </div>
@@ -53,30 +52,12 @@
                                 <a href="#">{{ project.name }}</a>
                               </h5>
                               <p>{{ project.type }}</p>
-                              <!-- <div class="elm-meta">
-                                <span>
-                                  <a href="#">Green House</a>
-                                </span>
-                                <span>
-                                  <a href="#">Villa</a>
-                                </span>
-                              </div> -->
                             </div>
                           </div>
                         </div>
                         <!-- /.project-item -->
                       </div>
                       <!-- /.themesflat-project -->
-                      <!-- <div class="button-wrap has-icon icon-left size-14 pf21 text-center">
-                        <a href="#" class="themesflat-button bg-accent pd32">
-                          <span>
-                            LOAD MORE
-                            <span class="icon">
-                              <i class="ion-load-c"></i>
-                            </span>
-                          </span>
-                        </a>
-                      </div> -->
                       <div
                         class="themesflat-spacer clearfix"
                         data-desktop="72"
@@ -121,7 +102,7 @@
                 <!--Slides-->
                 <div class="carousel-inner" role="listbox">
                   <div v-for="(image, i) in project.otherImages.images" :key="i" class="carousel-item" :class="{'active': i === 0 }">
-                    <img class="d-block w-100" :src="image" :alt="project.name">
+                    <img class="d-block" :src="image" :alt="project.name">
                   </div>
                 </div>
                 <!--/.Slides-->
@@ -136,8 +117,8 @@
                 </a>
                 <!--/.Controls-->
                 <ol class="carousel-indicators">
-                  <li v-for="(image, i) in project.otherImages.images" :key="i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" :class="{'active': i === 0 }">
-                    <img class="d-block w-100 img-fluid" :src="image">
+                  <li v-for="(image, i) in project.otherImages.images" :key="i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" :class="{'active': i === 0, 'hidden': i > 4 }">
+                    <img class="d-block img-fluid thumbnail-carousel-img" :src="image">
                   </li>
                 </ol>
               </div>
@@ -164,17 +145,6 @@ export default {
     return {
       projects: projects
     }
-  },
-  created() {
-    // if (process.client) {
-    //   for (let i = 0; i < this.projects.projects.length; i++) {
-    //     this.projects.projects[i].otherImages.push(this.projects.projects[i].img1)
-    //     this.projects.projects[i].otherImages.push(this.projects.projects[i].img2)
-    //     this.projects.projects[i].otherImages.push(this.projects.projects[i].img3)
-    //     this.projects.projects[i].otherImages.push(this.projects.projects[i].img4)
-    //     this.projects.projects[i].otherImages.push(this.projects.projects[i].img5)
-    //   }
-    // }
   }
 }
 </script>
@@ -187,17 +157,12 @@ export default {
   background: transparent;
   border: none;
 }
-#projects .owl-thumb-item {
-  overflow-y: hidden;
+#projects .carousel-item img {
+  height: 450px;
+  width: auto;
 }
-#projects .owl-thumbs {
-  display: flex;
-}
-#projects .owl-prev {
-  margin-left: -65px;
-}
-#projects .owl-next {
-  margin-right: -65px;
+#projects .thumbnail-carousel-img {
+  height: 85px;
 }
 #projects .carousel-indicators {
   bottom: -22px;
@@ -217,8 +182,11 @@ export default {
 #projects .carousel-indicators .active {
   background-color: #FED00E;
 }
-
-#projects .carousel-item img {
-  height: 100%;
+#projects .carousel-item.active {
+  width: 800px;
+  justify-content: center;
+}
+#projects .carousel-inner {
+  margin-bottom: 10px;
 }
 </style>
