@@ -299,6 +299,7 @@
 .owl-theme .owl-nav [class*="owl-"]:hover { background-color: #3e3e3e; }
 .owl-theme .owl-nav [class*="owl-"].disabled:hover,
 .owl-theme .owl-nav [class*="owl-"].disabled { background-color: rgba(255,255,255,0.2); color: #fff; cursor: default; }
+#projects .owl-carousel { display: flex; }
 
 /* Arrows Style 2*/
 .arrow-style-2 .owl-theme .owl-nav [class*="owl-"].disabled { background-color: #e7e7e7; color: #bdbdbd; }
@@ -383,7 +384,7 @@
 @media only screen and (max-width: 1199px) {
 	.themesflat-project.style-1 .heading { font-size: 12px; }
 	.themesflat-project.has-margin.mg15.w25 .project-item { width: 33.33%; }
-  .themesflat-project.style-2 .text-wrap{ padding: 15px 5px; }
+	.themesflat-project.style-2 .text-wrap{ padding: 15px 5px; }
 }
 
 @media only screen and (max-width: 767px) {

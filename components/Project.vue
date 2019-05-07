@@ -97,7 +97,7 @@ export default {
     transform: none;
   }
   .themesflat-project.style-1 .text-wrap {
-    top: 77%;
+    top: 75%;
     left: 0;
     opacity: 1;
     visibility: visible;

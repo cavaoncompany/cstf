@@ -38,7 +38,7 @@
               <li
                 v-for="(item, index) in footer.links"
                 :key="index"
-                class="clearfix col-lg-6 col-sm-4"
+                class="clearfix col-6"
               >
                 <a @click="scrollToTop(item.title.toLowerCase())">{{ item.title }}</a>
               </li>
