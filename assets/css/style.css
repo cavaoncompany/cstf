@@ -326,9 +326,11 @@ h6 a { color: inherit }
 .bg-light-snow { background-color: #fafafb; }
 .bg-f7f { background-color: #f7f7f7 !important;}
 .bg-ffc { background-color: #FED00E !important;}
-.bg-row-1 { background: url('../img/Quote-bg.png') center center no-repeat; background-size: contain; background-position-x: -350px; }
+.bg-row-1 { background: url('../img/Quote-bg.png') center center no-repeat; background-size: contain; background-position-x: -650px; }
 .bg-row-2 { background: url('../img/page/bg-iconbox.jpg') center center no-repeat; background-size: cover; }
-
+@media only screen and (max-width: 479px) {
+	.bg-row-1 { background: #fff; }
+}
 .padding-top-45 { padding-top: 45px !important; }
 .padding-top-17 { padding-top: 17px !important; }
 .padding-top-16 { padding-top: 16px !important; }

@@ -2,7 +2,7 @@
   <section id="home" class="header-fixed page no-sidebar header-style-2 topbar-style-2 menu-has-search">
     <div id="wrapper" class="animsition">
       <div id="page" class="clearfix">
-        <Header currentItem="HOME" />
+        <Header current-item="HOME" />
         <!-- Main Content -->
         <div id="main-content" class="site-main clearfix">
           <div id="content-wrap">
@@ -32,7 +32,7 @@
                   <!-- <Testimonials /> -->
                   <!-- END TESTIMONIALS -->
                   <!-- QUOTE -->
-                  <GetAQuote />
+                  <OurPartners />
                   <!-- END QUOTE -->
                 </div><!-- /.page-content -->
               </div><!-- /#inner-content -->
@@ -55,8 +55,7 @@ import Banner from '../components/Banner'
 import About from '../components/About'
 import Services from '../components/Services'
 import Project from '../components/Project'
-import GetAQuote from '../components/GetAQuote'
-import Testimonials from '../components/Testimonials'
+import OurPartners from '../components/OurPartners'
 import Iconbox from '../components/Iconbox'
 import Footer from '../components/Footer'
 
@@ -69,12 +68,9 @@ export default {
     About,
     Services,
     Project,
-    GetAQuote,
-    Testimonials,
+    OurPartners,
     Iconbox,
     Footer
-  },
-  data() {
   },
   methods: {
     scrollToTop: function (el) {

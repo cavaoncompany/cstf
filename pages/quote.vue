@@ -897,8 +897,8 @@ export default {
       }
     },
     scrollToTop: function () {
-      if (process.client){
-        window.scrollTo({top: 120, behavior: 'smooth'})
+      if (process.client) {
+        window.scrollTo({ top: 120, behavior: 'smooth' })
       }
     },
     showUploadedFile: function (e, area) {
@@ -997,7 +997,7 @@ export default {
       this.structuralPlans = ''
       this.quoteFor = ''
       this.startProject = ''
-      return this.$router.push("/success");
+      return this.$router.push('/success')
       // this.$router.replace({ path: 'success' })
     },
     async onSubmit() {

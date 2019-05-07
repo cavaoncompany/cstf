@@ -21,28 +21,46 @@
           </p>
           <div class="form-group">
             <label for="quote-name" class="hide-element">{{ getaquote.namePlaceholder }}</label>
-            <input id="quote-name" type="text" name="name" :placeholder="getaquote.namePlaceholder" v-model="name" @blur="sendWarning('name')">
-            <p v-if="nameIsEmpty === true" class="warning-message">{{ getaquote.nameMissing }}</p>
+            <input
+              id="quote-name"
+              v-model="name"
+              type="text"
+              name="name"
+              :placeholder="getaquote.namePlaceholder"
+              @blur="sendWarning('name')"
+            >
+            <p v-if="nameIsEmpty === true" class="warning-message">
+              {{ getaquote.nameMissing }}
+            </p>
           </div>
           <div class="form-group">
             <label for="quote-email" class="hide-element">{{ getaquote.emailPlaceholder }}</label>
-            <input id="quote-email" type="email" name="email" :placeholder="getaquote.emailPlaceholder" v-model="email"  @blur="sendWarning('email')">
-            <p v-if="emailIsEmpty === true" class="warning-message">{{ getaquote.emailMissing }}</p>
+            <input
+              id="quote-email"
+              v-model="email"
+              type="email"
+              name="email"
+              :placeholder="getaquote.emailPlaceholder"
+              @blur="sendWarning('email')"
+            >
+            <p v-if="emailIsEmpty === true" class="warning-message">
+              {{ getaquote.emailMissing }}
+            </p>
           </div>
           <div class="form-group">
             <label for="quote-company" class="hide-element">{{ getaquote.companyPlaceholder }}</label>
-            <input id="quote-company" type="text" name="company" :placeholder="getaquote.companyPlaceholder" v-model="company">
+            <input id="quote-company" v-model="company" type="text" name="company" :placeholder="getaquote.companyPlaceholder">
           </div>
           <div class="elm-button">
-          <input
-            id="submitDetails"
-            type="submit"
-            :value="getaquote.nextButton"
-            disabled
-            v-bind:class="{'disabled': nextEnabled === false}"
-            class="themesflat-button bg-accent"
-            @click="openQuoteForm()"
-          >
+            <input
+              id="submitDetails"
+              type="submit"
+              :value="getaquote.nextButton"
+              disabled
+              v-bind:class="{'disabled': nextEnabled === false}"
+              class="themesflat-button bg-accent"
+              @click="openQuoteForm()"
+            >
           </div>
         </div>
       </div>
@@ -99,7 +117,7 @@ export default {
     }
   },
   methods: {
-    openQuoteForm: function() {
+    openQuoteForm: function () {
       if (this.nextEnabled) {
         this.$router.push({
           name: 'quote',
@@ -108,16 +126,17 @@ export default {
             email: this.email,
             company: this.company
           }
-      })
+        })
+        // eslint-disable-next-line
       $('.modal-backdrop').remove()
       }
     },
-    enableButton: function() {
+    enableButton: function () {
       document.getElementById('submitDetails').disabled = false
     },
-    sendWarning: function(field) {
+    sendWarning: function (field) {
       if (field === 'name') {
-        if (this.name === ''){
+        if (this.name === '') {
           this.nameIsEmpty = true
         } else {
           this.nameIsEmpty = false

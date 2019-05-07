@@ -1,6 +1,6 @@
 <template>
   <section id="services-page" class="header-fixed page no-sidebar header-style-2 topbar-style-1 menu-has-search">
-    <Header currentItem="SERVICES" />
+    <Header current-item="SERVICES" />
     <div class="container">
       <div class="row">
         <div class="col-md-12">

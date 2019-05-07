@@ -1,6 +1,6 @@
 <template>
   <section id="why-steel" class="header-fixed page header-style-2 topbar-style-1 menu-has-search">
-    <Header currentItem="ABOUT" />
+    <Header current-item="ABOUT" />
     <div class="container">
       <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60" />
       <div class="row about">
@@ -26,7 +26,17 @@
             <div v-for="(point, index) in whysteel.points" :id="'item-title-' + index" :key="index" class="card">
               <div class="card-header">
                 <h5>{{ point.title }}</h5>
-                <button class="btn btn-link expand" role="button" data-toggle="collapse" :data-target="'#item-content-' + index" :aria-controls="'item-content-' + index" type="button" @click="handleExpand(index)"><i class="fa fa-angle-down"></i></button>
+                <button
+                  class="btn btn-link expand"
+                  role="button"
+                  data-toggle="collapse"
+                  :data-target="'#item-content-' + index"
+                  :aria-controls="'item-content-' + index"
+                  type="button"
+                  @click="handleExpand(index)"
+                >
+                  <i class="fa fa-angle-down" />
+                </button>
               </div>
               <div :id="'item-content-' + index" class="collapse" aria-labelledby="'item-title-' + index" data-parent="#why-steel-framing-accordion">
                 <div class="card-body">
@@ -41,41 +51,13 @@
         <div class="col-md-4 col-lg-3">
           <div class="contact-box">
             <h5>{{ whysteel.contactBoxTitle }}</h5>
-          <p>{{ whysteel.contactBoxDescription }}</p>
-          <div class="elm-button">
-            <a href="/contact" class="themesflat-button bg-accent">{{ whysteel.contactBoxButtonText }}</a>
-          </div>
+            <p>{{ whysteel.contactBoxDescription }}</p>
+            <div class="elm-button">
+              <a href="/contact" class="themesflat-button bg-accent">{{ whysteel.contactBoxButtonText }}</a>
+            </div>
           </div>
         </div>
       </div>
-      <!-- <div class="themesflat-spacer clearfix" data-desktop="37" data-mobile="35" data-smobile="35" />
-      <div class="flat-content-wrap style-2 clearfix">
-        <div id="sidebar-wrap" class="themesflat-tabs style-2 title-w170 clearfix">
-          <ul id="sidebar" class="tab-title">
-            <li v-for="(point, index) in whysteel.points" :id="'item-title-' + index" :key="index" v-bind:class="{'active' : index === 0}" class="item-title">
-              <span class="inner" @click="findcontent('point-' + index, 'item-title-' + index)">{{ point.title }}</span>
-            </li>
-          </ul>
-          <div id="spacer" class="invisible">
-            DESIGN_FLEXIBILITY
-          </div>
-          <div id="steel-content" class="tab-content-wrap clearfix">
-            <div class="outer-wrapper">
-              <div v-for="(point, index) in whysteel.points" :id="'point-' + index" :key="index" class="tab-content">
-                <div class="item-content">
-                  <h5>{{ point.title }}</h5>
-                  <p v-for="(paragraph, i) in point.description" :key="i">
-                    {{ paragraph }}
-                  </p>
-                </div>
-              </div>
-              <!-- /.tab-content -->
-            <!-- </div> -->
-          <!-- </div> -->
-          <!-- /.tab-content-wrap -->
-        <!-- </div> -->
-        <!-- /.themesflat-tabs -->
-      <!-- </div>-->
     </div>
     <div class="themesflat-spacer clearfix" data-desktop="73" data-mobile="60" data-smobile="60" />
     <Footer />

@@ -3,7 +3,7 @@
     id="projects"
     class="header-fixed page no-sidebar header-style-2 topbar-style-1 menu-has-search"
   >
-    <Header currentItem="PROJECTS" />
+    <Header current-item="PROJECTS" />
     <!-- Main Content -->
     <div id="main-content" class="site-main clearfix">
       <div id="content-wrap">
@@ -127,23 +127,25 @@
                 <!--/.Slides-->
                 <!--Controls-->
                 <a class="carousel-control-prev" :href="'#carousel-thumb' + index" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="carousel-control-prev-icon" aria-hidden="true" />
                   <span class="sr-only">Previous</span>
                 </a>
                 <a class="carousel-control-next" :href="'#carousel-thumb' + index" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="carousel-control-next-icon" aria-hidden="true" />
                   <span class="sr-only">Next</span>
                 </a>
                 <!--/.Controls-->
                 <ol class="carousel-indicators">
-                  <li v-for="(image, i) in project.otherImages.images" :key="i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" v-bind:class="{'active': i === 0 }"> <img class="d-block w-100 img-fluid" :src="image"></li>
+                  <li v-for="(image, i) in project.otherImages.images" :key="i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" v-bind:class="{'active': i === 0 }">
+                    <img class="d-block w-100 img-fluid" :src="image">
+                  </li>
                 </ol>
               </div>
               <!--/.Carousel Wrapper-->
             </div>
+          </div>
         </div>
       </div>
-    </div>
     </div>
   </section>
 </template>

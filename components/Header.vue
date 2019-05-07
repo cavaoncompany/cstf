@@ -88,7 +88,7 @@ export default {
       const coordinates = { top: rect.top + scrollTop, left: rect.left + scrollLeft }
       window.scrollTo({ top: coordinates.top, behavior: 'smooth' })
     },
-    showSubMenu: function(submenu) {
+    showSubMenu: function (submenu) {
       document.getElementById(submenu).classList.add('submenu-visible')
     }
   }

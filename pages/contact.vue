@@ -3,7 +3,7 @@
     id="contact"
     class="header-fixed page no-sidebar header-style-2 topbar-style-2 menu-has-search"
   >
-    <Header currentItem="CONTACT" />
+    <Header current-item="CONTACT" />
     <!-- Main Content -->
     <div id="main-content" class="site-main clearfix">
       <div id="content-wrap">
@@ -45,9 +45,9 @@
                       <div class="themesflat-contact-form style-2 clearfix">
                         <form
                           id="contactusform"
-                          @submit.prevent="onSubmit"
                           accept-charset="utf-8"
                           class="form-submit contact-form wpcf7-form"
+                          @submit.prevent="onSubmit"
                         >
                           <input type="hidden" name="form-name" value="startAProject">
                           <p class="hidden">
@@ -215,8 +215,8 @@
                       <div id="map-wrap" style="height: 20vh; width: 100%;">
                         <no-ssr>
                           <l-map :zoom="10" :center="[47.413220, -1.219482]">
-                            <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"></l-tile-layer>
-                            <l-marker :lat-lng="[-33.833220, 151.209482]"></l-marker>
+                            <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
+                            <l-marker :lat-lng="[-33.833220, 151.209482]" />
                           </l-map>
                         </no-ssr>
                       </div>
@@ -264,9 +264,6 @@ export default {
     Header,
     Footer
   },
-  async mounted() {
-    await this.$recaptcha.init()
-  },
   data() {
     return {
       contact: contact,
@@ -279,7 +276,7 @@ export default {
     }
   },
   watch: {
-    name: function() {
+    name: function () {
       if (this.name !== '' && this.email !== '' && this.message !== '') {
         this.submitEnabled = true
         this.enableSubmit()
@@ -287,7 +284,7 @@ export default {
         this.submitEnabled = false
       }
     },
-    email: function() {
+    email: function () {
       if (this.name !== '' && this.email !== '' && this.message !== '') {
         this.submitEnabled = true
         this.enableSubmit()
@@ -295,7 +292,7 @@ export default {
         this.submitEnabled = false
       }
     },
-    message: function() {
+    message: function () {
       if (this.name !== '' && this.email !== '' && this.message !== '') {
         this.submitEnabled = true
         this.enableSubmit()
@@ -304,11 +301,14 @@ export default {
       }
     }
   },
+  async mounted() {
+    await this.$recaptcha.init()
+  },
   methods: {
-    enableSubmit: function() {
+    enableSubmit: function () {
       document.getElementById('contact-submit').disabled = false
     },
-    sendEmail: function() {
+    sendEmail: function () {
       const emailData = {
         email: this.email,
         name: this.name,
@@ -317,7 +317,7 @@ export default {
         message: this.message
       }
       this.$store.dispatch('contactUs', emailData).then(() => {
-          this.$toast.success(this.contact.success).goAway(1500)
+        this.$toast.success(this.contact.success).goAway(1500)
       })
       this.email = ''
       this.name = ''
@@ -325,11 +325,13 @@ export default {
       this.subject = ''
       this.message = ''
     },
+    // eslint-disable-next-line
     async onSubmit() {
       try {
-        const token = await this.$recaptcha.execute('login')
+        // const token = await this.$recaptcha.execute('login')
         this.sendEmail()
       } catch (error) {
+        // eslint-disable-next-line
         console.log('Submission error: ', error)
       }
     }

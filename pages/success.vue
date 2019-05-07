@@ -17,7 +17,7 @@
         <div>
           <p>{{ thankyou.thankYouMessage }}</p>
           <div class="elm-button">
-              <a href="/" class="themesflat-button bg-accent">{{ thankyou.returnHome }}</a>
+            <a href="/" class="themesflat-button bg-accent">{{ thankyou.returnHome }}</a>
           </div>
         </div>
       </div>

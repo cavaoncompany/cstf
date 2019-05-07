@@ -54,7 +54,14 @@
         </div><!-- /.col-md-12 -->
       </div><!-- /.row -->
     </div><!-- /.container -->
-    <div v-for="(service, i) in services.services" :key="i" class="modal fade service-modal" :id="'service-' + i" tabindex="-1" role="dialog">
+    <div
+      v-for="(service, i) in services.services"
+      :id="'service-' + i"
+      :key="i"
+      class="modal fade service-modal"
+      tabindex="-1"
+      role="dialog"
+    >
       <div class="modal-dialog" role="document">
         <div class="modal-content service-modal-content">
           <div class="modal-header service-modal-header">
@@ -86,7 +93,8 @@ export default {
   },
   methods: {
     showModal: function (modal) {
-      $('#' + modal).appendTo("body").modal('show')
+      // eslint-disable-next-line
+      $('#' + modal).appendTo('body').modal('show')
     }
   }
 }
