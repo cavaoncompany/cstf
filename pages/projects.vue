@@ -189,6 +189,15 @@ export default {
       swipe: ''
     }
   },
+  watch: {
+    mobile: function () {
+      if (this.mobile === true) {
+        this.target = '#project-detail-mobile-'
+      } else {
+        this.target = '#project-detail-'
+      }
+    }
+  },
   created() {
     const vm = this
     if (process.client) {
