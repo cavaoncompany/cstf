@@ -148,9 +148,12 @@
         </div>
         <div class="modal-body">
           <div id="mobile-projects-carousel" class="carousel" data-ride="carousel" data-interval="false">
-            <div class="carousel-inner">
+            <div id="swipezone" class="carousel-inner">
               <div v-for="(image, i) in project.otherImages.images" :key="i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
-                <img class="d-block w-100" :src="image" :alt="project.name">
+                <img class="d-block w-100" :src="image" :alt="project.name"><br>
+                <div class="image-counter carousel-caption d-md-block">
+                  <p>{{ i + 1 }}/{{ project.otherImages.images.length }}</p>
+                </div>
               </div>
             </div>
             <a class="carousel-control-prev" href="#mobile-projects-carousel" role="button" data-slide="prev">
@@ -182,26 +185,81 @@ export default {
     return {
       projects: projects,
       mobile: false,
-      target: '#project-detail-mobile-'
+      target: '#project-detail-mobile-',
+      swipe: ''
     }
   },
   created() {
     if (process.client) {
       // eslint-disable-next-line
       if (window.matchMedia('screen and (max-width: 768px)').matches) {
-        // eslint-disable-next-line
-        console.log('mobile')
         this.mobile = true
         this.target = '#project-detail-mobile-'
-        // eslint-disable-next-line
-        console.log(this.target)
       } else {
-        // eslint-disable-next-line
-        console.log('desktop')
         this.mobile = false
         this.target = '#project-detail-'
+      }
+
+      // eslint-disable-next-line
+      const el = document.getElementById('swipezone')
+      this.swipedetect(el, function (swipedir) {
+      // swipedir contains either "none", "left", "right", "top", or "down"
+        this.swipeImage(swipedir)
+      })
+    }
+  },
+  methods: {
+    // Swipe detection
+    swipedetect: function (el, callback) {
+      const touchsurface = el
+      let swipedir = ''
+      let startX = 0
+      let startY = 0
+      let distX = 0
+      let distY = 0
+      const threshold = 150 // required min distance traveled to be considered swipe
+      const restraint = 100 // maximum distance allowed at the same time in perpendicular direction
+      const allowedTime = 300 // maximum time allowed to travel that distance
+      let elapsedTime = 0
+      let startTime = 0
+      const handleswipe = callback || function (swipedir) {}
+
+      touchsurface.addEventListener('touchstart', function (e) {
+        const touchobj = e.changedTouches[0]
+        swipedir = 'none'
+        startX = touchobj.pageX
+        startY = touchobj.pageY
+        startTime = new Date().getTime() // record time when finger first makes contact with surface
+        e.preventDefault()
+      }, false)
+
+      touchsurface.addEventListener('touchmove', function (e) {
+        e.preventDefault() // prevent scrolling when inside DIV
+      }, false)
+
+      touchsurface.addEventListener('touchend', function (e) {
+        const touchobj = e.changedTouches[0]
+        distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+        distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+        elapsedTime = new Date().getTime() - startTime // get time elapsed
+        if (elapsedTime <= allowedTime) { // first condition for awipe met
+          if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) { // 2nd condition for horizontal swipe met
+            swipedir = (distX < 0) ? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
+          } else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) { // 2nd condition for vertical swipe met
+            swipedir = (distY < 0) ? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
+          }
+        }
+        handleswipe(swipedir)
+        e.preventDefault()
+      }, false)
+    },
+    swipeImage: function (direction) {
+      if (direction === 'left') {
         // eslint-disable-next-line
-        console.log(this.target)
+        $('#mobile-projects-carousel').carousel('next')
+      } else if (direction === 'right') {
+        // eslint-disable-next-line
+        $('#mobile-projects-carousel').carousel('prev')
       }
     }
   }
@@ -221,7 +279,7 @@ export default {
   width: auto;
 }
 #projects .mobile-carousel-item img {
-  height: 100%;
+  height: 90%;
 }
 #projects .thumbnail-carousel-img {
   height: 85px;
@@ -256,7 +314,10 @@ export default {
 }
 #projects .carousel-mobile-only .mobile-carousel-item.active {
   width: 100%;
-  height: 200px;
+  height: 215px;
+}
+#projects .carousel-mobile-only .carousel-caption {
+  left: 0;
 }
 #projects .carousel-inner {
   margin-bottom: 10px;
@@ -268,5 +329,4 @@ export default {
   color: #fff;
   text-align: right;
 }
-
 </style>
