@@ -43,7 +43,7 @@
                             >
                               <img :src="project.img" :alt="project.name">
                               <div class="elm-link">
-                                <a href="#" class="icon-1 icon-search" data-toggle="modal" :data-target="'#project-detail-' + index" />
+                                <a href="#" class="icon-1 icon-search" data-toggle="modal" :data-target="target + index" />
                               </div>
                               <div class="overlay-effect bg-color-3" />
                             </div>
@@ -85,9 +85,10 @@
     <Footer />
     <div
       v-for="(project, index) in projects.projects"
+      v-show="mobile === false"
       :id="'project-detail-' + index"
       :key="index"
-      class="modal"
+      class="modal desktop-only"
       tabindex="-1"
       role="dialog"
       aria-labelledby="projectDetail"
@@ -118,12 +119,48 @@
                 <!--/.Controls-->
                 <ol class="carousel-indicators">
                   <li v-for="(image, i) in project.otherImages.images" :key="i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" :class="{'active': i === 0, 'hidden': i > 4 }">
-                    <img class="d-block img-fluid thumbnail-carousel-img" :src="image">
+                    <img class="d-block img-fluid thumbnail-carousel-img" :src="image" :alt="project.name">
                   </li>
                 </ol>
               </div>
               <!--/.Carousel Wrapper-->
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      v-for="(project, index) in projects.projects"
+      v-show="mobile === true"
+      :id="'project-detail-mobile-' + index"
+      :key="index"
+      class="modal carousel-mobile-only"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="projectDetail"
+      aria-hidden="true"
+    >
+      <div class="modal-content">
+        <div class="modal-header project-modal-mobile-header">
+          <button class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div id="mobile-projects-carousel" class="carousel" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner">
+              <div v-for="(image, i) in project.otherImages.images" :key="i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
+                <img class="d-block w-100" :src="image" :alt="project.name">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#mobile-projects-carousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon mobile-carousel-control-prev-icon" aria-hidden="true" />
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#mobile-projects-carousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon mobile-carousel-control-next-icon" aria-hidden="true" />
+              <span class="sr-only">Next</span>
+            </a>
           </div>
         </div>
       </div>
@@ -143,7 +180,29 @@ export default {
   },
   data() {
     return {
-      projects: projects
+      projects: projects,
+      mobile: false,
+      target: '#project-detail-mobile-'
+    }
+  },
+  created() {
+    if (process.client) {
+      // eslint-disable-next-line
+      if (window.matchMedia('screen and (max-width: 768px)').matches) {
+        // eslint-disable-next-line
+        console.log('mobile')
+        this.mobile = true
+        this.target = '#project-detail-mobile-'
+        // eslint-disable-next-line
+        console.log(this.target)
+      } else {
+        // eslint-disable-next-line
+        console.log('desktop')
+        this.mobile = false
+        this.target = '#project-detail-'
+        // eslint-disable-next-line
+        console.log(this.target)
+      }
     }
   }
 }
@@ -161,6 +220,9 @@ export default {
   height: 450px;
   width: auto;
 }
+#projects .mobile-carousel-item img {
+  height: 100%;
+}
 #projects .thumbnail-carousel-img {
   height: 85px;
 }
@@ -173,11 +235,17 @@ export default {
   height: 30px;
   width: 30px;
 }
+#projects .mobile-carousel-control-prev-icon {
+  margin-left: 0;
+}
 #projects .carousel-control-next-icon {
   background-image: url('/img/right.png');
   margin-right: -160px;
   height: 30px;
   width: 30px;
+}
+#projects .mobile-carousel-control-next-icon {
+  margin-right: 0;
 }
 #projects .carousel-indicators .active {
   background-color: #FED00E;
@@ -186,7 +254,19 @@ export default {
   width: 800px;
   justify-content: center;
 }
+#projects .carousel-mobile-only .mobile-carousel-item.active {
+  width: 100%;
+  height: 200px;
+}
 #projects .carousel-inner {
   margin-bottom: 10px;
 }
+#projects .project-modal-mobile-header {
+  border: none;
+}
+#projects .project-modal-mobile-header button {
+  color: #fff;
+  text-align: right;
+}
+
 </style>
