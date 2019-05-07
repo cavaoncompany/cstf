@@ -157,14 +157,6 @@
                 </div>
               </div>
             </div>
-            <!-- <a class="carousel-control-prev" href="#mobile-projects-carousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon mobile-carousel-control-prev-icon" aria-hidden="true" />
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#mobile-projects-carousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon mobile-carousel-control-next-icon" aria-hidden="true" />
-              <span class="sr-only">Next</span>
-            </a> -->
           </div>
         </div>
       </div>
@@ -186,17 +178,7 @@ export default {
     return {
       projects: projects,
       mobile: false,
-      target: '',
       swipe: ''
-    }
-  },
-  watch: {
-    target: function () {
-      if (this.mobile === true) {
-        this.target = '#project-detail-mobile-'
-      } else {
-        this.target = '#project-detail-'
-      }
     }
   },
   created() {
@@ -284,7 +266,6 @@ export default {
   border: none;
 }
 #projects .carousel-item img {
-  height: 450px;
   width: auto;
 }
 #projects .mobile-carousel-item img {
