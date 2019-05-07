@@ -203,7 +203,7 @@ export default {
     const vm = this
     if (process.client) {
       // eslint-disable-next-line
-      if (window.matchMedia('screen and (max-width: 768px)').matches) {
+      if (window.matchMedia('screen and (max-width: 439px)').matches) {
         this.mobile = true
       } else {
         this.mobile = false

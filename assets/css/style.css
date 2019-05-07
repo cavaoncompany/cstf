@@ -1003,6 +1003,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 	background-color: #000000;width: 100%;z-index: -1;padding: 20px 0 30px 20px;}
 .sw-pattern.pattern a {	width: 40px; height: 40px; display: inline-block;margin-right: 5px; margin-bottom: 5px; position: relative;}
 .sw-pattern.pattern a.current:before {position: absolute; left: 12px; top: 6px;font-family: "FontAwesome";content: "\f00c";color: #fff;text-shadow: 0 0 2px rgba( 0, 0, 0, 1 );}
+.mobile-only { display: none; }
 
 /* Boxed
 -------------------------------------------------------------- */
