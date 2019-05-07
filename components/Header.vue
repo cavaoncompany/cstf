@@ -105,9 +105,6 @@ export default {
 .menu-item:hover {
   cursor: pointer;
 }
-.menu-item-last:hover {
-  border: none;
-}
 #main-nav.submenu-visible {
   opacity: 1;
   visibility: visible;
@@ -116,5 +113,8 @@ export default {
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
   transform: translateY(0);
+}
+.header-style-2 #main-nav>ul>.menu-item-last>a:after {
+  background-color: transparent;
 }
 </style>
