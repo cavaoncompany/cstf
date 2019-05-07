@@ -1228,7 +1228,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   .works-container { width: 47%; margin: 25px 0; }
   .mobile-only { display: flex; justify-content: space-around; }
   .desktop-only { display: none; }
-
+  #projects .carousel-item img { height: 200px }
   .banner-row .container { padding-top: 30%; padding-left: 30px; padding-right: 30px }
 
   .container { padding-left: 30px; padding-right: 30px }
