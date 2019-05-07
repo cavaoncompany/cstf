@@ -43,8 +43,8 @@
                             >
                               <img :src="project.img" :alt="project.name">
                               <div class="elm-link">
-                                <a v-if="mobile === true" href="#" class="icon-1 icon-search" data-toggle="modal" :data-target="'#project-detail-mobile-' + index" />
-                                <a v-if="mobile === false" href="#" class="icon-1 icon-search" data-toggle="modal" :data-target="'#project-detail-' + index" />
+                                <a v-if="mobile === true" href="#" class="icon-1 icon-search mobile-only" data-toggle="modal" :data-target="'#project-detail-mobile-' + index" />
+                                <a v-if="mobile === false" href="#" class="icon-1 icon-search desktop-only" data-toggle="modal" :data-target="'#project-detail-' + index" />
                               </div>
                               <div class="overlay-effect bg-color-3" />
                             </div>
