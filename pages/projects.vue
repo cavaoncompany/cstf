@@ -156,14 +156,14 @@
                 </div>
               </div>
             </div>
-            <a class="carousel-control-prev" href="#mobile-projects-carousel" role="button" data-slide="prev">
+            <!-- <a class="carousel-control-prev" href="#mobile-projects-carousel" role="button" data-slide="prev">
               <span class="carousel-control-prev-icon mobile-carousel-control-prev-icon" aria-hidden="true" />
               <span class="sr-only">Previous</span>
             </a>
             <a class="carousel-control-next" href="#mobile-projects-carousel" role="button" data-slide="next">
               <span class="carousel-control-next-icon mobile-carousel-control-next-icon" aria-hidden="true" />
               <span class="sr-only">Next</span>
-            </a>
+            </a> -->
           </div>
         </div>
       </div>
@@ -264,7 +264,6 @@ export default {
       }, false)
     },
     swipeImage: function (direction) {
-      alert(direction)
       if (direction === 'left') {
         // eslint-disable-next-line
         $('#mobile-projects-carousel').carousel('next')
