@@ -120,7 +120,7 @@
               <div :id="'carousel-thumb'+index" class="carousel slide carousel-fade carousel-thumbnails" data-interval="false" data-ride="carousel">
                 <!--Slides-->
                 <div class="carousel-inner" role="listbox">
-                  <div v-for="(image, i) in project.otherImages.images" :key="i" class="carousel-item" v-bind:class="{'active': i === 0 }">
+                  <div v-for="(image, i) in project.otherImages.images" :key="i" class="carousel-item" :class="{'active': i === 0 }">
                     <img class="d-block w-100" :src="image" :alt="project.name">
                   </div>
                 </div>
@@ -136,7 +136,7 @@
                 </a>
                 <!--/.Controls-->
                 <ol class="carousel-indicators">
-                  <li v-for="(image, i) in project.otherImages.images" :key="i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" v-bind:class="{'active': i === 0 }">
+                  <li v-for="(image, i) in project.otherImages.images" :key="i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" :class="{'active': i === 0 }">
                     <img class="d-block w-100 img-fluid" :src="image">
                   </li>
                 </ol>

@@ -30,16 +30,16 @@
           <!-- /.mobile-button -->
           <nav id="main-nav" class="main-nav">
             <ul id="menu-primary-menu" class="menu">
-              <li v-bind:class="{'current-menu-item': currentItem === 'HOME'}" class="menu-item">
+              <li :class="{'current-menu-item': currentItem === 'HOME'}" class="menu-item">
                 <a href="/">HOME</a>
               </li>
-              <li v-bind:class="{'current-menu-item': currentItem === 'PROJECTS'}" class="menu-item">
+              <li :class="{'current-menu-item': currentItem === 'PROJECTS'}" class="menu-item">
                 <a href="/projects">PROJECTS</a>
               </li>
-              <li v-bind:class="{'current-menu-item': currentItem === 'SERVICES'}" class="menu-item">
+              <li :class="{'current-menu-item': currentItem === 'SERVICES'}" class="menu-item">
                 <a href="/services">SERVICES</a>
               </li>
-              <li v-bind:class="{'current-menu-item': currentItem === 'ABOUT'}" class="menu-item menu-item-has-children">
+              <li :class="{'current-menu-item': currentItem === 'ABOUT'}" class="menu-item menu-item-has-children">
                 <a @mouseenter="showSubMenu('about-submenu')">ABOUT</a>
                 <ul id="about-submenu" class="sub-menu">
                   <li class="menu-item">
@@ -47,7 +47,7 @@
                   </li>
                 </ul>
               </li>
-              <li v-bind:class="{'current-menu-item': currentItem === 'CONTACT'}" class="menu-item">
+              <li :class="{'current-menu-item': currentItem === 'CONTACT'}" class="menu-item">
                 <a href="/contact">CONTACT</a>
               </li>
               <li class="menu-item menu-item-last">
@@ -73,7 +73,11 @@
 <script>
 export default {
   props: {
-    currentItem: String
+    currentItem: {
+      type: String,
+      required: false,
+      default: () => ''
+    }
   },
   data() {
     return {

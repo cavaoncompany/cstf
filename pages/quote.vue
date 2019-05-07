@@ -46,7 +46,7 @@
                 <div>Page {{ currentPage }} of {{ totalPages }}</div>
               </div>
               <div
-                v-bind:class="{'yellow': page2enabled === true}"
+                :class="{'yellow': page2enabled === true}"
                 class="page-navigation disabled"
                 role="button"
                 aria-disabled="true"
@@ -67,7 +67,7 @@
                 </div>
               </div>
               <div class="elm-button">
-                <a class="themesflat-button bg-accent" role="button" v-bind:class="{'disabled': page2enabled === false}" aria-disabled="true" @click="nextPage(2)">{{ quote.nextButton }}</a>
+                <a class="themesflat-button bg-accent" role="button" :class="{'disabled': page2enabled === false}" aria-disabled="true" @click="nextPage(2)">{{ quote.nextButton }}</a>
               </div>
               <div
                 class="themesflat-spacer clearfix"
@@ -131,7 +131,7 @@
                 class="page-navigation disabled"
                 role="button"
                 aria-disabled="true"
-                v-bind:class="{'yellow': page3enabled === true}"
+                :class="{'yellow': page3enabled === true}"
                 @click="nextPage(3)"
               >
                 {{ quote.next }} <i class="fa fa-chevron-right" />
@@ -230,7 +230,7 @@
                 data-smobile="60"
               />
               <div class="elm-button">
-                <a class="themesflat-button bg-accent" role="button" aria-disabled="true" v-bind:class="{'disabled': page3enabled === false}" @click="nextPage(3)">{{ quote.nextButton }}</a>
+                <a class="themesflat-button bg-accent" role="button" aria-disabled="true" :class="{'disabled': page3enabled === false}" @click="nextPage(3)">{{ quote.nextButton }}</a>
               </div>
             </article>
             <div
@@ -284,7 +284,7 @@
                 </div>
                 <div>Page {{ currentPage }} of {{ totalPages }}</div>
               </div>
-              <div class="page-navigation" v-bind:class="{'yellow': page4enabled === true}" @click="nextPage(4)">
+              <div class="page-navigation" :class="{'yellow': page4enabled === true}" @click="nextPage(4)">
                 {{ quote.next }} <i class="fa fa-chevron-right" />
               </div>
             </div>
@@ -375,10 +375,10 @@
                   </p>
                 </article>
               </article>
-              <h3 v-bind:class="{'greyed-out': engineeringPlansEnabled === false}">
+              <h3 :class="{'greyed-out': engineeringPlansEnabled === false}">
                 {{ quote.engineeringPlan.title }}
               </h3>
-              <article class="with-border" v-bind:class="{'greyed-out': engineeringPlansEnabled === false}">
+              <article class="with-border" :class="{'greyed-out': engineeringPlansEnabled === false}">
                 <div v-for="(eng, index) in quote.engineeringPlan.plans" :key="index">
                   <input
                     :id="'engineering' + index"
@@ -416,10 +416,10 @@
                   </p>
                 </article>
               </article>
-              <h3 v-bind:class="{'greyed-out': structuralPlansEnabled === false}">
+              <h3 :class="{'greyed-out': structuralPlansEnabled === false}">
                 {{ quote.structuralPlan.title }}
               </h3>
-              <article v-bind:class="{'greyed-out': structuralPlansEnabled === false}">
+              <article :class="{'greyed-out': structuralPlansEnabled === false}">
                 <div v-for="(struct, index) in quote.structuralPlan.plans" :key="index">
                   <input
                     :id="'structural' + index"
@@ -439,7 +439,7 @@
                 data-smobile="60"
               />
               <div class="elm-button">
-                <a class="themesflat-button bg-accent" role="button" aria-disabled="true" v-bind:class="{'disabled': page4enabled === false}" @click="nextPage(4)">{{ quote.nextButton }}</a>
+                <a class="themesflat-button bg-accent" role="button" aria-disabled="true" :class="{'disabled': page4enabled === false}" @click="nextPage(4)">{{ quote.nextButton }}</a>
               </div>
             </article>
             <div
@@ -550,7 +550,7 @@
                   class="themesflat-button bg-accent"
                   name="submit"
                   disabled
-                  v-bind:class="{'disabled': submitEnabled === false}"
+                  :class="{'disabled': submitEnabled === false}"
                 >
               </div>
             </article>

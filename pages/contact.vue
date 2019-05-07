@@ -147,7 +147,7 @@
                               class="submit wpcf7-form-control wpcf7-submit"
                               name="submit"
                               disabled
-                              v-bind:class="{'disabled': submitEnabled === false}"
+                              :class="{'disabled': submitEnabled === false}"
                             >
                           </span>
                         </form>

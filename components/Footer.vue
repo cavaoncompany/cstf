@@ -9,7 +9,9 @@
               <p>
                 <img :src="footer.logo" alt="Image" width="205" height="72">
               </p>
-              <p class="margin-bottom-15">{{ footer.rights }}</p>
+              <p class="margin-bottom-15">
+                {{ footer.rights }}
+              </p>
             </div>
           </div>
           <!-- /.widget_text -->
@@ -62,21 +64,21 @@
             <ul>
               <li>
                 <div class="inner">
-                  <span class="fa fa-phone"/>
+                  <span class="fa fa-phone" />
                   <span class="text">{{ footer.tel }}</span>
                 </div>
               </li>
 
               <li>
                 <div class="inner">
-                  <span class="fa fa-envelope"/>
+                  <span class="fa fa-envelope" />
                   <span class="text">{{ footer.email }}</span>
                 </div>
               </li>
 
               <li class="margin-top-7">
                 <div class="inner">
-                  <span class="fa fa-map-marker"/>
+                  <span class="fa fa-map-marker" />
                   <span class="text">{{ footer.address }}</span>
                 </div>
               </li>

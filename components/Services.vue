@@ -37,7 +37,7 @@
                   </h5>
                 </div>
               </div>
-              <div v-for="(service, index) in services.services" :key="index" v-bind:class="{'padding-right': index % 2 === 0, 'padding-left' : index % 2 > 0}" data-toggle="modal" class="card mobile-only bg-dark text-white col-6 col-md-3">
+              <div v-for="(service, index) in services.services" :key="index" :class="{'padding-right': index % 2 === 0, 'padding-left' : index % 2 > 0}" data-toggle="modal" class="card mobile-only bg-dark text-white col-6 col-md-3">
                 <div class="thumb data-effect-item">
                   <img :src="service.img" :alt="service.title" :data-target="'service-' + index" class="card-img-top" @click="showModal('service-' + index)">
                 </div>

@@ -12,8 +12,7 @@
                     {{ quote.startYourProject }}
                   </h3>
                 </div>
-                <div class="button-wrap has-icon .sep-icon-after">
-                </div>
+                <div class="button-wrap has-icon .sep-icon-after" />
               </div>
             </div>
           </div>

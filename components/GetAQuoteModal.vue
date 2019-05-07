@@ -16,7 +16,9 @@
           <p v-if="errors.length">
             <b>Please correct the following error(s):</b>
             <ul>
-              <li v-for="(error, i) in errors" :key="i">{{ error }}</li>
+              <li v-for="(error, i) in errors" :key="i">
+                {{ error }}
+              </li>
             </ul>
           </p>
           <div class="form-group">
@@ -57,7 +59,7 @@
               type="submit"
               :value="getaquote.nextButton"
               disabled
-              v-bind:class="{'disabled': nextEnabled === false}"
+              :class="{'disabled': nextEnabled === false}"
               class="themesflat-button bg-accent"
               @click="openQuoteForm()"
             >

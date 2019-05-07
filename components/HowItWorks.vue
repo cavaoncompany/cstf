@@ -9,8 +9,10 @@
       <div class="row desktop-only">
         <div v-for="(item, index) in howitworks.services" :key="index" class="works-container">
           <!-- <img :src="item.img" :alt="item.title"> -->
-          <div v-bind:class="{'invisible': (index === 0 || index === 3)}" class="connecting-line" />
-          <div class="number">{{ index + 1 }}</div>
+          <div :class="{'invisible': (index === 0 || index === 3)}" class="connecting-line" />
+          <div class="number">
+            {{ index + 1 }}
+          </div>
           <h3>{{ item.title }}</h3>
           <p>{{ item.timeframe }}</p>
         </div>
@@ -18,7 +20,9 @@
       <div class="row mobile-only">
         <div v-for="(item, index) in howitworks.services" :key="index" class="works-container">
           <!-- <img :src="item.img" :alt="item.title"> -->
-          <div class="number-mobile">{{ index + 1 }}</div>
+          <div class="number-mobile">
+            {{ index + 1 }}
+          </div>
           <h3>{{ item.title }}</h3>
           <p>{{ item.timeframe }}</p>
         </div>
