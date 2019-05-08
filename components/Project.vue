@@ -1,5 +1,5 @@
 <template>
-  <div id="projects" class="row-project parallax parallax-1 parallax-overlay">
+  <div id="project" class="row-project parallax parallax-1 parallax-overlay">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
@@ -66,15 +66,20 @@
       v-for="(project, index) in projects.projects"
       :id="'project-detail-home-mobile-' + index"
       :key="index"
-      class="modal carousel-mobile-only"
+      class="modal fade carousel-mobile-only"
       tabindex="-1"
       role="dialog"
       aria-labelledby="projectDetail"
       aria-hidden="true"
     >
-      <div class="modal-content">
-        <div class="modal-header project-modal-mobile-header">
-          <button class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-content project-home-modal-content">
+        <div class="modal-header project-home-modal-mobile-header">
+          <button
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+            @click="closeModal('project-detail-home-mobile-' + index)"
+          >
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -174,6 +179,14 @@ export default {
     showModal: function (modal) {
       // eslint-disable-next-line
       $('#' + modal).appendTo('body').modal('show')
+    },
+    closeModal: function (modal) {
+      // eslint-disable-next-line
+      const activeModal = document.getElementById(modal)
+      activeModal.classList.remove('show')
+      // eslint-disable-next-line
+      const backdrop = document.getElementsByClassName('modal-backdrop')[0]
+      backdrop.classList.remove('show')
     }
   }
 }
@@ -190,7 +203,7 @@ export default {
     width: 100%;
   }
   .projects-carousel .overlay-effect,
-  #projects .owl-carousel .overlay-effect {
+  #project .owl-carousel .overlay-effect {
     bottom: 0;
     top: auto;
     height: 30%;
@@ -206,8 +219,35 @@ export default {
     transform: none;
     transition: none;
   }
-  #projects .owl-carousel {
+  #project .owl-carousel {
     flex-direction: row;
     justify-content: space-around;
+  }
+  .mobile-carousel-item img {
+    height: 90%;
+  }
+  .carousel-mobile-only .mobile-carousel-item.active,
+  .carousel-mobile-only .carousel-item.active {
+    width: 100%;
+    height: 215px;
+  }
+  .carousel-mobile-only .carousel-caption {
+    left: 0;
+    bottom: -20px;
+    right: auto;
+  }
+  .project-home-modal-content {
+    background: transparent;
+    border: none;
+  }
+  #projects .carousel-inner {
+  margin-bottom: 10px;
+  }
+  .project-home-modal-mobile-header {
+    border: none;
+  }
+  .project-home-modal-mobile-header button {
+    color: #fff;
+    text-align: right;
   }
 </style>

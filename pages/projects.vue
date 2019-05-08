@@ -283,17 +283,11 @@ export default {
   height: 30px;
   width: 30px;
 }
-#projects .mobile-carousel-control-prev-icon {
-  margin-left: 0;
-}
 #projects .carousel-control-next-icon {
   background-image: url('/img/right.png');
   margin-right: -160px;
   height: 30px;
   width: 30px;
-}
-#projects .mobile-carousel-control-next-icon {
-  margin-right: 0;
 }
 #projects .carousel-indicators .active {
   background-color: #FED00E;
