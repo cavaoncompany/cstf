@@ -40,7 +40,7 @@
                 <div class="project-item">
                   <div class="inner">
                     <div class="thumb data-effect-item has-effect-icon w40 offset-v-43 offset-h-46">
-                      <img :src="item.img" :alt="item.title" data-toggle="modal" :data-target="'#project-detail-home-mobile-' + index" @click="showModal('project-detail-home-mobile-' + index)">
+                      <img :src="item.img" :alt="item.title" data-toggle="modal" :data-target="'#project-detail-home-mobile-' + index">
                       <div class="text-wrap text-center">
                         <h5 class="heading">
                           <a>{{ item.name }}</a>
@@ -62,41 +62,6 @@
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
     <div class="bg-parallax-overlay overlay-black" />
-    <div
-      v-for="(project, index) in projects.projects"
-      :id="'project-detail-home-mobile-' + index"
-      :key="index"
-      class="modal fade carousel-mobile-only"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="projectDetail"
-      aria-hidden="true"
-    >
-      <div class="modal-content project-home-modal-content">
-        <div class="modal-header project-home-modal-mobile-header">
-          <button
-            class="close"
-            data-dismiss="modal"
-            aria-label="Close"
-            @click="closeModal('project-detail-home-mobile-' + index)"
-          >
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body project-home-modal-body">
-          <div id="mobile-projects-home-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-            <div id="swipearea" class="carousel-inner">
-              <div v-for="(image, i) in project.otherImages.images" :key="i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
-                <img class="d-block w-100" :src="image" :alt="project.name"><br>
-                <div class="image-counter carousel-caption d-md-block">
-                  <p>{{ i + 1 }}/{{ project.otherImages.images.length }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -175,44 +140,6 @@ export default {
       } else if (direction === 'right') {
         // eslint-disable-next-line
         $('#mobile-projects-home-carousel').carousel('prev')
-      }
-    },
-    showModal: function (modal) {
-      // eslint-disable-next-line
-      $('#' + modal).appendTo('body')
-      // eslint-disable-next-line
-      const activeModal = document.getElementById(modal)
-      if (activeModal) {
-        activeModal.classList.remove('hidden')
-        activeModal.classList.add('show')
-      }
-      // eslint-disable-next-line
-      let backdrop = document.getElementsByClassName('modal-backdrop')[0]
-      if (backdrop) {
-        backdrop.classList.remove('hidden')
-      } else {
-        backdrop = '<div class="modal-backdrop fade show"></div>'
-        // eslint-disable-next-line
-        $(backdrop).appendTo('body')
-      }
-    },
-    closeModal: function (modal) {
-      // eslint-disable-next-line
-      const activeModal = document.getElementById(modal)
-      if (activeModal) {
-        activeModal.parentNode.removeChild(activeModal)
-      }
-      // eslint-disable-next-line
-      const backdrop = document.getElementsByClassName('modal-backdrop')[0]
-      if (backdrop) {
-        // eslint-disable-next-line
-        backdrop.parentNode.removeChild(backdrop)
-        // eslint-disable-next-line
-        const nextBackdrop = document.getElementsByClassName('modal-backdrop')[0]
-        if (nextBackdrop) {
-          // eslint-disable-next-line
-          nextBackdrop.parentNode.removeChild(nextBackdrop)
-        }
       }
     }
   }

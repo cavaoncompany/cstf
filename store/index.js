@@ -1,10 +1,5 @@
 import axios from '~/plugins/axios'
 export const state = () => ({
-  emailProvider: {
-    service: 'smtp',
-    username: 'username',
-    password: 'pw'
-  }
 })
 
 export const mutations = {

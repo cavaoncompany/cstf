@@ -44,10 +44,45 @@
     </div><!-- /#wrapper -->
     <a id="scroll-top" />
     <GetAQuoteModal />
+    <div id="projectModal">
+      <div
+        v-for="(project, index) in projects.projects"
+        :id="'project-detail-home-mobile-' + index"
+        :key="index"
+        class="modal carousel-mobile-only"
+        tabindex="-1"
+        role="dialog"
+      >
+        <div class="modal-content project-home-modal-content">
+          <div class="modal-header project-home-modal-mobile-header">
+            <button
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body project-home-modal-body">
+            <div id="mobile-projects-home-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
+              <div id="swipearea" class="carousel-inner">
+                <div v-for="(image, i) in project.otherImages.images" :key="i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
+                  <img class="d-block w-100" :src="image" :alt="project.name"><br>
+                  <div class="image-counter carousel-caption d-md-block">
+                    <p>{{ i + 1 }}/{{ project.otherImages.images.length }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
+import projects from '../content/projects.json'
 import Header from '../components/Header'
 import GetAQuoteModal from '../components/GetAQuoteModal'
 import HowItWorks from '../components/HowItWorks'
@@ -71,6 +106,11 @@ export default {
     OurPartners,
     Iconbox,
     Footer
+  },
+  data() {
+    return {
+      projects: projects
+    }
   },
   methods: {
     scrollToTop: function (el) {
