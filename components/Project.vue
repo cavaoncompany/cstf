@@ -83,8 +83,8 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
-          <div id="mobile-projects-home-carousel" class="carousel" data-ride="carousel" data-interval="false">
+        <div class="modal-body project-home-modal-body">
+          <div id="mobile-projects-home-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
             <div id="swipearea" class="carousel-inner">
               <div v-for="(image, i) in project.otherImages.images" :key="i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
                 <img class="d-block w-100" :src="image" :alt="project.name"><br>
@@ -116,7 +116,6 @@ export default {
       const el = document.getElementById('swipearea')
       if (el) {
         this.swipedetect(el, function (swipedir) {
-          alert(swipedir)
           // swipedir contains either "none", "left", "right", "top", or "down"
           vm.swipeImage(swipedir)
         })
@@ -169,6 +168,7 @@ export default {
       }, false)
     },
     swipeImage: function (direction) {
+      // eslint-disable-next-line
       if (direction === 'left') {
         // eslint-disable-next-line
         $('#mobile-projects-home-carousel').carousel('next')
@@ -200,8 +200,7 @@ export default {
       // eslint-disable-next-line
       const activeModal = document.getElementById(modal)
       if (activeModal) {
-        activeModal.classList.remove('show')
-        activeModal.classList.add('hidden')
+        activeModal.parentNode.removeChild(activeModal)
       }
       // eslint-disable-next-line
       const backdrop = document.getElementsByClassName('modal-backdrop')[0]
@@ -261,12 +260,18 @@ export default {
   }
   .carousel-mobile-only .carousel-caption {
     left: 0;
-    bottom: -20px;
+    bottom: -44px;
     right: auto;
   }
   .project-home-modal-content {
     background: transparent;
     border: none;
+    height: 100%;
+  }
+  .project-home-modal-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   #projects .carousel-inner {
   margin-bottom: 10px;

@@ -141,13 +141,13 @@
       aria-labelledby="projectDetail"
       aria-hidden="true"
     >
-      <div class="modal-content">
+      <div class="modal-content projects-modal-content">
         <div class="modal-header project-modal-mobile-header">
           <button class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body projects-modal-body">
           <div id="mobile-projects-carousel" class="carousel" data-ride="carousel" data-interval="false">
             <div id="swipezone" class="carousel-inner">
               <div v-for="(image, i) in project.otherImages.images" :key="i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
@@ -261,10 +261,6 @@ export default {
 #projects .text-wrap p {
   margin-bottom: 0;
 }
-#projects .modal-content {
-  background: transparent;
-  border: none;
-}
 #projects .carousel-item img {
   width: auto;
 }
@@ -304,6 +300,16 @@ export default {
   left: 0;
   bottom: -20px;
   right: auto;
+}
+.projects-modal-content {
+  background: transparent;
+  border: none;
+  height: 100%;
+}
+.projects-modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 #projects .carousel-inner {
   margin-bottom: 10px;
