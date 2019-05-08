@@ -43,8 +43,8 @@
                             >
                               <img :src="project.img" :alt="project.name">
                               <div class="elm-link">
-                                <a href="#" id="carousel-mobile-switch" class="icon-1 icon-search carousel-mobile-only" data-toggle="modal" :data-target="'#project-detail-mobile-' + index" />
-                                <a href="#" id="carousel-desktop-switch" class="icon-1 icon-search carousel-desktop-only" data-toggle="modal" :data-target="'#project-detail-' + index" />
+                                <a id="carousel-mobile-switch" href="#" class="icon-1 icon-search carousel-mobile-only" data-toggle="modal" :data-target="'#project-detail-mobile-' + index" />
+                                <a id="carousel-desktop-switch" href="#" class="icon-1 icon-search carousel-desktop-only" data-toggle="modal" :data-target="'#project-detail-' + index" />
                               </div>
                               <div class="overlay-effect bg-color-3" />
                             </div>
@@ -149,8 +149,8 @@
         </div>
         <div class="modal-body projects-modal-body">
           <div id="mobile-projects-carousel" class="carousel" data-ride="carousel" data-interval="false">
-            <div id="swipezone" class="carousel-inner">
-              <div v-for="(image, i) in project.otherImages.images" :key="'mobile-carousel' + i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
+            <div class="carousel-inner">
+              <div v-for="(image, i) in project.otherImages.images" :id="'swipezone' +i" :key="'mobile-carousel' + i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
                 <img class="d-block w-100" :src="image" :alt="project.name"><br>
                 <div class="image-counter carousel-caption d-md-block">
                   <p>{{ i + 1 }}/{{ project.otherImages.images.length }}</p>
@@ -186,18 +186,24 @@ export default {
     if (process.client) {
       vm.mobile = this.isMobileDevice()
 
-      // eslint-disable-next-line
-      const el = document.getElementById('swipezone')
-      this.swipedetect(el, function (swipedir) {
+      for (let i = 0; i < this.projects.projects.length; i++) {
+        // eslint-disable-next-line
+        const el = document.getElementById('swipezone' + i)
+        this.swipedetect(el, function (swipedir) {
         // swipedir contains either "none", "left", "right", "top", or "down"
-        vm.swipeImage(swipedir)
-      })
+          vm.swipeImage(swipedir)
+        })
+      }
+      // this.swipedetect(el, function (swipedir) {
+      // swipedir contains either "none", "left", "right", "top", or "down"
+      //   vm.swipeImage(swipedir)
+      // })
     }
   },
   methods: {
     // Swipe detection
     swipedetect: function (el, callback) {
-      const touchsurface = el
+      const touchsurface = document.getElementById(el)
       let swipedir = ''
       let startX = 0
       let startY = 0
