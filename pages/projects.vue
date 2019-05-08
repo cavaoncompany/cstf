@@ -184,12 +184,13 @@ export default {
   created() {
     const vm = this
     if (process.client) {
+      this.mobile = this.isMobileDevice()
       // eslint-disable-next-line
-      if (window.matchMedia('screen and (max-width: 439px)').matches) {
-        this.mobile = true
-      } else {
-        this.mobile = false
-      }
+      // if (window.matchMedia('screen and (max-width: 439px)').matches) {
+      //   this.mobile = true
+      // } else {
+      //   this.mobile = false
+      // }
 
       // eslint-disable-next-line
       const el = document.getElementById('swipezone')
@@ -252,6 +253,9 @@ export default {
         // eslint-disable-next-line
         $('#mobile-projects-carousel').carousel('prev')
       }
+    },
+    isMobileDevice: function () {
+      return (typeof window.orientation !== 'undefined') || (navigator.userAgent.indexOf('IEMobile') !== -1)
     }
   }
 }
@@ -298,8 +302,12 @@ export default {
 }
 #projects .carousel-mobile-only .carousel-caption {
   left: 0;
-  bottom: -20px;
+  bottom: -44px;
   right: auto;
+}
+#projects .modal-content {
+  background-color: transparent;
+  border: none;
 }
 .projects-modal-content {
   background: transparent;
@@ -310,6 +318,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 15px 15px 100px 15px;
 }
 #projects .carousel-inner {
   margin-bottom: 10px;
