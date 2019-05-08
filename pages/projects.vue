@@ -43,8 +43,8 @@
                             >
                               <img :src="project.img" :alt="project.name">
                               <div class="elm-link">
-                                <a v-if="mobile === true" href="#" class="icon-1 icon-search mobile-only" data-toggle="modal" :data-target="'#project-detail-mobile-' + index" />
-                                <a v-if="mobile === false" href="#" class="icon-1 icon-search desktop-only" data-toggle="modal" :data-target="'#project-detail-' + index" />
+                                <a href="#" id="carousel-mobile-switch" class="icon-1 icon-search carousel-mobile-only" data-toggle="modal" :data-target="'#project-detail-mobile-' + index" />
+                                <a href="#" id="carousel-desktop-switch" class="icon-1 icon-search carousel-desktop-only" data-toggle="modal" :data-target="'#project-detail-' + index" />
                               </div>
                               <div class="overlay-effect bg-color-3" />
                             </div>
@@ -89,7 +89,7 @@
       v-show="mobile === false"
       :id="'project-detail-' + index"
       :key="'desktop-modal' + index"
-      class="modal desktop-only"
+      class="modal carousel-desktop-only"
       tabindex="-1"
       role="dialog"
       aria-labelledby="projectDetail"
@@ -184,7 +184,7 @@ export default {
   created() {
     const vm = this
     if (process.client) {
-      this.mobile = this.isMobileDevice()
+      vm.mobile = this.isMobileDevice()
 
       // eslint-disable-next-line
       const el = document.getElementById('swipezone')

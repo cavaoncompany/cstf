@@ -1013,6 +1013,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
  #footer .associations { justify-content: flex-end; }
 .service-container .card-title { margin-top: 25px; min-height: 60px; }
 
+
 /* Media Queries
 -------------------------------------------------------------- */
 @media only screen and (min-width: 1200px) {
@@ -1040,6 +1041,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #projects .carousel-indicators li { max-width: 27.5%; }
 
   #footer .associations img { height: 50px; margin-left: 40px; }
+
 }
 
 @media only screen and (max-width: 1199px) {
@@ -1088,6 +1090,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #projects .carousel-indicators li { max-width: 27.5%; }
 
   #footer .associations img { height: 50px; margin-left: 40px; }
+
 }
 
 @media only screen and (max-width: 991px) {
@@ -1191,6 +1194,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   #projects .carousel-indicators li { max-width: 27%; }
 }
+#projects .has-effect-icon.w40 .elm-link  #carousel-mobile-switch { display: none; }
 
 @media only screen and (max-width: 479px) {
 	#spacer { display: none; }
@@ -1231,6 +1235,10 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #project .owl-carousel { display: none }
   #projects .carousel-item img { height: 200px }
   .banner-row .container { padding-top: 30%; padding-left: 30px; padding-right: 30px }
+  #projects #carousel-desktop-switch { display: none; }
+  #projects .has-effect-icon.w40 .elm-link > #carousel-desktop-switch { display: none; }
+  #projects .has-effect-icon.w40 .elm-link #carousel-mobile-switch { display: block; }
+
 
   .container { padding-left: 30px; padding-right: 30px }
 
