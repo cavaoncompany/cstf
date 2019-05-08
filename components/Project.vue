@@ -84,7 +84,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <div id="mobile-projects-carousel" class="carousel" data-ride="carousel" data-interval="false">
+          <div id="mobile-projects-home-carousel" class="carousel" data-ride="carousel" data-interval="false">
             <div id="swipearea" class="carousel-inner">
               <div v-for="(image, i) in project.otherImages.images" :key="i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
                 <img class="d-block w-100" :src="image" :alt="project.name"><br>
@@ -116,7 +116,8 @@ export default {
       const el = document.getElementById('swipearea')
       if (el) {
         this.swipedetect(el, function (swipedir) {
-        // swipedir contains either "none", "left", "right", "top", or "down"
+          alert(swipedir)
+          // swipedir contains either "none", "left", "right", "top", or "down"
           vm.swipeImage(swipedir)
         })
       }
@@ -170,10 +171,10 @@ export default {
     swipeImage: function (direction) {
       if (direction === 'left') {
         // eslint-disable-next-line
-        $('#mobile-projects-carousel').carousel('next')
+        $('#mobile-projects-home-carousel').carousel('next')
       } else if (direction === 'right') {
         // eslint-disable-next-line
-        $('#mobile-projects-carousel').carousel('prev')
+        $('#mobile-projects-home-carousel').carousel('prev')
       }
     },
     showModal: function (modal) {
@@ -214,13 +215,6 @@ export default {
           nextBackdrop.parentNode.removeChild(nextBackdrop)
         }
       }
-      // const backdrops = document.getElementsByClassName('modal-backdrop')
-      // if (backdrops) {
-      //   for (let i = 0; i < backdrops.length; i++) {
-      //     // eslint-disable-next-line
-      //     backdrops[i].parentNode.removeChild(backdrops[i])
-      //   }
-      // }
     }
   }
 }
