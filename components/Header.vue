@@ -106,6 +106,10 @@ export default {
   border: 1px solid #FED00E;
   padding: 14px 20px;
 }
+.menu-item-tel:hover {
+  background-color: #FED00E;
+  color: #fff;
+}
 .menu-item:hover {
   cursor: pointer;
 }
