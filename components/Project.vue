@@ -178,15 +178,49 @@ export default {
     },
     showModal: function (modal) {
       // eslint-disable-next-line
-      $('#' + modal).appendTo('body').modal('show')
+      $('#' + modal).appendTo('body')
+      // eslint-disable-next-line
+      const activeModal = document.getElementById(modal)
+      if (activeModal) {
+        activeModal.classList.remove('hidden')
+        activeModal.classList.add('show')
+      }
+      // eslint-disable-next-line
+      let backdrop = document.getElementsByClassName('modal-backdrop')[0]
+      if (backdrop) {
+        backdrop.classList.remove('hidden')
+      } else {
+        backdrop = '<div class="modal-backdrop fade show"></div>'
+        // eslint-disable-next-line
+        $(backdrop).appendTo('body')
+      }
     },
     closeModal: function (modal) {
       // eslint-disable-next-line
       const activeModal = document.getElementById(modal)
-      activeModal.classList.remove('show')
+      if (activeModal) {
+        activeModal.classList.remove('show')
+        activeModal.classList.add('hidden')
+      }
       // eslint-disable-next-line
       const backdrop = document.getElementsByClassName('modal-backdrop')[0]
-      backdrop.classList.remove('show')
+      if (backdrop) {
+        // eslint-disable-next-line
+        backdrop.parentNode.removeChild(backdrop)
+        // eslint-disable-next-line
+        const nextBackdrop = document.getElementsByClassName('modal-backdrop')[0]
+        if (nextBackdrop) {
+          // eslint-disable-next-line
+          nextBackdrop.parentNode.removeChild(nextBackdrop)
+        }
+      }
+      // const backdrops = document.getElementsByClassName('modal-backdrop')
+      // if (backdrops) {
+      //   for (let i = 0; i < backdrops.length; i++) {
+      //     // eslint-disable-next-line
+      //     backdrops[i].parentNode.removeChild(backdrops[i])
+      //   }
+      // }
     }
   }
 }
