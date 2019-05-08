@@ -36,7 +36,7 @@
                       <div
                         class="themesflat-project style-2 isotope-project has-margin mg15 data-effect clearfix"
                       >
-                        <div v-for="(project, index) in projects.projects" :key="index" class="project-item green villa">
+                        <div v-for="(project, index) in projects.projects" :key="'project' + index" class="project-item green villa">
                           <div class="inner">
                             <div
                               class="thumb data-effect-item has-effect-icon w40 offset-v-19 offset-h-19"
@@ -88,7 +88,7 @@
       v-for="(project, index) in projects.projects"
       v-show="mobile === false"
       :id="'project-detail-' + index"
-      :key="index"
+      :key="'desktop-modal' + index"
       class="modal desktop-only"
       tabindex="-1"
       role="dialog"
@@ -103,7 +103,7 @@
               <div :id="'carousel-thumb'+index" class="carousel slide carousel-fade carousel-thumbnails" data-interval="false" data-ride="carousel">
                 <!--Slides-->
                 <div class="carousel-inner" role="listbox">
-                  <div v-for="(image, i) in project.otherImages.images" :key="i" class="carousel-item" :class="{'active': i === 0 }">
+                  <div v-for="(image, i) in project.otherImages.images" :key="'desktop-carousel' + i" class="carousel-item" :class="{'active': i === 0 }">
                     <img class="d-block" :src="image" :alt="project.name">
                   </div>
                 </div>
@@ -119,7 +119,7 @@
                 </a>
                 <!--/.Controls-->
                 <ol class="carousel-indicators">
-                  <li v-for="(image, i) in project.otherImages.images" :key="i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" :class="{'active': i === 0, 'hidden': i > 4 }">
+                  <li v-for="(image, i) in project.otherImages.images" :key="'desktop-carousel-indicator' + i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" :class="{'active': i === 0, 'hidden': i > 4 }">
                     <img class="d-block img-fluid thumbnail-carousel-img" :src="image" :alt="project.name">
                   </li>
                 </ol>
@@ -134,7 +134,7 @@
       v-for="(project, index) in projects.projects"
       v-show="mobile === true"
       :id="'project-detail-mobile-' + index"
-      :key="index"
+      :key="'mobile-modal' + index"
       class="modal carousel-mobile-only"
       tabindex="-1"
       role="dialog"
@@ -150,7 +150,7 @@
         <div class="modal-body projects-modal-body">
           <div id="mobile-projects-carousel" class="carousel" data-ride="carousel" data-interval="false">
             <div id="swipezone" class="carousel-inner">
-              <div v-for="(image, i) in project.otherImages.images" :key="i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
+              <div v-for="(image, i) in project.otherImages.images" :key="'mobile-carousel' + i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
                 <img class="d-block w-100" :src="image" :alt="project.name"><br>
                 <div class="image-counter carousel-caption d-md-block">
                   <p>{{ i + 1 }}/{{ project.otherImages.images.length }}</p>
@@ -185,12 +185,6 @@ export default {
     const vm = this
     if (process.client) {
       this.mobile = this.isMobileDevice()
-      // eslint-disable-next-line
-      // if (window.matchMedia('screen and (max-width: 439px)').matches) {
-      //   this.mobile = true
-      // } else {
-      //   this.mobile = false
-      // }
 
       // eslint-disable-next-line
       const el = document.getElementById('swipezone')
