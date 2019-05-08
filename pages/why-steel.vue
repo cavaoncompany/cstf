@@ -33,7 +33,6 @@
                   :data-target="'#item-content-' + index"
                   :aria-controls="'item-content-' + index"
                   type="button"
-                  @click="handleExpand(index)"
                 >
                   <i class="fa fa-angle-down" />
                 </button>
@@ -80,30 +79,6 @@ export default {
       whysteel: whysteel
     }
   },
-  created() {
-    if (process.client) {
-      // eslint-disable-next-line
-      if (window.innerWidth > 479) {
-        // eslint-disable-next-line
-        const sidebar = document.getElementById('sidebar')
-        const sidebarTop = sidebar.getBoundingClientRect()
-        // eslint-disable-next-line
-        const contentHeight = document.getElementById('steel-content').offsetHeight - 10
-        // eslint-disable-next-line
-        const scrollTop = window.pageYOffset + 50 || document.documentElement.scrollTop
-        const coordinates = { top: sidebarTop.top + scrollTop }
-        // eslint-disable-next-line
-        document.addEventListener('scroll', event => {this.fixSidebarOnScroll(sidebar, coordinates.top, contentHeight)})
-      }
-    }
-  },
-  // destroyed() {
-  //   // eslint-disable-next-line
-  //   if (process.client) {
-  //     // eslint-disable-next-line
-  //     window.removeEventListener('scroll', this.fixSidebarOnScroll(sidebar, coordinates.top, contentHeight))
-  //   }
-  // },
   methods: {
     findcontent: function (content, button) {
       const buttons = document.getElementsByClassName('item-title')
@@ -120,30 +95,6 @@ export default {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       const coordinates = { top: rect.top + scrollTop, left: rect.left + scrollLeft }
       window.scrollTo({ top: coordinates.top, behavior: 'smooth' })
-    },
-    fixSidebarOnScroll: function (sidebar, sidebarTop, contentHeight) {
-      const spacer = document.getElementById('spacer')
-      const windowScrollTop = window.scrollY
-      if (windowScrollTop <= sidebarTop) {
-        if (sidebar.classList.contains('absolute')) {
-          sidebar.classList.remove('absolute')
-        }
-        sidebar.classList.remove('sticky')
-        spacer.classList.add('hide-element')
-        spacer.classList.remove('invisible')
-      } else if (windowScrollTop >= contentHeight) {
-        sidebar.classList.remove('sticky')
-        sidebar.classList.add('absolute')
-      } else if (windowScrollTop >= sidebarTop) {
-        if (sidebar.classList.contains('absolute')) {
-          sidebar.classList.remove('absolute')
-        }
-        if (!sidebar.classList.contains('sticky')) {
-          sidebar.classList.add('sticky')
-          spacer.classList.remove('hide-element')
-          spacer.classList.add('invisible')
-        }
-      }
     }
   }
 }

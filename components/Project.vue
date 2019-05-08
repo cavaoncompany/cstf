@@ -6,7 +6,7 @@
           <div class="themesflat-spacer clearfix" data-desktop="60" data-mobile="60" data-smobile="60" />
           <div class="themesflat-headings style-1 text-center clearfix">
             <h2 class="heading text-white">
-              {{ project.title }}
+              {{ projects.titleHome }}
             </h2>
           </div>
           <div class="themesflat-spacer clearfix" data-desktop="30" data-mobile="35" data-smobile="35" />
@@ -19,14 +19,14 @@
             data-auto="false"
           >
             <div class="desktop-only owl-carousel owl-theme">
-              <div v-for="(item, index) in project.projectDetails" :key="index" class="themesflat-project style-1 data-effect clearfix">
+              <div v-for="(item, index) in projects.projects" :key="index" class="themesflat-project style-1 data-effect clearfix">
                 <div class="project-item">
                   <div class="inner">
                     <div class="thumb data-effect-item has-effect-icon w40 offset-v-43 offset-h-46">
                       <img :src="item.img" :alt="item.title">
                       <div class="text-wrap text-center">
                         <h5 class="heading">
-                          <a>{{ item.title }}</a>
+                          <a>{{ item.name }}</a>
                         </h5>
                       </div>
                       <div class="overlay-effect bg-color-3" />
@@ -36,14 +36,14 @@
               </div><!-- /.themesflat-project -->
             </div>
             <div class="mobile-only projects-carousel">
-              <div v-for="(item, index) in project.projectDetails" :key="index" class="themesflat-project style-1 data-effect clearfix">
+              <div v-for="(item, index) in projects.projects" :key="index" class="themesflat-project style-1 data-effect clearfix">
                 <div class="project-item">
                   <div class="inner">
                     <div class="thumb data-effect-item has-effect-icon w40 offset-v-43 offset-h-46">
                       <img :src="item.img" :alt="item.title" data-toggle="modal" :data-target="'#project-detail-home-mobile-' + index" @click="showModal('project-detail-home-mobile-' + index)">
                       <div class="text-wrap text-center">
                         <h5 class="heading">
-                          <a>{{ item.title }}</a>
+                          <a>{{ item.name }}</a>
                         </h5>
                       </div>
                       <div class="overlay-effect bg-color-3" />
@@ -55,7 +55,7 @@
           </div><!-- /.themesflat-carousel-box -->
           <div class="themesflat-spacer clearfix" data-desktop="41" data-mobile="35" data-smobile="35" />
           <div class="elm-button text-center">
-            <a href="/projects" class="themesflat-button bg-accent">{{ project.buttonText }}</a>
+            <a href="/projects" class="themesflat-button bg-accent">{{ projects.buttonText }}</a>
           </div>
           <div class="themesflat-spacer clearfix" data-desktop="73" data-mobile="60" data-smobile="60" />
         </div><!-- /.col-md-12 -->
@@ -63,8 +63,7 @@
     </div><!-- /.container-fluid -->
     <div class="bg-parallax-overlay overlay-black" />
     <div
-      v-for="(proj, index) in project.projects"
-      v-show="mobile === true"
+      v-for="(project, index) in projects.projects"
       :id="'project-detail-home-mobile-' + index"
       :key="index"
       class="modal carousel-mobile-only"
@@ -82,10 +81,10 @@
         <div class="modal-body">
           <div id="mobile-projects-carousel" class="carousel" data-ride="carousel" data-interval="false">
             <div id="swipearea" class="carousel-inner">
-              <div v-for="(image, i) in proj.otherImages.images" :key="i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
-                <img class="d-block w-100" :src="image" :alt="proj.name"><br>
+              <div v-for="(image, i) in project.otherImages.images" :key="i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
+                <img class="d-block w-100" :src="image" :alt="project.name"><br>
                 <div class="image-counter carousel-caption d-md-block">
-                  <p>{{ i + 1 }}/{{ proj.otherImages.images.length }}</p>
+                  <p>{{ i + 1 }}/{{ project.otherImages.images.length }}</p>
                 </div>
               </div>
             </div>
@@ -97,12 +96,12 @@
 </template>
 
 <script>
-import project from '../content/project.json'
+import projects from '../content/projects.json'
 
 export default {
   data() {
     return {
-      project: project
+      projects: projects
     }
   },
   created() {
