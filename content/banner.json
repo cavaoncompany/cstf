@@ -5,15 +5,18 @@
   "slides": [
     {
       "title": "Banner image showing construction",
-      "image": "/img/banner-bg.png"
+      "image": "/img/banner-bg.png",
+      "mobileImage": "/img/mobile-banner.png"
     },
     {
       "title": "Banner image with construction work",
-      "image": "/img/banner-bg.png"
+      "image": "/img/banner-bg.png",
+      "mobileImage": "/img/mobile-banner.png"
     },
     {
       "title": "Banner image showing construction worker",
-      "image": "/img/banner-bg.png"
+      "image": "/img/banner-bg.png",
+      "mobileImage": "/img/mobile-banner.png"
     }
   ]
 }
