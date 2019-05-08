@@ -89,7 +89,7 @@
       v-show="mobile === false"
       :id="'project-detail-' + index"
       :key="'desktop-modal' + index"
-      class="modal desktop-only"
+      class="modal projects-desktop-only"
       tabindex="-1"
       role="dialog"
       aria-labelledby="projectDetail"
@@ -185,7 +185,8 @@ export default {
     const vm = this
     if (process.client) {
       this.mobile = this.isMobileDevice()
-
+      // eslint-disable-next-line
+      console.log(this.mobile)
       // eslint-disable-next-line
       const el = document.getElementById('swipezone')
       this.swipedetect(el, function (swipedir) {
