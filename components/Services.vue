@@ -107,7 +107,6 @@ export default {
 .service-container .card {
   border: none;
 }
-
 .service-container .card-body .btn-link {
   color: #FED00E;
   font-size: 14px;
@@ -129,6 +128,9 @@ export default {
 .service-container .card-overlay-text {
   padding: 15px;
   color: #111111;
+}
+.data-effect-item:hover .overlay-effect {
+  overflow-y: auto;
 }
 .higher {
   max-height: 15rem !important;
