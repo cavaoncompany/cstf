@@ -64,8 +64,8 @@
             </button>
           </div>
           <div class="modal-body project-home-modal-body">
-            <div id="mobile-projects-home-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-              <div id="swipearea" class="carousel-inner">
+            <div :id="'mobile-projects-home-carousel' + index" class="carousel slide" data-ride="carousel" data-interval="false">
+              <div :id="'swipearea' + index" class="carousel-inner">
                 <div v-for="(image, i) in project.otherImages.images" :key="i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
                   <img class="d-block w-100" :src="image" :alt="project.name"><br>
                   <div class="image-counter carousel-caption d-md-block">
@@ -112,6 +112,21 @@ export default {
       projects: projects
     }
   },
+  created() {
+    const vm = this
+    if (process.client) {
+      for (let i = 0; i < this.projects.projects.length; i++) {
+        // eslint-disable-next-line
+        const el = document.getElementById('swipearea' + i)
+        if (el) {
+          this.swipedetect(el, function (swipedir) {
+          // swipedir contains either "none", "left", "right", "top", or "down"
+            vm.swipeImage(swipedir, i)
+          })
+        }
+      }
+    }
+  },
   methods: {
     scrollToTop: function (el) {
       const element = document.getElementById(el)
@@ -120,6 +135,59 @@ export default {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       const coordinates = { top: rect.top + scrollTop, left: rect.left + scrollLeft }
       window.scrollTo({ top: coordinates.top, behavior: 'smooth' })
+    },
+    // Swipe detection
+    swipedetect: function (el, callback) {
+      const touchsurface = el
+      let swipedir = ''
+      let startX = 0
+      let startY = 0
+      let distX = 0
+      let distY = 0
+      const threshold = 150 // required min distance traveled to be considered swipe
+      const restraint = 100 // maximum distance allowed at the same time in perpendicular direction
+      const allowedTime = 300 // maximum time allowed to travel that distance
+      let elapsedTime = 0
+      let startTime = 0
+      const handleswipe = callback || function (swipedir) {}
+
+      touchsurface.addEventListener('touchstart', function (e) {
+        const touchobj = e.changedTouches[0]
+        swipedir = 'none'
+        startX = touchobj.pageX
+        startY = touchobj.pageY
+        startTime = new Date().getTime() // record time when finger first makes contact with surface
+        e.preventDefault()
+      }, false)
+
+      touchsurface.addEventListener('touchmove', function (e) {
+        e.preventDefault() // prevent scrolling when inside DIV
+      }, false)
+
+      touchsurface.addEventListener('touchend', function (e) {
+        const touchobj = e.changedTouches[0]
+        distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+        distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+        elapsedTime = new Date().getTime() - startTime // get time elapsed
+        if (elapsedTime <= allowedTime) { // first condition for awipe met
+          if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) { // 2nd condition for horizontal swipe met
+            swipedir = (distX < 0) ? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
+          } else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint) { // 2nd condition for vertical swipe met
+            swipedir = (distY < 0) ? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
+          }
+        }
+        handleswipe(swipedir)
+        e.preventDefault()
+      }, false)
+    },
+    swipeImage: function (direction, i) {
+      if (direction === 'left') {
+        // eslint-disable-next-line
+        $('#mobile-projects-home-carousel' + i).carousel('next')
+      } else if (direction === 'right') {
+        // eslint-disable-next-line
+        $('#mobile-projects-home-carousel' + i).carousel('prev')
+      }
     }
   }
 }

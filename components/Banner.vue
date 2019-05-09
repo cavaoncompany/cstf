@@ -1,6 +1,6 @@
 <template>
   <div class="banner-row">
-    <div id="banner-carousel-desktop" class="carousel slide desktop-only" data-ride="carousel">
+    <div id="banner-carousel-desktop" class="carousel slide desktop-medium-only" data-ride="carousel">
       <ol class="carousel-indicators">
         <li v-for="(slide, i) in banner.slides" :key="i" data-target="#banner-carousel-desktop" data-slide-to="i" />
       </ol>
@@ -51,11 +51,6 @@ export default {
 </script>
 
 <style>
-.b-row {
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
 .banner-row .container {
   padding-bottom: 50px;
   min-height: 500px;

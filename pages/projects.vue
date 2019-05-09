@@ -119,7 +119,7 @@
                 </a>
                 <!--/.Controls-->
                 <ol class="carousel-indicators">
-                  <li v-for="(image, i) in project.otherImages.images" :key="'desktop-carousel-indicator' + i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" :class="{'active': i === 0, 'hidden': i > 4 }">
+                  <li v-for="(image, i) in project.otherImages.images" :key="'desktop-carousel-indicator' + i" :data-target="'#carousel-thumb' + index" :data-slide-to="i">
                     <img class="d-block img-fluid thumbnail-carousel-img" :src="image" :alt="project.name">
                   </li>
                 </ol>
@@ -148,7 +148,7 @@
           </button>
         </div>
         <div class="modal-body projects-modal-body">
-          <div id="mobile-projects-carousel" class="carousel" data-ride="carousel" data-interval="false">
+          <div :id="'mobile-projects-carousel' + index" class="carousel" data-ride="carousel" data-interval="false">
             <div :id="'swipezone' + index" class="carousel-inner">
               <div v-for="(image, i) in project.otherImages.images" :key="'mobile-carousel' + i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
                 <img class="d-block w-100" :src="image" :alt="project.name"><br>
@@ -192,14 +192,10 @@ export default {
         if (el) {
           this.swipedetect(el, function (swipedir) {
           // swipedir contains either "none", "left", "right", "top", or "down"
-            vm.swipeImage(swipedir)
+            vm.swipeImage(swipedir, i)
           })
         }
       }
-      // this.swipedetect(el, function (swipedir) {
-      // swipedir contains either "none", "left", "right", "top", or "down"
-      //   vm.swipeImage(swipedir)
-      // })
     }
   },
   methods: {
@@ -247,13 +243,13 @@ export default {
         e.preventDefault()
       }, false)
     },
-    swipeImage: function (direction) {
+    swipeImage: function (direction, i) {
       if (direction === 'left') {
         // eslint-disable-next-line
-        $('#mobile-projects-carousel').carousel('next')
+        $('#mobile-projects-carousel' + i).carousel('next')
       } else if (direction === 'right') {
         // eslint-disable-next-line
-        $('#mobile-projects-carousel').carousel('prev')
+        $('#mobile-projects-carousel' + i).carousel('prev')
       }
     },
     isMobileDevice: function () {
@@ -269,6 +265,8 @@ export default {
 }
 #projects .carousel-item img {
   width: auto;
+  object-fit: cover;
+  margin: 0 auto;
 }
 #projects .mobile-carousel-item img {
   height: 90%;
@@ -277,7 +275,34 @@ export default {
   height: 85px;
 }
 #projects .carousel-indicators {
-  bottom: -22px;
+  bottom: -106px;
+  overflow: auto;
+  height: 111px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#projects .carousel-indicators::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+#projects .carousel-indicators::-webkit-scrollbar
+{
+  width: 10px;
+  height: 7px;
+  background-color: #F5F5F5;
+}
+#projects .carousel-indicators::-webkit-scrollbar-thumb
+{
+  background-color: #FED00E;
+  background-image: -webkit-linear-gradient(90deg,
+  rgba(255, 255, 255, .2) 25%,
+  transparent 25%,
+  transparent 50%,
+  rgba(255, 255, 255, .2) 50%,
+  rgba(255, 255, 255, .2) 75%,
+  transparent 75%,
+  transparent)
 }
 #projects .carousel-control-prev-icon {
   background-image: url('/img/left.png');
@@ -300,7 +325,6 @@ export default {
 }
 #projects .carousel-mobile-only .mobile-carousel-item.active {
   width: 100%;
-  height: 215px;
 }
 #projects .carousel-mobile-only .carousel-caption {
   left: 0;
@@ -319,7 +343,6 @@ export default {
 .projects-modal-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 15px 15px 100px 15px;
 }
 #projects .carousel-inner {

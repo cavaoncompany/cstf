@@ -30,7 +30,7 @@
     "express": "^4.16.4",
     "netlify-lambda": "^1.4.4",
     "nodemailer": "^6.1.0",
-    "nuxt": "^2.4.0",
+    "nuxt": "^2.6.3",
     "nuxt-leaflet": "^0.0.18",
     "serverless-http": "^1.9.1"
   },

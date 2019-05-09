@@ -20,6 +20,13 @@ collections:
           - label: "Button text"
             name: "buttonText"
             widget: "string"
+          - label: "Slides"
+            name: "slides"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Image", name: "image", widget: "image"}
+              - {label: "Image for Mobile", name: "mobileImage", widget: "image"}
       - label: "Get a quote form"
         name: "getaquote"
         format: "json"
