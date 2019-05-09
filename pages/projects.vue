@@ -119,7 +119,7 @@
                 </a>
                 <!--/.Controls-->
                 <ol class="carousel-indicators">
-                  <li v-for="(image, i) in project.otherImages.images" :key="'desktop-carousel-indicator' + i" :data-target="'#carousel-thumb' + index" :data-slide-to="i" :class="{'active': i === 0, 'hidden': i > 4 }">
+                  <li v-for="(image, i) in project.otherImages.images" :key="'desktop-carousel-indicator' + i" :data-target="'#carousel-thumb' + index" :data-slide-to="i">
                     <img class="d-block img-fluid thumbnail-carousel-img" :src="image" :alt="project.name">
                   </li>
                 </ol>
@@ -275,7 +275,34 @@ export default {
   height: 85px;
 }
 #projects .carousel-indicators {
-  bottom: -22px;
+  bottom: -106px;
+  overflow: auto;
+  height: 111px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+#projects .carousel-indicators::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+#projects .carousel-indicators::-webkit-scrollbar
+{
+  width: 10px;
+  height: 7px;
+  background-color: #F5F5F5;
+}
+#projects .carousel-indicators::-webkit-scrollbar-thumb
+{
+  background-color: #FED00E;
+  background-image: -webkit-linear-gradient(90deg,
+  rgba(255, 255, 255, .2) 25%,
+  transparent 25%,
+  transparent 50%,
+  rgba(255, 255, 255, .2) 50%,
+  rgba(255, 255, 255, .2) 75%,
+  transparent 75%,
+  transparent)
 }
 #projects .carousel-control-prev-icon {
   background-image: url('/img/left.png');
