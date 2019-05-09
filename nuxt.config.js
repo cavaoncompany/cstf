@@ -38,7 +38,6 @@ module.exports = {
       { src: '/js/rev-slider.js' }
     ]
   },
-
   /*
   ** Customize the progress-bar color
   */
