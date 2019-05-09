@@ -1,6 +1,6 @@
 <template>
   <div id="getAQuote" class="row-quote bg-row-1">
-    <div class="container desktop-only">
+    <div class="container desktop-medium-only">
       <div class="row">
         <div class="col-md-12">
           <div class="themesflat-spacer clearfix" data-desktop="40" data-mobile="60" data-smobile="60" />

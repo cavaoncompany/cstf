@@ -17,7 +17,7 @@
           <p>{{ item.timeframe }}</p>
         </div>
       </div>
-      <div class="row mobile-only">
+      <div class="row mobile-medium-only item-row">
         <div v-for="(item, index) in howitworks.services" :key="index" class="works-container">
           <!-- <img :src="item.img" :alt="item.title"> -->
           <div class="number-mobile">
@@ -119,5 +119,8 @@ export default {
 }
 .invisible {
   display: none;
+}
+.works-row .row {
+  justify-content: space-around;
 }
 </style>

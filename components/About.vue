@@ -29,8 +29,8 @@
                 </div>
               </div><!-- /.themeslat-list -->
             </div><!-- /.content-list -->
-            <div class="themesflat-spacer clearfix desktop-only" data-desktop="42" data-mobile="35" data-smobile="35" />
-            <div class="elm-button desktop-only">
+            <div class="themesflat-spacer clearfix desktop-medium-only" data-desktop="42" data-mobile="35" data-smobile="35" />
+            <div class="elm-button desktop-medium-only">
               <a href="#" class="themesflat-button bg-white" data-toggle="modal" data-target="#getAQuoteModal">{{ about.buttonText }}</a>
             </div>
           </div><!-- /.themesflat-content-box -->

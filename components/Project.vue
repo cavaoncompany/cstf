@@ -18,7 +18,7 @@
             data-column3="1"
             data-auto="false"
           >
-            <div class="desktop-only owl-carousel owl-theme">
+            <div class="desktop-medium-only owl-carousel owl-theme">
               <div v-for="(item, index) in projects.projects" :key="index" class="themesflat-project style-1 data-effect clearfix">
                 <div class="project-item">
                   <div class="inner">

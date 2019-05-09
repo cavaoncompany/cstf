@@ -43,8 +43,8 @@
                             >
                               <img :src="project.img" :alt="project.name">
                               <div class="elm-link">
-                                <a v-if="mobile === true" href="#" class="icon-1 icon-search mobile-only" data-toggle="modal" :data-target="'#project-detail-mobile-' + index" />
-                                <a v-if="mobile === false" href="#" class="icon-1 icon-search desktop-only" data-toggle="modal" :data-target="'#project-detail-' + index" />
+                                <a id="carousel-mobile-switch" href="#" class="icon-1 icon-search carousel-mobile-only" data-toggle="modal" :data-target="'#project-detail-mobile-' + index" />
+                                <a id="carousel-desktop-switch" href="#" class="icon-1 icon-search carousel-desktop-only" data-toggle="modal" :data-target="'#project-detail-' + index" />
                               </div>
                               <div class="overlay-effect bg-color-3" />
                             </div>
@@ -89,7 +89,7 @@
       v-show="mobile === false"
       :id="'project-detail-' + index"
       :key="'desktop-modal' + index"
-      class="modal projects-desktop-only"
+      class="modal carousel-desktop-only"
       tabindex="-1"
       role="dialog"
       aria-labelledby="projectDetail"
@@ -149,7 +149,7 @@
         </div>
         <div class="modal-body projects-modal-body">
           <div id="mobile-projects-carousel" class="carousel" data-ride="carousel" data-interval="false">
-            <div id="swipezone" class="carousel-inner">
+            <div :id="'swipezone' + index" class="carousel-inner">
               <div v-for="(image, i) in project.otherImages.images" :key="'mobile-carousel' + i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
                 <img class="d-block w-100" :src="image" :alt="project.name"><br>
                 <div class="image-counter carousel-caption d-md-block">
@@ -184,15 +184,22 @@ export default {
   created() {
     const vm = this
     if (process.client) {
-      this.mobile = this.isMobileDevice()
-      // eslint-disable-next-line
-      console.log(this.mobile)
-      // eslint-disable-next-line
-      const el = document.getElementById('swipezone')
-      this.swipedetect(el, function (swipedir) {
-        // swipedir contains either "none", "left", "right", "top", or "down"
-        vm.swipeImage(swipedir)
-      })
+      vm.mobile = this.isMobileDevice()
+
+      for (let i = 0; i < this.projects.projects.length; i++) {
+        // eslint-disable-next-line
+        const el = document.getElementById('swipezone' + i)
+        if (el) {
+          this.swipedetect(el, function (swipedir) {
+          // swipedir contains either "none", "left", "right", "top", or "down"
+            vm.swipeImage(swipedir)
+          })
+        }
+      }
+      // this.swipedetect(el, function (swipedir) {
+      // swipedir contains either "none", "left", "right", "top", or "down"
+      //   vm.swipeImage(swipedir)
+      // })
     }
   },
   methods: {
@@ -293,7 +300,6 @@ export default {
 }
 #projects .carousel-mobile-only .mobile-carousel-item.active {
   width: 100%;
-  height: 215px;
 }
 #projects .carousel-mobile-only .carousel-caption {
   left: 0;
