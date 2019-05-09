@@ -196,10 +196,6 @@ export default {
           })
         }
       }
-      // this.swipedetect(el, function (swipedir) {
-      // swipedir contains either "none", "left", "right", "top", or "down"
-      //   vm.swipeImage(swipedir)
-      // })
     }
   },
   methods: {
@@ -269,6 +265,8 @@ export default {
 }
 #projects .carousel-item img {
   width: auto;
+  object-fit: cover;
+  margin: 0 auto;
 }
 #projects .mobile-carousel-item img {
   height: 90%;
@@ -318,7 +316,6 @@ export default {
 .projects-modal-body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 15px 15px 100px 15px;
 }
 #projects .carousel-inner {
