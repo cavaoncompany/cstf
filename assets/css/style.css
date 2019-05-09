@@ -1014,6 +1014,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 .service-container .card-title { margin-top: 25px; min-height: 60px; }
 .works-row .mobile-medium-only { display: none; }
 
+.b-row { position: absolute;  top: 0; left: 0; width: 100%; }
+
 /* Modal
 --------------------------------------------------------------- */
 .service-modal-content {
