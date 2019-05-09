@@ -65,5 +65,6 @@
       "^.+.vue$": "vue-jest",
       "^.+.js$": "babel-jest"
     }
-  }
+  },
+  "heroku-run-build-script": true
 }
