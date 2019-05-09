@@ -148,7 +148,7 @@
           </button>
         </div>
         <div class="modal-body projects-modal-body">
-          <div id="mobile-projects-carousel" class="carousel" data-ride="carousel" data-interval="false">
+          <div :id="'mobile-projects-carousel' + index" class="carousel" data-ride="carousel" data-interval="false">
             <div :id="'swipezone' + index" class="carousel-inner">
               <div v-for="(image, i) in project.otherImages.images" :key="'mobile-carousel' + i" :class="{'active': i === 0}" class="carousel-item mobile-carousel-item">
                 <img class="d-block w-100" :src="image" :alt="project.name"><br>
@@ -192,7 +192,7 @@ export default {
         if (el) {
           this.swipedetect(el, function (swipedir) {
           // swipedir contains either "none", "left", "right", "top", or "down"
-            vm.swipeImage(swipedir)
+            vm.swipeImage(swipedir, i)
           })
         }
       }
@@ -243,13 +243,13 @@ export default {
         e.preventDefault()
       }, false)
     },
-    swipeImage: function (direction) {
+    swipeImage: function (direction, i) {
       if (direction === 'left') {
         // eslint-disable-next-line
-        $('#mobile-projects-carousel').carousel('next')
+        $('#mobile-projects-carousel' + i).carousel('next')
       } else if (direction === 'right') {
         // eslint-disable-next-line
-        $('#mobile-projects-carousel').carousel('prev')
+        $('#mobile-projects-carousel' + i).carousel('prev')
       }
     },
     isMobileDevice: function () {
