@@ -1069,6 +1069,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   #footer .associations img { height: 50px; margin-left: 40px; }
 
+  .service-container .card-img-top { height: 200px; }
+
 }
 
 @media only screen and (max-width: 1199px) {
@@ -1119,6 +1121,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   #footer .associations img { height: 50px; margin-left: 40px; }
 
+  .service-container .card-img-top { height: 200px; }
 }
 
 @media only screen and (max-width: 991px) {
@@ -1324,6 +1327,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   #footer .associations img { max-height: 53px; margin-left: 0; width: 30%; }
   #footer .associations { justify-content: space-between; }
+
+  .service-container .card-img-top { height: 120px; }
 }
 
 @media only screen and (max-width: 359px) {
