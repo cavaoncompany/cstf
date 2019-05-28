@@ -1054,8 +1054,6 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   #quote .progress-wrapper { flex-direction: row; width: 35%; }
 
-  .mobile-medium-only { display: none; }
-
   #quote .questionnaire { padding: 2% 15%; }
 
   #thankyou .thank-you-wrapper { margin: 70px; padding: 70px; }
@@ -1069,6 +1067,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   #footer .associations img { height: 50px; margin-left: 40px; }
 
+  .mobile-medium-only { display: none; }
 }
 
 @media only screen and (max-width: 1199px) {
