@@ -31,7 +31,7 @@
         </div>
       </div>
       <div class="bottom-row">
-        <img src="/img/blank.png" alt="placeholder">
+        <img v-for="(partner, i) in quote.partners" :key="i" :src="partner.image" :alt="partner.title">
       </div>
     </div>
   </div>
@@ -70,7 +70,14 @@ export default {
   font-size: 12px;
 }
 .partner-wrapper .bottom-row {
-  height: 100px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.partner-wrapper .bottom-row img {
+  margin-left: 5px;
+  margin-right: 5px;
+  max-height: 80px;
 }
 .partner-wrapper .top-row h3 {
   margin-top: 15px;
