@@ -71,7 +71,7 @@ export default {
     position: absolute;
     left: -32px;
     top: 35px;
-    background-image: url('/img/number-bg.png')
+    background-image: url('/img/number-bg.PNG')
 }
 .works-container .connecting-line {
   background-image: url('/img/blank.png');
