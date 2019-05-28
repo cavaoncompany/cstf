@@ -56,7 +56,9 @@ module.exports = {
   */
   plugins: [
   ],
-
+  serverMiddleware: [
+    '~/api/nodemailer'
+  ],
   /*
   ** Nuxt.js modules
   */

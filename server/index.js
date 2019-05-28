@@ -9,6 +9,9 @@ app.use(bodyParser.json({ limit: '10mb' }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true, parameterLimit: 10000 }))
 app.use(express.json())
 
+const api = require('../api/nodemailer.js')
+app.use('/api/nodemailer', api)
+
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')

@@ -18,9 +18,6 @@ async function sendEmail({ state, commit }, payload, path) {
   path = path || 'contact'
 
   const emailInfo = payload
-  // const emailProvider = state.emailProvider
-
-  // if (emailProvider.username !== '' && emailProvider.password !== '') {
   try {
     // eslint-disable-next-line
     const { res } = await axios.post(path, {
@@ -35,8 +32,8 @@ async function sendEmail({ state, commit }, payload, path) {
 
 export const actions = {
   async contactUs({ state, commit }, payload) {
-    const path = '/.netlify/functions/contact'
-    await sendEmail({ state, commit }, payload, path)
+    // const path = '/.netlify/functions/contact'
+    // await sendEmail({ state, commit }, payload, path)
   },
   async getQuote({ state, commit }, payload) {
     const path = '/.netlify/functions/quote'
