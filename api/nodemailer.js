@@ -2,7 +2,6 @@
 
 const express = require('express')
 const nodemailer = require('nodemailer')
-const router = express.Router()
 const bodyParser = require('body-parser')
 const app = express()
 
@@ -24,11 +23,6 @@ app.post('/', function (req, res) {
   sendMail(emailInfo, emailProvider, attachment)
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
 })
-router.get('/newProject', function (req, res) {
-  res.send('Hello')
-})
-
-module.exports = router
 
 app.post('/contactUs', function (req, res) {
   const emailInfo = req.body.emailInfo
