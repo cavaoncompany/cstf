@@ -112,7 +112,8 @@ export default {
     height: 90%;
   }
   .carousel-mobile-only .mobile-carousel-item.active,
-  .carousel-mobile-only .carousel-item.active {
+  .carousel-mobile-only .carousel-item.active,
+  .mobile-carousel-item {
     width: 100%;
     height: 215px;
   }
