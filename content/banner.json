@@ -10,13 +10,18 @@
     },
     {
       "title": "Banner image with construction work",
-      "image": "/img/banner-bg.png",
-      "mobileImage": "/img/mobile-banner.png"
+      "image": "/img/banner-1.jpg",
+      "mobileImage": "/img/mobile-banner-1.jpg"
     },
     {
       "title": "Banner image showing construction worker",
-      "image": "/img/banner-bg.png",
-      "mobileImage": "/img/mobile-banner.png"
+      "image": "/img/banner-2.jpg",
+      "mobileImage": "/img/mobile-banner-2.jpg"
+    },
+    {
+      "title": "Banner image showing construction worker",
+      "image": "/img/banner-3.jpg",
+      "mobileImage": "/img/mobile-banner-3.jpg"
     }
   ]
 }
