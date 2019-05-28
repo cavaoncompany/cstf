@@ -125,5 +125,19 @@
     "message": "Leave your message (optional) ",
     "submitButton": "SUBMIT",
     "thankYou": "THANK YOU",
-    "thankYouMessage": "Thank you for submitting a request, our team will contact you shortly."
+    "thankYouMessage": "Thank you for submitting a request, our team will contact you shortly.",
+    "partners": [
+        {
+            "image": "/img/client-hilti.png",
+            "title": "HILTI"
+        },
+        {
+            "image": "/img/client-bluescope.png",
+            "title": "Bluescope Steel"
+        },
+        {
+            "image": "/img/client-framecad.png",
+            "title": "Framecad"
+        }
+    ]
 }       

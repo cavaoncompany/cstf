@@ -326,7 +326,7 @@ h6 a { color: inherit }
 .bg-light-snow { background-color: #fafafb; }
 .bg-f7f { background-color: #f7f7f7 !important;}
 .bg-ffc { background-color: #FED00E !important;}
-.bg-row-1 { background: url('../img/Quote-bg.png') center center no-repeat; background-size: contain; background-position-x: -530px; }
+.bg-row-1 { background: url('../img/Quote-bg.png') center center no-repeat; background-size: contain; background-position-x: -830px; }
 .bg-row-2 { background: url('../img/page/bg-iconbox.jpg') center center no-repeat; background-size: cover; }
 @media only screen and (max-width: 479px) {
 	.bg-row-1 { background: #fff; }

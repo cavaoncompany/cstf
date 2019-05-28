@@ -12,7 +12,9 @@
                     {{ quote.startYourProject }}
                   </h3>
                 </div>
-                <div class="button-wrap has-icon .sep-icon-after" />
+                <div class="button-wrap has-icon .sep-icon-after">
+                  <img v-for="(partner, i) in quote.partners" :key="i" :src="partner.image" :alt="partner.title">
+                </div>
               </div>
             </div>
           </div>
