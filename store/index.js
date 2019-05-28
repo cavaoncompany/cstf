@@ -15,7 +15,7 @@ export const getters = {
 }
 
 async function sendEmail({ state, commit }, payload, path) {
-  path = path || 'contact'
+  path = path || 'contactUs'
 
   const emailInfo = payload
   try {
@@ -33,7 +33,8 @@ async function sendEmail({ state, commit }, payload, path) {
 export const actions = {
   async contactUs({ state, commit }, payload) {
     // const path = '/.netlify/functions/contact'
-    // await sendEmail({ state, commit }, payload, path)
+    const path = '/contactUs'
+    await sendEmail({ state, commit }, payload, path)
   },
   async getQuote({ state, commit }, payload) {
     const path = '/.netlify/functions/quote'

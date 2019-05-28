@@ -214,9 +214,9 @@
                       <!-- <div class="themesflat-map" /> -->
                       <div id="map-wrap" style="height: 20vh; width: 100%;">
                         <no-ssr>
-                          <l-map :zoom="10" :center="[47.413220, -1.219482]">
+                          <l-map :zoom="15" :center="[-33.884392, 151.207870]">
                             <l-tile-layer url="http://{s}.tile.osm.org/{z}/{x}/{y}.png" />
-                            <l-marker :lat-lng="[-33.833220, 151.209482]" />
+                            <l-marker :lat-lng="[-33.884392, 151.207870]" />
                           </l-map>
                         </no-ssr>
                       </div>
