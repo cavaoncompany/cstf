@@ -95,7 +95,7 @@ export default {
     position: absolute;
     left: 50px;
     top: -29px;
-    background-image: url('/img/number-bg.png')
+    background-image: url('/img/number-bg.PNG')
 }
 .works-container p {
   color: #fff;
