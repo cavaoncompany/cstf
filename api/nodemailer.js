@@ -34,7 +34,7 @@ app.post('/contactUs', function (req, res) {
 app.post('/getEstimate', function (req, res) {
   const emailInfo = req.body.emailInfo
   const emailProvider = emailProviderDetails
-  sendMail(emailInfo, emailProvider)
+  sendGetEstimateMail(emailInfo, emailProvider)
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
 })
 
@@ -70,7 +70,7 @@ const sendContactUsMail = (emailInfo, emailProvider) => {
   }, 100)
 }
 
-const sendMail = (emailInfo, emailProvider) => {
+const sendGetEstimateMail = (emailInfo, emailProvider) => {
   const transporter = nodemailer.createTransport({
     host: emailProvider.service,
     port: 465,

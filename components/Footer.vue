@@ -127,4 +127,7 @@ export default {
 #footer .themesflat-row .span_1_of_3 {
   margin-bottom: 15px;
 }
+#footer .widget .widget-title {
+  text-align: left;
+}
 </style>
