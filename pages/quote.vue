@@ -1004,7 +1004,7 @@ export default {
     async onSubmit() {
       try {
         // eslint-disable-next-line
-        // const token = await this.$recaptcha.execute('login')
+        const token = await this.$recaptcha.execute('login')
         this.sendEmail()
       } catch (error) {
         // eslint-disable-next-line
