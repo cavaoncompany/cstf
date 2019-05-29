@@ -34,8 +34,7 @@ app.post('/contactUs', function (req, res) {
 app.post('/getEstimate', function (req, res) {
   const emailInfo = req.body.emailInfo
   const emailProvider = emailProviderDetails
-  const attachment = req.body.emailInfo.file
-  sendMail(emailInfo, emailProvider, attachment)
+  sendMail(emailInfo, emailProvider)
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
 })
 
@@ -84,17 +83,19 @@ const sendMail = (emailInfo, emailProvider) => {
     }
   })
   setTimeout(() => {
-    const file1 = emailInfo.architecturalFile
     const attachments = []
-    if (emailInfo.engineeringFile !== '') {
-      const file2 = emailInfo.engineeringFile
-      const buffer = Buffer.from(file1.split('base64,')[1], 'base64')
-      attachments.push({ content: buffer, filename: emailInfo.architecturalPlan })
-      const secondbuffer = Buffer.from(file2.split('base64')[1], 'base64')
-      attachments.push({ content: secondbuffer, filename: emailInfo.engineeringPlan })
-    } else {
-      const buffer = Buffer.from(file1.split('base64,')[1], 'base64')
-      attachments.push({ content: buffer, filename: emailInfo.architecturalPlan })
+    if (emailInfo.architecturalFile !== '') {
+      const file1 = emailInfo.architecturalFile
+      if (emailInfo.engineeringFile !== '') {
+        const file2 = emailInfo.engineeringFile
+        const buffer = Buffer.from(file1.split('base64,')[1], 'base64')
+        attachments.push({ content: buffer, filename: emailInfo.architecturalPlan })
+        const secondbuffer = Buffer.from(file2.split('base64')[1], 'base64')
+        attachments.push({ content: secondbuffer, filename: emailInfo.engineeringPlan })
+      } else {
+        const buffer = Buffer.from(file1.split('base64,')[1], 'base64')
+        attachments.push({ content: buffer, filename: emailInfo.architecturalPlan })
+      }
     }
 
     transporter.sendMail({

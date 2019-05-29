@@ -1052,7 +1052,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #why-steel .about-left { padding: 35px; }
   #quote .project-type { margin: 50px; padding-top: 100px; padding-bottom: 80px; }
 
-  #quote .progress-wrapper { flex-direction: row; width: 35%; }
+  #quote .progress-wrapper { flex-direction: row; width: 35%; padding-right: 25px; }
 
   .mobile-medium-only { display: none; }
 
@@ -1106,7 +1106,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #why-steel .about-left { padding: 35px; }
   #quote .project-type { margin: 50px; padding-top: 100px; padding-bottom: 80px; }
 
-  #quote .progress-wrapper { flex-direction: row; width: 35%; }
+  #quote .progress-wrapper { flex-direction: row; width: 35%; padding-right: 25px; }
 
   #quote .questionnaire { padding: 2% 15%; }
 
@@ -1314,7 +1314,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #why-steel .about-right img { height: auto }
   #quote .project-type { margin: 35px; padding: 30px 10px 10px 10px; }
 
-  #quote .progress-wrapper { flex-direction: column; width: 50%; }
+  #quote .progress-wrapper { flex-direction: column; width: 50%; padding-right: 0; }
 
   #quote .questionnaire { padding: 2% 5%; }
 
