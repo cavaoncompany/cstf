@@ -39,7 +39,7 @@ const sendMail = (emailInfo, emailProvider) => {
       // to: ''
       to: `${emailProvider.username}`,
       subject: `${emailInfo.subject}`,
-      html: `<h2>The following message has been received through the Contact us form on www.cavaon.com</h2>
+      html: `<h2>The following message has been received through the Contact us form on www.cstf.com</h2>
       <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
       <p style="margin-bottom: 10px;"><b>Email:</b> ${emailInfo.email}</p>
       <p style="margin-bottom: 10px;"><b>Phone:</b> ${emailInfo.phone}</p>

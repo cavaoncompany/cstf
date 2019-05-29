@@ -32,12 +32,17 @@ async function sendEmail({ state, commit }, payload, path) {
 
 export const actions = {
   async contactUs({ state, commit }, payload) {
+    // Netlify use:
     // const path = '/.netlify/functions/contact'
-    const path = '/contactUs'
+    // Heroku use:
+    const path = '/api/nodemailer/contactUs'
     await sendEmail({ state, commit }, payload, path)
   },
   async getQuote({ state, commit }, payload) {
-    const path = '/.netlify/functions/quote'
+    // Netlify use:
+    // const path = '/.netlify/functions/quote'
+    // Heroku use:
+    const path = '/api/nodemailer/getEstimate'
     await sendEmail({ state, commit }, payload, path)
   }
 }
