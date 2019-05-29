@@ -27,8 +27,7 @@ app.post('/', function (req, res) {
 app.post('/contactUs', function (req, res) {
   const emailInfo = req.body.emailInfo
   const emailProvider = emailProviderDetails
-  const attachment = req.body.emailInfo.file
-  sendContactUsMail(emailInfo, emailProvider, attachment)
+  sendContactUsMail(emailInfo, emailProvider)
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
 })
 
