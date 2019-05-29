@@ -1000,10 +1000,11 @@ export default {
       return this.$router.push('/success')
       // this.$router.replace({ path: 'success' })
     },
+    // eslint-disable-next-line
     async onSubmit() {
       try {
         // eslint-disable-next-line
-        const token = await this.$recaptcha.execute('login')
+        // const token = await this.$recaptcha.execute('login')
         this.sendEmail()
       } catch (error) {
         // eslint-disable-next-line

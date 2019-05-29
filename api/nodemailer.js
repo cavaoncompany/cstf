@@ -20,7 +20,7 @@ app.post('/', function (req, res) {
   const emailInfo = req.body.emailInfo
   const emailProvider = req.body.emailProvider
   const attachment = req.body.emailInfo.file
-  sendMail(emailInfo, emailProvider, attachment)
+  sendGetEstimateMail(emailInfo, emailProvider, attachment)
   res.status(200).json({ 'message': 'Your mail was sent successfully' })
 })
 
