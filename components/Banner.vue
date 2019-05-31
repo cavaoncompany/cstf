@@ -6,7 +6,9 @@
       </ol>
       <div class="carousel-inner">
         <div v-for="(slide, i) in banner.slides" :key="i" :class="{'active': i === 0}" class="carousel-item">
-          <img class="d-block w-100" :src="slide.image" :alt="slide.title">
+          <!-- <img class="d-block w-100" :src="slide.image" :alt="slide.title"> -->
+          <div class="slider-img" :style="{ background: `url('` + slide.image + `') no-repeat top` }" />
+          <!-- <div class="slider-img" /> -->
           <div class="overlay-black" />
         </div>
       </div>
@@ -71,5 +73,11 @@ export default {
   top: 0;
   width: 100%;
   height: 100%;
+}
+.banner-row .carousel-inner .slider-img {
+  height: 545px;
+  width: 100%;
+  background-size: cover;
+  background-attachment: fixed;
 }
 </style>
