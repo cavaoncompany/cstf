@@ -373,19 +373,8 @@ collections:
             widget: "string"
           - label: "Profession"
             name: "profession"
-            widget: "list"
+            widget: "object"
             fields:
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Professions", name: "professions", widget: "string"}
-          - label: "Message"
-            name: "message"
-            widget: "string"
-          - label: "Submit button"
-            name: "submitButton"
-            widget: "string"
-          - label: "Thank you title"
-            name: "thankYou"
-            widget: "string"
-          - label: "Thank you message"
-            name: "thankYouMessage"
-            widget: "string"
+              - {label: "Professions", name: "professions", widget: "list"}
+          
