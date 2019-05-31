@@ -27,14 +27,16 @@
     "tick": "/img/tick.png",
     "residentialProject": "YOUR RESIDENTIAL PROJECT",
     "commercialProject": "YOUR COMMERCIAL / INDUSTRIAL PROJECT",
-    "profession": {
-        "title": "What is your profession?",
-        "professions": [
-            "Homeowner builder",
-            "Licenced contractor builder / project manager",
-            "Architect"
-        ]
-    },
+    "profession": [
+        {
+            "title": "What is your profession?",
+            "professions": [
+                "Homeowner builder",
+                "Licenced contractor builder / project manager",
+                "Architect"
+            ]
+        }
+    ],
     "projectType": {
         "title": "What is the project type?",
         "type": [
