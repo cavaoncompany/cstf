@@ -371,12 +371,12 @@ collections:
           - label: "Commercial project"
             name: "commercialProject"
             widget: "string"
-          - label: "Type of project"
-            name: "typeOfProject"
+          - label: "Profession"
+            name: "profession"
             widget: "list"
             fields:
-              - {label: "Question", name: "question", widget: "string"}
-              - {label: "Image", name: "img", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Professions", name: "professions", widget: "list"}
           - label: "Message"
             name: "message"
             widget: "string"
