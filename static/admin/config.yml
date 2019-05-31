@@ -371,9 +371,3 @@ collections:
           - label: "Commercial project"
             name: "commercialProject"
             widget: "string"
-          - label: "Project type"
-            name: "projectType"
-            widget: "list"
-            fields:
-              - {label: "Title", name: "title", widget: "string"}
-              - {label: "Type", name: "type", widget: "list"}
