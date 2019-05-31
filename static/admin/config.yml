@@ -356,3 +356,9 @@ collections:
           - label: "Type of project title"
             name: "typeOfProjectTitle"
             widget: "string"
+          - label: "Type of project"
+            name: "typeOfProject"
+            widget": "list"
+            fields:
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Image", name: "img", widget: "image"}
