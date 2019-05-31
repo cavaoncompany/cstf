@@ -469,9 +469,13 @@
 /* Style 1 */
 .themesflat-quote.style-1 .heading { margin: 0; font-size: 18px; color: #111; font-weight: 600; }
 
+@media only screen and (max-width: 1199px) {
+	.themesflat-quote .heading-wrap { width: 30%; }
+	.themesflat-quote .button-wrap { width:  70%; }
+}
+
 @media only screen and (max-width: 991px) {
-	.themesflat-quote .heading-wrap { width: 60%; }
-	.themesflat-quote .button-wrap { width: 40%; }
+	.themesflat-quote .button-wrap img { height: 50px;  }
 }
 
 @media only screen and (max-width: 767px) {
