@@ -376,7 +376,6 @@ collections:
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Professions", name: "professions", widget: "string"}
           - label: "Message"
             name: "message"
             widget: "string"
