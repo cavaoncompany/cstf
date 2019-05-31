@@ -371,3 +371,21 @@ collections:
           - label: "Commercial project"
             name: "commercialProject"
             widget: "string"
+          - label: "Type of project"
+            name: "typeOfProject"
+            widget: "list"
+            fields:
+              - {label: "Question", name: "question", widget: "string"}
+              - {label: "Image", name: "img", widget: "image"}
+          - label: "Message"
+            name: "message"
+            widget: "string"
+          - label: "Submit button"
+            name: "submitButton"
+            widget: "string"
+          - label: "Thank you title"
+            name: "thankYou"
+            widget: "string"
+          - label: "Thank you message"
+            name: "thankYouMessage"
+            widget: "string"
