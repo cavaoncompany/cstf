@@ -104,7 +104,6 @@ collections:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Description", name: "description", widget: "string"}
               - {label: "Identifier", name: "id", widget: "string"}
-              - {label: "Needs shortening", name: "overflow", widget: "boolean"}
           - label: "Button text"
             name: "buttonText"
             widget: "string"
@@ -144,32 +143,6 @@ collections:
               - {label: "Description", name: "description", widget: "string"}
           - label: "Button text"
             name: "buttonText"
-            widget: "string"
-      - label: "Testimony"
-        name: "testimonials"
-        format: "json"
-        file: "/content/testimonials.json"
-        fields:
-          - label: "Title"
-            name: "title"
-            widget: "string"
-          - label: "Testimonials"
-            name: "testimonials"
-            widget: "list"
-            fields:
-              - {label: "Top text", name: "textTop", widget: "string"}
-              - {label: "Bottom text", name: "textBottom", widget: "string"}
-              - {label: "Name", name: "author", widget: "string"}
-      - label: "Quote"
-        name: "quote"
-        format: "json"
-        file: "/content/quote.json"
-        fields:
-          - label: "Text"
-            name: "text"
-            widget: "string"
-          - label: "Call to action"
-            name: "quote"
             widget: "string"
       - label: "Footer"
         name: "footer"

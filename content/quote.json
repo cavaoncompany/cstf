@@ -1,5 +1,5 @@
 {
-    "startYourProject": "OUR PARTNERS",
+    "title": "GET AN ESTIMATE",
     "intro": "Please leave your details to get a quote.",
     "namePlaceholder": "Full Name*",
     "nameMissing": "*Please enter your name",
@@ -126,6 +126,7 @@
     "submitButton": "SUBMIT",
     "thankYou": "THANK YOU",
     "thankYouMessage": "Thank you for submitting a request, our team will contact you shortly.",
+    "partnerTitle": "OUR PARTNERS",
     "partners": [
         {
             "image": "/img/client-hilti.png",
