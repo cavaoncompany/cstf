@@ -7134,10 +7134,10 @@ neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-netlify-lambda@^1.4.4:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.4.7.tgz#a03e4a4c6f6f8d27abb7986891b11b4a74d82e82"
-  integrity sha512-tTS1Vm6sDky8lTi6SZgAwrOWz9sLhlwUpoh5Vg3L/Iz6oR03XAdIxXAoSZjbRD2OHhLzATh0LsBpCN1BlFF2ug==
+netlify-lambda@^1.4.13:
+  version "1.4.13"
+  resolved "https://registry.yarnpkg.com/netlify-lambda/-/netlify-lambda-1.4.13.tgz#a324615133b8f1a3aaeec8c5dfc825cf07aaddf1"
+  integrity sha512-f8CeAt8iGeORFn6fcNn3UXNSjGPL8vWaLm3yZH6I7txENOOdKMp7SdwvNL5YEN3s5h9+GAQ05qy3Ems0nle2JQ==
   dependencies:
     "@babel/core" "^7.0.0"
     "@babel/plugin-proposal-class-properties" "^7.0.0"
@@ -7269,10 +7269,10 @@ node-releases@^1.1.19:
   dependencies:
     semver "^5.3.0"
 
-nodemailer@^6.1.0:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.1.1.tgz#09e88ef4b3646f01089c5d84d007b872141fb575"
-  integrity sha512-/x5MRIh56VyuuhLfcz+DL2SlBARpZpgQIf2A4Ao4hMb69MHSgDIMPwYmFwesGT1lkRDZ0eBSoym5+JoIZ3N+cQ==
+nodemailer@^6.2.1:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.2.1.tgz#20d773925eb8f7a06166a0b62c751dc8290429f3"
+  integrity sha512-TagB7iuIi9uyNgHExo8lUDq3VK5/B0BpbkcjIgNvxbtVrjNqq0DwAOTuzALPVkK76kMhTSzIgHqg8X1uklVs6g==
 
 nodemon@^1.18.9:
   version "1.19.0"
