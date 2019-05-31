@@ -18,7 +18,7 @@
     "prod": "npm run generate & npm run build:lambda"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.4.1",
+    "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/recaptcha": "^0.3.3",
     "@nuxtjs/toast": "^3.1.0",
@@ -30,7 +30,7 @@
     "express": "^4.16.4",
     "netlify-lambda": "^1.4.4",
     "nodemailer": "^6.1.0",
-    "nuxt": "^2.6.3",
+    "nuxt": "^2.4.0",
     "nuxt-leaflet": "^0.0.18",
     "serverless-http": "^1.9.1"
   },
