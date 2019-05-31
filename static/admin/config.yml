@@ -305,7 +305,7 @@ collections:
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Description", name: "description", widget: list}
+              - {label: "Description", name: "description", widget: "list"}
   - label: "Quote"
     name: "quoteform"
     files:
@@ -371,9 +371,9 @@ collections:
           - label: "Commercial project"
             name: "commercialProject"
             widget: "string"
-          - label: "Profession"
-            name: "profession"
+          - label: "Project type"
+            name: "projectType"
             widget: "list"
             fields:
               - {label: "Title", name: "title", widget: "string"}
-              - {label: "Professions", name: "professions", widget: list}
+              - {label: "Type", name: "type", widget: "list"}
