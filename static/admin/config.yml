@@ -377,4 +377,86 @@ collections:
             fields:
               - {label: "Title", name: "title", widget: "string"}
               - {label: "Professions", name: "professions", widget: "list"}
+          - label: "Project type"
+            name: "projectType"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Type", name: "type", widget: "list"}
+          - label: "Detail for residential project"
+            name: "detail"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Detail", name: "detail", widget: "list"}
+          - label: "Detail for commercial project"
+            name: "commercialDetail"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Detail", name: "detail", widget: "list"}
+          - label: "DA approval"
+            name: "DAApproval"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Options", name: "approval", widget: "list"}
+          - label: "No DA approval"
+            name: "noDAApproval"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Reasons", name: "reasons", widget: "list"}
+          - label: "Architectural plan"
+            name: "architecturalPlan"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Options", name: "plans", widget: "list"}
+              - {label: "Upload", name: "upload", widget: "string"}
+              - {label: "Upload button", name: uploadButton, widget: "string"}
+          - label: "Engineering plan"
+            name: "engineeringPlan"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Options", name: "plans", widget: "list"}
+              - {label: "Upload", name: "upload", widget: "string"}
+              - {label: "Upload button", name: uploadButton, widget: "string"}
+          - label: "Structural plan"
+            name: "structuralPlan"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Options", name: "plans", widget: "list"}
+          - label: "No architectural plan"
+            name: "sorry"
+            widget: "string"
+          - label: "Return to homepage"
+            name: "returnHome"
+            widget: "string"
+          - label: "Quote for"
+            name: "quoteFor"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Type", name: "type", widget: "list"}
+          - label: "Start project"
+            name: "startProject"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Timeframe", name: "timeframe", widget: "list"}
+          - label: "Message"
+            name: "message"
+            widget: "string"
+          - label: "Submit button"
+            name: "submitButton"
+            widget: "string"
+          - label: "Thank you title"
+            name: "thankYou"
+            widget: "string"
+          - label: "Thank you message"
+            name: "thankYouMessage"
+            widget: "string"
           
