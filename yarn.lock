@@ -9496,10 +9496,10 @@ server-destroy@^1.0.1:
   resolved "https://registry.yarnpkg.com/server-destroy/-/server-destroy-1.0.1.tgz#f13bf928e42b9c3e79383e61cc3998b5d14e6cdd"
   integrity sha1-8Tv5KOQrnD55OD5hzDmYtdFObN0=
 
-serverless-http@^1.9.1:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/serverless-http/-/serverless-http-1.10.1.tgz#e604fbef55ecd991fdbb7d1130b4d34dad8a0428"
-  integrity sha512-6DEaM8izBg05rP4JfDWVJmzpTbXcVa1lGLOfj7ODtjOJ98hb1gbYI8m/91XERUUNUvP1KeBzxtiJiTU+v7Jgzg==
+serverless-http@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/serverless-http/-/serverless-http-2.0.2.tgz#88c48a0977a0c3793fbb859a4661098cebff672d"
+  integrity sha512-rPE8+LiIWw1ONubDaKSgQjJA6qXx50vFJUtU/8+kKduJlcgWNC7efkEq1vLireIK+3sq7aaip8TRdEQJLZggCg==
   optionalDependencies:
     "@types/aws-lambda" "^8.10.19"
 
