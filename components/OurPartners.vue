@@ -9,7 +9,7 @@
               <div class="inner">
                 <div class="heading-wrap">
                   <h3 class="heading">
-                    {{ quote.partnerTitle }}
+                    {{ quote.startYourProject }}
                   </h3>
                 </div>
                 <div class="button-wrap has-icon .sep-icon-after">
@@ -26,7 +26,7 @@
       <div class="top-row">
         <div class="container">
           <h3 class="heading">
-            {{ quote. }}
+            {{ quote.partnerTitle }}
           </h3>
         </div>
       </div>
