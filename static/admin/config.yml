@@ -362,3 +362,18 @@ collections:
             fields:
               - {label: "Question", name: "question", widget: "string"}
               - {label: "Image", name: "img", widget: "image"}
+          - label: "Tick"
+            name: "tick"
+            widget": "image"
+          - label: "Residential project"
+            name: "residentialProject"
+            widget": "string"
+          - label: "Commercial project"
+            name: "commercialProject"
+            widget": "string"
+          - label: "Profession"
+            name: "profession"
+            widget: "list"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Professions", name: "professions", widget: "list"}
