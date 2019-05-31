@@ -93,7 +93,6 @@ export default {
     flex-direction: column;
     text-align: center;
     position: absolute;
-    left: 50px;
     top: -29px;
     background-image: url('/img/number-bg.PNG')
 }

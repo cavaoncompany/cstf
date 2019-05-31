@@ -1071,6 +1071,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
 
   .service-container .card-img-top { height: 200px; }
 
+  .works-container .connecting-line { display: block; }
 }
 
 @media only screen and (max-width: 1199px) {
@@ -1122,6 +1123,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #footer .associations img { height: 50px; margin-left: 40px; }
 
   .service-container .card-img-top { height: 200px; }
+
+  .works-container .connecting-line { display: none; }
 }
 
 @media only screen and (max-width: 991px) {
@@ -1234,6 +1237,8 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #quote #sorry-modal .modal-body { padding: 40px; }
 
   #projects .carousel-indicators li { max-width: 27%; }
+
+  .works-container .number-mobile { left: 133px; }
 }
 
 @media only screen and (max-width: 479px) {
@@ -1329,6 +1334,7 @@ body.page #main-content { padding-top: 0; padding-bottom: 0; }
   #footer .associations { justify-content: space-between; }
 
   .service-container .card-img-top { height: 120px; }
+  .works-container .number-mobile { left: 50px; }
 }
 
 @media only screen and (max-width: 359px) {
