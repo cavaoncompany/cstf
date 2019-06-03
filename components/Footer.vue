@@ -42,7 +42,7 @@
                 :key="index"
                 class="clearfix col-6"
               >
-                <a @click="scrollToTop(item.title.toLowerCase())">{{ item.title }}</a>
+                <a :href="item.link">{{ item.title }}</a>
               </li>
             </ul>
           </div>

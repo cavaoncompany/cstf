@@ -21,8 +21,8 @@
             </div>
           </div>
           <!-- /#site-logo -->
-          <a href="tel:+61285276342">
-            <span class="menu-item-tel-mobile">+61 28 527 6342</span>
+          <a href="tel:+61290592535">
+            <span class="menu-item-tel-mobile">+61 (02) 9059 2535</span>
           </a>
           <div class="mobile-button">
             <span />
@@ -51,8 +51,8 @@
                 <a href="/contact">CONTACT</a>
               </li>
               <li class="menu-item menu-item-last">
-                <a id="tel" href="tel:+61285276342">
-                  <span class="menu-item-tel">+61 28 527 6342</span>
+                <a id="tel" href="tel:+61290592535">
+                  <span class="menu-item-tel">+61 (02) 9059 2535</span>
                 </a>
               </li>
             </ul>

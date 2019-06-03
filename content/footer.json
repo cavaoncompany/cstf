@@ -10,26 +10,22 @@
         },
         {
             "title": "Projects",
-            "link": "#projects"
+            "link": "/projects"
         },
         {
             "title": "About",
-            "link": "#about"
+            "link": "/why-steel"
         },
         {
             "title": "Services",
-            "link": "#services"
+            "link": "/services"
         },
         {
             "title": "Contact",
-            "link": "#contact"
-        },
-        {
-            "title": "Testimony",
-            "link": "#testimony"
+            "link": "/contact"
         }
     ],
-    "tel": "+61 2 8324 3742",
+    "tel": "+61 (02) 9059 2535",
     "email": "info@cstf.com.au",
     "address": "403 Elizabeth St, Surry Hills 2010 NSW",
     "associations": [
