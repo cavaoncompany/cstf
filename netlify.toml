@@ -1,2 +1,5 @@
 [build]
   functions = "lambda"
+[backend]
+  name = "github-api"
+  repo = "cavaoncompany/cstf"
