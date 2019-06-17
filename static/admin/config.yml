@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: cavaoncompany/cstf
-  site_id: stoic-austin-d1871a
+  site_id: cstf.com.au
   site_domain: cstf.com.au
   branch: master # Branch to update (optional; defaults to master)
 media_folder: "assets/images/uploads" # Media files will be stored in the repo under images/uploads
