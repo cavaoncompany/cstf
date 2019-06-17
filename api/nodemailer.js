@@ -61,11 +61,13 @@ const sendContactUsMail = (emailInfo, emailProvider) => {
       // to: ''
       to: `${emailProvider.username}`,
       subject: `${emailInfo.subject}`,
-      html: `<h2>The following message has been received through the Contact us form on CSTF</h2>
-          <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
-          <p style="margin-bottom: 10px;"><b>Email:</b> ${emailInfo.email}</p>
-          <p style="margin-bottom: 10px;"><b>Phone:</b> ${emailInfo.phone}</p>
-          <p style="margin-bottom: 10px;"><b>Message:</b> ${emailInfo.message}</p>`
+      html: `<h2>New Contact us form submission on CSTF</h2>
+        <table style="border: 4px solid #555555; padding: 8px;">
+          <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Enquiry from: </b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.name}</td></tr>
+          <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Email:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.email}</td></tr>
+          <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Phone:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.phone}</td></tr>
+          <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Message:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.message}</td></tr>
+        </table>`
     })
   }, 100)
 }
@@ -102,23 +104,25 @@ const sendGetEstimateMail = (emailInfo, emailProvider) => {
       from: emailInfo.email,
       // to: ''
       to: `${emailProvider.username}`,
-      subject: 'New quote request form',
-      html: `<h2>The following message has been received through the Contact us form on www.cstf.com</h2>
-        <p style="color:blue; margin-bottom: 10px;">Enquiry from: ${emailInfo.name}</p>
-        <p style="margin-bottom: 10px;"><b>Email:</b> ${emailInfo.email}</p>
-        <p style="margin-bottom: 10px;"><b>Company:</b> ${emailInfo.company}</p>
-        <p style="margin-bottom: 10px;"><b>Project Type:</b> ${emailInfo.projectType}</p>
-        <p style="margin-bottom: 10px;"><b>Profession:</b> ${emailInfo.profession}</p>
-        <p style="margin-bottom: 10px;"><b>Type:</b> ${emailInfo.type}</p>
-        <p style="margin-bottom: 10px;"><b>Detail:</b> ${emailInfo.detail}</p>
-        <p style="margin-bottom: 10px;"><b>Detail Other:</b> ${emailInfo.detailOther}</p>
-        <p style="margin-bottom: 10px;"><b>DA Approval:</b> ${emailInfo.DAApproval}</p>
-        <p style="margin-bottom: 10px;"><b>Reason if no DA approval:</b> ${emailInfo.noDAApproval}</p>
-        <p style="margin-bottom: 10px;"><b>Architectural plans:</b> ${emailInfo.architecturalPlans}</p>
-        <p style="margin-bottom: 10px;"><b>Engineering plans:</b> ${emailInfo.engineeringPlans}</p>
-        <p style="margin-bottom: 10px;"><b>Structural plans designed specifically for light gauge steel application:</b> ${emailInfo.structuralPlans}</p>
-        <p style="margin-bottom: 10px;"><b>Quote for:</b> ${emailInfo.quoteFor}</p>
-        <p style="margin-bottom: 10px;"><b>Start of project:</b> ${emailInfo.startProject}</p>
+      subject: 'New estimate request form from www.cstf.com.au',
+      html: `<h2>The following request for an estimate has been received through www.cstf.com.au</h2>
+      <table style="border: 4px solid #555555; padding: 8px;">
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px; padding: 8px;"><b>Enquiry from: </b></td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.name}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Email:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.email}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Company:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.company}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Project Type:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.projectType}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Profession:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.profession}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Type:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.type}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Detail:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.detail}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Detail Other:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.detailOther}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>DA Approval:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.DAApproval}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Reason if no DA approval:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.noDAApproval}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Architectural plans:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.architecturalPlans}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Engineering plans:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.engineeringPlans}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Structural plans designed specifically for light gauge steel application:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.structuralPlans}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Quote for:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.quoteFor}</td></tr>
+        <tr><td style="margin-bottom: 10px; border: 2px solid #555555; padding: 8px;"><b>Start of project:</b> </td><td style="border: 2px solid #555555; padding: 8px;">${emailInfo.startProject}</td></tr>
+      </table>
         `,
       attachments: attachments
     })
