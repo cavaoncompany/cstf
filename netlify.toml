@@ -1,7 +1,2 @@
 [build]
   functions = "lambda"
-[backend]
-  name = "github"
-  repo = "cavaoncompany/cstf"
-  site_id: "stoic-austin-d1871a"
-  site_domain: "stoic-austin-d1871a"
