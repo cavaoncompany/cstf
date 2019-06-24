@@ -58,8 +58,9 @@ const sendContactUsMail = (emailInfo, emailProvider) => {
   setTimeout(() => {
     transporter.sendMail({
       from: emailInfo.email,
-      // to: ''
-      to: `${emailProvider.username}`,
+      to: 'peter.tan@wyktan.com.au',
+      cc: '',
+      // to: `${emailProvider.username}`,
       subject: `${emailInfo.subject}`,
       html: `<h2>New Contact us form submission on CSTF</h2>
         <table style="border: 4px solid #555555; padding: 8px;">
@@ -102,8 +103,9 @@ const sendGetEstimateMail = (emailInfo, emailProvider) => {
 
     transporter.sendMail({
       from: emailInfo.email,
-      // to: ''
-      to: `${emailProvider.username}`,
+      to: 'peter.tan@wyktan.com.au',
+      // to: `${emailProvider.username}`,
+      cc: '',
       subject: 'New estimate request form from www.cstf.com.au',
       html: `<h2>The following request for an estimate has been received through www.cstf.com.au</h2>
       <table style="border: 4px solid #555555; padding: 8px;">
