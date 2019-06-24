@@ -28,6 +28,7 @@
     "cssnano": "^4.1.10",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
+    "netlify-cms": "^2.9.2-beta.2",
     "netlify-lambda": "^1.4.13",
     "nodemailer": "^6.2.1",
     "nuxt": "^2.4.0",
