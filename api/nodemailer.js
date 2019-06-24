@@ -4,6 +4,7 @@ const express = require('express')
 const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser')
 const app = express()
+const emailData = require('../content/sitedata.json')
 
 app.use(bodyParser.json({ limit: '10mb' }))
 app.use(bodyParser.urlencoded({ limit: '10mb', extended: true, parameterLimit: 10000 }))
@@ -58,9 +59,8 @@ const sendContactUsMail = (emailInfo, emailProvider) => {
   setTimeout(() => {
     transporter.sendMail({
       from: emailInfo.email,
-      to: 'peter.tan@wyktan.com.au',
-      cc: '',
-      // to: `${emailProvider.username}`,
+      cc: `${emailData.cc}`,
+      to: `${emailData.email}`,
       subject: `${emailInfo.subject}`,
       html: `<h2>New Contact us form submission on CSTF</h2>
         <table style="border: 4px solid #555555; padding: 8px;">
@@ -103,9 +103,8 @@ const sendGetEstimateMail = (emailInfo, emailProvider) => {
 
     transporter.sendMail({
       from: emailInfo.email,
-      to: 'peter.tan@wyktan.com.au',
-      // to: `${emailProvider.username}`,
-      cc: '',
+      cc: `${emailData.cc}`,
+      to: `${emailData.email}`,
       subject: 'New estimate request form from www.cstf.com.au',
       html: `<h2>The following request for an estimate has been received through www.cstf.com.au</h2>
       <table style="border: 4px solid #555555; padding: 8px;">

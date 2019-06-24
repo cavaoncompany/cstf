@@ -461,4 +461,17 @@ collections:
           - label: "Thank you message"
             name: "thankYouMessage"
             widget: "string"
-          
+  - label: "Site Information"
+    name: "sitedata"
+    files:
+      - label: "Site Information"
+        name: "sitedata"
+        format: "json"
+        file: "/content/sitedata.json"
+        fields:
+          - label: "Form forwarding email"
+            name: "email"
+            widget: "string"
+          - label: "Form forwarding cc"
+            name: "cc"
+            widget: "string"
