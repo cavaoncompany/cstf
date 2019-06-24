@@ -112,7 +112,7 @@ collections:
       - label: "Featured Project"
         name: "project"
         format: "json"
-        file: "/content/services.json"
+        file: "/content/project.json"
         fields:
           - label: "Title"
             name: "title"
