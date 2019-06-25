@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: cavaoncompany/cstf
   identifier_field: body
   branch: master # Branch to update (optional; defaults to master)
   site_domain: stoic-austin-d1871a.netlify.com
