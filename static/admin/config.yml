@@ -505,4 +505,4 @@ collections:
             widget: "string"
           - label: "Projects meta description"
             name: "projectsDescription"
-            widget: string
+            widget: "string"
