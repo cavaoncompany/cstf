@@ -83,6 +83,7 @@
 
 <script>
 import projects from '../content/projects.json'
+import sitedata from '../content/sitedata.json'
 import Header from '../components/Header'
 import GetAQuoteModal from '../components/GetAQuoteModal'
 import HowItWorks from '../components/HowItWorks'
@@ -109,7 +110,8 @@ export default {
   },
   data() {
     return {
-      projects: projects
+      projects: projects,
+      sitedata: sitedata
     }
   },
   created() {
@@ -188,6 +190,18 @@ export default {
         // eslint-disable-next-line
         $('#mobile-projects-home-carousel' + i).carousel('prev')
       }
+    }
+  },
+  head() {
+    return {
+      title: `${this.sitedata.homepageTitle}`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `${this.sitedata.homepageDescription}`
+        }
+      ]
     }
   }
 }

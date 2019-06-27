@@ -166,6 +166,7 @@
 
 <script>
 import projects from '../content/projects.json'
+import sitedata from '../content/sitedata.json'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
@@ -178,7 +179,8 @@ export default {
     return {
       projects: projects,
       mobile: false,
-      swipe: ''
+      swipe: '',
+      sitedata: sitedata
     }
   },
   created() {
@@ -254,6 +256,18 @@ export default {
     },
     isMobileDevice: function () {
       return (typeof window.orientation !== 'undefined') || (navigator.userAgent.indexOf('IEMobile') !== -1)
+    }
+  },
+  head() {
+    return {
+      title: `${this.sitedata.projectsTitle}`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `${this.sitedata.projectsDescription}`
+        }
+      ]
     }
   }
 }

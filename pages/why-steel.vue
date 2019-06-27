@@ -66,6 +66,7 @@
 
 <script>
 import whysteel from '../content/whysteel.json'
+import sitedata from '../content/sitedata.json'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
@@ -76,7 +77,8 @@ export default {
   },
   data() {
     return {
-      whysteel: whysteel
+      whysteel: whysteel,
+      sitedata: sitedata
     }
   },
   methods: {
@@ -95,6 +97,18 @@ export default {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop
       const coordinates = { top: rect.top + scrollTop, left: rect.left + scrollLeft }
       window.scrollTo({ top: coordinates.top, behavior: 'smooth' })
+    }
+  },
+  head() {
+    return {
+      title: `${this.sitedata.whySteelTitle}`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `${this.sitedata.whySteelDescription}`
+        }
+      ]
     }
   }
 }

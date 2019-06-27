@@ -600,6 +600,7 @@
 <script>
 // import { constants } from 'crypto'
 import quote from '../content/quote.json'
+import sitedata from '../content/sitedata.json'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
@@ -611,6 +612,7 @@ export default {
   data() {
     return {
       quote: quote,
+      sitedata: sitedata,
       currentPage: 1,
       totalPages: 4,
       otherDetailSelected: false,
@@ -1010,6 +1012,18 @@ export default {
         // eslint-disable-next-line
         console.log('Submission error: ', error)
       }
+    }
+  },
+  head() {
+    return {
+      title: `${this.sitedata.estimateFormTitle}`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `${this.sitedata.estimateFormDescription}`
+        }
+      ]
     }
   }
 }

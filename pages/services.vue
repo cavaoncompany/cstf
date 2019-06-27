@@ -48,6 +48,7 @@
 
 <script>
 import services from '../content/services.json'
+import sitedata from '../content/sitedata.json'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 
@@ -58,7 +59,20 @@ export default {
   },
   data() {
     return {
-      services: services
+      services: services,
+      sitedata: sitedata
+    }
+  },
+  head() {
+    return {
+      title: `${this.sitedata.servicesTitle}`,
+      meta: [
+        {
+          hid: `description`,
+          name: 'description',
+          content: `${this.sitedata.servicesDescription}`
+        }
+      ]
     }
   }
 }

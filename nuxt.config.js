@@ -1,5 +1,6 @@
 const env = require('dotenv').config()
 const pkg = require('./package')
+const sitedata = require('./content/sitedata.json')
 
 module.exports = {
   mode: 'universal',
@@ -12,7 +13,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'site_name', name: 'site_name', content: sitedata.homepageTitle },
+      { hid: 'description', name: 'description', content: sitedata.homepageDescription }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
