@@ -1,56 +1,53 @@
 {
-    "title": "WHY STEEL FRAMING?",
-    "about": "ABOUT",
-    "intro": "Installation is part of our comprehensive service which will save your money and time looking and installation is part of our comprehensive service which will save your money and time looking",
-    "img": "/img/why-steel-framing.png",
-    "points": [
-        {
-            "title": "DURABILITY",
-            "description": [
-                "Steel House Frames have In-built Durability. Corrosion Protection is Built In. Protective coatings of either TrueCore® 45% zinc/55% aluminium alloy, or zinc, defend the steel against corrosion. (Note: TrueCore® is produced in Australia by BlueScope Steel. Zinc coated steel is commonly known as “galvanized iron”). A natural phenomenon known as sacrificial protection prevents corrosion of any steel exposed at cut edges and penetrations.",
-                "The protective coatings. The coatings are tough, continuous, of uniform thickness, tightly adherent, and strongly resistant to corrosion. They are applied to both sides of the steel by the hot-dip process. In this process the steel strip is passed through a bath of molten metal, the amount of coating applied being closely controlled. The coating mass must meet the requirements of the relevant Australian Standard (AS 1397), or its equivalent.",
-                "BlueScope Steel provides a 50 – year warranty for its TrueCore® used correctly in steel house frames. Steel framing is the only framing material for which any kind of structural durability warranty is offered."
-            ]
-        },
-        {
-            "title": "LESS DEFORMATION",
-            "description": [
-                "LGS frame provides the strength, stiffness and geometric stability of the building. Its ability to stay straight and square indefinitely, through varying seasons with temperature and humidity changes, is vital to just about everything which is attached to it – the brick exterior skin, roof tiles or sheeting, window units, door frames, plasterboard wall linings and so on."
-            ]
-        },
-        {
-            "title": "DESIGN FLEXIBILITY",
-            "description": [
-                "Steel roof structures perform in any climate. Not surprisingly, steel is the preferred framing material in the extreme climates of North West WA, where temperatures can vary over 40°C in a single day. Steel adapts perfectly to cyclonic design requirements, and is equally at home in humid or cold climates.",
-                "Because of its strength, steel is capable of long spans, offering large open spaces without requiring intermediate columns or load bearing walls. This allows increased design flexibility. With its inherent strength and consistency, and the wide range of sections available, steel offers the potential to reduce the number of framing members required. This is particularly useful on awkward sites where stable, slender structures and long spans can greatly simplify foundation design and reduce construction time and cost."
-            ]
-        },
-        {
-            "title": "ACCURACY",
-            "description": [
-                "Because steel has consistent material strength and complies with strict quality controls and tolerances, every stud is a good stud. This means there is no time wasted sorting material to select suitable pieces. “Every stud is a good stud”."
-            ]
-        },
-        {
-            "title": "COST-EFFICIENT",
-            "description": [
-                "Factory pre-assembly will realise cost savings for your project in your labour budget. Additionally, there is no wastage in the form of off-cuts and, being purpose built sub-assemblies, the incidence of site theft is reduced."
-            ]
-        },
-        {
-            "title": "TERMITE",
-            "description": [
-                "Termite management is simplified. Termites cannot destroy the steel frame. The builder is thus far less likely to be involved later in any disputes resulting from extensive termite damage. The builder also does not have to handle a chemically treated product. Householders particularly appreciate the termite-proof nature of steel as these days they are much more aware of termites and the widespread damage they inflict. They also appreciate an immediate environment that is as free of chemicals as possible."
-            ]
-        },
-        {
-            "title": "FIRE RESISTANCE",
-            "description": [
-                "Steel is a non-combustible material, simplifying the design of elevated flooring, verandahs, carports architectural features in bushfire-prone areas. Steel framing is always fully earthed, so the potential for concealed ignition leading to building fires is reduced."
-            ]
-        }
-    ],
-    "contactBoxTitle": "HOW CAN WE HELP?",
-    "contactBoxDescription": "Are you interested in finding out how we can make your project. Please email us.",
-    "contactBoxButtonText": "GET IN TOUCH"
+  "title": "7 REASONS WHY STEEL FRAMING?",
+  "about": "ABOUT",
+  "intro": "Installation is part of our comprehensive service which will save your money and time looking and installation is part of our comprehensive service which will save your money and time looking",
+  "img": "/img/why-steel-framing.png",
+  "points": [
+    {
+      "title": "DURABILITY",
+      "description": [
+        "Steel House Frames have In-built Durability. Corrosion Protection is Built In. Protective coatings of either TrueCore® 45% zinc/55% aluminium alloy, or zinc, defend the steel against corrosion. (Note: TrueCore® is produced in Australia by BlueScope Steel. Zinc coated steel is commonly known as “galvanized iron”). A natural phenomenon known as sacrificial protection prevents corrosion of any steel exposed at cut edges and penetrations.",
+        "The protective coatings. The coatings are tough, continuous, of uniform thickness, tightly adherent, and strongly resistant to corrosion. They are applied to both sides of the steel by the hot-dip process. In this process the steel strip is passed through a bath of molten metal, the amount of coating applied being closely controlled. The coating mass must meet the requirements of the relevant Australian Standard (AS 1397), or its equivalent.",
+        "BlueScope Steel provides a 50 – year warranty for its TrueCore® used correctly in steel house frames. Steel framing is the only framing material for which any kind of structural durability warranty is offered."
+      ]
+    },
+    {
+      "title": "LESS DEFORMATION",
+      "description": [
+        "LGS frame provides the strength, stiffness and geometric stability of the building. Its ability to stay straight and square indefinitely, through varying seasons with temperature and humidity changes, is vital to just about everything which is attached to it – the brick exterior skin, roof tiles or sheeting, window units, door frames, plasterboard wall linings and so on."
+      ]
+    },
+    {
+      "title": "DESIGN FLEXIBILITY",
+      "description": [
+        "Steel roof structures perform in any climate. Not surprisingly, steel is the preferred framing material in the extreme climates of North West WA, where temperatures can vary over 40°C in a single day. Steel adapts perfectly to cyclonic design requirements, and is equally at home in humid or cold climates.",
+        "Because of its strength, steel is capable of long spans, offering large open spaces without requiring intermediate columns or load bearing walls. This allows increased design flexibility. With its inherent strength and consistency, and the wide range of sections available, steel offers the potential to reduce the number of framing members required. This is particularly useful on awkward sites where stable, slender structures and long spans can greatly simplify foundation design and reduce construction time and cost."
+      ]
+    },
+    {
+      "title": "ACCURACY",
+      "description": [
+        "Because steel has consistent material strength and complies with strict quality controls and tolerances, every stud is a good stud. This means there is no time wasted sorting material to select suitable pieces. “Every stud is a good stud”."
+      ]
+    },
+    {
+      "title": "COST-EFFICIENT",
+      "description": [
+        "Factory pre-assembly will realise cost savings for your project in your labour budget. Additionally, there is no wastage in the form of off-cuts and, being purpose built sub-assemblies, the incidence of site theft is reduced."
+      ]
+    },
+    {
+      "title": "TERMITE",
+      "description": [
+        "Termite management is simplified. Termites cannot destroy the steel frame. The builder is thus far less likely to be involved later in any disputes resulting from extensive termite damage. The builder also does not have to handle a chemically treated product. Householders particularly appreciate the termite-proof nature of steel as these days they are much more aware of termites and the widespread damage they inflict. They also appreciate an immediate environment that is as free of chemicals as possible."
+      ]
+    },
+    {
+      "title": "FIRE RESISTANCE",
+      "description": [
+        "Steel is a non-combustible material, simplifying the design of elevated flooring, verandahs, carports architectural features in bushfire-prone areas. Steel framing is always fully earthed, so the potential for concealed ignition leading to building fires is reduced."
+      ]
+    }
+  ]
 }
