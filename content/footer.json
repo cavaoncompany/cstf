@@ -1,45 +1,41 @@
 {
-    "rights": "© 2019 CSTF. All rights reserved.",
-    "logo": "/img/logo-white@2x.png",
-    "site": "SITE",
-    "contact": "CONTACT",
-    "links": [
-        {
-            "title": "Home",
-            "link": "/"
-        },
-        {
-            "title": "Projects",
-            "link": "/projects"
-        },
-        {
-            "title": "About",
-            "link": "/why-steel"
-        },
-        {
-            "title": "Services",
-            "link": "/services"
-        },
-        {
-            "title": "Contact",
-            "link": "/contact"
-        }
-    ],
-    "tel": "+61 (02) 9059 2535",
-    "email": "info@cstf.com.au",
-    "address": "403 Elizabeth St, Surry Hills 2010 NSW",
-    "associations": [
-        {
-            "image": "/img/nash.png",
-            "title": "NASH"
-        },
-        {
-            "image": "/img/truecore.png",
-            "title": "Truecore"
-        },
-        {
-            "image": "/img/mba.png",
-            "title": "Master Builders Association"
-        }
-    ]
+  "rights": "© 2019 CSTF. All rights reserved.",
+  "logo": "/img/logo-white@2x.png",
+  "site": "SITE",
+  "contact": "CONTACT",
+  "links": [
+    {
+      "title": "Home",
+      "link": "/"
+    },
+    {
+      "title": "Projects",
+      "link": "/projects"
+    },
+    {
+      "title": "About",
+      "link": "/why-steel"
+    },
+    {
+      "title": "Services",
+      "link": "/services"
+    },
+    {
+      "title": "Contact",
+      "link": "/contact"
+    }
+  ],
+  "tel": "+61 (02) 9059 2535",
+  "email": "info@cstf.com.au",
+  "address": "403 Elizabeth St, Surry Hills 2010 NSW",
+  "associations": [
+    {
+      "image": "/img/truecore.png",
+      "title": "Truecore"
+    },
+    {
+      "image": "/img/mba.png",
+      "title": "Master Builders Association"
+    }
+  ]
 }
