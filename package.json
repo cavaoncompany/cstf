@@ -27,7 +27,7 @@
     "cross-env": "^5.2.0",
     "cssnano": "^4.1.10",
     "dotenv": "^8.0.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "netlify-cms": "^2.9.2-beta.2",
     "netlify-identity-widget": "^1.5.5",
     "netlify-lambda": "^1.4.13",
